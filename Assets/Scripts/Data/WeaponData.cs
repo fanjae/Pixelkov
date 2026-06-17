@@ -9,6 +9,8 @@ public class WeaponData : ItemData
     [SerializeField] private float reloadTime;
     [SerializeField] private int ammoItemId;
 
+    public int AmmoItemId => ammoItemId;
+
     public override void Use(Player player)
     {
         // player.EquipWeapon(this);

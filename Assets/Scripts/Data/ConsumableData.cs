@@ -5,7 +5,7 @@ public class ConsumableData : ItemData
 {
     // 소비 아이템
     // 타입(순수 회복, 회피 수치 회복)
-    // 값
+    // 회복 값
 
     [Header("Consumable")]
     [SerializeField] private ConsumableType consumableType;
@@ -18,8 +18,4 @@ public class ConsumableData : ItemData
     {
         // player.UseConsumable(this);
     }
-
-    // 소비 데이터
-    // - 소비 아이템 타입
-    // - 
 }

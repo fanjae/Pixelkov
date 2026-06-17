@@ -2,6 +2,7 @@
 {
     Consumable,
     Weapon,
+    Ammo,
     Armor,
     Accessory,
     Material

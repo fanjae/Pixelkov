@@ -11,6 +11,7 @@ public class GuidePanel : MonoBehaviour
 
     public void PaintGuide(int itemId)
     {
+        // 할당되지 않은 필드가 존재하면 return
         if (database == null) return;
         if (icon == null) return;
         if (itemName == null) return;

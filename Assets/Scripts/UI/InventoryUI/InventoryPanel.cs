@@ -45,8 +45,7 @@ public class InventoryPanel : MonoBehaviour
         ItemData itemInfo = database.GetItem(getId);
         if (itemInfo == null) return;
 
-        // 얻은 데이터를 기반으로 슬롯 그리기
-        Sprite icon = itemInfo.Icon;
-        slotUIs[index].PaintSlot(icon, curSlot.Count);
+        // 얻은 데이터를 슬롯에 보내기
+        slotUIs[index].GetItemInfo(itemInfo, curSlot.Count);
     }
 }

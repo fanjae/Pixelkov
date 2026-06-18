@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Equipment
 {
@@ -23,11 +22,9 @@ public class Equipment
             { EquipmentSlotType.Accessory, new EquipmentSlot(EquipmentSlotType.Accessory) }
         };
     }
-    
-    public bool EquipItem(ItemData itemData, out int previousItemId)
+
+    public bool EquipItem(ItemData itemData, int inventorySlotIndex)
     {
-        // 교체된 기존 장비 없으면 0.
-        previousItemId = 0;
 
         // 장착할 아이템 데이터 체크
         if (itemData == null) return false;
@@ -35,15 +32,28 @@ public class Equipment
         // ItemType을 실제 장비 슬롯 타입 변환 및 무기/방어구/악세서리 여부 체크
         if (!TryGetEquipmentSlotType(itemData.ItemType, out EquipmentSlotType slotType)) return false;
 
-        EquipmentSlot slot = slots[slotType];
-
-        // 해당 슬롯에 이미 장비 존재하면 기존 장비 ItemID를 변환해서 인벤토리로 돌려보냄.
-        if (!slot.IsEmpty) previousItemId = slot.ItemId;
-
         // 실제 슬롯 데이터 변경
-        slot.SetItem(itemData.ItemId);
+        EquipmentSlot slot = slots[slotType];
+        slot.SetItem(itemData.ItemId, inventorySlotIndex);
 
         // 장비 변경 상태 알림
+        OnEquipmentChanged?.Invoke();
+        return true;
+    }
+
+    // 지정한 장비 슬롯 아이템 해제
+    public bool UnEquipItem(EquipmentSlotType slotType)
+    {
+        // 미존재하는 슬롯 타입 해제 불가
+        if (!slots.TryGetValue(slotType, out EquipmentSlot slot)) return false;
+
+        // 이미 비어있는 슬롯 해제 불가
+        if (slot.IsEmpty) return false;
+
+        // 장착 정보 제거
+        slot.Clear();
+
+        // 장비 상태 변경 알림
         OnEquipmentChanged?.Invoke();
         return true;
     }
@@ -76,4 +86,15 @@ public class Equipment
                 return false;
         }
     }
+
+
+    // 해당 아이템이 장착 가능한 장비 아이템인지 확인(외부 확인용)
+    public bool CanEquip(ItemData itemData)
+    {
+        if (itemData == null) return false;
+
+        return TryGetEquipmentSlotType(itemData.ItemType, out _);
+    }
+
+
 }

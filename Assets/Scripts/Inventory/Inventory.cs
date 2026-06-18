@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 public class Inventory
 {
     private readonly List<InventorySlot> slots;
@@ -25,6 +24,9 @@ public class Inventory
     {
         if (itemData == null || count <= 0) return false;
 
+        // 공간 부족하면 아무 변경도 하지 않음
+        if (!CanAddItem(itemData, count)) return false;
+
         int remainingCount = count;
 
         // 스택 가능한 아이템이면 기존 같은 아이템 슬롯부터 채움
@@ -36,13 +38,10 @@ public class Inventory
         // 기존 슬롯에 다 못 넣은 수량은 빈 슬롯에 추가
         remainingCount = AddToEmptySlots(itemData, remainingCount);
 
-        bool success = remainingCount == 0;
-
-        // 아이템 전부 정상 추가되었으면 변경 이벤트 호출
-        if (success)
-            OnInventoryChanged?.Invoke();
-
-        return success;
+        if (remainingCount != 0) return false; // 논리적 오류
+        
+        OnInventoryChanged?.Invoke();
+        return true;
     }
 
     // 지정한 수 만큼 아이템 제거
@@ -172,4 +171,34 @@ public class Inventory
         return count;
     }
 
+    // 아이템을 지정한 수량 만큼 추가 가능 여부체크
+    public bool CanAddItem(ItemData itemData, int count = 1)
+    {
+        // 잘못된 아이템 데이터나 수량은 추가 불가
+        if (itemData == null || count <= 0) return false;
+
+        // 남은 수량
+        int remainingCount = count;
+
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.IsEmpty)
+            {
+                // 빈 슬롯이면 스택 가능 아이템은 최대 수 만큼, 스택 불가능 아이템은 1개만 들어감
+                remainingCount -= itemData.IsStackable ? itemData.MaxStackCount : 1;
+            }
+            else if (itemData.IsStackable && slot.ItemId == itemData.ItemId)
+            {
+                // 같은 아이템이 들어있는 기존 스택 슬롯은 최대 스택 수까지 남은 공간 만큼 사용 가능
+                int availableCount = itemData.MaxStackCount - slot.Count;
+                remainingCount -= availableCount;
+            }
+
+            // 남은 수량이 0 이하 = 넣을 공간이 충분
+            if (remainingCount <= 0) return true;
+        }
+
+        // 공간 부족하면 추가 불가능
+        return false;
+    }
 }

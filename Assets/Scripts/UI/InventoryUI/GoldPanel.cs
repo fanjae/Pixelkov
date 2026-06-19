@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GoldPanel : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    //[SerializeField] private Player player;
     [SerializeField] private TextMeshProUGUI goldText;
 
     private void OnEnable()

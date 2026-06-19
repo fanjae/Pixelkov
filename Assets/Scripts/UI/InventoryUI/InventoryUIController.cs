@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// 인벤토리의 주요 정보를 담고, 패널들의 흐름을 관리합니다.
 /// </summary>
-public class InventoryUIController : MonoBehaviour
+public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     public static ItemDatabase Database { get; private set; }
 
@@ -19,6 +20,9 @@ public class InventoryUIController : MonoBehaviour
     #endregion
     private PlayerInventoryController inventoryController;
 
+    // 마우스 드래그 오프셋
+    private Vector2 offset = Vector2.zero;
+
     private void Awake()
     {
         if (database != null)
@@ -33,6 +37,7 @@ public class InventoryUIController : MonoBehaviour
         }
         if(equipmentPanel != null)
         {
+            equipmentPanel.AllocateSlotEvent(UnEquip);
             equipmentPanel.AllocateEquipment(equipment);
         }
         if(inventory != null)
@@ -51,6 +56,10 @@ public class InventoryUIController : MonoBehaviour
         if(inventoryPanel != null)
         {
             inventoryPanel.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
+        }
+        if(equipmentPanel != null)
+        {
+            equipmentPanel.ReleaseSlotEvent(UnEquip);
         }
         if(inventory != null)
         {
@@ -111,8 +120,21 @@ public class InventoryUIController : MonoBehaviour
     {
         inventoryController.EquipFromInventory(index);
     }
+    /// <summary>
+    /// 슬롯 타입을 기준으로 장비를 해제합니다.
+    /// </summary>
     public void UnEquip(EquipmentSlotType slotType)
     {
         inventoryController.UnEquip(slotType);
+    }
+    
+    // 창 움직이는 기능 관련 메서드
+    public void OnDrag(PointerEventData eventData)
+    {
+        transform.position = eventData.position + offset;
+    }
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        offset = (Vector2)transform.position - eventData.position;
     }
 }

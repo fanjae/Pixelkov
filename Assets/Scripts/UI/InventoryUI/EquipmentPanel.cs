@@ -7,6 +7,20 @@ public class EquipmentPanel : MonoBehaviour
     [SerializeField] private EquipSlotUI[] equipSlotUIs;  // 장비창에 있는 슬롯 오브젝트들
     private Equipment equipment;                // 장비창의 데이터를 받을 변수
 
+    public void AllocateSlotEvent(Action<EquipmentSlotType> unEquip)
+    {
+        foreach(var slot in equipSlotUIs)
+        {
+            slot.OnUnEquip += unEquip;
+        }
+    }
+    public void ReleaseSlotEvent(Action<EquipmentSlotType> unEquip)
+    {
+        foreach(var slot in equipSlotUIs)
+        {
+            slot.OnUnEquip -= unEquip;
+        }
+    }
     /// <summary>
     /// 장비 정보를 제공받는 메서드.
     /// </summary>

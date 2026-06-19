@@ -34,6 +34,13 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     }
 
     /// <summary>
+    /// 버튼에 할당하기 위한 메서드
+    /// </summary>
+    public void OnClickEquipButton()
+    {
+        OnEquip?.Invoke(Index);
+    }
+    /// <summary>
     /// 슬롯의 데이터를 가져와 UI에 적용하는 메서드
     /// </summary>
     public void SetSlotInfo(InventorySlot slot)

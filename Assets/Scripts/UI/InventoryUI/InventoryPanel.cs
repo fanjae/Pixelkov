@@ -16,14 +16,27 @@ public class InventoryPanel : MonoBehaviour
     }
 
     /// <summary>
-    /// 각 슬롯에 마우스 포인터가 Enter, Exit 하는 경우에 호출할 Action에 메서드를 연결합니다.
+    /// 각 슬롯마다 갖고있는 Action에 메서드를 연결합니다.
     /// </summary>
-    public void AllocateSlotEvent(Action<int> enter, Action exit)
+    public void AllocateSlotEvent(Action<int> enter, Action exit, Action<int> equip)
     {
         foreach(var slot in slotUIs)
         {
             slot.OnSlotEnter += enter;
             slot.OnSlotExit += exit;
+            slot.OnEquip += equip;
+        }
+    }
+    /// <summary>
+    /// 슬롯에 할당했던 메서드들 해제
+    /// </summary>
+    public void ReleaseSlotEvent(Action<int> enter, Action exit, Action<int> equip)
+    {
+        foreach(var slot in slotUIs)
+        {
+            slot.OnSlotEnter -= enter;
+            slot.OnSlotExit -= exit;
+            slot.OnEquip -= equip;
         }
     }
 

@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, 
+    IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private Image iconImage;
@@ -13,14 +14,18 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     public Action<int> OnSlotEnter;
     public Action OnSlotExit;
+    public Action<int> OnEquip;
+
     public int Index { get; private set; }
+    public ItemData CurItem { get; private set; }
 
     private Vector3 originScale;
-    ItemData curItem = null;
+    private Vector3 originPos;
 
     private void Awake()
     {
         originScale = transform.localScale;
+        originPos = iconImage.transform.localPosition;
     }
 
     public void SetIndex(int index)
@@ -41,20 +46,19 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         ItemData itemInfo = database.GetItem(getId);
         if (itemInfo == null) return;
 
-        curItem = itemInfo;
-        iconImage.sprite = curItem.Icon;
+        CurItem = itemInfo;
+        iconImage.sprite = CurItem.Icon;
         if (slot.Count <= 1) countText.text = "";
         else countText.text = slot.Count.ToString();
     }
-
     // 슬롯에 마우스 올리면 확대
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOKill();
         transform.DOScale(originScale * 1.1f, 0.15f).SetEase(Ease.OutQuad);
-        if(curItem != null)
+        if(CurItem != null)
         {
-            OnSlotEnter?.Invoke(curItem.ItemId);
+            OnSlotEnter?.Invoke(CurItem.ItemId);
         }
     }
     // 슬롯에서 마우스를 내리면 복구
@@ -70,7 +74,61 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (subButton == null) return;
+
+            // 해당 슬롯이 재료 아이템이라면 상호작용 X
+            if (CurItem.ItemType == ItemType.Material) return;
+
             subButton.SetActive(!subButton.activeSelf);
+            return;
+        }
+        else
+            subButton.SetActive(false);
+
+        if (eventData.clickCount >= 2)
+        {
+            // 더블 클릭시 장착
+            OnEquip?.Invoke(Index);
+            eventData.clickCount = 0;
         }
     }
+    public void OnDrag(PointerEventData eventData)
+    {
+        iconImage.transform.position = eventData.position;
+    }
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        subButton.SetActive(false);
+    }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        iconImage.transform.localPosition = originPos;
+        // 드래그를 놓은 시점에서 마우스 위치로 Raycast시 맞은 대상의 GameObject를 가져오기
+        GameObject hoverObjects = eventData.pointerCurrentRaycast.gameObject;
+        if (hoverObjects == null) return;
+
+        // 맞은 대상은 하위 UI들이고 원하는 슬롯 정보는 부모 오브젝트가 갖고 있으므로 InParent 사용
+        EquipSlotUI equipInfo = hoverObjects.GetComponentInParent<EquipSlotUI>();
+        if(equipInfo != null)
+        {
+            // 장착할 슬롯의 장비 타입과 현재 선택한 슬롯의 장비 타입이 일치하면 장착
+            var slotType = ConvertToEquipType(CurItem.ItemType);
+            if (equipInfo.SlotType == slotType)
+                OnEquip?.Invoke(Index);
+        }
+    }
+    private EquipmentSlotType ConvertToEquipType(ItemType type)
+    {
+        switch(type)
+        {
+            case ItemType.Weapon:
+                return EquipmentSlotType.Weapon;
+                case ItemType.Armor:
+                return EquipmentSlotType.Armor;
+            case ItemType.Accessory:
+                return EquipmentSlotType.Accessory;
+            default:
+                return default;
+        }
+    }
+
 }

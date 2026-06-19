@@ -9,28 +9,63 @@ public class InventoryUIController : MonoBehaviour
 
     [SerializeField] private GuidePanel guidePanel;
     [SerializeField] private InventoryPanel inventoryPanel;
+    [SerializeField] private EquipmentPanel equipmentPanel;
 
     #region test Fields
     // 해당 region에 있는 필드들은 추후 플레이어 데이터와 연동해야하는 필드 입니다.
     [SerializeField] private ItemDatabase database; // 테스트용 데이터베이스
     private Inventory inventory = new Inventory(12);
+    private Equipment equipment = new Equipment();
     #endregion
+    private PlayerInventoryController inventoryController;
 
     private void Awake()
     {
         if (database != null)
+        {
             Database = database;
+            inventoryController = new PlayerInventoryController(inventory, equipment, database);
+        }
         if(inventoryPanel != null)
         {
-            inventoryPanel.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel); // GuidePanel의 온/오프 메서드 할당
+            inventoryPanel.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
             inventoryPanel.AllocateInventory(inventory);    // 임시로 생성된 인벤토리
+        }
+        if(equipmentPanel != null)
+        {
+            equipmentPanel.AllocateEquipment(equipment);
+        }
+        if(inventory != null)
+        {
+            inventory.OnInventoryChanged += UpdateInventory;
+        }
+        if(equipment != null)
+        {
+            equipment.OnEquipmentChanged += UpdateEquipment;
+        }
+        inventory.AddItem(database.GetItem(1));
+        inventory.AddItem(database.GetItem(2));
+    }
+    private void OnDestroy()
+    {
+        if(inventoryPanel != null)
+        {
+            inventoryPanel.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
+        }
+        if(inventory != null)
+        {
+            inventory.OnInventoryChanged -= UpdateInventory;
+        }
+        if(equipment != null)
+        {
+            equipment.OnEquipmentChanged -= UpdateEquipment;
         }
     }
 
     private void OnEnable()
     {
-        InventoryPanelUpdate();
-        // 다른 패널들도 기능 완성되면 추가 예정
+        UpdateInventory();
+        UpdateEquipment();
     }
     
     /// <summary>
@@ -54,11 +89,30 @@ public class InventoryUIController : MonoBehaviour
             guidePanel.gameObject.SetActive(false);
     }
     /// <summary>
-    /// InventoryPanel을 업데이트하는 메서드. Action에 할당하는 용도로 사용할 예정입니다.
+    /// InventoryPanel을 업데이트하는 메서드
     /// </summary>
-    private void InventoryPanelUpdate()
+    private void UpdateInventory()
     {
         if(inventoryPanel != null)
             inventoryPanel.PaintInventoryAll();
+    }
+    /// <summary>
+    /// EquipmentPanel을 업데이트하는 메서드
+    /// </summary>
+    private void UpdateEquipment()
+    {
+        if (equipmentPanel != null)
+            equipmentPanel.PaintEquipmentAll();
+    }
+    /// <summary>
+    /// index 번째의 슬롯의 장비를 장착합니다.
+    /// </summary>
+    private void Equip(int index)
+    {
+        inventoryController.EquipFromInventory(index);
+    }
+    public void UnEquip(EquipmentSlotType slotType)
+    {
+        inventoryController.UnEquip(slotType);
     }
 }

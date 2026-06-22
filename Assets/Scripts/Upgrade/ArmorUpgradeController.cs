@@ -18,7 +18,7 @@ public class ArmorUpgradeController
     }
 
     // 지정한 인벤토리 슬롯의 방어구 강화 가능한 상태인지 확인
-    public bool CanUpgradeArmotAt(int slotIndex)
+    public bool CanUpgradeArmorAt(int slotIndex)
     {
         // 잘못된 슬롯이거나 빈 슬롯이면 강화 불가
         if (!inventory.TryGetSlot(slotIndex, out InventorySlot slot)) return false;
@@ -43,7 +43,7 @@ public class ArmorUpgradeController
     public bool UpgradeArmorAt(int slotIndex)
     {
         // 강화 가능 조건을 검증
-        if (!CanUpgradeArmotAt(slotIndex)) return false;
+        if (!CanUpgradeArmorAt(slotIndex)) return false;
 
         InventorySlot slot = inventory.Slots[slotIndex];
 

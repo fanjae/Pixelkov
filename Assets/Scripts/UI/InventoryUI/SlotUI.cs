@@ -15,6 +15,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public event Action<int> OnSlotEnter;
     public event Action OnSlotExit;
     public event Action<int> OnEquip;
+    public event Action<int> OnSell;
 
     public int Index { get; private set; }
     public ItemData CurItem { get; private set; }
@@ -40,6 +41,10 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         OnEquip?.Invoke(Index);
     }
+    public void OnClickSellButton()
+    {
+        OnSell?.Invoke(Index);
+    }
     /// <summary>
     /// 슬롯의 데이터를 가져와 UI에 적용하는 메서드
     /// </summary>
@@ -51,14 +56,21 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         int getId = slot.ItemId;
 
         ItemData itemInfo = database.GetItem(getId);
-        if (itemInfo == null) return;
-
+        // 데이터가 없으면 비워줍니다.
+        if (itemInfo == null)
+        {
+            CurItem = null;
+            iconImage.sprite = null;
+            countText.text = "";
+            return;
+        }
+        // 데이터가 있다면 해당 데이터를 기반으로 그리기 진행
         CurItem = itemInfo;
         iconImage.sprite = CurItem.Icon;
         if (slot.Count <= 1) countText.text = "";
         else countText.text = slot.Count.ToString();
     }
-    // 슬롯에 마우스 올리면 확대
+    // 슬롯에 마우스 올리면 슬롯 크기가 커집니다.
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOKill();
@@ -68,7 +80,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             OnSlotEnter?.Invoke(CurItem.ItemId);
         }
     }
-    // 슬롯에서 마우스를 내리면 복구
+    // 슬롯에서 마우스를 내리면 원본 크기로 돌아옵니다.
     public void OnPointerExit(PointerEventData eventData)
     {
         transform.DOKill();
@@ -103,6 +115,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     }
     public void OnDrag(PointerEventData eventData)
     {
+        // 현재 슬롯에 아이템이 없을 시 드래그 하지 않음
         if (CurItem == null) return;
 
         iconImage.transform.position = eventData.position;
@@ -126,6 +139,14 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             var slotType = ConvertToEquipType(CurItem.ItemType);
             if (equipInfo.SlotType == slotType)
                 OnEquip?.Invoke(Index);
+            return;
+        }
+        
+        // 드래그가 끝난 시점(드롭)에 마우스가 올려진 UI의 이름으로 판매창에 드롭했음을 정합니다.
+        if(hoverObjects.name == "SellCover")
+        {
+            OnSell?.Invoke(Index);
+            return;
         }
     }
     private EquipmentSlotType ConvertToEquipType(ItemType type)

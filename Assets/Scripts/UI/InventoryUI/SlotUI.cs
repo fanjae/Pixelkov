@@ -73,6 +73,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         transform.DOKill();
         transform.DOScale(originScale, 0.15f).SetEase(Ease.OutQuad);
+        subButton.SetActive(false);
         OnSlotExit?.Invoke();
     }
     public void OnPointerClick(PointerEventData eventData)
@@ -81,6 +82,8 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (subButton == null) return;
+
+            if (CurItem == null) return;
 
             // 해당 슬롯이 재료 아이템이라면 상호작용 X
             if (CurItem.ItemType == ItemType.Material) return;
@@ -100,6 +103,8 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     }
     public void OnDrag(PointerEventData eventData)
     {
+        if (CurItem == null) return;
+
         iconImage.transform.position = eventData.position;
     }
     public void OnBeginDrag(PointerEventData eventData)

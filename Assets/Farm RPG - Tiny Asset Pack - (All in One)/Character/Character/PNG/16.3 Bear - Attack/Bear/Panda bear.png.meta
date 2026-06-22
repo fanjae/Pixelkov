@@ -1,0 +1,541 @@
+fileFormatVersion: 2
+guid: 483ba06f36fc04242b6e8e4f13e7fac5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4781459014320185949
+    second: Panda bear_0
+  - first:
+      213: 6554080627094069624
+    second: Panda bear_1
+  - first:
+      213: 8879867521910583869
+    second: Panda bear_2
+  - first:
+      213: -5721517510155884182
+    second: Panda bear_3
+  - first:
+      213: -1905132406651323111
+    second: Panda bear_4
+  - first:
+      213: -8996588258299511202
+    second: Panda bear_5
+  - first:
+      213: -26664653248816102
+    second: Panda bear_6
+  - first:
+      213: -5565885133340097552
+    second: Panda bear_7
+  - first:
+      213: -3992440591865352424
+    second: Panda bear_8
+  - first:
+      213: 3170131603522612544
+    second: Panda bear_9
+  - first:
+      213: 2042699792505981044
+    second: Panda bear_10
+  - first:
+      213: -1153776489750412441
+    second: Panda bear_11
+  - first:
+      213: -2210194209155722193
+    second: Panda bear_12
+  - first:
+      213: -8085426340193312159
+    second: Panda bear_13
+  - first:
+      213: -2021393934095199118
+    second: Panda bear_14
+  - first:
+      213: -1845296545543458705
+    second: Panda bear_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Panda bear_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 8
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52e4a8e3a72b5240800000000000000
+      internalID: 4781459014320185949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 8
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8712637fa95c4fa50800000000000000
+      internalID: 6554080627094069624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 8
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d323200b670ab3b70800000000000000
+      internalID: 8879867521910583869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 8
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a692bfe63261990b0800000000000000
+      internalID: -5721517510155884182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 8
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d76738b2c9f85e0800000000000000
+      internalID: -1905132406651323111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 8
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e7b9125a2b52380800000000000000
+      internalID: -8996588258299511202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_6
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 8
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c9b0f93a441aff0800000000000000
+      internalID: -26664653248816102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 8
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f3c2a6e5f002c2b0800000000000000
+      internalID: -5565885133340097552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_8
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 8
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81fe30f3f600898c0800000000000000
+      internalID: -3992440591865352424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_9
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 8
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d6437b5e19efb20800000000000000
+      internalID: 3170131603522612544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 8
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478451b73a0295c10800000000000000
+      internalID: 2042699792505981044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 8
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763ca324566fcffe0800000000000000
+      internalID: -1153776489750412441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 8
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24d5aea310d351e0800000000000000
+      internalID: -2210194209155722193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 8
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162e03ff49bcacf80800000000000000
+      internalID: -8085426340193312159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 8
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274502f3de092f3e0800000000000000
+      internalID: -2021393934095199118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panda bear_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 8
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6070a191903466e0800000000000000
+      internalID: -1845296545543458705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Panda bear_0: 4781459014320185949
+      Panda bear_1: 6554080627094069624
+      Panda bear_10: 2042699792505981044
+      Panda bear_11: -1153776489750412441
+      Panda bear_12: -2210194209155722193
+      Panda bear_13: -8085426340193312159
+      Panda bear_14: -2021393934095199118
+      Panda bear_15: -1845296545543458705
+      Panda bear_2: 8879867521910583869
+      Panda bear_3: -5721517510155884182
+      Panda bear_4: -1905132406651323111
+      Panda bear_5: -8996588258299511202
+      Panda bear_6: -26664653248816102
+      Panda bear_7: -5565885133340097552
+      Panda bear_8: -3992440591865352424
+      Panda bear_9: 3170131603522612544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294413
+  packageName: Farm RPG - Tiny Asset Pack
+  packageVersion: 1.0
+  assetPath: Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character/Character/PNG/16.3
+    Bear - Attack/Bear/Panda bear.png
+  uploadId: 883898

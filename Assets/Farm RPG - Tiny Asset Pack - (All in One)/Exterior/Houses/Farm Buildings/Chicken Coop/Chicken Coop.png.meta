@@ -1,0 +1,931 @@
+fileFormatVersion: 2
+guid: d98d85ebcf7d015498deb0fd395decb8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5250406865512826508
+    second: Chicken Coop_0
+  - first:
+      213: 1562293368426017868
+    second: Chicken Coop_1
+  - first:
+      213: -640988700043297048
+    second: Chicken Coop_2
+  - first:
+      213: 4134350840770384158
+    second: Chicken Coop_3
+  - first:
+      213: 8990488116297783084
+    second: Chicken Coop_4
+  - first:
+      213: -4958922173871363998
+    second: Chicken Coop_5
+  - first:
+      213: 7400800479480853004
+    second: Chicken Coop_6
+  - first:
+      213: 755869738869267130
+    second: Chicken Coop_7
+  - first:
+      213: -7712568697919634502
+    second: Chicken Coop_8
+  - first:
+      213: 4492216964114466246
+    second: Chicken Coop_9
+  - first:
+      213: -3805568183509965598
+    second: Chicken Coop_10
+  - first:
+      213: 8745452200434393608
+    second: Chicken Coop_11
+  - first:
+      213: 5219458304630131418
+    second: Chicken Coop_12
+  - first:
+      213: -94298849435394796
+    second: Chicken Coop_13
+  - first:
+      213: -8401649778909515349
+    second: Chicken Coop_14
+  - first:
+      213: 2203324839025345794
+    second: Chicken Coop_15
+  - first:
+      213: -6621781076994557875
+    second: Chicken Coop_16
+  - first:
+      213: -7838703658173241250
+    second: Chicken Coop_17
+  - first:
+      213: 4245177765526056930
+    second: Chicken Coop_18
+  - first:
+      213: 4565930718567580665
+    second: Chicken Coop_19
+  - first:
+      213: 9203197124618298159
+    second: Chicken Coop_20
+  - first:
+      213: -8206268103254096093
+    second: Chicken Coop_21
+  - first:
+      213: -7677496982443681425
+    second: Chicken Coop_22
+  - first:
+      213: 3355523890211745203
+    second: Chicken Coop_23
+  - first:
+      213: -2080609149566028615
+    second: Chicken Coop_24
+  - first:
+      213: 2407546200772303494
+    second: Chicken Coop_25
+  - first:
+      213: 5582340157097306455
+    second: Chicken Coop_26
+  - first:
+      213: 2334251996346429953
+    second: Chicken Coop_27
+  - first:
+      213: 4879116429303078876
+    second: Chicken Coop_28
+  - first:
+      213: -8808088644909286214
+    second: Chicken Coop_29
+  - first:
+      213: -1167712431655559474
+    second: Chicken Coop_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chicken Coop_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 143
+        width: 57
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479f5de06cec227b0800000000000000
+      internalID: -5250406865512826508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 144
+        width: 57
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c443bfb8a816ea510800000000000000
+      internalID: 1562293368426017868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee31e46c20ca17f0800000000000000
+      internalID: -640988700043297048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11d4f85f2a206930800000000000000
+      internalID: 4134350840770384158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27dc41ee41a4cc70800000000000000
+      internalID: 8990488116297783084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_5
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 268e69d6e8e5e2bb0800000000000000
+      internalID: -4958922173871363998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_6
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c023ff033dce4b660800000000000000
+      internalID: 7400800479480853004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_7
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba15c1d5836d7a00800000000000000
+      internalID: 755869738869267130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_8
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab304b6d1a377f490800000000000000
+      internalID: -7712568697919634502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_9
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 161
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5c600378f875e30800000000000000
+      internalID: 4492216964114466246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 63
+        width: 57
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e42c5d56e7ef2bc0800000000000000
+      internalID: -3805568183509965598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 64
+        width: 57
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802ec0fd0761e5970800000000000000
+      internalID: 8745452200434393608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_12
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 112
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada01779cad3f6840800000000000000
+      internalID: 5219458304630131418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_13
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 112
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ddca032bbf0bef0800000000000000
+      internalID: -94298849435394796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_14
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 112
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1fbd83a08576b80800000000000000
+      internalID: -8401649778909515349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_15
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 112
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20586e27448c39e10800000000000000
+      internalID: 2203324839025345794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_16
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 112
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48f555b135ba14a0800000000000000
+      internalID: -6621781076994557875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_17
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 112
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e58670bdd84573390800000000000000
+      internalID: -7838703658173241250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_18
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 64
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef21929fa6e9ea30800000000000000
+      internalID: 4245177765526056930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_19
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 64
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3c3451cc17d5f30800000000000000
+      internalID: 4565930718567580665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_20
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 64
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2325c2360358bf70800000000000000
+      internalID: 9203197124618298159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_21
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 64
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327cbe583aa7d1e80800000000000000
+      internalID: -8206268103254096093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_22
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 64
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f699f4deb2d047590800000000000000
+      internalID: -7677496982443681425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_23
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 64
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd68672337319e20800000000000000
+      internalID: 3355523890211745203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_24
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 4
+        width: 24
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b470b380013023e0800000000000000
+      internalID: -2080609149566028615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_25
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 28
+        width: 9
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68adf5d8382596120800000000000000
+      internalID: 2407546200772303494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_26
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 4
+        width: 24
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759ee2fdbc4787d40800000000000000
+      internalID: 5582340157097306455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_27
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 16
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102b972c2dde46020800000000000000
+      internalID: 2334251996346429953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_28
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 16
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdfd162ba8a16b340800000000000000
+      internalID: 4879116429303078876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_29
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 16
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcb7027b0263c580800000000000000
+      internalID: -8808088644909286214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Coop_30
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 16
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecedc5feab37bcfe0800000000000000
+      internalID: -1167712431655559474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Chicken Coop_0: -5250406865512826508
+      Chicken Coop_1: 1562293368426017868
+      Chicken Coop_10: -3805568183509965598
+      Chicken Coop_11: 8745452200434393608
+      Chicken Coop_12: 5219458304630131418
+      Chicken Coop_13: -94298849435394796
+      Chicken Coop_14: -8401649778909515349
+      Chicken Coop_15: 2203324839025345794
+      Chicken Coop_16: -6621781076994557875
+      Chicken Coop_17: -7838703658173241250
+      Chicken Coop_18: 4245177765526056930
+      Chicken Coop_19: 4565930718567580665
+      Chicken Coop_2: -640988700043297048
+      Chicken Coop_20: 9203197124618298159
+      Chicken Coop_21: -8206268103254096093
+      Chicken Coop_22: -7677496982443681425
+      Chicken Coop_23: 3355523890211745203
+      Chicken Coop_24: -2080609149566028615
+      Chicken Coop_25: 2407546200772303494
+      Chicken Coop_26: 5582340157097306455
+      Chicken Coop_27: 2334251996346429953
+      Chicken Coop_28: 4879116429303078876
+      Chicken Coop_29: -8808088644909286214
+      Chicken Coop_3: 4134350840770384158
+      Chicken Coop_30: -1167712431655559474
+      Chicken Coop_4: 8990488116297783084
+      Chicken Coop_5: -4958922173871363998
+      Chicken Coop_6: 7400800479480853004
+      Chicken Coop_7: 755869738869267130
+      Chicken Coop_8: -7712568697919634502
+      Chicken Coop_9: 4492216964114466246
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294413
+  packageName: Farm RPG - Tiny Asset Pack
+  packageVersion: 1.0
+  assetPath: Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Houses/Farm
+    Buildings/Chicken Coop/Chicken Coop.png
+  uploadId: 883898

@@ -1,0 +1,957 @@
+fileFormatVersion: 2
+guid: 50ef4864b47295c47bae3dc0a11da3c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2751047463212190684
+    second: Santa Hat_0
+  - first:
+      213: -5565061120317042362
+    second: Santa Hat_1
+  - first:
+      213: 7464212906712095286
+    second: Santa Hat_2
+  - first:
+      213: 1582657956808953123
+    second: Santa Hat_3
+  - first:
+      213: 2657181625176251192
+    second: Santa Hat_4
+  - first:
+      213: 6452892126512714635
+    second: Santa Hat_5
+  - first:
+      213: 8522126344592647673
+    second: Santa Hat_6
+  - first:
+      213: -5365578441353366221
+    second: Santa Hat_7
+  - first:
+      213: -2612852246950674503
+    second: Santa Hat_8
+  - first:
+      213: -8409508821139208504
+    second: Santa Hat_9
+  - first:
+      213: -1647076237335475642
+    second: Santa Hat_10
+  - first:
+      213: 3577784838941557581
+    second: Santa Hat_11
+  - first:
+      213: -2380252903317387236
+    second: Santa Hat_12
+  - first:
+      213: 3501698313845954634
+    second: Santa Hat_13
+  - first:
+      213: 8739429133980857488
+    second: Santa Hat_14
+  - first:
+      213: -7198287423148901856
+    second: Santa Hat_15
+  - first:
+      213: -3166049003011625451
+    second: Santa Hat_16
+  - first:
+      213: 5064445528516038053
+    second: Santa Hat_17
+  - first:
+      213: 1550008202911930771
+    second: Santa Hat_18
+  - first:
+      213: 3527395705166932764
+    second: Santa Hat_19
+  - first:
+      213: 6460648976504725574
+    second: Santa Hat_20
+  - first:
+      213: 502410044697441165
+    second: Santa Hat_21
+  - first:
+      213: 1305983601900952440
+    second: Santa Hat_22
+  - first:
+      213: -2284756226304721572
+    second: Santa Hat_23
+  - first:
+      213: -5115794076984689603
+    second: Santa Hat_24
+  - first:
+      213: 8674726936765796184
+    second: Santa Hat_25
+  - first:
+      213: -3089076343699397807
+    second: Santa Hat_26
+  - first:
+      213: 7392405268359016465
+    second: Santa Hat_27
+  - first:
+      213: 9165917055296933324
+    second: Santa Hat_28
+  - first:
+      213: 1111463792688255656
+    second: Santa Hat_29
+  - first:
+      213: 9150238606128783630
+    second: Santa Hat_30
+  - first:
+      213: 8214006407229273776
+    second: Santa Hat_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Santa Hat_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4247ffa68e052d9d0800000000000000
+      internalID: -2751047463212190684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6415a22656ee4c2b0800000000000000
+      internalID: -5565061120317042362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ad5707716369760800000000000000
+      internalID: 7464212906712095286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d0b84c60bb6f510800000000000000
+      internalID: 1582657956808953123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b53581c9430e420800000000000000
+      internalID: 2657181625176251192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8394be33374d8950800000000000000
+      internalID: 6452892126512714635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5617c12cca44670800000000000000
+      internalID: 8522126344592647673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_7
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33573ace5d2a985b0800000000000000
+      internalID: -5365578441353366221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_8
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf7ce199b84dbbd0800000000000000
+      internalID: -2612852246950674503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_9
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c6cb7c584c6b4b80800000000000000
+      internalID: -8409508821139208504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_10
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ac1a383e86429e0800000000000000
+      internalID: -1647076237335475642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_11
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43c3e7ea58d6a130800000000000000
+      internalID: 3577784838941557581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_12
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18cc267894a7fed0800000000000000
+      internalID: -2380252903317387236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_13
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a485f5b4018889030800000000000000
+      internalID: 3501698313845954634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_14
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 094f0ae6e70b84970800000000000000
+      internalID: 8739429133980857488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_15
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02a3c001abb8a1c90800000000000000
+      internalID: -7198287423148901856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_16
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51e230ac43fef04d0800000000000000
+      internalID: -3166049003011625451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_17
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad83872066884640800000000000000
+      internalID: 5064445528516038053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_18
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399d18d8f3cb28510800000000000000
+      internalID: 1550008202911930771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_19
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ba6b474b3d3f030800000000000000
+      internalID: 3527395705166932764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_20
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6402e0f9306d8a950800000000000000
+      internalID: 6460648976504725574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_21
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8377c5164be8f600800000000000000
+      internalID: 502410044697441165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_22
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b9ac1aa29cf1210800000000000000
+      internalID: 1305983601900952440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_23
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5dbebc315aea40e0800000000000000
+      internalID: -2284756226304721572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_24
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3cb741446c0109b0800000000000000
+      internalID: -5115794076984689603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_25
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f00753032d26870800000000000000
+      internalID: 8674726936765796184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_26
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 17
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1532cb99e656125d0800000000000000
+      internalID: -3089076343699397807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_27
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110f348cc69179660800000000000000
+      internalID: 7392405268359016465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_28
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd0ba9aff0e33f70800000000000000
+      internalID: 9165917055296933324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_29
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a254ef3e66bc6f00800000000000000
+      internalID: 1111463792688255656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_30
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e012f50488d2cfe70800000000000000
+      internalID: 9150238606128783630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa Hat_31
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 18
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6fea5ce430ef170800000000000000
+      internalID: 8214006407229273776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Santa Hat_0: -2751047463212190684
+      Santa Hat_1: -5565061120317042362
+      Santa Hat_10: -1647076237335475642
+      Santa Hat_11: 3577784838941557581
+      Santa Hat_12: -2380252903317387236
+      Santa Hat_13: 3501698313845954634
+      Santa Hat_14: 8739429133980857488
+      Santa Hat_15: -7198287423148901856
+      Santa Hat_16: -3166049003011625451
+      Santa Hat_17: 5064445528516038053
+      Santa Hat_18: 1550008202911930771
+      Santa Hat_19: 3527395705166932764
+      Santa Hat_2: 7464212906712095286
+      Santa Hat_20: 6460648976504725574
+      Santa Hat_21: 502410044697441165
+      Santa Hat_22: 1305983601900952440
+      Santa Hat_23: -2284756226304721572
+      Santa Hat_24: -5115794076984689603
+      Santa Hat_25: 8674726936765796184
+      Santa Hat_26: -3089076343699397807
+      Santa Hat_27: 7392405268359016465
+      Santa Hat_28: 9165917055296933324
+      Santa Hat_29: 1111463792688255656
+      Santa Hat_3: 1582657956808953123
+      Santa Hat_30: 9150238606128783630
+      Santa Hat_31: 8214006407229273776
+      Santa Hat_4: 2657181625176251192
+      Santa Hat_5: 6452892126512714635
+      Santa Hat_6: 8522126344592647673
+      Santa Hat_7: -5365578441353366221
+      Santa Hat_8: -2612852246950674503
+      Santa Hat_9: -8409508821139208504
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294413
+  packageName: Farm RPG - Tiny Asset Pack
+  packageVersion: 1.0
+  assetPath: Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character/Character/PNG/17.2
+    Umbrela - Run/Acc/Santa Hat.png
+  uploadId: 883898

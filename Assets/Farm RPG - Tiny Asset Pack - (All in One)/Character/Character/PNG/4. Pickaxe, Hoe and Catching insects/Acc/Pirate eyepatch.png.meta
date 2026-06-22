@@ -1,0 +1,593 @@
+fileFormatVersion: 2
+guid: 1f2e0e40348b7064da78a23a746e4ad1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -640742576002166980
+    second: Pirate eyepatch_0
+  - first:
+      213: 3862595907734237807
+    second: Pirate eyepatch_1
+  - first:
+      213: -3978122283478583575
+    second: Pirate eyepatch_2
+  - first:
+      213: 3339865472086238480
+    second: Pirate eyepatch_3
+  - first:
+      213: -8667862601460261298
+    second: Pirate eyepatch_4
+  - first:
+      213: 4502850615273495842
+    second: Pirate eyepatch_5
+  - first:
+      213: -6686505354050058798
+    second: Pirate eyepatch_6
+  - first:
+      213: -8232059908399083951
+    second: Pirate eyepatch_7
+  - first:
+      213: -254023941037448038
+    second: Pirate eyepatch_8
+  - first:
+      213: 7725655427391103132
+    second: Pirate eyepatch_9
+  - first:
+      213: -7229740065933082212
+    second: Pirate eyepatch_10
+  - first:
+      213: 13410031028864709
+    second: Pirate eyepatch_11
+  - first:
+      213: 7504557787434189174
+    second: Pirate eyepatch_12
+  - first:
+      213: -4116650888712601934
+    second: Pirate eyepatch_13
+  - first:
+      213: -8562177052397445469
+    second: Pirate eyepatch_14
+  - first:
+      213: -5058409211597333912
+    second: Pirate eyepatch_15
+  - first:
+      213: -3182146148143026411
+    second: Pirate eyepatch_16
+  - first:
+      213: 8435859340896564628
+    second: Pirate eyepatch_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pirate eyepatch_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 15
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f0cec9500ab17f0800000000000000
+      internalID: -640742576002166980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 17
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62706f5382ba9530800000000000000
+      internalID: 3862595907734237807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 16
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e671343cdedac8c0800000000000000
+      internalID: -3978122283478583575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 16
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015ea4593f5995e20800000000000000
+      internalID: 3339865472086238480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 16
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e511663e095b780800000000000000
+      internalID: -8667862601460261298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 15
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d960807c65d7e30800000000000000
+      internalID: 4502850615273495842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5491f9ec2c433a0800000000000000
+      internalID: -6686505354050058798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_7
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 15
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e432ee029d1cd80800000000000000
+      internalID: -8232059908399083951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 15
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94a40e4296897cf0800000000000000
+      internalID: -254023941037448038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_9
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9027becdaa073b60800000000000000
+      internalID: 7725655427391103132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_10
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9146aff6bdcaab90800000000000000
+      internalID: -7229740065933082212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_11
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c607e72a54af2000800000000000000
+      internalID: 13410031028864709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_12
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671086cfb8b852860800000000000000
+      internalID: 7504557787434189174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_13
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 15
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be3df1e3d7bed6c0800000000000000
+      internalID: -4116650888712601934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_14
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 15
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae59dfc5590d2980800000000000000
+      internalID: -8562177052397445469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_15
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a5d266f9becc9b0800000000000000
+      internalID: -5058409211597333912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_16
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fae8020feb6d3d0800000000000000
+      internalID: -3182146148143026411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate eyepatch_17
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495fc4d1061321570800000000000000
+      internalID: 8435859340896564628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pirate eyepatch_0: -640742576002166980
+      Pirate eyepatch_1: 3862595907734237807
+      Pirate eyepatch_10: -7229740065933082212
+      Pirate eyepatch_11: 13410031028864709
+      Pirate eyepatch_12: 7504557787434189174
+      Pirate eyepatch_13: -4116650888712601934
+      Pirate eyepatch_14: -8562177052397445469
+      Pirate eyepatch_15: -5058409211597333912
+      Pirate eyepatch_16: -3182146148143026411
+      Pirate eyepatch_17: 8435859340896564628
+      Pirate eyepatch_2: -3978122283478583575
+      Pirate eyepatch_3: 3339865472086238480
+      Pirate eyepatch_4: -8667862601460261298
+      Pirate eyepatch_5: 4502850615273495842
+      Pirate eyepatch_6: -6686505354050058798
+      Pirate eyepatch_7: -8232059908399083951
+      Pirate eyepatch_8: -254023941037448038
+      Pirate eyepatch_9: 7725655427391103132
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294413
+  packageName: Farm RPG - Tiny Asset Pack
+  packageVersion: 1.0
+  assetPath: Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character/Character/PNG/4.
+    Pickaxe, Hoe and Catching insects/Acc/Pirate eyepatch.png
+  uploadId: 883898

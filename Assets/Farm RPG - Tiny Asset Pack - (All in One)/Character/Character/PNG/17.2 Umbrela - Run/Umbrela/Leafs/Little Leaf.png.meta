@@ -1,0 +1,957 @@
+fileFormatVersion: 2
+guid: d8a67caf204ca3b40a1c79155d1e9286
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8830852303634503980
+    second: Little Leaf_0
+  - first:
+      213: -4729416350613487895
+    second: Little Leaf_1
+  - first:
+      213: 6778671802805642655
+    second: Little Leaf_2
+  - first:
+      213: -1025539893605037110
+    second: Little Leaf_3
+  - first:
+      213: -7756641391374763094
+    second: Little Leaf_4
+  - first:
+      213: 176618558851904991
+    second: Little Leaf_5
+  - first:
+      213: 4471498580075290512
+    second: Little Leaf_6
+  - first:
+      213: 8203270860041414863
+    second: Little Leaf_7
+  - first:
+      213: 1676036464011977477
+    second: Little Leaf_8
+  - first:
+      213: -1461122261998521054
+    second: Little Leaf_9
+  - first:
+      213: 8665888328757531802
+    second: Little Leaf_10
+  - first:
+      213: 8767899256352204145
+    second: Little Leaf_11
+  - first:
+      213: -5648855758548510642
+    second: Little Leaf_12
+  - first:
+      213: -4050567479636133416
+    second: Little Leaf_13
+  - first:
+      213: -5013717024690364759
+    second: Little Leaf_14
+  - first:
+      213: 5433870976742130496
+    second: Little Leaf_15
+  - first:
+      213: -326016141066362234
+    second: Little Leaf_16
+  - first:
+      213: -3466825517188620436
+    second: Little Leaf_17
+  - first:
+      213: 4234796984772665886
+    second: Little Leaf_18
+  - first:
+      213: 3315611909011308623
+    second: Little Leaf_19
+  - first:
+      213: 7417358842891216848
+    second: Little Leaf_20
+  - first:
+      213: 4154771029129280387
+    second: Little Leaf_21
+  - first:
+      213: 6189328447344788491
+    second: Little Leaf_22
+  - first:
+      213: 3242064377402522642
+    second: Little Leaf_23
+  - first:
+      213: -8043578343704547168
+    second: Little Leaf_24
+  - first:
+      213: 4696533036680083469
+    second: Little Leaf_25
+  - first:
+      213: -3182842192604050184
+    second: Little Leaf_26
+  - first:
+      213: -7042008489554973211
+    second: Little Leaf_27
+  - first:
+      213: 8219519833713292935
+    second: Little Leaf_28
+  - first:
+      213: -8885260316358884482
+    second: Little Leaf_29
+  - first:
+      213: -8649956329518070670
+    second: Little Leaf_30
+  - first:
+      213: -580235388587497179
+    second: Little Leaf_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Little Leaf_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 10
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6ece12e92827580800000000000000
+      internalID: -8830852303634503980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 9
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee32caf2ecbd5eb0800000000000000
+      internalID: -4729416350613487895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95ef27f61ea21e50800000000000000
+      internalID: 6778671802805642655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acb0eaa76ec84c1f0800000000000000
+      internalID: -1025539893605037110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 10
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabf30140cfda5490800000000000000
+      internalID: -7756641391374763094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 9
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5fb1db4a9737200800000000000000
+      internalID: 176618558851904991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f1d0f7444fd0e30800000000000000
+      internalID: 4471498580075290512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_7
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8e419626fd7d170800000000000000
+      internalID: 8203270860041414863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_8
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 18
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5032904b84a724710800000000000000
+      internalID: 1676036464011977477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 17
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225b9284b0d09bbe0800000000000000
+      internalID: -1461122261998521054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_10
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 16
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94dbca658b634870800000000000000
+      internalID: 8665888328757531802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_11
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 18
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175e8495be5dda970800000000000000
+      internalID: 8767899256352204145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_12
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 18
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48db44dd9b3b91b0800000000000000
+      internalID: -5648855758548510642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_13
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 17
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d9f98d865e79c7c0800000000000000
+      internalID: -4050567479636133416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_14
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 16
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae900b0ee2bb6ab0800000000000000
+      internalID: -5013717024690364759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_15
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 18
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043050c0ddcf86b40800000000000000
+      internalID: 5433870976742130496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_16
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68222b80c02c97bf0800000000000000
+      internalID: -326016141066362234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_17
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 10
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f56b56f8c53efc0800000000000000
+      internalID: -3466825517188620436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_18
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e122545bb6505ca30800000000000000
+      internalID: 4234796984772665886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_19
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f408ca1e67b630e20800000000000000
+      internalID: 3315611909011308623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_20
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d7222a9190cfe660800000000000000
+      internalID: 7417358842891216848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_21
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 10
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38bb552fc36b8a930800000000000000
+      internalID: 4154771029129280387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_22
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b04c43e2e69e4e550800000000000000
+      internalID: 6189328447344788491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_23
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c7602cf502efc20800000000000000
+      internalID: 3242064377402522642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_24
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a03774fc187f5090800000000000000
+      internalID: -8043578343704547168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_25
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 10
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08f33fd9ef6d2140800000000000000
+      internalID: 4696533036680083469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_26
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 11
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fcc5b5a3e544d3d0800000000000000
+      internalID: -3182842192604050184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_27
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed6ac2c692c54e90800000000000000
+      internalID: -7042008489554973211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_28
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78632c86db9911270800000000000000
+      internalID: 8219519833713292935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_29
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 10
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73cd8281d631b480800000000000000
+      internalID: -8885260316358884482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_30
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2740f683c8e25f780800000000000000
+      internalID: -8649956329518070670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Leaf_31
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 12
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529a1210df692f7f0800000000000000
+      internalID: -580235388587497179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Little Leaf_0: -8830852303634503980
+      Little Leaf_1: -4729416350613487895
+      Little Leaf_10: 8665888328757531802
+      Little Leaf_11: 8767899256352204145
+      Little Leaf_12: -5648855758548510642
+      Little Leaf_13: -4050567479636133416
+      Little Leaf_14: -5013717024690364759
+      Little Leaf_15: 5433870976742130496
+      Little Leaf_16: -326016141066362234
+      Little Leaf_17: -3466825517188620436
+      Little Leaf_18: 4234796984772665886
+      Little Leaf_19: 3315611909011308623
+      Little Leaf_2: 6778671802805642655
+      Little Leaf_20: 7417358842891216848
+      Little Leaf_21: 4154771029129280387
+      Little Leaf_22: 6189328447344788491
+      Little Leaf_23: 3242064377402522642
+      Little Leaf_24: -8043578343704547168
+      Little Leaf_25: 4696533036680083469
+      Little Leaf_26: -3182842192604050184
+      Little Leaf_27: -7042008489554973211
+      Little Leaf_28: 8219519833713292935
+      Little Leaf_29: -8885260316358884482
+      Little Leaf_3: -1025539893605037110
+      Little Leaf_30: -8649956329518070670
+      Little Leaf_31: -580235388587497179
+      Little Leaf_4: -7756641391374763094
+      Little Leaf_5: 176618558851904991
+      Little Leaf_6: 4471498580075290512
+      Little Leaf_7: 8203270860041414863
+      Little Leaf_8: 1676036464011977477
+      Little Leaf_9: -1461122261998521054
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294413
+  packageName: Farm RPG - Tiny Asset Pack
+  packageVersion: 1.0
+  assetPath: Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character/Character/PNG/17.2
+    Umbrela - Run/Umbrela/Leafs/Little Leaf.png
+  uploadId: 883898

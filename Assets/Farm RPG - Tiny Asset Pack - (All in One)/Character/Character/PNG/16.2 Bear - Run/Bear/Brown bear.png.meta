@@ -1,0 +1,749 @@
+fileFormatVersion: 2
+guid: d3752625f93004c4bba70e1f9c20a9fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5164949074760638223
+    second: Brown bear_0
+  - first:
+      213: -7836180572912054174
+    second: Brown bear_1
+  - first:
+      213: -4062524087371547275
+    second: Brown bear_2
+  - first:
+      213: -8587650220769756351
+    second: Brown bear_3
+  - first:
+      213: -7462029042229535654
+    second: Brown bear_4
+  - first:
+      213: -3042647938824500425
+    second: Brown bear_5
+  - first:
+      213: 8179185762554904239
+    second: Brown bear_6
+  - first:
+      213: -2920066888198797677
+    second: Brown bear_7
+  - first:
+      213: 3939380077115654990
+    second: Brown bear_8
+  - first:
+      213: -5095910339580545954
+    second: Brown bear_9
+  - first:
+      213: -6696573676098348475
+    second: Brown bear_10
+  - first:
+      213: -6677999705782377890
+    second: Brown bear_11
+  - first:
+      213: -5228605909269274858
+    second: Brown bear_12
+  - first:
+      213: 4474286827491844503
+    second: Brown bear_13
+  - first:
+      213: 9044842373875184500
+    second: Brown bear_14
+  - first:
+      213: 1312798292757244420
+    second: Brown bear_15
+  - first:
+      213: 7013685559470519473
+    second: Brown bear_16
+  - first:
+      213: 6962882218110791511
+    second: Brown bear_17
+  - first:
+      213: 6037639101259963642
+    second: Brown bear_18
+  - first:
+      213: 7242608064185718477
+    second: Brown bear_19
+  - first:
+      213: 3470550584586992757
+    second: Brown bear_20
+  - first:
+      213: -982041025763978867
+    second: Brown bear_21
+  - first:
+      213: -1422642950859260183
+    second: Brown bear_22
+  - first:
+      213: 6942538561524320703
+    second: Brown bear_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Brown bear_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 8
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f171481d59da740800000000000000
+      internalID: 5164949074760638223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 8
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26092cb694b404390800000000000000
+      internalID: -7836180572912054174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 8
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d30c0edd30f97c0800000000000000
+      internalID: -4062524087371547275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 8
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14bb6bf9f9982d880800000000000000
+      internalID: -8587650220769756351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 8
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5c92422f1c817890800000000000000
+      internalID: -7462029042229535654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 8
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b8acdf1d756c5d0800000000000000
+      internalID: -3042647938824500425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_6
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 8
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae7409ad1e428170800000000000000
+      internalID: 8179185762554904239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 9
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396c788e2a6d977d0800000000000000
+      internalID: -2920066888198797677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 8
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43cab3fe4d7ba630800000000000000
+      internalID: 3939380077115654990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 7
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54bf02ab80b749b0800000000000000
+      internalID: -5095910339580545954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_10
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 7
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a1de7b8bdf013a0800000000000000
+      internalID: -6696573676098348475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_11
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 8
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52adae26aaf253a0800000000000000
+      internalID: -6677999705782377890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_12
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 8
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f1f7bb0a24077b0800000000000000
+      internalID: -5228605909269274858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_13
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 9
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7916cdfe92cd71e30800000000000000
+      internalID: 4474286827491844503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_14
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 7
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4733b38a73cb58d70800000000000000
+      internalID: 9044842373875184500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_15
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 7
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ae88d771ff73210800000000000000
+      internalID: 1312798292757244420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 8
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4f6823bdd955160800000000000000
+      internalID: 7013685559470519473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_17
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 8
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75fa0678c7021a060800000000000000
+      internalID: 6962882218110791511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 8
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afcdb9816c00ac350800000000000000
+      internalID: 6037639101259963642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_19
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 9
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc65b2159a9e28460800000000000000
+      internalID: 7242608064185718477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_20
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 7
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cf4517e5fd92030800000000000000
+      internalID: 3470550584586992757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_21
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 7
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d815a70e3e61f52f0800000000000000
+      internalID: -982041025763978867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_22
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 8
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eef1df06c1c14ce0800000000000000
+      internalID: -1422642950859260183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brown bear_23
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 8
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9cb1fd90ad85060800000000000000
+      internalID: 6942538561524320703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Brown bear_0: 5164949074760638223
+      Brown bear_1: -7836180572912054174
+      Brown bear_10: -6696573676098348475
+      Brown bear_11: -6677999705782377890
+      Brown bear_12: -5228605909269274858
+      Brown bear_13: 4474286827491844503
+      Brown bear_14: 9044842373875184500
+      Brown bear_15: 1312798292757244420
+      Brown bear_16: 7013685559470519473
+      Brown bear_17: 6962882218110791511
+      Brown bear_18: 6037639101259963642
+      Brown bear_19: 7242608064185718477
+      Brown bear_2: -4062524087371547275
+      Brown bear_20: 3470550584586992757
+      Brown bear_21: -982041025763978867
+      Brown bear_22: -1422642950859260183
+      Brown bear_23: 6942538561524320703
+      Brown bear_3: -8587650220769756351
+      Brown bear_4: -7462029042229535654
+      Brown bear_5: -3042647938824500425
+      Brown bear_6: 8179185762554904239
+      Brown bear_7: -2920066888198797677
+      Brown bear_8: 3939380077115654990
+      Brown bear_9: -5095910339580545954
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294413
+  packageName: Farm RPG - Tiny Asset Pack
+  packageVersion: 1.0
+  assetPath: Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character/Character/PNG/16.2
+    Bear - Run/Bear/Brown bear.png
+  uploadId: 883898

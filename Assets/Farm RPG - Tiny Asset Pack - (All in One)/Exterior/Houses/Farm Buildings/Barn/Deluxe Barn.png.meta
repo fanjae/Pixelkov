@@ -1,0 +1,515 @@
+fileFormatVersion: 2
+guid: 8b3c7ed5b5bbc834ab47909922519cd3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4661392844511881379
+    second: Deluxe Barn_0
+  - first:
+      213: -8348358511847237681
+    second: Deluxe Barn_1
+  - first:
+      213: -2662492100783881695
+    second: Deluxe Barn_2
+  - first:
+      213: -5409209418887103013
+    second: Deluxe Barn_3
+  - first:
+      213: 9087259822346899221
+    second: Deluxe Barn_4
+  - first:
+      213: 3914144071736500688
+    second: Deluxe Barn_5
+  - first:
+      213: -1907559156697641462
+    second: Deluxe Barn_6
+  - first:
+      213: 9042565749731265194
+    second: Deluxe Barn_7
+  - first:
+      213: -4924611319885390044
+    second: Deluxe Barn_8
+  - first:
+      213: -5549538567738979941
+    second: Deluxe Barn_9
+  - first:
+      213: 2748538027976083391
+    second: Deluxe Barn_10
+  - first:
+      213: -8661175000993527885
+    second: Deluxe Barn_11
+  - first:
+      213: 7016698696660515196
+    second: Deluxe Barn_12
+  - first:
+      213: 7666644957991916162
+    second: Deluxe Barn_13
+  - first:
+      213: 8244795287504005219
+    second: Deluxe Barn_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Deluxe Barn_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 143
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d575250b7e76f4fb0800000000000000
+      internalID: -4661392844511881379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 144
+        width: 113
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc79cbb3a2ca42c80800000000000000
+      internalID: -8348358511847237681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 179
+        width: 113
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1224e737a8dec0bd0800000000000000
+      internalID: -2662492100783881695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_3
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 179
+        width: 113
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd798751b0aee4b0800000000000000
+      internalID: -5409209418887103013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_4
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 179
+        width: 113
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f8aac79ae6c1e70800000000000000
+      internalID: 9087259822346899221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_5
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 179
+        width: 113
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d12e839b45d15630800000000000000
+      internalID: 3914144071736500688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 122
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e4efcbd0df685e0800000000000000
+      internalID: -1907559156697641462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 16
+        width: 113
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa88dac3a5ad7d70800000000000000
+      internalID: 9042565749731265194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_8
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 96
+        width: 99
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f1d55a81448abb0800000000000000
+      internalID: -4924611319885390044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_9
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 42
+        width: 9
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99869a43141cf2b0800000000000000
+      internalID: -5549538567738979941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_10
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 96
+        width: 99
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7ca2926c4c42620800000000000000
+      internalID: 2748538027976083391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_11
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 96
+        width: 99
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b78948b9335dc780800000000000000
+      internalID: -8661175000993527885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_12
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 96
+        width: 99
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79756ed942506160800000000000000
+      internalID: 7016698696660515196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_13
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 5
+        width: 51
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282d52c38f4656a60800000000000000
+      internalID: 7666644957991916162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deluxe Barn_14
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 5
+        width: 51
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368ad7591a56b6270800000000000000
+      internalID: 8244795287504005219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Deluxe Barn_0: -4661392844511881379
+      Deluxe Barn_1: -8348358511847237681
+      Deluxe Barn_10: 2748538027976083391
+      Deluxe Barn_11: -8661175000993527885
+      Deluxe Barn_12: 7016698696660515196
+      Deluxe Barn_13: 7666644957991916162
+      Deluxe Barn_14: 8244795287504005219
+      Deluxe Barn_2: -2662492100783881695
+      Deluxe Barn_3: -5409209418887103013
+      Deluxe Barn_4: 9087259822346899221
+      Deluxe Barn_5: 3914144071736500688
+      Deluxe Barn_6: -1907559156697641462
+      Deluxe Barn_7: 9042565749731265194
+      Deluxe Barn_8: -4924611319885390044
+      Deluxe Barn_9: -5549538567738979941
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294413
+  packageName: Farm RPG - Tiny Asset Pack
+  packageVersion: 1.0
+  assetPath: Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Houses/Farm
+    Buildings/Barn/Deluxe Barn.png
+  uploadId: 883898

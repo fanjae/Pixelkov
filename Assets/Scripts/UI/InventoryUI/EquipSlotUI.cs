@@ -8,7 +8,7 @@ public class EquipSlotUI : MonoBehaviour, IPointerClickHandler
     [SerializeField] private EquipmentSlotType slotType;
     [SerializeField] private Image iconImage;
 
-    public Action<EquipmentSlotType> OnUnEquip;
+    public event Action<EquipmentSlotType> OnUnEquip;
     public EquipmentSlotType SlotType => slotType;
     public ItemData CurItem { get; private set; }
 

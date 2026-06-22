@@ -20,6 +20,12 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     #endregion
     private PlayerInventoryController inventoryController;
 
+    // Shop 전달용 임시 프로퍼티 (플레이어 받으면 수정 예정)
+    public Inventory Inventory => inventory;
+    public Equipment Equipment => equipment;
+    public PlayerInventoryController InventoryController => inventoryController;
+
+
     // 마우스 드래그 오프셋
     private Vector2 offset = Vector2.zero;
 
@@ -48,8 +54,6 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
         {
             equipment.OnEquipmentChanged += UpdateEquipment;
         }
-        inventory.AddItem(database.GetItem(1));
-        inventory.AddItem(database.GetItem(2));
     }
     private void OnDestroy()
     {

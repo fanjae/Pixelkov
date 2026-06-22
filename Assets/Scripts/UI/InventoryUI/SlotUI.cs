@@ -12,9 +12,9 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     [SerializeField] private Image iconImage;
     [SerializeField] private GameObject subButton;
 
-    public Action<int> OnSlotEnter;
-    public Action OnSlotExit;
-    public Action<int> OnEquip;
+    public event Action<int> OnSlotEnter;
+    public event Action OnSlotExit;
+    public event Action<int> OnEquip;
 
     public int Index { get; private set; }
     public ItemData CurItem { get; private set; }

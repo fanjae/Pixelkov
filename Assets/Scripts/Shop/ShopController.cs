@@ -33,15 +33,14 @@ public class ShopController
         // 총 구매 가격 계산
         int totalPrice = itemData.Price * count;
 
-        // if (!goldController.CanSpendGold(totalPrice)) return false;
-
+        if (!goldController.CanSpendGold(totalPrice)) return false;
         if (!inventory.CanAddItem(itemData, count)) return false;
 
-        // if (!goldController.SpendGold(totalPrice)) return false;
+        if (!goldController.SpendGold(totalPrice)) return false;
 
         if (!inventory.AddItem(itemData, count))
         {
-            // goldController.AddGold(totalPrice);
+            goldController.AddGold(totalPrice);
             return false;
         }
 
@@ -69,11 +68,9 @@ public class ShopController
         // 인벤토리에서 해당 아이템 제거
         if (!inventory.RemoveItemAt(slotIndex, count)) return false;
 
-        // goldController.AddGold(sellPrice);
+        goldController.AddGold(sellPrice);
         return true;
     }
-
-
 
     // 현재 상점에서 특정 ItemId 상품을 판매 중인지 체크
     private ShopItemData GetShopItemData(int itemId)

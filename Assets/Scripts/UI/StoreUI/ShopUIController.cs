@@ -36,13 +36,13 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
             shopController = new ShopController(inventory, database, goldController, inventoryController, shopData);
         }
         // 활성화 시 인벤토리 슬롯의 판매 기능 활성화
-        invenUIController?.AllocateShop(shopController);
+        invenUIController?.AllocateShop(shopController.SellItemAt);
     }
 
     private void OnDisable()
     {
         // 인벤토리 슬롯 판매 기능 해제
-        invenUIController?.ReleaseShop();
+        invenUIController?.ReleaseShop(shopController.SellItemAt);
     }
 
     private void OnDestroy()

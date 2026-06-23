@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
@@ -19,7 +20,6 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     private Equipment equipment = new Equipment();
     #endregion
     private PlayerInventoryController inventoryController;
-    private ShopController shopController;
 
     // Shop 전달용 임시 프로퍼티 (플레이어 받으면 수정 예정)
     public Inventory Inventory => inventory;
@@ -31,7 +31,7 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
 
     private void Awake()
     {
-        inventoryPanel?.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, Sell); // GuidePanel의 온/오프 메서드 할당
+        inventoryPanel?.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
         inventoryPanel?.AllocateInventory(inventory);    // 임시로 생성된 인벤토리
 
         equipmentPanel?.AllocateSlotEvent(UnEquip);
@@ -53,7 +53,7 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     }
     private void OnDestroy()
     {
-        inventoryPanel?.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, Sell); // GuidePanel의 온/오프 메서드 할당
+        inventoryPanel?.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
         equipmentPanel?.ReleaseSlotEvent(UnEquip);
 
         if (inventory != null)
@@ -117,17 +117,13 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
         inventoryController?.UnEquip(slotType);
     }
     
-    private void Sell(int slotIndex)
+    public void AllocateShop(Func<int, int, bool> sellAction)
     {
-        shopController?.SellItemAt(slotIndex);
+        inventoryPanel.AllocateSell(sellAction);
     }
-    public void AllocateShop(ShopController shopController)
+    public void ReleaseShop(Func<int, int, bool> sellAction)
     {
-        this.shopController = shopController;
-    }
-    public void ReleaseShop()
-    {
-        shopController = null;
+        inventoryPanel.ReleaseSell(sellAction);
     }
 
 

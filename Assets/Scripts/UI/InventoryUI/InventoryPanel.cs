@@ -18,26 +18,40 @@ public class InventoryPanel : MonoBehaviour
     /// <summary>
     /// 각 슬롯마다 갖고있는 Action에 메서드를 연결합니다.
     /// </summary>
-    public void AllocateSlotEvent(Action<int> enter, Action exit, Action<int> equip, Action<int> sell)
+    public void AllocateSlotEvent(Action<int> enter, Action exit, Action<int> equip)
     {
         foreach(var slot in slotUIs)
         {
             slot.OnSlotEnter += enter;
             slot.OnSlotExit += exit;
             slot.OnEquip += equip;
-            slot.OnSell += sell;
         }
     }
     /// <summary>
     /// 슬롯에 할당했던 메서드들 해제
     /// </summary>
-    public void ReleaseSlotEvent(Action<int> enter, Action exit, Action<int> equip, Action<int> sell)
+    public void ReleaseSlotEvent(Action<int> enter, Action exit, Action<int> equip)
     {
         foreach(var slot in slotUIs)
         {
             slot.OnSlotEnter -= enter;
             slot.OnSlotExit -= exit;
             slot.OnEquip -= equip;
+        }
+    }
+
+    public void AllocateSell(Func<int, int, bool> sell)
+    {
+
+        foreach(var slot in slotUIs)
+        {
+            slot.OnSell += sell;
+        }
+    }
+    public void ReleaseSell(Func<int, int, bool> sell)
+    {
+        foreach(var slot in slotUIs)
+        {
             slot.OnSell -= sell;
         }
     }

@@ -15,7 +15,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public event Action<int> OnSlotEnter;
     public event Action OnSlotExit;
     public event Action<int> OnEquip;
-    public event Action<int> OnSell;
+    public event Func<int, int, bool> OnSell;
 
     public int Index { get; private set; }
     public ItemData CurItem { get; private set; }
@@ -43,7 +43,8 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     }
     public void OnClickSellButton()
     {
-        OnSell?.Invoke(Index);
+        // 임시로 1개씩 판매
+        OnSell?.Invoke(Index, 1);
     }
     /// <summary>
     /// 슬롯의 데이터를 가져와 UI에 적용하는 메서드
@@ -145,7 +146,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         // 드래그가 끝난 시점(드롭)에 마우스가 올려진 UI의 이름으로 판매창에 드롭했음을 정합니다.
         if(hoverObjects.name == "SellCover")
         {
-            OnSell?.Invoke(Index);
+            OnSell?.Invoke(Index, 1);
             return;
         }
     }

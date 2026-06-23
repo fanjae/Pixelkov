@@ -10,6 +10,7 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
     [SerializeField] private PlayerGoldController goldController; // 플레이어 받으면 수정 가능성 존재
     [SerializeField] private ShopData shopData;
     [SerializeField] private BuyPanel buyPanel;
+    [SerializeField] private ArmorUpgradePanel upgradePanel;
 
     [SerializeField] private InventoryUIController invenUIController;
 
@@ -20,6 +21,8 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
     private HashSet<int> Duplicate = new HashSet<int>();
     private Vector2 offset = Vector2.zero;
 
+    private ArmorUpgradeController upgradeController;
+
     private void Awake()
     {
         Database = database;
@@ -28,6 +31,7 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     private void OnEnable()
     {
+        // 임시로 InventoryUI에 만들어둔 객체를 참조
         if(shopController == null)
         {
             inventory = invenUIController.Inventory;
@@ -35,14 +39,20 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
             inventoryController = invenUIController.InventoryController;
             shopController = new ShopController(inventory, database, goldController, inventoryController, shopData);
         }
+        if(upgradeController == null)
+        {
+            upgradeController = new ArmorUpgradeController(inventory, database, goldController, inventoryController, equipment);
+        }
         // 활성화 시 인벤토리 슬롯의 판매 기능 활성화
         invenUIController?.AllocateShop(shopController.SellItemAt);
+        upgradePanel.OnUpgrade += Upgrade;
     }
 
     private void OnDisable()
     {
         // 인벤토리 슬롯 판매 기능 해제
         invenUIController?.ReleaseShop(shopController.SellItemAt);
+        upgradePanel.OnUpgrade -= Upgrade;
     }
 
     private void OnDestroy()
@@ -58,7 +68,7 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
             // 중복 아이템 검사
             if (Duplicate.Contains(data.ItemId)) return;
 
-            buyPanel.AddProduct(data.ItemId, Buy);
+            buyPanel.AddProduct(data.ItemId, Buy, goldController);
             Duplicate.Add(data.ItemId);
         }
     }
@@ -66,9 +76,13 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
     {
         buyPanel.AllocEvent(Buy);
     }
-    private void Buy(int itemId)
+    private bool Buy(int itemId, int count)
     {
-        shopController.BuyItem(itemId);
+        return shopController.BuyItem(itemId, count);
+    }
+    public bool Upgrade(int slotIndex)
+    {
+        return upgradeController.UpgradeArmorAt(slotIndex);
     }
     // 창 움직이는 기능 관련 메서드
     public void OnDrag(PointerEventData eventData)

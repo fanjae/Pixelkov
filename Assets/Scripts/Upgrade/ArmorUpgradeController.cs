@@ -57,18 +57,9 @@ public class ArmorUpgradeController
         // 강화 비용 지불
         if (!goldController.SpendGold(currentArmor.UpgradeCost)) return false;
 
-        // 기존 방어구 제거
-        if (!inventory.RemoveItemAt(slotIndex, 1))
+        // 기존 슬롯의 아이템을 강화된 방어구로 교체
+        if (!inventory.ReplaceItemAt(slotIndex, nextArmor))
         {
-            goldController.AddGold(currentArmor.UpgradeCost);
-            return false;
-        }
-
-        // 강화된 방어구 지급
-        if (!inventory.AddItem(nextArmor, 1))
-        {
-            // 실패 시 기존 방어구, 골드 복구
-            inventory.AddItem(currentArmor, 1);
             goldController.AddGold(currentArmor.UpgradeCost);
             return false;
         }
@@ -83,4 +74,24 @@ public class ArmorUpgradeController
 
         return true;
     }
+
+    // 인벤토리 슬롯에 있는 강화 가능한 방어구 데이터 조회
+    public ArmorData GetUpgradeableArmorAt(int slotIndex)
+    {
+        if (!inventory.TryGetSlot(slotIndex, out InventorySlot slot)) return null;
+        if (slot.IsEmpty) return null;
+
+        return itemDatabase.GetItem(slot.ItemId) as ArmorData;
+    }
+
+    // 현재 방어구의 다음 강화 단계 방어구 데이터 조회
+    public ArmorData GetNextArmorAt(int slotIndex)
+    {
+        ArmorData currentArmor = GetUpgradeableArmorAt(slotIndex);
+        if (currentArmor == null) return null;
+        if (!currentArmor.CanUpgrade) return null;
+
+        return itemDatabase.GetItem(currentArmor.NextUpgradeItemId) as ArmorData;
+    }
+
 }

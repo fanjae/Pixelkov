@@ -159,8 +159,6 @@ public class Inventory
     // 빈 슬롯에 아이템 추가
     private int AddToEmptySlots(ItemData itemData, int count)
     {
-        if(count <= 0) 
-
         foreach  (InventorySlot slot in slots)
         {
             if (!slot.IsEmpty) continue;

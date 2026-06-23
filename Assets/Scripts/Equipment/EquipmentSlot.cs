@@ -17,6 +17,14 @@ public class EquipmentSlot
         SlotType = slotType;
         Clear();
     }
+
+    public void ChangeItemId(int itemId) // 강화 추가에 따른 장비 슬롯 Item 교체 방식 추가
+    {
+        if (itemId <= 0) return;
+
+        ItemId = itemId;
+    }
+
     public void SetItem(int itemId, int inventorySlotIndex)
     {
         // 슬롯에 장착된 아이템 ID 저장

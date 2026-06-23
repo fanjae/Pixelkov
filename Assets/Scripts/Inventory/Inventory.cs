@@ -201,4 +201,16 @@ public class Inventory
         // 공간 부족하면 추가 불가능
         return false;
     }
+
+    // 기존 아이템을 교체하는 경우 사용
+    public bool ReplaceItemAt(int slotIndex, ItemData newItemData, int count = 1)
+    {
+        if (newItemData == null || count <= 0) return false;
+        if (!TryGetSlot(slotIndex, out InventorySlot slot)) return false;
+        if (slot.IsEmpty) return false;
+
+        slot.SetItem(newItemData.ItemId, count);
+        OnInventoryChanged?.Invoke();
+        return true;
+    }
 }

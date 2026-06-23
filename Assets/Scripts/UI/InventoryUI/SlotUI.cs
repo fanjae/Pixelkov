@@ -11,6 +11,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private Image iconImage;
     [SerializeField] private GameObject subButton;
+    [SerializeField] private CounterSelector counterSelector;
 
     public event Action<int> OnSlotEnter;
     public event Action OnSlotExit;
@@ -22,6 +23,8 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     private Vector3 originScale;
     private Vector3 originPos;
+    private ArmorUpgradePanel upgradePanel;
+    private int slotCount = 0;
 
     private void Awake()
     {
@@ -43,8 +46,38 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     }
     public void OnClickSellButton()
     {
-        // 임시로 1개씩 판매
-        OnSell?.Invoke(Index, 1);
+        // 스택형 아이템이면 개수 정하는 UI 활성화
+        if(CurItem.IsStackable)
+        {
+            if(counterSelector != null)
+            {
+                counterSelector.gameObject.SetActive(true);
+            }
+        }
+        // 아니라면 한개만 있다는 의미이므로 한개 판매
+        else
+        {
+            OnSell?.Invoke(Index, 1);
+        }
+    }
+    /// <summary>
+    /// Stackable Item 판매처리
+    /// </summary>
+    public void OnClickSellStackable()
+    {
+        OnSell?.Invoke(Index, counterSelector.Count);
+    }
+    /// <summary>
+    /// subButton에 있는 Upgrade버튼에 할당하는 메서드로 업그레이드 패널에 데이터를 전달하는 기능
+    /// </summary>
+    public void OnClickUpgradeButton()
+    {
+        if(upgradePanel == null)
+        {
+            upgradePanel = FindAnyObjectByType<ArmorUpgradePanel>();
+            if (upgradePanel == null) return;
+        }
+        upgradePanel.PaintUpgradeUI(CurItem as ArmorData, Index);
     }
     /// <summary>
     /// 슬롯의 데이터를 가져와 UI에 적용하는 메서드
@@ -68,8 +101,11 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         // 데이터가 있다면 해당 데이터를 기반으로 그리기 진행
         CurItem = itemInfo;
         iconImage.sprite = CurItem.Icon;
-        if (slot.Count <= 1) countText.text = "";
+        slotCount = slot.Count;
+        if (slotCount <= 1) countText.text = "";
         else countText.text = slot.Count.ToString();
+
+        counterSelector?.Init(0, slotCount);
     }
     // 슬롯에 마우스 올리면 슬롯 크기가 커집니다.
     public void OnPointerEnter(PointerEventData eventData)
@@ -146,7 +182,28 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         // 드래그가 끝난 시점(드롭)에 마우스가 올려진 UI의 이름으로 판매창에 드롭했음을 정합니다.
         if(hoverObjects.name == "SellCover")
         {
-            OnSell?.Invoke(Index, 1);
+            // 스택형 아이템이면 CounterSelector 활성화
+            if(CurItem.IsStackable)
+            {
+                // OnSell이 null이면 상점UI가 열리지 않았음을 의미하므로 예외처리
+                if(counterSelector != null && OnSell != null)
+                {
+                    counterSelector.gameObject.SetActive(true);
+                }
+            }
+            // 비스택형이면 바로 판매 진행
+            else
+            {
+                OnSell?.Invoke(Index, 1);
+            }
+            return;
+        }
+        
+        // 방어구 강화탭에 드롭한 경우 데이터 전달
+        ArmorUpgradePanel upgradePanel = hoverObjects.GetComponentInParent<ArmorUpgradePanel>();
+        if(upgradePanel != null)
+        {
+            upgradePanel.PaintUpgradeUI(CurItem as ArmorData, Index);
             return;
         }
     }

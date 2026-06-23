@@ -40,6 +40,7 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
+    // 판매 기능만 따로 분리(상점 활성화 시에만 기능 활성화를 위함)
     public void AllocateSell(Func<int, int, bool> sell)
     {
 

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum SceneType
 {
-    Title, Map
+    Title, Main
 }
 public class SceneLoadManager : Singleton<SceneLoadManager>
 {
@@ -14,7 +14,7 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
     private Dictionary<SceneType, string> SceneNames = new Dictionary<SceneType, string>()
     {
         {SceneType.Title, "TitleScene"},
-        {SceneType.Map, "MapScene"}
+        {SceneType.Main, "MainScene"}
     };
 
     public Func<YieldInstruction> FadeEvent;

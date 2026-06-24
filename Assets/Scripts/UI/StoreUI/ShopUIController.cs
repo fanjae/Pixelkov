@@ -66,7 +66,7 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
         foreach (var data in shopData.ShopItems)
         {
             // 중복 아이템 검사
-            if (Duplicate.Contains(data.ItemId)) return;
+            if (Duplicate.Contains(data.ItemId)) continue;
 
             buyPanel.AddProduct(data.ItemId, Buy, goldController);
             Duplicate.Add(data.ItemId);

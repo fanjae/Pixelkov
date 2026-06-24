@@ -10,24 +10,27 @@ public class Fade : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(FadeOut());
+        // 씬 들어오면 FadeIn
+        StartCoroutine(FadeIn());
+        // FadeOut을 이벤트에 구독해서 씬 전환할 때 FadeOut
         if(SceneLoadManager.Instance != null)
-            SceneLoadManager.Instance.FadeEvent += FadeIn;
+            SceneLoadManager.Instance.FadeEvent += FadeOut;
     }
     private void OnDestroy()
     {
         if(SceneLoadManager.Instance != null)
-            SceneLoadManager.Instance.FadeEvent -= FadeIn;
+            SceneLoadManager.Instance.FadeEvent -= FadeOut;
     }
 
-    private YieldInstruction FadeIn()
+    private YieldInstruction FadeOut()
     {
         fadeImage.gameObject.SetActive(true);
         fadeImage.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        // DOTween과 코루틴을 연계해서 씬 전환 타이밍을 조절
         Tween tween = fadeImage.DOFade(1.0f, fadeDuration);
         return tween.WaitForCompletion();
     }
-    private IEnumerator FadeOut()
+    private IEnumerator FadeIn()
     {
         fadeImage.gameObject.SetActive(true);
         fadeImage.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);

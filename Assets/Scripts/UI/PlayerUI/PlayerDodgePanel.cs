@@ -71,12 +71,4 @@ public class PlayerDodgePanel : MonoBehaviour
     {
         panels[index].GetComponent<CanvasGroup>().alpha = 1f;
     }
-
-    /// <summary>
-    /// 디버깅용 버튼 할당 메서드
-    /// </summary>
-    public void OnClickButton()
-    {
-        DodgeUIUpdate(Random.Range(0, maxDodgeCount), Random.Range(0f, 1f));
-    }
 }

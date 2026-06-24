@@ -1,3 +1,5 @@
+using Enemy;
+using Enemy_Player;
 using UnityEngine;
 
 namespace Enemy1
@@ -14,16 +16,34 @@ namespace Enemy1
         //플레이어
         private Transform target;
 
-        private Rigidbody2D rb;
+        //HP UI
+        [SerializeField] private EnemyUI hpUI;
+        //Max HP
+        [SerializeField] private int maxHealth = 3;
+        //초기 HP
+        private int currentHealth;
         
-        void Start()
+
+        private Rigidbody2D rb;
+
+        private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
 
-            //플레이어 컴포넌틑
+            //플레이어 컴포넌트
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
+
+        void Start()
+        {
+            //HP셋팅
+            currentHealth = maxHealth;
+            if (hpUI != null)
+            {
+                hpUI.Initialize(maxHealth);
+            }
         }
 
         
@@ -68,6 +88,38 @@ namespace Enemy1
         private void UpdatePlayerShoter()
         {
             shooterController.UpdateShooterState(target.position);
+        }
+
+        //Damage
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+            if (hpUI != null)
+            {
+                hpUI.SetHP(currentHealth);
+            }
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+        //사망
+        private void Die()
+        {
+            //Eenmy 삭제
+            Destroy(gameObject);
+        }
+        //플레이어 공격 트리거
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            //플레이어 공격 컴포넌트
+            if (collision.TryGetComponent<Enemy_PlayerBullet>(out Enemy_PlayerBullet bullet))
+            {
+                //Damage
+                TakeDamage(bullet.Damage);
+                //공격 삭제
+                Destroy(bullet.gameObject);
+            }
         }
 
     }

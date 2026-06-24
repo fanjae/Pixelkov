@@ -11,11 +11,13 @@ public class Fade : MonoBehaviour
     private void Awake()
     {
         StartCoroutine(FadeOut());
-        SceneLoadManager.Instance.FadeEvent += FadeIn;
+        if(SceneLoadManager.Instance != null)
+            SceneLoadManager.Instance.FadeEvent += FadeIn;
     }
     private void OnDestroy()
     {
-        SceneLoadManager.Instance.FadeEvent -= FadeIn;
+        if(SceneLoadManager.Instance != null)
+            SceneLoadManager.Instance.FadeEvent -= FadeIn;
     }
 
     private YieldInstruction FadeIn()

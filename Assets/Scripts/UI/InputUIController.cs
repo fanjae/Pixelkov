@@ -22,13 +22,13 @@ public class InputUIController : MonoBehaviour
 
     void Update()
     {
-        if(InputInventory.WasPerformedThisFrame())
+        if(InputInventory.WasPerformedThisFrame() && inventoryUI != null)
         {
-            inventoryUI?.SetActive(!inventoryUI.activeSelf);
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
-        if(InputMenu.WasPerformedThisFrame())
+        if(InputMenu.WasPerformedThisFrame() && menuUI != null)
         {
-            menuUI?.SetActive(!menuUI.activeSelf);
+            menuUI.SetActive(!menuUI.activeSelf);
         }
         if(InputShop.WasCompletedThisFrame())
         {

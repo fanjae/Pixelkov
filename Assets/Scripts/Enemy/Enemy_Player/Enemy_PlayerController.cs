@@ -7,15 +7,31 @@ namespace Enemy_Player
         [SerializeField] private Enemy_PlayerAnimationController animationController;
         [SerializeField] private Enemy_PlayerShooterController shooterController;
 
+        //HP UI
+        [SerializeField] private Enemy_PlayerUI hpUI;
+        //Max HP
+        [SerializeField] private int maxHealth = 3;
+        //초기 HP
+        private int currentHealth;
 
         private Rigidbody2D rb;
-        private SpriteRenderer spriteRenderer;
-        void Start()
+        
+
+        private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
             animationController = GetComponentInChildren<Enemy_PlayerAnimationController>();
             shooterController = GetComponentInChildren<Enemy_PlayerShooterController>();
+
+        }
+        void Start()
+        {
+            //HP셋팅
+            currentHealth = maxHealth;
+            if (hpUI != null)
+            {
+                hpUI.Initialize(maxHealth);
+            }
         }
 
         

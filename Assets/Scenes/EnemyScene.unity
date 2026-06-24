@@ -612,15 +612,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.186
+      value: 6.67
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.682
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.021
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalRotation.w
@@ -769,10 +769,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33c849c4ae77364d99066c00c17ce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyController
-  moveSpeed: 5
+  moveSpeed: 2
   animationController: {fileID: 1985865445}
   shooterController: {fileID: 2145999914}
-  fireDistance: 4
+  fireDistance: 3
+  targeteDistance: 6
   hpUI: {fileID: 635362185}
   maxHealth: 3
 --- !u!95 &635362181 stripped

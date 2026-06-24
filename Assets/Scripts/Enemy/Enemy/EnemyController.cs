@@ -6,12 +6,14 @@ namespace Enemy1
 {
     public class EnemyController : MonoBehaviour
     {
-        [SerializeField] private float moveSpeed = 5.0f;
+        [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyShooterController shooterController;
 
         //플레이어와 적 공격 거리
-        [SerializeField] private float fireDistance = 4.0f;
+        [SerializeField] private float fireDistance = 3.0f;
+        //플레이어 거리 기준 이동 거리
+        [SerializeField] private float targeteDistance = 6.0f;
 
         //플레이어
         private Transform target;
@@ -47,42 +49,47 @@ namespace Enemy1
         }
 
         
-        void Update()
-        {
-            //애니메이션 상태 업데이트
-            //UpdateAnimation();
-            //플레이어 포지션 전달
-            UpdatePlayerShoter();
-
-            //플레이어와 적 공격 거리 
-            if (Vector2.Distance(transform.position, target.position) <= fireDistance)
-            {
-
-                //발사
-                shooterController.Fire();
-            }
-        }
         private void FixedUpdate()
         {
-            //이동
-            //추적 시스템 전 주석
-            //Move();
+            //플레이어 - 적 거리
+            float distance = Vector2.Distance(transform.position, target.position);
+            
+            //이동 
+            if (distance < targeteDistance)
+            {
+                //공격
+                if (distance < fireDistance)
+                {
+                    //애니메이션 타입 : 공격
+                    //현재 공격 애니메이션 문제로 주석
+                    UpdateAnimation(EnemyActionType.Idle);
+                    //UpdateAnimation(EnemyActionType.Attack);
+                    //공격 방향
+                    UpdatePlayerShoter();
+                    //공격
+                    shooterController.Fire();
+                    return;
+                }
+                //애니메이션 타입
+                UpdateAnimation(EnemyActionType.Move);
+                Move();
+                return;
+            }
+            //애니메이션 타입
+            UpdateAnimation(EnemyActionType.Idle);
         }
 
         private void Move()
         {
-            //X, Y로 이동
-            float moveX = InputManager.Movement.x;
-            float moveY = InputManager.Movement.y;
-
-            //이동
-            rb.linearVelocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
+            //플레이어 방향으로 이동
+            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
 
         //애니메이션 상태 업데이트
-        private void UpdateAnimation()
+        //para : action type
+        private void UpdateAnimation(EnemyActionType actionType)
         {
-            animationController.UpdateState(InputManager.Movement.x, InputManager.Movement.y);
+            animationController.UpdateState(actionType);
         }
         //공격 방향
         private void UpdatePlayerShoter()
@@ -121,6 +128,11 @@ namespace Enemy1
                 Destroy(bullet.gameObject);
             }
         }
+        //private void OnDrawGizmos()
+        //{
+        //    Gizmos.color = Color.red;
+        //    Gizmos.DrawWireSphere(transform.position, targeteDistance);
+        //}
 
     }
 }

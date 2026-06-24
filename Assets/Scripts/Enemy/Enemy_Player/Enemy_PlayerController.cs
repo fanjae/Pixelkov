@@ -1,3 +1,4 @@
+using Enemy1;
 using UnityEngine;
 namespace Enemy_Player
 {
@@ -73,5 +74,19 @@ namespace Enemy_Player
         {
             shooterController.UpdateShooterState(InputManager.Movement.x, InputManager.Movement.y);
         }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.TryGetComponent<EnemyBullet>(out EnemyBullet bullet))
+            {
+                Debug.Log("bullet attack");
+                Destroy(bullet.gameObject);
+            }
+            if (collision.TryGetComponent<Weapon>(out Weapon weapon))
+            {
+                Debug.Log("weapon attack");
+                //TakeDamage(weapon.Damage);
+            }
+        }
+
     }
 }

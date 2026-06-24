@@ -1,17 +1,16 @@
 using Enemy;
 using Enemy_Player;
 using UnityEngine;
-
 namespace Enemy1
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemyWeaponController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;
-        [SerializeField] private EnemyShooterController shooterController;
+        
 
         //플레이어와 적 공격 거리
-        [SerializeField] private float fireDistance = 3.0f;
+        [SerializeField] private float attackDistance = 0.5f;
         //플레이어 거리 기준 이동 거리
         [SerializeField] private float targeteDistance = 6.0f;
 
@@ -24,7 +23,7 @@ namespace Enemy1
         [SerializeField] private int maxHealth = 3;
         //초기 HP
         private int currentHealth;
-        
+
 
         private Rigidbody2D rb;
 
@@ -32,7 +31,7 @@ namespace Enemy1
         {
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
-            shooterController = GetComponentInChildren<EnemyShooterController>();
+            
 
             //플레이어 컴포넌트
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -48,25 +47,20 @@ namespace Enemy1
             }
         }
 
-        
+
         private void FixedUpdate()
         {
             //플레이어 - 적 거리
             float distance = Vector2.Distance(transform.position, target.position);
-            
             //이동 
             if (distance < targeteDistance)
             {
                 //공격
-                if (distance < fireDistance)
+                if (distance < attackDistance)
                 {
                     //애니메이션 타입 : 공격
                     //현재 공격 애니메이션 문제로 주석
-                    UpdateAnimation(EnemyActionType.Attack);
-                    //공격 방향
-                    UpdatePlayerShoter();
-                    //공격
-                    shooterController.Fire();
+                    UpdateAnimation(EnemyActionType.Attack);                    
                     return;
                 }
                 //애니메이션 타입
@@ -80,6 +74,9 @@ namespace Enemy1
 
         private void Move()
         {
+            
+            //플레이어와 거리
+            Vector2 direction = (target.position - transform.position).normalized;
             //플레이어 방향으로 이동
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
@@ -90,12 +87,7 @@ namespace Enemy1
         {
             animationController.UpdateState(actionType);
         }
-        //공격 방향
-        private void UpdatePlayerShoter()
-        {
-            shooterController.UpdateShooterState(target.position);
-        }
-
+        
         //Damage
         public void TakeDamage(int damage)
         {

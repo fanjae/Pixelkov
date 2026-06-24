@@ -37,7 +37,7 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
 
     private IEnumerator LoadSceneCoroutine(SceneType type)
     {
-        yield return FadeEvent();
+        yield return FadeEvent?.Invoke();
         SceneManager.LoadScene(SceneNames[type]);
     }
 }

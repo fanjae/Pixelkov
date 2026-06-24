@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,11 +17,27 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
         {SceneType.Map, "MapScene"}
     };
 
+    public Func<YieldInstruction> FadeEvent;
+
     /// <summary>
     /// SceneType에 맞춰 씬을 로드하는 메서드
     /// </summary>
     public void LoadScene(SceneType type)
     {
+        if (FadeEvent == null)
+            SceneManager.LoadScene(SceneNames[type]);
+        else
+            LoadSceneWithFade(type);
+    }
+
+    private void LoadSceneWithFade(SceneType type)
+    {
+        StartCoroutine(LoadSceneCoroutine(type));
+    }
+
+    private IEnumerator LoadSceneCoroutine(SceneType type)
+    {
+        yield return FadeEvent();
         SceneManager.LoadScene(SceneNames[type]);
     }
 }

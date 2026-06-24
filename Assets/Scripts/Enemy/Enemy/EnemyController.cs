@@ -6,7 +6,13 @@ namespace Enemy1
     {
         [SerializeField] private float moveSpeed = 5.0f;
         [SerializeField] private EnemyAnimationController animationController;
+        [SerializeField] private EnemyShooterController shooterController;
 
+        //플레이어와 적 공격 거리
+        [SerializeField] private float fireDistance = 4.0f;
+
+        //플레이어
+        private Transform target;
 
         private Rigidbody2D rb;
         
@@ -14,18 +20,33 @@ namespace Enemy1
         {
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
+            shooterController = GetComponentInChildren<EnemyShooterController>();
+
+            //플레이어 컴포넌틑
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
 
-        // Update is called once per frame
+        
         void Update()
         {
             //애니메이션 상태 업데이트
-            UpdateAnimation();
+            //UpdateAnimation();
+            //플레이어 포지션 전달
+            UpdatePlayerShoter();
+
+            //플레이어와 적 공격 거리 
+            if (Vector2.Distance(transform.position, target.position) <= fireDistance)
+            {
+
+                //발사
+                shooterController.Fire();
+            }
         }
         private void FixedUpdate()
         {
             //이동
-            Move();
+            //추적 시스템 전 주석
+            //Move();
         }
 
         private void Move()
@@ -43,6 +64,11 @@ namespace Enemy1
         {
             animationController.UpdateState(InputManager.Movement.x, InputManager.Movement.y);
         }
-        
+        //공격 방향
+        private void UpdatePlayerShoter()
+        {
+            shooterController.UpdateShooterState(target.position);
+        }
+
     }
 }

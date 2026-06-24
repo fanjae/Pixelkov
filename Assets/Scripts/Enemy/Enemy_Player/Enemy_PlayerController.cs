@@ -5,6 +5,7 @@ namespace Enemy_Player
     {
         [SerializeField] private float moveSpeed = 5.0f;
         [SerializeField] private Enemy_PlayerAnimationController animationController;
+        [SerializeField] private Enemy_PlayerShooterController shooterController;
 
 
         private Rigidbody2D rb;
@@ -14,7 +15,7 @@ namespace Enemy_Player
             rb = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animationController = GetComponentInChildren<Enemy_PlayerAnimationController>();
-
+            shooterController = GetComponentInChildren<Enemy_PlayerShooterController>();
         }
 
         
@@ -22,6 +23,13 @@ namespace Enemy_Player
         {
             //애니메이션 상태 업데이트
             UpdateAnimation();
+            //Shooter 방향 업데이트
+            UpdatePlayerShoter();
+
+            if (InputManager.IsFire)
+            {
+                shooterController.Fire();
+            }
         }
         private void FixedUpdate()
         {
@@ -43,6 +51,11 @@ namespace Enemy_Player
         private void UpdateAnimation()
         {
             animationController.UpdateState(InputManager.Movement.x, InputManager.Movement.y);
+        }
+        //Shooter 방향 업데이트
+        private void UpdatePlayerShoter()
+        {
+            shooterController.UpdateShooterState(InputManager.Movement.x, InputManager.Movement.y);
         }
     }
 }

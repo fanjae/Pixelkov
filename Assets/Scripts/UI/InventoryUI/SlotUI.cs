@@ -47,7 +47,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public void OnClickSellButton()
     {
         // 스택형 아이템이면 개수 정하는 UI 활성화
-        if(CurItem.IsStackable)
+        if(CurItem != null && CurItem.IsStackable)
         {
             if(counterSelector != null && OnSell != null)
             {

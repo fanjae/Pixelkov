@@ -8,23 +8,18 @@ using UnityEngine.EventSystems;
 public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     public static ItemDatabase Database { get; private set; }
+    [SerializeField] private ItemDatabase database;
 
     [SerializeField] private GuidePanel guidePanel;
     [SerializeField] private InventoryPanel inventoryPanel;
     [SerializeField] private EquipmentPanel equipmentPanel;
 
-    #region test Fields
-    // 해당 region에 있는 필드들은 추후 플레이어 데이터와 연동해야하는 필드 입니다.
-    [SerializeField] private ItemDatabase database; // 테스트용 데이터베이스
-    private Inventory inventory = new Inventory(12);
-    private Equipment equipment = new Equipment();
-    #endregion
-    private PlayerInventoryController inventoryController;
+    [SerializeField] private Player player;
 
-    // Shop 전달용 임시 프로퍼티 (플레이어 받으면 수정 예정)
-    public Inventory Inventory => inventory;
-    public Equipment Equipment => equipment;
-    public PlayerInventoryController InventoryController => inventoryController;
+    private Inventory inventory;
+    private Equipment equipment;
+
+    private PlayerInventoryController inventoryController;
 
     // 마우스 드래그 오프셋
     private Vector2 offset = Vector2.zero;
@@ -32,23 +27,34 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     private void Awake()
     {
         inventoryPanel?.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
-        inventoryPanel?.AllocateInventory(inventory);    // 임시로 생성된 인벤토리
-
         equipmentPanel?.AllocateSlotEvent(UnEquip);
-        equipmentPanel?.AllocateEquipment(equipment);
 
-        if (inventory != null)
-        {
-            inventory.OnInventoryChanged += UpdateInventory;
-        }
-        if(equipment != null)
-        {
-            equipment.OnEquipmentChanged += UpdateEquipment;
-        }
         if (database != null)
         {
             Database = database;
-            inventoryController = new PlayerInventoryController(inventory, equipment, database);
+        }
+        if(player == null) player = FindAnyObjectByType<Player>();
+    }
+    private void Start()
+    {
+        if(player != null)
+        {
+            // 플레이어의 인벤토리, 장비 받을 예정
+
+            if (inventory != null)
+            {
+                inventory.OnInventoryChanged += UpdateInventory;
+                inventoryPanel?.AllocateInventory(inventory);
+            }
+            if (equipment != null)
+            {
+                equipment.OnEquipmentChanged += UpdateEquipment;
+                equipmentPanel?.AllocateEquipment(equipment);
+            }
+            if(inventory != null && equipment != null && database != null)
+            {
+                inventoryController = new PlayerInventoryController(inventory, equipment, database);
+            }
         }
     }
     private void OnDestroy()

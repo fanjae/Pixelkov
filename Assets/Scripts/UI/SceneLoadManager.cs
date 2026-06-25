@@ -21,6 +21,8 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
     // Fade가 배치된 씬이면 해당 이벤트를 사용해서 DOTween 애니메이션 종료 시점을 알림
     public event Func<YieldInstruction> FadeEvent;
 
+    public event Action<SceneType> OnSceneChanged; // 씬 전환을 알림
+
     /// <summary>
     /// SceneType에 맞춰 씬을 로드하는 메서드
     /// </summary>
@@ -28,7 +30,10 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
     {
         // Fade 기능 존재에 따른 분기
         if (FadeEvent == null)
+        {
             SceneManager.LoadScene(SceneNames[type]);
+            OnSceneChanged?.Invoke(type);
+        }
         else
             LoadSceneWithFade(type);
     }
@@ -44,5 +49,6 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
         yield return FadeEvent?.Invoke();
 
         SceneManager.LoadScene(SceneNames[type]);
+        OnSceneChanged?.Invoke(type);
     }
 }

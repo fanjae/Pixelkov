@@ -13,6 +13,9 @@ public class PlayerShooter : MonoBehaviour
 
     // 한 번 발사한 후 다음 발사가 가능해질 때까지의 시간
     [SerializeField] private float fireDelay = 0.2f;
+    [SerializeField] private float arrowSpeed = 10f;
+    [SerializeField] private Animator animator;
+
 
     // 마우스 화면 좌표를 월드 좌표로 변환할 때 사용할 카메라
     private Camera mainCamera;
@@ -47,7 +50,16 @@ public class PlayerShooter : MonoBehaviour
         // 아직 발사 간격이 지나지 않았다면 발사하지 않음
         if (fireTimer < fireDelay)
             return;
-
+        if (animator != null)
+        {
+            Debug.Log("활 공격 애니메이션 실행");
+            animator.ResetTrigger("Shoot");
+            animator.SetTrigger("Shoot");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerShooter의 Animator가 연결되지 않았습니다.");
+        }
         // FirePoint나 투사체 프리팹이 Inspector에 연결되지 않은 경우
         if (firePoint == null || projectilePrefab == null)
         {
@@ -76,7 +88,7 @@ public class PlayerShooter : MonoBehaviour
             Instantiate(
                 projectilePrefab,
                 firePoint.position,
-                Quaternion.identity
+                firePoint.rotation * Quaternion.Euler(0f, 0f, 0f)
             );
 
         // 생성된 투사체에 발사 방향 전달

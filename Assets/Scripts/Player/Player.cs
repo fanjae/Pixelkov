@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
     [Header("이동 설정")]//이동속도
@@ -16,9 +15,11 @@ public class Player : MonoBehaviour
     [SerializeField] private int maxDodgeCount = 2;
     [SerializeField] private float dodgeRecoverTime = 3f;
 
-    private Rigidbody2D rb;
-    private Animator animator;
-//현재 이동방향,마지막 이동방향, 회피방향, 마우스 방향
+    private Rigidbody2D rb; 
+    [Header("애니메이터")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private Transform characterVisual;
+    //현재 이동방향,마지막 이동방향, 회피방향, 마우스 방향
     private Vector2 moveInput;
     private Vector2 lastDirection = Vector2.down;
     private Vector2 dodgeDirection;
@@ -29,14 +30,19 @@ public class Player : MonoBehaviour
     private bool isInvincible;
     private int currentDodgeCount;
 
+    private PlayerHealth playerHealth;
     //타 스크립트에서 무적이랑 횟수 확인시 사용
     public bool IsInvincible => isInvincible;
     public int CurrentDodgeCount => currentDodgeCount;
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
         mainCamera = Camera.main;
 
         rb.gravityScale = 0f;
@@ -59,6 +65,7 @@ public class Player : MonoBehaviour
         return;
         }
         ReadMovementInput();
+        UpdateCharacterDirection();
         UpdateAnimation();
 
         // Space를 누르면 회피
@@ -67,7 +74,24 @@ public class Player : MonoBehaviour
             TryDodge();
         }
     }
+    private void UpdateCharacterDirection()
+    {
+        if (characterVisual == null)
+            return;
 
+        // 오른쪽 이동
+        if (moveInput.x > 0.01f)
+        {
+            characterVisual.localScale =
+                new Vector3(-0.1f, 0.1f, 0.1f);
+        }
+        // 왼쪽 이동
+        else if (moveInput.x < -0.01f)
+        {
+            characterVisual.localScale =
+                new Vector3(0.1f, 0.1f, 0.1f);
+        }
+    }
     private void FixedUpdate()
     {
         if (isDodging)

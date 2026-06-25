@@ -32,6 +32,6 @@ public class GoldPanel : MonoBehaviour
     public void GoldTextUpdate(int amount)
     {
         // 플레이어의 골드를 받아서 텍스트 추가
-        goldText.text = amount.ToString();
+        goldText.text = amount.ToString() + " G";
     }
 }

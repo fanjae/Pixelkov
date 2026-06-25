@@ -78,8 +78,9 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     /// <param name="itemId"></param>
     private void OpenGuidePanel(int itemId)
     {
-        guidePanel?.gameObject.SetActive(true);
-        guidePanel?.PaintGuide(itemId);
+        bool? result = guidePanel?.PaintGuide(itemId);
+        if(result != null && result == true)
+            guidePanel?.gameObject.SetActive(true);
     }
     /// <summary>
     /// GuidePanel을 비활성화 하는 메서드.

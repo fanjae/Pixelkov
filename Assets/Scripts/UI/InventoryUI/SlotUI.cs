@@ -94,6 +94,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         if (itemInfo == null)
         {
             CurItem = null;
+            iconImage.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
             iconImage.sprite = null;
             countText.text = "";
             return;
@@ -101,6 +102,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         // 데이터가 있다면 해당 데이터를 기반으로 그리기 진행
         CurItem = itemInfo;
         iconImage.sprite = CurItem.Icon;
+        iconImage.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         slotCount = slot.Count;
         if (slotCount <= 1) countText.text = "";
         else countText.text = slot.Count.ToString();

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Enemy1;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
@@ -52,22 +53,18 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 부딪힌 오브젝트에서 EnemyHealth를 찾음
-        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+        if (other.CompareTag("Player"))
+            return;
+
         if (other.CompareTag("Wall"))
         {
             Destroy(gameObject);
+            return;
         }
-        // EnemyHealth가 있다면 적에게 데미지를 줌
-        if (enemyHealth != null)
+
+        if (other.TryGetComponent<EnemyController>(out EnemyController enemy))
         {
-            enemyHealth.TakeDamage(damage);
-
-            // 플레이어와 충돌하면 무시
-            if (other.CompareTag("Player"))
-                return;
-
-            // 적을 맞힌 투사체 삭제
+            enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
     }

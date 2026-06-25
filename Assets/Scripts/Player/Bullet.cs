@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static NewMonoBehaviourScript;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
@@ -52,28 +53,18 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 플레이어와 충돌하면 아무것도 하지 않음
         if (other.CompareTag("Player"))
-        {
             return;
-        }
 
-        // 벽과 충돌하면 투사체 삭제
         if (other.CompareTag("Wall"))
         {
             Destroy(gameObject);
             return;
         }
 
-        // 충돌한 오브젝트에서 IDamageable을 구현한 컴포넌트를 찾음
-        IDamageable damageable = other.GetComponent<IDamageable>();
-
-        // 데미지를 받을 수 있는 오브젝트라면 데미지를 줌
-        if (damageable != null)
+        if (other.TryGetComponent<EnemyController>(out EnemyController enemy))
         {
-            damageable.TakeDamage(damage);
-
-            // 대상을 맞힌 투사체 삭제
+            enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
     }

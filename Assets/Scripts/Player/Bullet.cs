@@ -52,22 +52,28 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 부딪힌 오브젝트에서 EnemyHealth를 찾음
-        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+        // 플레이어와 충돌하면 아무것도 하지 않음
+        if (other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        // 벽과 충돌하면 투사체 삭제
         if (other.CompareTag("Wall"))
         {
             Destroy(gameObject);
+            return;
         }
-        // EnemyHealth가 있다면 적에게 데미지를 줌
-        if (enemyHealth != null)
+
+        // 충돌한 오브젝트에서 IDamageable을 구현한 컴포넌트를 찾음
+        IDamageable damageable = other.GetComponent<IDamageable>();
+
+        // 데미지를 받을 수 있는 오브젝트라면 데미지를 줌
+        if (damageable != null)
         {
-            enemyHealth.TakeDamage(damage);
+            damageable.TakeDamage(damage);
 
-            // 플레이어와 충돌하면 무시
-            if (other.CompareTag("Player"))
-                return;
-
-            // 적을 맞힌 투사체 삭제
+            // 대상을 맞힌 투사체 삭제
             Destroy(gameObject);
         }
     }

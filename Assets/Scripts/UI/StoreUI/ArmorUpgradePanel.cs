@@ -41,11 +41,13 @@ public class ArmorUpgradePanel : MonoBehaviour
         iconImage.sprite = data.Icon;
         itemName.text = data.ItemName;
         description.text = data.Description;
+        iconImage.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         SlotIndex = slotIndex;
     }
 
     private void InitUI()
     {
+        iconImage.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         iconImage.sprite = null;
         itemName.text = null;
         description.text = null;

@@ -8,30 +8,30 @@ namespace Enemy1
         [SerializeField] private float lifeTime = 3.0f;
         [SerializeField] private int damage = 1;
 
-        private SpriteRenderer spriteRenderer;
+        SpriteRenderer spriteRenderer;
         private Vector2 direction;
 
         public int Damage => damage;
+
         private void Awake()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponent<SpriteRenderer>();        
         }
-        void Start()
+        //방향 설정
+        public void SetDirection(Vector2 dir)
         {
-            //bullet 삭제
-            Destroy(gameObject, lifeTime);
+            direction = dir;
+
+            // 총알이 날아가는 방향으로 회전값 변경
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
         void Update()
         {
-            //bullet 이동
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
+            // 지정된 방향으로 이동
+            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime, Space.Self);
         }
 
-        //bullet 방향
-        public void SetDirection(Vector2 dir)
-        {
-            direction = dir.normalized;
-        }
         //프리펩 Flip 설정
         public void SetFlip(int x, int y)
         {

@@ -63,10 +63,10 @@ namespace Enemy1
                     //애니메이션 타입 : 공격
                     //현재 공격 애니메이션 문제로 주석
                     UpdateAnimation(EnemyActionType.Attack);
-                    //공격 방향
-                    UpdatePlayerShoter();
-                    //공격
-                    shooterController.Fire();
+                    ////공격 방향
+                    //UpdatePlayerShoter();
+                    ////공격
+                    //shooterController.Fire();
                     return;
                 }
                 //애니메이션 타입
@@ -90,11 +90,11 @@ namespace Enemy1
         {
             animationController.UpdateState(actionType);
         }
-        //공격 방향
-        private void UpdatePlayerShoter()
-        {
-            shooterController.UpdateShooterState(target.position);
-        }
+        ////공격 방향
+        //private void UpdatePlayerShoter()
+        //{
+        //    shooterController.UpdateShooterState(target.position);
+        //}
 
         //Damage
         public void TakeDamage(int damage)

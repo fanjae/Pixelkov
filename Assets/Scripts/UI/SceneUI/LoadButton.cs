@@ -7,4 +7,8 @@ public class LoadButton : MonoBehaviour
     {
         SceneLoadManager.Instance.LoadScene(sceneType);
     }
+    public void ClickExitButton()
+    {
+        Application.Quit();
+    }
 }

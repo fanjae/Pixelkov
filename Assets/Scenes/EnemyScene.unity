@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2412,7 +2412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3357,15 +3357,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.67
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.92
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4115,7 +4115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyShooterController
   firePoint: {fileID: 2122791818}
-  bulletPrefab: {fileID: 2451312595677165212, guid: e8c8db3fdfdca174e8e066c03a7313b4, type: 3}
+  bulletPrefab: {fileID: 2273542289340582570, guid: 1ad387b7eb3531c40a8eda43a7d67db1, type: 3}
   fireDelay: 0.2
 --- !u!4 &2079856379
 Transform:
@@ -19136,9 +19136,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7417723230966456241}
   - component: {fileID: 3327217815288436886}
-  - component: {fileID: 7417723230966456243}
   - component: {fileID: 7417723230966456242}
   - component: {fileID: 7417723230966456244}
+  - component: {fileID: 7417723230966456245}
   m_Layer: 0
   m_Name: L_Weapon
   m_TagString: Untagged
@@ -24624,24 +24624,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7417723230966456243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5177625340011674625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f20f675ee07548448fc732e8e1471f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
-  moveSpeed: 2
-  animationController: {fileID: 0}
-  attackDistance: 1
-  targeteDistance: 6
-  hpUI: {fileID: 0}
-  maxHealth: 3
 --- !u!61 &7417723230966456244
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24688,6 +24670,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5344182, y: 0.68953943}
   m_EdgeRadius: 0
+--- !u!114 &7417723230966456245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177625340011674625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8505e06b900ac144093ec55f76d4cd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1.Weapon
+  damage: 1
 --- !u!4 &7418790545979427200
 Transform:
   m_ObjectHideFlags: 0

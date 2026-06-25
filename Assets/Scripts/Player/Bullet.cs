@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using static NewMonoBehaviourScript;
+﻿using Enemy1;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour

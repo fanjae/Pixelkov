@@ -61,6 +61,7 @@ public class ProductUI : MonoBehaviour
         ItemId = itemId;
         icon.sprite = curItem.Icon;
         itemName.text = curItem.ItemName;
+        icon.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         if(this.goldController == null && goldController != null)
         {

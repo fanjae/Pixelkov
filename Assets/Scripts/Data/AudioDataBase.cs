@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AudioDataBase", menuName = "Scriptable Objects/AudioDataBase")]
+[CreateAssetMenu(fileName = "AudioDataBase", menuName = "Audio/Audio Data Base")]
 public class AudioDataBase : ScriptableObject
 {
     [SerializeField] private List<AudioData> AudioDataList;

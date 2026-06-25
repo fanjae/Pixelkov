@@ -10,7 +10,7 @@ public enum BGMType
 }
 public enum SFXType
 { 
-    None, 
+    None
 }
 
 [CreateAssetMenu(fileName = "AudioData", menuName = "Audio/Audio Data")]

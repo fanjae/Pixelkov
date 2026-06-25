@@ -35,11 +35,13 @@ public class EquipSlotUI : MonoBehaviour, IPointerClickHandler, IDragHandler, IE
         if(itemInfo == null)
         {
             CurItem = null;
+            iconImage.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
             iconImage.sprite = null;
             return;
         }
         CurItem = itemInfo;
         iconImage.sprite = CurItem.Icon;
+        iconImage.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
     }
     public void OnPointerClick(PointerEventData eventData)
     {

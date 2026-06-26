@@ -6,12 +6,15 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     public static ItemDatabase Database { get; private set; }
 
+    [Header("외부 참조 컴포넌트")]
     [SerializeField] private ItemDatabase database;
-    [SerializeField] private PlayerGoldController goldController;
     [SerializeField] private ShopData shopData;
+    [SerializeField] private Player player;
+    [SerializeField] private PlayerGoldController goldController;
+
+    [Header("캔버스 내 참조 컴포넌트")]
     [SerializeField] private BuyPanel buyPanel;
     [SerializeField] private ArmorUpgradePanel upgradePanel;
-    [SerializeField] private Player player;
     [SerializeField] private InventoryUIController invenUIController;
 
     private Inventory inventory;

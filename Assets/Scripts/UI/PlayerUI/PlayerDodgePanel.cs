@@ -10,13 +10,8 @@ public class PlayerDodgePanel : MonoBehaviour
         // 패널 할당이 되어있지 않다면 자식 오브젝트 패널들을 추가
         if(panels.Length == 0)
         {
-            Debug.Log("패널추가");
             panels = transform.GetComponentsInChildren<DodgePanel>();
         }
-    }
-    private void Start()
-    {
-        MaxDodgeCountChanged(maxDodgeCount);
     }
 
     /// <summary>

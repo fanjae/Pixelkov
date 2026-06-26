@@ -5,15 +5,13 @@
 /// </summary>
 public class PlayerHUDController : MonoBehaviour
 {
-    // 플레이어를 할당 예정
+    [Header("플레이어 오브젝트 할당")]
+    [SerializeField] private Player player;
+    [SerializeField] private PlayerHealth playerHealth;
 
     [Header("플레이어 HUD")]
     [SerializeField] private PlayerHpPanel hpPanel; // 체력 패널
     [SerializeField] private PlayerDodgePanel dodgePanel;   // 회피 패널
-
-    [Header("플레이어 오브젝트 할당")]
-    [SerializeField] private Player player;
-    [SerializeField] private PlayerHealth playerHealth;
 
     private int curDodgeCount = -1;
     private void Awake()

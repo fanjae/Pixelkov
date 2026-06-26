@@ -8,13 +8,16 @@ using UnityEngine.EventSystems;
 public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     public static ItemDatabase Database { get; private set; }
-    [SerializeField] private ItemDatabase database;
 
+    [Header("외부 참조 컴포넌트")]
+    [SerializeField] private ItemDatabase database;
+    [SerializeField] private Player player;
+
+    [Header("캔버스 내 참조 컴포넌트")]
     [SerializeField] private GuidePanel guidePanel;
     [SerializeField] private InventoryPanel inventoryPanel;
     [SerializeField] private EquipmentPanel equipmentPanel;
 
-    [SerializeField] private Player player;
 
     private Inventory inventory;
     private Equipment equipment;

@@ -86,9 +86,14 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     /// <param name="itemId"></param>
     private void OpenGuidePanel(int itemId)
     {
-        bool? result = guidePanel?.PaintGuide(itemId);
+        if (guidePanel == null) return;
+        bool? result = guidePanel.PaintGuide(itemId);
         if(result != null && result == true)
-            guidePanel?.gameObject.SetActive(true);
+        {
+            guidePanel.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition.x > 0 
+                ? new Vector2(-525.0f, 0.0f) : new Vector2(525.0f, 0.0f);
+            guidePanel.gameObject.SetActive(true);
+        }
     }
     /// <summary>
     /// GuidePanel을 비활성화 하는 메서드.

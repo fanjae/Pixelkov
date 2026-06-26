@@ -183,10 +183,14 @@ public class Player : MonoBehaviour
         }
 
         bool isMoving = moveInput != Vector2.zero;
-
-        animator.SetFloat("MoveX", lastDirection.x);
-        animator.SetFloat("MoveY", lastDirection.y);
         animator.SetBool("IsMoving", isMoving);
+        animator.SetBool("1_Move", isMoving);
+
+        if (isMoving)
+        {
+            animator.SetFloat("MoveX", lastDirection.x);
+            animator.SetFloat("MoveY", lastDirection.y);
+        }
     }
 
     private void TryDodge()

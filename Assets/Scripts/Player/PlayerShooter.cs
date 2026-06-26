@@ -16,7 +16,7 @@ public class PlayerShooter : MonoBehaviour
 
     private Camera mainCamera;
     private float fireTimer;
-
+    private PlayerHealth playerHealth;
     private int currentAmmo;
     private bool isReloading;
 
@@ -27,7 +27,7 @@ public class PlayerShooter : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
-
+        playerHealth = GetComponent<PlayerHealth>();
         currentAmmo = maxAmmo;
 
         if (animator == null)
@@ -68,6 +68,12 @@ public class PlayerShooter : MonoBehaviour
 
     private void TryFire()
     {
+        //피격시 공격불가
+        if (playerHealth != null && playerHealth.IsHit)
+        {
+            return;
+        }
+
         // 발사 간격 확인
         if (fireTimer < fireDelay)
         {

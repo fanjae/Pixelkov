@@ -27,6 +27,7 @@ public class PlayerHUDController : MonoBehaviour
         // UI 초기화
         if(player != null && dodgePanel != null)
         {
+            dodgePanel.MaxDodgeCountChanged(player.CurrentDodgeCount);
             dodgePanel.DodgeUIUpdate(player.CurrentDodgeCount);
             curDodgeCount = player.CurrentDodgeCount;
         }

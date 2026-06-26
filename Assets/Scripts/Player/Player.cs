@@ -21,6 +21,16 @@ public class Player : MonoBehaviour
     [Header("캐릭터 방향")]
     [SerializeField] private Transform horseRoot;
 
+    // 0626 (테스트용)
+    [Header("인벤토리 테스트")]
+    [SerializeField] private ItemDatabase itemDatabase;
+    [SerializeField] private int inventorySlotCount = 12;
+
+    public Inventory Inventory { get; private set; }
+    public Equipment Equipment { get; private set; }
+
+    // 0626 (테스트용)
+
     // 원본 말 이미지가 기본적으로 오른쪽을 보고 있으면 체크
     // 기본적으로 왼쪽을 보고 있으면 체크 해제
     [SerializeField] private bool horseFacesRightByDefault;
@@ -71,6 +81,13 @@ public class Player : MonoBehaviour
         {
             horseOriginalScale = horseRoot.localScale;
         }
+
+        // 0626 테스트용
+
+        Inventory = new Inventory(inventorySlotCount);
+        Equipment = new Equipment();
+
+        // 0626 테스트용
     }
 
     private void Update()

@@ -4,25 +4,25 @@ using UnityEngine.UI;
 
 public class GuidePanel : MonoBehaviour
 {
-    [SerializeField] private ItemDatabase database;
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI description;
 
-    public void PaintGuide(int itemId)
+    public bool PaintGuide(int itemId)
     {
         // 할당되지 않은 필드가 존재하면 return
-        if (database == null) return;
-        if (icon == null) return;
-        if (itemName == null) return;
-        if (description == null) return;
+        if (icon == null) return false;
+        if (itemName == null) return false;
+        if (description == null) return false;
 
-        ItemData data = database.GetItem(itemId);
+        ItemData data = InventoryUIController.Database.GetItem(itemId);
 
-        if (data == null) return;
+        if (data == null) return false;
 
         icon.sprite = data.Icon;
         itemName.text = data.ItemName;
         description.text = data.Description;
+        icon.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        return true;
     }
 }

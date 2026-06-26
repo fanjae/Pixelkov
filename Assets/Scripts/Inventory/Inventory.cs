@@ -36,8 +36,11 @@ public class Inventory
         }
 
         // 기존 슬롯에 다 못 넣은 수량은 빈 슬롯에 추가
-        remainingCount = AddToEmptySlots(itemData, remainingCount);
-
+        if(remainingCount > 0)
+        {
+            remainingCount = AddToEmptySlots(itemData, remainingCount);
+        }
+        
         if (remainingCount != 0) return false; // 논리적 오류
         
         OnInventoryChanged?.Invoke();
@@ -129,6 +132,8 @@ public class Inventory
     // 같은 Item에 가진 기존 슬롯에 가능한 만큼 수량을 추가하고 남은 수량을 반환
     private int AddToExistingStacks(ItemData itemData, int count)
     {
+        if (count <= 0) return count;
+
         foreach (InventorySlot slot in slots)
         {
             if (slot.IsEmpty) continue;
@@ -200,5 +205,17 @@ public class Inventory
 
         // 공간 부족하면 추가 불가능
         return false;
+    }
+
+    // 기존 아이템을 교체하는 경우 사용
+    public bool ReplaceItemAt(int slotIndex, ItemData newItemData, int count = 1)
+    {
+        if (newItemData == null || count <= 0) return false;
+        if (!TryGetSlot(slotIndex, out InventorySlot slot)) return false;
+        if (slot.IsEmpty) return false;
+
+        slot.SetItem(newItemData.ItemId, count);
+        OnInventoryChanged?.Invoke();
+        return true;
     }
 }

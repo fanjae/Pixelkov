@@ -97,4 +97,27 @@ public class Equipment
     }
 
 
+    // 인벤토리 슬롯의 아이템이 다른 ItemID로 교체된 경우,
+    // 해당 슬롯을 참조 중인 장비 슬롯의 ItemID도 함께 교체.
+    public bool ReplaceEquippedItem(int inventorySlotIndex, int oldItemId, int newItemId)
+    {
+        foreach (var pair in slots)
+        {
+            EquipmentSlot slot = pair.Value;
+
+            // 비어있는 장비 슬롯은 갱신 대상에서 제외
+            if (slot.IsEmpty) continue;
+
+            // 같은 인벤토리 슬롯을 참조, 기존 ItemId가 일치하는 장비 슬롯을 찾음
+            if (slot.InventorySlotIndex == inventorySlotIndex && slot.ItemId == oldItemId)
+            {
+                // 장비 슬롯의 ItemID를 새 ItemID로 동기화 처리
+                slot.ChangeItemId(newItemId);
+                OnEquipmentChanged?.Invoke();
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

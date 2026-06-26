@@ -8,12 +8,6 @@ public class PlayerHpPanel : MonoBehaviour
     [SerializeField] private Image fillImage;   // 체력바
     [SerializeField] private TextMeshProUGUI hpText;    // 체력 수치 표시
 
-    private void Start()
-    {
-        // 플레이어 추가하기 이전 임시 로직
-        Init(100, 100);
-    }
-
     /// <summary>
     /// 게임 시작시 플레이어 HP기반으로 초기화 해주는 메서드입니다.
     /// </summary>

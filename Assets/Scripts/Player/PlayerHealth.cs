@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     [Header("애니메이터")]
     [SerializeField] private Animator animator;
 
+    [Header("사망 설정")]
+    [SerializeField] private float destroyDelay = 3f;
+
     // 현재 체력
     private int currentHealth;
 
@@ -15,12 +18,27 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead;
 
     private Player player;
+    private PlayerShooter playerShooter;
+    private Rigidbody2D rb;
+    private PlayerAnimationController animationController;
+
+    public int CurrentHealth => currentHealth;
+    public int MaxHealth => maxHealth;
+    public bool IsDead => isDead;
 
     private void Awake()
     {
         // 게임 시작 시 최대 체력으로 설정
         currentHealth = maxHealth;
+
+        // Player에 붙어 있는 컴포넌트 찾기
         player = GetComponent<Player>();
+        playerShooter = GetComponent<PlayerShooter>();
+        rb = GetComponent<Rigidbody2D>();
+
+        // 자식 오브젝트에서 애니메이션 제어 스크립트 찾기
+        animationController =
+            GetComponentInChildren<PlayerAnimationController>();
 
         // Inspector에서 Animator를 연결하지 않았다면
         // Player의 자식 오브젝트에서 자동으로 찾음
@@ -31,7 +49,10 @@ public class PlayerHealth : MonoBehaviour
 
         if (animator != null)
         {
-            Debug.Log("찾은 Animator: " + animator.gameObject.name);
+            Debug.Log(
+                "PlayerHealth가 찾은 Animator: " +
+                animator.gameObject.name
+            );
 
             if (animator.runtimeAnimatorController != null)
             {
@@ -52,19 +73,37 @@ public class PlayerHealth : MonoBehaviour
     // 플레이어가 데미지를 받을 때 외부에서 호출
     public void TakeDamage(int damage)
     {
-        // 이미 죽었다면 추가 데미지를 받지 않음
-        if (player != null && player.IsInvincible)
+        // 이미 죽은 상태라면 추가 데미지를 받지 않음
+        if (isDead)
         {
-            Debug.Log("회피 무적 상태라 데미지를 받지 않았습니다.");
             return;
         }
+
+        // 0 이하의 데미지는 무시
+        if (damage <= 0)
+        {
+            return;
+        }
+
+        // 회피 무적 상태라면 데미지를 받지 않음
+        if (player != null && player.IsInvincible)
+        {
+            Debug.Log(
+                "회피 무적 상태라 데미지를 받지 않았습니다."
+            );
+
+            return;
+        }
+
         // 체력 감소
         currentHealth -= damage;
 
         // 체력이 음수가 되지 않도록 처리
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        Debug.Log("플레이어 현재 체력: " + currentHealth);
+        Debug.Log(
+            $"플레이어 현재 체력: {currentHealth} / {maxHealth}"
+        );
 
         // 체력이 0이 되면 사망
         if (currentHealth <= 0)
@@ -77,62 +116,59 @@ public class PlayerHealth : MonoBehaviour
     {
         // 중복 사망 처리 방지
         if (isDead)
+        {
             return;
+        }
 
         isDead = true;
 
         Debug.Log("플레이어 사망");
 
-        // 플레이어 이동 즉시 멈추기
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-
+        // 물리 이동 즉시 정지
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
         }
 
-        // 이동 스크립트 비활성화
-        Player player = GetComponent<Player>();
-
+        // 이동과 회피 스크립트 비활성화
         if (player != null)
         {
             player.enabled = false;
         }
 
-        // 공격 스크립트 비활성화
-        PlayerShooter playerShooter =
-            GetComponent<PlayerShooter>();
-
+        // 발사 스크립트 비활성화
         if (playerShooter != null)
         {
             playerShooter.enabled = false;
         }
 
-        // 평소 걷기·대기 애니메이션을 변경하는 스크립트 비활성화
-        PlayerAnimationController animationController =
-            GetComponentInChildren<PlayerAnimationController>();
-
+        // 이동 애니메이션을 계속 변경하는 스크립트 비활성화
         if (animationController != null)
         {
             animationController.enabled = false;
         }
 
-        // 죽는 애니메이션 실행
+        // 죽음 애니메이션 실행
         if (animator != null)
         {
             animator.speed = 1f;
 
-            // Animator Parameters에 있는 Die Trigger 실행
+            // 기존 이동과 회피 상태를 종료
+            animator.SetBool("IsMoving", false);
+            animator.SetBool("IsDodging", false);
+
+            // Die Trigger를 다시 실행할 수 있도록 초기화
+            animator.ResetTrigger("Die");
             animator.SetTrigger("Die");
         }
         else
         {
             Debug.LogWarning(
-                "Animator가 없어서 죽는 애니메이션을 실행할 수 없습니다."
+                "Animator가 없어서 죽음 애니메이션을 실행할 수 없습니다."
             );
         }
 
-        // 죽는 애니메이션이 재생된 후 플레이어 삭제
-        Destroy(gameObject, 3f);
+        // 죽음 모션이 재생된 후 Player 오브젝트 삭제
+        Destroy(gameObject, destroyDelay);
     }
 }

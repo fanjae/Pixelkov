@@ -1,89 +1,80 @@
 ﻿using UnityEngine;
-using static NewMonoBehaviourScript;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Projectile : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    [Header("투사체 설정")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float lifeTime = 10f;
+    [Header("총알 설정")]
+    [SerializeField] private float speed = 10f;
+
+    [Header("삭제 설정")]
+    [SerializeField] private float lifeTime = 3f;
+    [SerializeField] private float maxDistance = 12f;
+    //투사체 데미지
     [SerializeField] private int damage = 1;
-
-    [Header("시야 설정")]
-    [SerializeField] private float visionDistance = 6f;
-
     private Rigidbody2D rb;
-    private Transform player;
+
+    // 총알이 생성된 위치
+    private Vector2 spawnPosition;
+
+    // 총알이 생성된 뒤 흐른 시간
+    private float lifeTimer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
 
-    private void Start()
-    {
-        GameObject playerObject =
-            GameObject.FindGameObjectWithTag("Player");
-
-        if (playerObject != null)
-        {
-            player = playerObject.transform;
-        }
-
-        // 안전장치로 일정 시간이 지나면 자동 삭제
-        Destroy(gameObject, lifeTime);
+        // 생성 위치 저장
+        spawnPosition = transform.position;
     }
 
     private void Update()
     {
-        if (player == null)
-            return;
+        // 생존 시간 증가
+        lifeTimer += Time.deltaTime;
 
-        // 플레이어와 투사체 사이 거리 확인
+        // 생성 위치로부터 이동한 거리 계산
         float distance = Vector2.Distance(
-            transform.position,
-            player.position
+            spawnPosition,
+            transform.position
         );
 
-        // 시야 범위 밖으로 나가면 삭제
-        if (distance > visionDistance)
+        // 제한 시간 또는 제한 거리를 넘으면 삭제
+        if (lifeTimer >= lifeTime || distance >= maxDistance)
         {
+            Debug.Log("Bullet 삭제: " + gameObject.name);
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            return;
 
-        if (other.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        if (other.TryGetComponent<EnemyController>(out EnemyController enemy))
-        {
-            enemy.TakeDamage(damage);
-            Destroy(gameObject);
-        }
-    }
     public void Launch(Vector2 direction)
     {
-        // 대각선 방향에서도 같은 속도 유지
-        direction = direction.normalized;
+        if (rb == null)
+        {
+            return;
+        }
 
-        // 전달받은 방향으로 투사체 이동
-        rb.linearVelocity = direction * speed;
-
-        // 이동 방향을 각도로 변환
-        float angle =
-            Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // 투사체가 이동 방향을 바라보도록 회전
-        transform.rotation =
-            Quaternion.Euler(0f, 0f, angle - 45f);
+        rb.linearVelocity = direction.normalized * speed;
     }
 
-  
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // 플레이어 자신과 충돌하면 무시
+        if (other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        // 충돌한 오브젝트나 부모에서 EnemyController 찾기
+        EnemyController enemyController =
+            other.GetComponentInParent<EnemyController>();
+
+        // 적이라면 데미지 전달
+        if (enemyController != null)
+        {
+            enemyController.TakeDamage(damage);
+        }
+
+        // 충돌 후 총알 삭제
+        Destroy(gameObject);
+    }
 }

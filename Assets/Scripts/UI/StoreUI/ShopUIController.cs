@@ -6,53 +6,75 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     public static ItemDatabase Database { get; private set; }
 
+    [Header("외부 참조 컴포넌트")]
     [SerializeField] private ItemDatabase database;
-    [SerializeField] private PlayerGoldController goldController; // 플레이어 받으면 수정 가능성 존재
     [SerializeField] private ShopData shopData;
+    [SerializeField] private Player player;
+    [SerializeField] private PlayerGoldController goldController;
+
+    [Header("캔버스 내 참조 컴포넌트")]
     [SerializeField] private BuyPanel buyPanel;
     [SerializeField] private ArmorUpgradePanel upgradePanel;
-
     [SerializeField] private InventoryUIController invenUIController;
 
     private Inventory inventory;
     private Equipment equipment;
-    private PlayerInventoryController inventoryController;
+
     private ShopController shopController;
+    private PlayerInventoryController inventoryController;
+    private ArmorUpgradeController upgradeController;
+
     private HashSet<int> Duplicate = new HashSet<int>();
     private Vector2 offset = Vector2.zero;
-
-    private ArmorUpgradeController upgradeController;
 
     private void Awake()
     {
         Database = database;
         InitShopList();
-    }
+        if (player == null) FindAnyObjectByType<Player>();
+        if (invenUIController == null) FindAnyObjectByType<InventoryUIController>();
 
-    private void OnEnable()
-    {
-        // 임시로 InventoryUI에 만들어둔 객체를 참조
-        if(shopController == null)
+        if(player != null)
         {
-            inventory = invenUIController.Inventory;
-            equipment = invenUIController.Equipment;
-            inventoryController = invenUIController.InventoryController;
-            shopController = new ShopController(inventory, database, goldController, inventoryController, shopData);
+            // 플레이어의 인벤토리, 장비 받을 예정
+            inventory = player.Inventory;
+            equipment = player.Equipment;
         }
-        if(upgradeController == null)
+        if (inventory != null && equipment != null && database != null)
+        {
+            inventoryController = new PlayerInventoryController(inventory, equipment, database);
+        }
+        if (goldController != null && inventoryController != null)
         {
             upgradeController = new ArmorUpgradeController(inventory, database, goldController, inventoryController, equipment);
+            if(shopData != null)
+                shopController = new ShopController(inventory, database, goldController, inventoryController, shopData);
         }
+    }
+    private void OnEnable()
+    {
         // 활성화 시 인벤토리 슬롯의 판매 기능 활성화
-        invenUIController?.AllocateShop(shopController.SellItemAt);
-        upgradePanel.OnUpgrade += Upgrade;
+        if (invenUIController != null && shopController != null)
+        {
+            invenUIController.AllocateShop(shopController.SellItemAt);
+        }
+        if (upgradePanel != null)
+        {
+            upgradePanel.OnUpgrade += Upgrade;
+        }
     }
 
     private void OnDisable()
     {
         // 인벤토리 슬롯 판매 기능 해제
-        invenUIController?.ReleaseShop(shopController.SellItemAt);
-        upgradePanel.OnUpgrade -= Upgrade;
+        if (invenUIController != null && shopController != null)
+        {
+            invenUIController.ReleaseShop(shopController.SellItemAt);
+        }
+        if (upgradePanel != null)
+        {
+            upgradePanel.OnUpgrade -= Upgrade;
+        }
     }
 
     private void OnDestroy()

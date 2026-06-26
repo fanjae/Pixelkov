@@ -21,9 +21,8 @@ public class DodgePanel : MonoBehaviour
     /// </summary>
     public void FillUpdate(float amount)
     {
-        //fillImage.fillAmount = amount;
-        if(amount < 1f) fillImage.color = defaultColor;
+        fillImage.fillAmount = amount;
+        if(amount < 0.5f) fillImage.color = defaultColor;
         else fillImage.color = ActiveColor;
-        fillImage.DOFillAmount(amount, 0.05f).SetEase(Ease.OutQuad);
     }
 }

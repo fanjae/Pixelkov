@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("플레이어 체력")]
@@ -13,7 +13,9 @@ public class PlayerHealth : MonoBehaviour
 
     // 현재 체력
     private int currentHealth;
+    private bool isHit;
 
+    public bool IsHit => isHit;
     // 이미 죽었는지 확인
     private bool isDead;
 
@@ -109,9 +111,30 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            return;
+        }
+        if(animator !=null)
+        {
+            animator.ResetTrigger("3_Damaged");
+            animator.SetTrigger("3_Damaged");
+        }
+        if (animator != null)
+        {
+            StartCoroutine(HitCoroutine());
         }
     }
+    private IEnumerator HitCoroutine()
+    {
+        isHit = true;
 
+        animator.ResetTrigger("3_Damaged");
+        animator.SetTrigger("3_Damaged");
+
+        // 피격 모션 길이에 맞게 조절
+        yield return new WaitForSeconds(0.5f);
+
+        isHit = false;
+    }
     private void Die()
     {
         // 중복 사망 처리 방지

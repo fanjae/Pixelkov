@@ -8,7 +8,10 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private float fireDelay = 0.2f;
-    [SerializeField] private Animator animator;
+
+    [Header("애니메이터")]
+    [SerializeField] private Animator characterAnimator;
+    [SerializeField] private Animator weaponAnimator;
 
     [Header("탄창 설정")]
     [SerializeField] private int maxAmmo = 6;
@@ -30,10 +33,7 @@ public class PlayerShooter : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
         currentAmmo = maxAmmo;
 
-        if (animator == null)
-        {
-            animator = GetComponentInChildren<Animator>();
-        }
+       
     }
 
     private void Update()
@@ -108,10 +108,10 @@ public class PlayerShooter : MonoBehaviour
              (Vector2)firePoint.position).normalized;
 
         // 공격 애니메이션
-        if (animator != null)
+        if (weaponAnimator != null)
         {
-            animator.ResetTrigger("Shoot");
-            animator.SetTrigger("Shoot");
+            weaponAnimator.ResetTrigger("Shoot");
+            weaponAnimator.SetTrigger("Shoot");
         }
         float angle =
     Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg -45f;
@@ -136,13 +136,13 @@ public class PlayerShooter : MonoBehaviour
 
     private IEnumerator Reload()
     {
-        // 이미 재장전 중이면 다시 실행하지 않음
+        // 이미 재장전 중이라면 중복 실행하지 않음
         if (isReloading)
         {
             yield break;
         }
 
-        // 탄창이 이미 가득 차 있으면 재장전하지 않음
+        // 탄창이 이미 가득 차 있다면 재장전하지 않음
         if (currentAmmo >= maxAmmo)
         {
             yield break;
@@ -152,22 +152,25 @@ public class PlayerShooter : MonoBehaviour
 
         Debug.Log("재장전 시작");
 
-        // 나중에 재장전 애니메이션을 넣을 자리
-        if (animator != null)
+        // 캐릭터 재장전 애니메이션 실행
+        if (characterAnimator != null)
         {
-           // animator.SetBool("IsReloading", true);
+            characterAnimator.ResetTrigger("Reload");
+            characterAnimator.SetTrigger("Reload");
+        }
+        else
+        {
+            Debug.LogWarning(
+                "Character Animator가 연결되지 않았습니다."
+            );
         }
 
+        // 재장전 시간 동안 대기
         yield return new WaitForSeconds(reloadTime);
 
         // 탄창을 가득 채움
         currentAmmo = maxAmmo;
         isReloading = false;
-
-        if (animator != null)
-        {
-          //  animator.SetBool("IsReloading", false);
-        }
 
         Debug.Log(
             $"재장전 완료: {currentAmmo} / {maxAmmo}"

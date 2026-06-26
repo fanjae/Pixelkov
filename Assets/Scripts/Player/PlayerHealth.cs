@@ -71,7 +71,7 @@ public class PlayerHealth : MonoBehaviour
             );
         }
     }
-
+ 
     // 플레이어가 데미지를 받을 때 외부에서 호출
     public void TakeDamage(int damage)
     {

@@ -34,9 +34,7 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
             Database = database;
         }
         if(player == null) player = FindAnyObjectByType<Player>();
-    }
-    private void Start()
-    {
+
         if(player != null)
         {
             // 플레이어의 인벤토리, 장비 받을 예정

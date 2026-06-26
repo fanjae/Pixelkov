@@ -1,3 +1,4 @@
+﻿using Enemy1;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]

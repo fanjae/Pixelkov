@@ -30,10 +30,7 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
         InitShopList();
         if (player == null) FindAnyObjectByType<Player>();
         if (invenUIController == null) FindAnyObjectByType<InventoryUIController>();
-    }
 
-    private void Start()
-    {
         if(player != null)
         {
             // 플레이어의 인벤토리, 장비 받을 예정
@@ -51,7 +48,6 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
                 shopController = new ShopController(inventory, database, goldController, inventoryController, shopData);
         }
     }
-
     private void OnEnable()
     {
         // 활성화 시 인벤토리 슬롯의 판매 기능 활성화

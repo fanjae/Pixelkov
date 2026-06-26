@@ -40,21 +40,22 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
         if(player != null)
         {
             // 플레이어의 인벤토리, 장비 받을 예정
-
-            if (inventory != null)
-            {
-                inventory.OnInventoryChanged += UpdateInventory;
-                inventoryPanel?.AllocateInventory(inventory);
-            }
-            if (equipment != null)
-            {
-                equipment.OnEquipmentChanged += UpdateEquipment;
-                equipmentPanel?.AllocateEquipment(equipment);
-            }
-            if(inventory != null && equipment != null && database != null)
-            {
-                inventoryController = new PlayerInventoryController(inventory, equipment, database);
-            }
+            //inventory = player.Inventory;
+            //equipment = player.Equipment;
+        }
+        if (inventory != null)
+        {
+            inventory.OnInventoryChanged += UpdateInventory;
+            inventoryPanel?.AllocateInventory(inventory);
+        }
+        if (equipment != null)
+        {
+            equipment.OnEquipmentChanged += UpdateEquipment;
+            equipmentPanel?.AllocateEquipment(equipment);
+        }
+        if (inventory != null && equipment != null && database != null)
+        {
+            inventoryController = new PlayerInventoryController(inventory, equipment, database);
         }
     }
     private void OnDestroy()

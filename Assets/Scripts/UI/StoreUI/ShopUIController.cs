@@ -7,7 +7,7 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
     public static ItemDatabase Database { get; private set; }
 
     [SerializeField] private ItemDatabase database;
-    [SerializeField] private PlayerGoldController goldController; // 플레이어 받으면 수정 가능성 존재
+    [SerializeField] private PlayerGoldController goldController;
     [SerializeField] private ShopData shopData;
     [SerializeField] private BuyPanel buyPanel;
     [SerializeField] private ArmorUpgradePanel upgradePanel;
@@ -34,34 +34,32 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     private void Start()
     {
-        if(player != null && database != null)
+        if(player != null)
         {
             // 플레이어의 인벤토리, 장비 받을 예정
-            //inventory = invenUIController.Inventory;
-            //equipment = invenUIController.Equipment;
-            if(inventory != null && equipment != null)
-            {
-                inventoryController = new PlayerInventoryController(inventory, equipment, database);
-            }
-            if (inventoryController != null)
-            {
+            //inventory = player.Inventory;
+            //equipment = player.Equipment;
+        }
+        if (inventory != null && equipment != null && database != null)
+        {
+            inventoryController = new PlayerInventoryController(inventory, equipment, database);
+        }
+        if (goldController != null && inventoryController != null)
+        {
+            upgradeController = new ArmorUpgradeController(inventory, database, goldController, inventoryController, equipment);
+            if(shopData != null)
                 shopController = new ShopController(inventory, database, goldController, inventoryController, shopData);
-                if (goldController != null)
-                {
-                    upgradeController = new ArmorUpgradeController(inventory, database, goldController, inventoryController, equipment);
-                }
-            }
         }
     }
 
     private void OnEnable()
     {
         // 활성화 시 인벤토리 슬롯의 판매 기능 활성화
-        if(invenUIController != null && shopController != null)
+        if (invenUIController != null && shopController != null)
         {
             invenUIController.AllocateShop(shopController.SellItemAt);
         }
-        if(upgradePanel != null)
+        if (upgradePanel != null)
         {
             upgradePanel.OnUpgrade += Upgrade;
         }
@@ -70,11 +68,11 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
     private void OnDisable()
     {
         // 인벤토리 슬롯 판매 기능 해제
-        if(invenUIController != null && shopController != null)
+        if (invenUIController != null && shopController != null)
         {
             invenUIController.ReleaseShop(shopController.SellItemAt);
         }
-        if(upgradePanel != null)
+        if (upgradePanel != null)
         {
             upgradePanel.OnUpgrade -= Upgrade;
         }

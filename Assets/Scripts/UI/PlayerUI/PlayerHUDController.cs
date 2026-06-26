@@ -34,7 +34,7 @@ public class PlayerHUDController : MonoBehaviour
         }
         if(playerHealth != null && hpPanel != null)
         {
-            //hpPanel.Init()
+            hpPanel.Init(playerHealth.CurrentHealth, playerHealth.MaxHealth);
         }
     }
     private void OnEnable()
@@ -48,9 +48,17 @@ public class PlayerHUDController : MonoBehaviour
     {
         // 만약 HUD를 끄거나 씬 전환되는 상황이 생기면 이벤트 해제
         if(playerHealth == null ||  hpPanel == null) return;
+
+        // 이벤트 취소 로직 추가
     }
     private void Update()
     {
+        // 이벤트로 연결하기 전 임시 업데이트 로직
+        if(playerHealth != null && hpPanel != null)
+        {
+            hpPanel.HpUIUpdate(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+        }
+
         // 플레이어가 null이 아니면 dodgePanel에 갱신하는 함수를 호출
         if (player == null || dodgePanel == null) return;
 

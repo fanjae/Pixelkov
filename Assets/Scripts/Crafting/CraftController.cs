@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class CraftController
 {
@@ -15,43 +16,38 @@ public class CraftController
     }
 
     // 해당 레시피로 제작 가능한지 확인
-    public bool CanCraft(int recipeId)
+    public bool CanCraft(int recipeId, int craftCount = 1)
     {
-        // RecipeId로 레시피 조회
-        CraftRecipeData recipe = recipeDatabase.GetRecipe(recipeId);
+        if (craftCount <= 0) return false;
 
-        // 레시피 데이터가 유효하지 않으면 제작 불가
+        CraftRecipeData recipe = recipeDatabase.GetRecipe(recipeId);
         if (!IsValidRecipe(recipe)) return false;
 
-        // 결과 아이템 데이터 조회
         ItemData resultItem = itemDatabase.GetItem(recipe.ResultItemId);
         if (resultItem == null) return false;
 
-        // 필요한 재료를 보유하고 있는지 확인
-        if (!inventory.HasItem(recipe.Material1ItemId, recipe.Material1Count)) return false;
-        if (!inventory.HasItem(recipe.Material2ItemId, recipe.Material2Count)) return false;
+        // 스택 불가능한 결과 아이템은 여러 개 제작 불가
+        if (!resultItem.IsStackable && craftCount > 1) return false;
 
-        // 결과 아이템을 인벤토리에 추가할 공간이 있는지 확인
-        return inventory.CanAddItem(resultItem, recipe.ResultCount);
+        if (!inventory.HasItem(recipe.Material1ItemId, recipe.Material1Count * craftCount)) return false;
+        if (!inventory.HasItem(recipe.Material2ItemId, recipe.Material2Count * craftCount)) return false;
+
+        return inventory.CanAddItem(resultItem, recipe.ResultCount * craftCount);
     }
 
     // 레시피 기준으로 아이템 제작
-    public bool Craft(int recipeId)
+    public bool Craft(int recipeId, int craftCount = 1)
     {
-        // 제작 조건을 만족하지 않으면 제작 불가
-        if (!CanCraft(recipeId)) return false;
+        if (!CanCraft(recipeId, craftCount)) return false;
 
-        // 제작에 사용할 레시피와 결과 아이템 조회
         CraftRecipeData recipe = recipeDatabase.GetRecipe(recipeId);
         ItemData resultItem = itemDatabase.GetItem(recipe.ResultItemId);
         if (resultItem == null) return false;
 
-        // 재료 아이템 소모
-        if (!inventory.RemoveItem(recipe.Material1ItemId, recipe.Material1Count)) return false;
-        if (!inventory.RemoveItem(recipe.Material2ItemId, recipe.Material2Count)) return false;
+        if (!inventory.RemoveItem(recipe.Material1ItemId, recipe.Material1Count * craftCount)) return false;
+        if (!inventory.RemoveItem(recipe.Material2ItemId, recipe.Material2Count * craftCount)) return false;
 
-        // 결과 아이템 추가
-        if (!inventory.AddItem(resultItem, recipe.ResultCount)) return false;
+        if (!inventory.AddItem(resultItem, recipe.ResultCount * craftCount)) return false;
 
         return true;
     }
@@ -69,5 +65,59 @@ public class CraftController
         if (recipe.Material2ItemId <= 0 || recipe.Material2Count <= 0) return false;
 
         return true;
+    }
+
+    // 레시피에 필요한 재료들의 보유 상태 목록을 조회
+    public List<CraftMaterialStatus> GetMaterialStatuses(int recipeId, int craftCount = 1)
+    {
+        List<CraftMaterialStatus> result = new();
+
+        if (craftCount <= 0) return result;
+
+        CraftRecipeData recipe = recipeDatabase.GetRecipe(recipeId);
+        if (!IsValidRecipe(recipe)) return result;
+
+        AddMaterialStatus(result, recipe.Material1ItemId, recipe.Material1Count * craftCount);
+        AddMaterialStatus(result, recipe.Material2ItemId, recipe.Material2Count * craftCount);
+
+        return result;
+    }
+
+    // 단일 재료의 필요 개수와 현재 보유 개수를 상태 목록에 추가
+    private void AddMaterialStatus(List<CraftMaterialStatus> result,int itemId,int requiredCount)
+    {
+        ItemData itemData = itemDatabase.GetItem(itemId);
+
+        // 현재 인벤토리에 보유 중인 재료 개수 조회
+        int ownedCount = inventory.GetItemCount(itemId);
+
+        result.Add(new CraftMaterialStatus(itemId,itemData,requiredCount,ownedCount));
+    }
+
+    // 해당 레시피로 최대로 제작 가능한 횟수 조회
+    public int GetMaxCraftCount(int recipeId)
+    {
+        CraftRecipeData recipe = recipeDatabase.GetRecipe(recipeId);
+        if (!IsValidRecipe(recipe)) return 0;
+
+        ItemData resultItem = itemDatabase.GetItem(recipe.ResultItemId);
+        if (resultItem == null) return 0;
+
+        // 결과 아이템이 스택 불가능하면 1회 제작까지만 허용
+        if (!resultItem.IsStackable)
+        {
+            return CanCraft(recipeId) ? 1 : 0;
+        }
+
+        // 각 재료의 보유 수량
+        int material1OwnedCount = inventory.GetItemCount(recipe.Material1ItemId);
+        int material2OwnedCount = inventory.GetItemCount(recipe.Material2ItemId);
+
+        // 각 재료 기준으로 제작 가능한 횟수
+        int material1CraftableCount = material1OwnedCount / recipe.Material1Count;
+        int material2CraftableCount = material2OwnedCount / recipe.Material2Count;
+
+        // 두 재료 중 더 적게 만들 수 있는 횟수가 최종 제작 가능 횟수.
+        return Math.Min(material1CraftableCount, material2CraftableCount);
     }
 }

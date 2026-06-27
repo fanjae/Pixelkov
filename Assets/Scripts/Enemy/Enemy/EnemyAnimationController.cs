@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 
 namespace Enemy1
@@ -7,7 +7,7 @@ namespace Enemy1
     {
         [SerializeField] private Animator animator;
 
-        //ÃÊ±â ¾Ö´Ï¸ŞÀÌ¼Ç Å¸ÀÔ
+        //ì´ˆê¸° ì• ë‹ˆë©”ì´ì…˜ íƒ€ì…
         private EnemyActionType currentState = EnemyActionType.Idle;
 
         private static readonly int MoveHash = Animator.StringToHash("Move");
@@ -20,8 +20,8 @@ namespace Enemy1
                 animator = GetComponent<Animator>();
             }
         }
-        //¾Ö´Ï¸ŞÀÌ¼Ç ¸ğ¼Ç ¾÷µ¥ÀÌÆ®
-        //Para : ¾Ö´Ï¸ŞÀÌ¼Ç ¾×¼Ç Å¸ÀÔ
+        //ì• ë‹ˆë©”ì´ì…˜ ëª¨ì…˜ ì—…ë°ì´íŠ¸
+        //Para : ì• ë‹ˆë©”ì´ì…˜ ì•¡ì…˜ íƒ€ì…
         public void UpdateState(EnemyActionType newState)
         {
             if (currentState == newState) return;
@@ -30,21 +30,31 @@ namespace Enemy1
             {
                 animator.SetBool(MoveHash, false);
                 animator.SetBool(AttackHash, false);
+                animator.SetBool("WeaponAttack", false);
             }
             else if (newState == EnemyActionType.Move)
             {
                 animator.SetBool(MoveHash, true);
                 animator.SetBool(AttackHash, false);
+                animator.SetBool("WeaponAttack", false);
             }
             else if (newState == EnemyActionType.Attack)
             {
                 animator.SetBool(MoveHash, false);
                 animator.SetBool(AttackHash, true);
+                animator.SetBool("WeaponAttack", false);
+            }
+            else if (newState == EnemyActionType.WeaponAttack)
+            {
+                animator.SetBool("Move", false);
+                animator.SetBool("Attack", false);
+                animator.SetBool("WeaponAttack", true);
             }
             else if (newState == EnemyActionType.Dead)
             {
                 animator.SetBool("Move", false);
                 animator.SetBool("Attack", false);
+                animator.SetBool("WeaponAttack", false);
                 animator.SetBool("isDeath", true);
             }
         }

@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace Enemy1
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemyController : MonoBehaviour, IEnmeyController
     {
         [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;

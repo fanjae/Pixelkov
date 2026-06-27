@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Collections;
 namespace Enemy1
 {
-    public class EnemyWeaponController : MonoBehaviour
+    public class EnemyWeaponController : MonoBehaviour, IEnmeyController
     {
         [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;

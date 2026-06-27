@@ -34,10 +34,7 @@ public class Bullet : MonoBehaviour
         lifeTimer += Time.deltaTime;
 
         // 생성 위치로부터 이동한 거리 계산
-        float distance = Vector2.Distance(
-            spawnPosition,
-            transform.position
-        );
+        float distance = Vector2.Distance(spawnPosition,transform.position);
 
         // 제한 시간 또는 제한 거리를 넘으면 삭제
         if (lifeTimer >= lifeTime || distance >= maxDistance)
@@ -51,31 +48,46 @@ public class Bullet : MonoBehaviour
     {
         if (rb == null)
         {
+            Debug.LogWarning("Bullet 발사 실패: Rigidbody2D 없음");
             return;
         }
 
         rb.linearVelocity = direction.normalized * speed;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 플레이어 자신과 충돌하면 무시
-        if (other.CompareTag("Player"))
+        Debug.Log("Bullet 충돌 대상: " + other.name);
+
+        // 총알끼리 충돌하면 무시
+        if (other.GetComponent<Bullet>() != null)
         {
+            Debug.Log("Bullet 충돌 무시: Bullet");
             return;
         }
 
-        // 충돌한 오브젝트나 부모에서 EnemyController 찾기
-        EnemyController enemyController =
-            other.GetComponentInParent<EnemyController>();
+        // 자신과 충돌 무시
+        if (other.GetComponent<Player>() != null)
+        {
+            Debug.Log("Bullet 충돌 무시: Player 계층");
+            return;
+        }
 
-        // 적이라면 데미지 전달
+        EnemyController enemyController = other.GetComponentInParent<EnemyController>();
+
         if (enemyController != null)
         {
             enemyController.TakeDamage(damage);
+            Debug.Log("Bullet 삭제: 적 충돌 - " + enemyController.name);
+            Destroy(gameObject);
+            return;
         }
 
-        // 충돌 후 총알 삭제
         Destroy(gameObject);
+    }
+    public void SetDamage(int damage)
+    {
+        this.damage = Mathf.Max(0, damage);
     }
 }

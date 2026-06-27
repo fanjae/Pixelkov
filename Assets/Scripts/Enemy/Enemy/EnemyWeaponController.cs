@@ -1,13 +1,14 @@
 using Enemy;
 using Enemy_Player;
 using UnityEngine;
+using System.Collections;
 namespace Enemy1
 {
     public class EnemyWeaponController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;
-        
+        [SerializeField] private EnemyWeapon weapon;
 
         //플레이어와 적 공격 거리
         [SerializeField] private float attackDistance = 0.5f;
@@ -26,6 +27,9 @@ namespace Enemy1
 
 
         private Rigidbody2D rb;
+
+        private bool isDead = false;
+        private bool isAttack = false;
 
         private void Awake()
         {
@@ -50,31 +54,38 @@ namespace Enemy1
 
         private void FixedUpdate()
         {
-            //플레이어 - 적 거리
+            if (isDead) return;
+            if (isAttack) return;
             float distance = Vector2.Distance(transform.position, target.position);
-            //이동 
             if (distance < targeteDistance)
             {
-                //공격
                 if (distance < attackDistance)
                 {
-                    //애니메이션 타입 : 공격
-                    //현재 공격 애니메이션 문제로 주석
-                    UpdateAnimation(EnemyActionType.Attack);                    
+                    //공격 코루틴
+                    StartCoroutine(AttackRoutine());
                     return;
                 }
-                //애니메이션 타입
                 UpdateAnimation(EnemyActionType.Move);
                 Move();
                 return;
             }
-            //애니메이션 타입
             UpdateAnimation(EnemyActionType.Idle);
+        }
+        //공격 코루틴
+        IEnumerator AttackRoutine()
+        {
+            isAttack = true;
+            UpdateAnimation(EnemyActionType.Attack);
+            weapon.StartAttack();
+            yield return new WaitForSeconds(1.0f);
+            //공격후 딜레이
+            yield return new WaitForSeconds(1.0f);
+            isAttack = false;
+
         }
 
         private void Move()
         {
-            
             //플레이어와 거리
             Vector2 direction = (target.position - transform.position).normalized;
             //플레이어 방향으로 이동
@@ -104,26 +115,13 @@ namespace Enemy1
         //사망
         private void Die()
         {
-            //Eenmy 삭제
-            Destroy(gameObject);
+            isDead = true;
+            //애니메이션
+            UpdateAnimation(EnemyActionType.Dead);
+            //hp 삭제
+            Destroy(transform.Find("HP").gameObject);
         }
-        //플레이어 공격 트리거
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            //플레이어 공격 컴포넌트
-            if (collision.TryGetComponent<Enemy_PlayerBullet>(out Enemy_PlayerBullet bullet))
-            {
-                //Damage
-                TakeDamage(bullet.Damage);
-                //공격 삭제
-                Destroy(bullet.gameObject);
-            }
-        }
-        //private void OnDrawGizmos()
-        //{
-        //    Gizmos.color = Color.red;
-        //    Gizmos.DrawWireSphere(transform.position, targeteDistance);
-        //}
+       
 
     }
 }

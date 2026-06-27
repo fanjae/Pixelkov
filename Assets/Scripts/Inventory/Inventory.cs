@@ -218,4 +218,24 @@ public class Inventory
         OnInventoryChanged?.Invoke();
         return true;
     }
+
+    // 특정 아이템에 대한 보유 개수를 조회.
+    public int GetItemCount(int itemId)
+    {
+        if (itemId <= 0) return 0;
+
+        int totalCount = 0;
+
+        foreach (InventorySlot slot in slots)
+        {
+            // 빈 슬롯이거나 아이템 다르면 제외
+            if (!slot.IsEmpty && slot.ItemId == itemId)
+            {
+                // 같은 아이템 수량 모두 합산
+                totalCount += slot.Count;
+            }
+        }
+
+        return totalCount;
+    }
 }

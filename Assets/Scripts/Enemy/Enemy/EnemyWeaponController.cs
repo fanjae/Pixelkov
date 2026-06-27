@@ -9,12 +9,15 @@ namespace Enemy1
         [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyWeapon weapon;
+        
 
         //플레이어와 적 공격 거리
         [SerializeField] private float attackDistance = 0.5f;
         //플레이어 거리 기준 이동 거리
         [SerializeField] private float targeteDistance = 6.0f;
 
+        //코인
+        [SerializeField]private GameObject coin;
         //플레이어
         private Transform target;
 
@@ -102,6 +105,7 @@ namespace Enemy1
         //Damage
         public void TakeDamage(int damage)
         {
+            if (isDead) return;
             currentHealth -= damage;
             if (hpUI != null)
             {
@@ -115,7 +119,10 @@ namespace Enemy1
         //사망
         private void Die()
         {
+            
             isDead = true;
+            //코인 Instantiate
+            Instantiate(coin, transform.position, Quaternion.identity);
             //애니메이션
             UpdateAnimation(EnemyActionType.Dead);
             //hp 삭제

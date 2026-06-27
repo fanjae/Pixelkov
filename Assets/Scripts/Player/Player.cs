@@ -26,6 +26,11 @@ public class Player : MonoBehaviour
     [SerializeField] private ItemDatabase itemDatabase;
     [SerializeField] private int inventorySlotCount = 12;
 
+    [SerializeField] private int defaultDamage = 1;
+
+    public PlayerInventoryController InventoryController { get; private set; }
+    public PlayerWeaponController WeaponController { get; private set; }
+
     public Inventory Inventory { get; private set; }
     public Equipment Equipment { get; private set; }
 
@@ -82,12 +87,11 @@ public class Player : MonoBehaviour
             horseOriginalScale = horseRoot.localScale;
         }
 
-        // 0626 테스트용
-
         Inventory = new Inventory(inventorySlotCount);
         Equipment = new Equipment();
 
-        // 0626 테스트용
+        InventoryController = new PlayerInventoryController(Inventory,Equipment,itemDatabase);
+        WeaponController = new PlayerWeaponController(Equipment,itemDatabase,defaultDamage);
     }
 
     private void Update()

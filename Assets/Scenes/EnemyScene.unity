@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -674,6 +674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
   moveSpeed: 2
   animationController: {fileID: 910294302}
+  weapon: {fileID: 7417723230966456245}
   attackDistance: 0.5
   targeteDistance: 6
   hpUI: {fileID: 246022954}
@@ -2400,15 +2401,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.396
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.065
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.024
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2479,10 +2480,10 @@ PrefabInstance:
       addedObject: {fileID: 1204992465}
     - targetCorrespondingSourceObject: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1204992464}
+      addedObject: {fileID: 1204992463}
     - targetCorrespondingSourceObject: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1204992463}
+      addedObject: {fileID: 1204992468}
   m_SourcePrefab: {fileID: 100100000, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
 --- !u!1 &1204992460 stripped
 GameObject:
@@ -2512,25 +2513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyUI
   hpFillImage: {fileID: 1295587449}
---- !u!114 &1204992464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204992460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33c849c4ae77364d99066c00c17ce20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyController
-  moveSpeed: 2
-  animationController: {fileID: 572587593}
-  shooterController: {fileID: 2079856378}
-  fireDistance: 3
-  targeteDistance: 6
-  hpUI: {fileID: 1204992463}
-  maxHealth: 3
 --- !u!50 &1204992465
 Rigidbody2D:
   serializedVersion: 5
@@ -2595,6 +2577,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.34559235}
   m_Size: {x: 0.5, y: 0.9744006}
   m_Direction: 0
+--- !u!114 &1204992468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204992460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33c849c4ae77364d99066c00c17ce20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyController
+  moveSpeed: 2
+  animationController: {fileID: 572587593}
+  shooterController: {fileID: 2079856378}
+  fireDistance: 3
+  targeteDistance: 6
+  hpUI: {fileID: 1204992463}
+  maxHealth: 3
 --- !u!1001 &1243954753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3753,7 +3754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3888,6 +3889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
   moveSpeed: 2
   animationController: {fileID: 136466477}
+  weapon: {fileID: 8000475381359839145}
   attackDistance: 0.5
   targeteDistance: 6
   hpUI: {fileID: 1751808595}

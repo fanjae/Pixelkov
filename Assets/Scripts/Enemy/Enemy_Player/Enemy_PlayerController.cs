@@ -81,11 +81,11 @@ namespace Enemy_Player
                 Debug.Log("bullet attack");
                 Destroy(bullet.gameObject);
             }
-            if (collision.TryGetComponent<Weapon>(out Weapon weapon))
-            {
-                Debug.Log("weapon attack");
-                //TakeDamage(weapon.Damage);
-            }
+            //if (collision.TryGetComponent<Weapon>(out Weapon weapon))
+            //{
+            //    Debug.Log("weapon attack");
+            //    //TakeDamage(weapon.Damage);
+            //}
         }
 
     }

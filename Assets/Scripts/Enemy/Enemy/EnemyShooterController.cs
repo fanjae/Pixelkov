@@ -24,10 +24,9 @@ namespace Enemy1
         {
             //delta 업데이트
             fireTimer += Time.deltaTime;
-            SetTarget();
         }
         //play target 추척
-        void SetTarget()
+        public void Fire()
         {
 
             if (fireTimer < fireDelay) return;
@@ -58,34 +57,33 @@ namespace Enemy1
             }
 
             //프리펩 Flip 설정
-            if (direction.y <= firePoint.position.y)
-            {
-                if (direction.x <= firePoint.position.x)
-                {
-                    //왼쪽 아래
-                    bulletScript.SetFlip(1, 1);
-                }
-                else
-                {   //오른쪽 아래
-                    bulletScript.SetFlip(0, 1);
-                }
-            }
-            else
-            {
-                if (direction.x <= firePoint.position.x)
-                {
-                    //왼쪽 위
-                    bulletScript.SetFlip(1, 0);
-                }
-                else
-                {
-                    //오른쪽 위
-                    bulletScript.SetFlip(0, 0);
-                }
-            }
+            //if (direction.y <= firePoint.position.y)
+            //{
+            //    if (direction.x <= firePoint.position.x)
+            //    {
+            //        //왼쪽 아래
+            //        bulletScript.SetFlip(1, 1);
+            //    }
+            //    else
+            //    {   //오른쪽 아래
+            //        bulletScript.SetFlip(0, 1);
+            //    }
+            //}
+            //else
+            //{
+            //    if (direction.x <= firePoint.position.x)
+            //    {
+            //        //왼쪽 위
+            //        bulletScript.SetFlip(1, 0);
+            //    }
+            //    else
+            //    {
+            //        //오른쪽 위
+            //        bulletScript.SetFlip(0, 0);
+            //    }
+            //}
         }
 
-        
         //가까운거리 
         Transform GetNearestTarget(RaycastHit2D[] hits)
         {
@@ -102,55 +100,6 @@ namespace Enemy1
             }
             return nearest;
         }
-       
-
-        //public void Fire()
-        //{
-        //    //Bullet delta
-        //    if (fireTimer < fireDelay) return;
-        //    fireTimer = 0.0f;
-
-        //    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-
-        //    // 발사 방향 전달
-        //    EnemyBullet bulletScript = bullet.GetComponent<EnemyBullet>();
-        //    if (bulletScript != null)
-        //    {
-        //        bulletScript.SetDirection(fireDirection);
-
-
-        //        //프리펩 Flip 설정
-        //        if (fireDirection.y <= firePoint.position.y)
-        //        {
-        //            if (fireDirection.x <= firePoint.position.x)
-        //            {
-        //                //왼쪽 아래
-        //                bulletScript.SetFlip(1, 1);
-        //            }
-        //            else
-        //            {   //오른쪽 아래
-        //                bulletScript.SetFlip(0, 1);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (fireDirection.x <= firePoint.position.x)
-        //            {
-        //                //왼쪽 위
-        //                bulletScript.SetFlip(1, 0);
-        //            }
-        //            else
-        //            {
-        //                //오른쪽 위
-        //                bulletScript.SetFlip(0, 0);
-        //            }
-        //        }
-        //    }
-        //}
-        //Player 위치 전달
-        //public void UpdateShooterState(Vector2 dir)
-        //{
-        //    fireDirection = dir;
-        //}
+      
     }
 }

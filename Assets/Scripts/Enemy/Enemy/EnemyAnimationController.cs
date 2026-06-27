@@ -41,6 +41,12 @@ namespace Enemy1
                 animator.SetBool(MoveHash, false);
                 animator.SetBool(AttackHash, true);
             }
+            else if (newState == EnemyActionType.Dead)
+            {
+                animator.SetBool("Move", false);
+                animator.SetBool("Attack", false);
+                animator.SetBool("isDeath", true);
+            }
         }
     }
 }

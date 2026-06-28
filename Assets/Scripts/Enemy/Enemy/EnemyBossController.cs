@@ -1,26 +1,25 @@
 ﻿using Enemy;
-using Enemy_Player;
 using UnityEngine;
 using System.Collections;
-
-
 namespace Enemy1
 {
-    public class EnemyController : MonoBehaviour, IEnmeyController
+    public class EnemyBossController : MonoBehaviour, IEnmeyController
     {
         [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyShooterController shooterController;
-        
+        [SerializeField] private EnemyWeapon weapon;
 
         //플레이어와 적 공격 거리
         [SerializeField] private float fireDistance = 3.0f;
+        //근접무기 공격 거리
+        [SerializeField] private float attackDistance = 1.0f;
         //플레이어 거리 기준 이동 거리
         [SerializeField] private float targeteDistance = 6.0f;
 
-
         //코인
         [SerializeField]private GameObject coin;
+
         //골드
         [SerializeField] private int gold;
 
@@ -33,8 +32,14 @@ namespace Enemy1
         [SerializeField] private int maxHealth = 3;
         //초기 HP
         private int currentHealth;
-        
 
+        public float dashSpeed = 15f;
+        public float dashDuration = 0.2f;
+
+        [SerializeField] private float dashDelay = 5.0f;
+        private float dashTimer = 0.0f;
+        [SerializeField] private float recoveryHPDelay = 5.0f;
+        private float recoveryHPTimer = 0.0f;
         private Rigidbody2D rb;
 
         private bool isDead = false;
@@ -45,7 +50,6 @@ namespace Enemy1
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
-            
 
             //플레이어 컴포넌트
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -61,6 +65,24 @@ namespace Enemy1
             }
         }
 
+        private void Update()
+        {
+            dashTimer += Time.deltaTime;
+            //데미지 있을시 HP 회복 타이머 작동
+            if (currentHealth < maxHealth)
+            {
+                recoveryHPTimer += Time.deltaTime;
+                Debug.Log(recoveryHPTimer);
+            }
+            //HP 회복
+            if (recoveryHPDelay < recoveryHPTimer
+                && currentHealth < maxHealth)
+            {
+                currentHealth += 1;
+                hpUI.SetHP(currentHealth);
+                recoveryHPTimer = 0.0f;
+            }
+        }
 
         private void FixedUpdate()
         {
@@ -68,14 +90,33 @@ namespace Enemy1
             if (isAttack) return;
             //플레이어 - 적 거리
             float distance = Vector2.Distance(transform.position, target.position);
-
+            Vector2 direction = (target.position - transform.position).normalized;
             if (distance < targeteDistance)
             {
-                if (distance < fireDistance)
+                if (3 < currentHealth)
                 {
-                    //공격 코루틴
-                    StartCoroutine(AttackRoutine());
-                    return;
+                    if (distance < fireDistance)
+                    {
+                        //공격 코루틴
+                        //StartCoroutine(DashRoutine(direction));
+                        StartCoroutine(AttackRoutine());
+                        return;
+                    }
+                }
+                else
+                {
+                    if (distance < attackDistance)
+                    {
+                        //데쉬 작업중......
+                        //if (dashTimer < dashDelay)
+                        //{
+                        //    StartCoroutine(DashRoutine(direction));
+                        //    dashTimer = 0.0f;
+                        //}
+                        //근접무기 공격 코루틴
+                        StartCoroutine(AttackWeaponRoutine());
+                        return;
+                    }
                 }
                 //애니메이션 타입
                 UpdateAnimation(EnemyActionType.Move);
@@ -86,7 +127,20 @@ namespace Enemy1
             UpdateAnimation(EnemyActionType.Idle);
 
         }
-        //공격 코루틴
+
+        IEnumerator DashRoutine(Vector2 dir)
+        {
+            isAttack = true;
+            rb.linearVelocity = dir * dashSpeed;
+
+            // 대쉬 지속 시간만큼 대기
+            yield return new WaitForSeconds(dashDuration);
+            rb.linearVelocity = Vector2.zero;
+
+            isAttack = false;
+
+        }
+        //원거리 공격
         IEnumerator AttackRoutine()
         {
             isAttack = true;
@@ -102,8 +156,36 @@ namespace Enemy1
             //공격후 딜레이
             //yield return new WaitForSeconds(1.0f);
             isAttack = false;
-
         }
+        //근접무기 공격
+        IEnumerator AttackWeaponRoutine()
+        {
+            isAttack = true;
+            //애니메이션 타입 : 공격
+            //현재 공격 애니메이션 문제로 주석
+            UpdateAnimation(EnemyActionType.WeaponAttack);
+            ////공격 방향
+            //UpdatePlayerShoter();
+            ////공격
+
+            yield return new WaitForSeconds(1.0f);
+            weapon.StartAttack();
+            //공격후 딜레이
+            yield return new WaitForSeconds(1.0f);
+            isAttack = false;
+        }
+
+        //IEnumerator AttackRoutine()
+        //{
+        //    isAttack = true;
+        //    UpdateAnimation(EnemyActionType.Attack);
+        //    weapon.StartAttack();
+        //    yield return new WaitForSeconds(1.0f);
+        //    //공격후 딜레이
+        //    yield return new WaitForSeconds(1.0f);
+        //    isAttack = false;
+
+        //}
 
         private void Move()
         {
@@ -117,12 +199,11 @@ namespace Enemy1
         {
             animationController.UpdateState(actionType);
         }
-        
+
 
         //Damage
         public void TakeDamage(int damage)
         {
-            if (isDead) return;
             currentHealth -= damage;
             if (hpUI != null)
             {
@@ -136,25 +217,24 @@ namespace Enemy1
         //사망
         private void Die()
         {
-            
             isDead = true;
-            //코인 Instantiate
-            Instantiate(coin, transform.position, Quaternion.identity);
-
             UpdateAnimation(EnemyActionType.Dead);
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
+            Instantiate(coin, transform.position, Quaternion.identity);
         }
-        //void OnCollisionStay2D(Collision2D collision)
+
+        //private void OnTriggerEnter2D(Collider2D collision)
         //{
-        //    Debug.Log("test");
+        //    Debug.Log("TESt5");
         //    // 충돌한 상대가 'Enemy' 레이어일 경우
-        //    if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+        //    if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         //    {
         //        // 서로 밀어내는 벡터 계산
         //        Vector2 dir = transform.position - collision.transform.position;
-        //        GetComponent<Rigidbody2D>().AddForce(dir.normalized * 5f);
+        //        rb.AddForce(dir.normalized * 5f);
         //    }
         //}
     }
 }
+

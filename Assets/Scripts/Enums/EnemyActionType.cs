@@ -1,7 +1,8 @@
-public enum EnemyActionType
+﻿public enum EnemyActionType
 {
     Idle,
     Move,
     Attack,
+    WeaponAttack,
     Dead
 }

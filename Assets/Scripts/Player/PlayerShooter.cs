@@ -155,6 +155,7 @@ public class PlayerShooter : MonoBehaviour
         }
 
         isReloading = true;
+        player.Equipment.SetWeaponLocked(true);
 
         Debug.Log("재장전 시작");
 
@@ -172,6 +173,7 @@ public class PlayerShooter : MonoBehaviour
             $"재장전 완료: {player.WeaponController.CurrentAmmo} / {player.WeaponController.MaxAmmo}"
         );
 
+        player.Equipment.SetWeaponLocked(false);
         isReloading = false;
     }
 }

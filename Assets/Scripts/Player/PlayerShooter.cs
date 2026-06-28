@@ -143,12 +143,6 @@ public class PlayerShooter : MonoBehaviour
             yield break;
         }
 
-        if (!player.WeaponController.CanReload(player.Inventory))
-        {
-            Debug.LogWarning("장전 실패: WeaponController가 없습니다.");
-            yield break;
-        }
-
         Debug.Log(
             $"장전 시도 - 무기: {player.WeaponController.GetEquippedWeapon()?.ItemName}, " +
             $"탄약: {player.WeaponController.CurrentAmmo} / {player.WeaponController.MaxAmmo}"

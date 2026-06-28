@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerWeaponController
 {
@@ -12,6 +13,8 @@ public class PlayerWeaponController
 
     // 무기 장착시 기본 공격력
     private readonly int defaultDamage;
+
+    public event Action OnAmmoChanged;
 
     public int CurrentAmmo
     {
@@ -117,6 +120,7 @@ public class PlayerWeaponController
 
         // 탄약 1발 소모
         runtimeData.ConsumeAmmo();
+        OnAmmoChanged?.Invoke();
         return true;
     }
 
@@ -168,6 +172,7 @@ public class PlayerWeaponController
 
         // 소모한 탄약 수만큼 현재 탄창에 반영
         runtimeData.Reload(reloadCount, weapon.Capacity);
+        OnAmmoChanged?.Invoke();
         return true;
     }
 

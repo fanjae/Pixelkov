@@ -19,6 +19,7 @@ public class PlayerShooter : MonoBehaviour
     private Player player;
 
     public bool IsReloading => isReloading;
+    public bool IsShootingBlocked { get; private set; }
 
     private void Awake()
     {
@@ -57,6 +58,9 @@ public class PlayerShooter : MonoBehaviour
 
     private void TryFire()
     {
+        // 총 발사 불가 상태 확인
+        if (IsShootingBlocked) return;
+
         //피격시 공격불가
         if (playerHealth != null && playerHealth.IsHit)
         {
@@ -179,5 +183,9 @@ public class PlayerShooter : MonoBehaviour
         );
 
         isReloading = false;
+    }
+    public void SetShootingBlocked(bool value)
+    {
+        IsShootingBlocked = value;
     }
 }

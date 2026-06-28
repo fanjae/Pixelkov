@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         Equipment = new Equipment();
 
         InventoryController = new PlayerInventoryController(Inventory,Equipment,itemDatabase);
-        WeaponController = new PlayerWeaponController(Equipment,itemDatabase,defaultDamage);
+        WeaponController = new PlayerWeaponController(Inventory,Equipment,itemDatabase,defaultDamage);
     }
 
     private void Update()

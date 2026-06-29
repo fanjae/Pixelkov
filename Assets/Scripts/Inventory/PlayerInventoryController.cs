@@ -86,4 +86,28 @@ public class PlayerInventoryController
         // 슬롯에 제거하려는 수량 이상 보유 여부 체크
         return inventorySlot.Count >= count;
     }
+
+    // 인벤토리 소비 아이템 사용
+    public bool UseConsumableFromInventory(int slotIndex, Player player)
+    {
+        if (player == null) return false;
+
+        // 잘못된 슬롯 접근
+        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot))
+            return false;
+
+        // 빈 슬롯
+        if (inventorySlot.IsEmpty) return false;
+
+        ItemData itemData = itemDatabase.GetItem(inventorySlot.ItemId);
+
+        if (itemData == null) return false;
+
+        // 소비 아이템일 때만 사용할 수 있어야함.
+        if (itemData is not ConsumableData consumableData) return false;
+
+        consumableData.Use(player);
+
+        return inventory.RemoveItemAt(slotIndex, 1);
+    }
 }

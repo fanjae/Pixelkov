@@ -5,9 +5,16 @@ public class AudioManager : Singleton<AudioManager>
 {
     [Header("Audio Fields")]
     [SerializeField] private AudioSource BGM_Player;
-    [SerializeField] private AudioSource SFX_Player;
     [SerializeField] private AudioDataBase database;
     [SerializeField] private AudioMixer audioMixer;
+
+    private void Awake()
+    {
+        if(database != null)
+        {
+            database.Init();
+        }
+    }
 
     private void Start()
     {
@@ -21,19 +28,17 @@ public class AudioManager : Singleton<AudioManager>
     }
 
     /// <summary>
-    /// sfx타입을 받아서 재생 해주는 메서드
+    /// sfx타입을 받아 전달 해주는 메서드
     /// </summary>
-    public void PlaySFX(SFXType sfxType)
+    public AudioClip GetSFX(SFXType sfxType)
     {
-        if (SFX_Player == null || database == null) return;
+        if (database == null) return null;
 
         AudioData data = database.GetAudioData(sfxType);
-        if (data == null) return;
+        if (data == null) return null;
 
         AudioClip nextClip = data.Clip;
-        if(nextClip == null) return;
-
-        SFX_Player.PlayOneShot(nextClip);
+        return nextClip;
     }
 
     /// <summary>

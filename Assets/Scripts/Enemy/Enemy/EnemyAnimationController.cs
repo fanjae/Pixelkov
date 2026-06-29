@@ -12,6 +12,8 @@ namespace Enemy1
 
         private static readonly int MoveHash = Animator.StringToHash("Move");
         private static readonly int AttackHash = Animator.StringToHash("Attack");
+        private static readonly int WeaponAttackHash = Animator.StringToHash("WeaponAttack");
+        private static readonly int DeadHash = Animator.StringToHash("isDeath");
 
         private void Awake()
         {
@@ -30,32 +32,33 @@ namespace Enemy1
             {
                 animator.SetBool(MoveHash, false);
                 animator.SetBool(AttackHash, false);
-                animator.SetBool("WeaponAttack", false);
+                animator.SetBool(WeaponAttackHash, false);
             }
             else if (newState == EnemyActionType.Move)
             {
                 animator.SetBool(MoveHash, true);
                 animator.SetBool(AttackHash, false);
-                animator.SetBool("WeaponAttack", false);
+                animator.SetBool(WeaponAttackHash, false);
             }
             else if (newState == EnemyActionType.Attack)
             {
                 animator.SetBool(MoveHash, false);
                 animator.SetBool(AttackHash, true);
-                animator.SetBool("WeaponAttack", false);
+                animator.SetBool(WeaponAttackHash, false);
             }
             else if (newState == EnemyActionType.WeaponAttack)
             {
-                animator.SetBool("Move", false);
-                animator.SetBool("Attack", false);
-                animator.SetBool("WeaponAttack", true);
+                animator.SetBool(MoveHash, false);
+                animator.SetBool(AttackHash, false);
+                animator.SetBool(WeaponAttackHash, true);
             }
             else if (newState == EnemyActionType.Dead)
             {
-                animator.SetBool("Move", false);
-                animator.SetBool("Attack", false);
-                animator.SetBool("WeaponAttack", false);
-                animator.SetBool("isDeath", true);
+                animator.SetBool(MoveHash, false);
+                animator.SetBool(AttackHash, false);
+                animator.SetBool(WeaponAttackHash, false);
+                animator.SetBool(DeadHash, true);
+                animator.SetBool(DeadHash, true);
             }
         }
     }

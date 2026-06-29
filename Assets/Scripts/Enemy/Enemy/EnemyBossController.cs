@@ -9,6 +9,8 @@ namespace Enemy1
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyShooterController shooterController;
         [SerializeField] private EnemyWeapon weapon;
+        //골드 컨드롤
+        [SerializeField] private PlayerGoldController goldController;
 
         //플레이어와 적 공격 거리
         [SerializeField] private float fireDistance = 3.0f;
@@ -40,6 +42,8 @@ namespace Enemy1
         private float dashTimer = 0.0f;
         [SerializeField] private float recoveryHPDelay = 5.0f;
         private float recoveryHPTimer = 0.0f;
+
+        private Collider2D collider;
         private Rigidbody2D rb;
 
         private bool isDead = false;
@@ -52,6 +56,7 @@ namespace Enemy1
         {
             originalPosiotion = transform.position;
 
+            collider = GetComponent<Collider2D>();
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
@@ -104,7 +109,7 @@ namespace Enemy1
 
                     if (distance < fireDistance)
                     {
-
+                        //원거리 공격 루틴
                         StartCoroutine(AttackRoutine());
                         return;
                     }
@@ -222,10 +227,17 @@ namespace Enemy1
         private void Die()
         {
             isDead = true;
+            //골드 추가
+            goldController.AddGold(gold);
             UpdateAnimation(EnemyActionType.Dead);
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
             Instantiate(coin, transform.position, Quaternion.identity);
+
+            //collider, Rigidbody 비활성화
+            collider.enabled = false;
+            rb.simulated = false;
+            Destroy(gameObject, 3.0f);
         }
 
         //private void OnTriggerEnter2D(Collider2D collision)

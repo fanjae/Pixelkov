@@ -84773,6 +84773,14 @@ PrefabInstance:
       propertyPath: database
       value: 
       objectReference: {fileID: 11400000, guid: 5e26967a74d832647a977f851c9331b2, type: 2}
+    - target: {fileID: 1315577135855588045, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2021475773}
+    - target: {fileID: 1315577135855588045, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
+      propertyPath: recipeDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: e7823bfe3ff36b14fb819c3f9b2b7049, type: 2}
     - target: {fileID: 1377062396867547547, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -125357,11 +125365,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.01
+      value: -4.32
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.64
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.z

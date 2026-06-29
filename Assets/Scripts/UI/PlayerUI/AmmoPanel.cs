@@ -24,7 +24,7 @@ public class AmmoPanel : MonoBehaviour
 
         if (maxAmmo == 0)
         {
-            ammoText.text = "";
+            ammoText.text = "∞";
         }
         else
         {

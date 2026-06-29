@@ -13,8 +13,9 @@ public class CursorController : MonoBehaviour
 
     [Header("캔버스 내 참조 컴포넌트")]
     [SerializeField] private Image cursorImage;
-    [SerializeField] private Sprite crossHair;
-    [SerializeField] private Sprite mouseCursor;
+    [SerializeField] private Sprite crossHairSprite;
+    [SerializeField] private Sprite cursorSprite;
+    [SerializeField] private Vector2 offset;
 
     private void OnEnable()
     {
@@ -34,20 +35,21 @@ public class CursorController : MonoBehaviour
         if (cursorImage == null) return;
 
         cursorImage.transform.position = Mouse.current.position.ReadValue();
-        if(EventSystem.current.IsPointerOverGameObject())
+        // 마우스가 UI 위에 있는 상태
+        if (EventSystem.current.IsPointerOverGameObject())
         {
-            // 마우스가 UI 위에 있는 상태
-            if(mouseCursor != null)
+            if(cursorSprite != null)
             {
-                cursorImage.sprite = mouseCursor;
+                cursorImage.sprite = cursorSprite;
             }
+            cursorImage.rectTransform.anchoredPosition += offset;
             HoverUI = true;
         }
         else
         {
-            if(crossHair != null)
+            if(crossHairSprite != null)
             {
-                cursorImage.sprite = crossHair;
+                cursorImage.sprite = crossHairSprite;
             }
             HoverUI = false;
         }

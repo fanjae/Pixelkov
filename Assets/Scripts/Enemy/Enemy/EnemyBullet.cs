@@ -5,8 +5,11 @@ namespace Enemy1
 {
     public class EnemyBullet : MonoBehaviour
     {
+        [Header("Bullet 속도")]
         [SerializeField] private float moveSpeed = 10.0f;
+        [Header("Bullet 생명주기")]
         [SerializeField] private float lifeTime = 3.0f;
+        [Header("Damage")]
         [SerializeField] private int damage = 1;
 
         
@@ -63,12 +66,5 @@ namespace Enemy1
             // 충돌 후 총알 삭제
             Destroy(gameObject);
         }
-
-        //프리펩 Flip 설정
-        //public void SetFlip(int x, int y)
-        //{
-        //    spriteRenderer.flipX = x == 1 ? true : false;
-        //    spriteRenderer.flipY = y == 1 ? true : false;
-        //}
     }
 }

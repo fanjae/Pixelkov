@@ -809,15 +809,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f20f675ee07548448fc732e8e1471f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
-  moveSpeed: 2
   animationController: {fileID: 910294302}
   weapon: {fileID: 7417723230966456245}
-  goldController: {fileID: 0}
-  attackDistance: 0.8
-  targeteDistance: 6
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-  gold: 0
+  goldController: {fileID: 919741306}
   hpUI: {fileID: 246022954}
+  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
+  moveSpeed: 2
+  targeteDistance: 6
+  attackDistance: 0.5
+  gold: 100
   maxHealth: 3
 --- !u!1 &251281135
 GameObject:
@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1108,15 +1108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33c849c4ae77364d99066c00c17ce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyController
-  moveSpeed: 2
   animationController: {fileID: 251281136}
   shooterController: {fileID: 1131892066}
-  goldController: {fileID: 0}
+  goldController: {fileID: 919741306}
+  hpUI: {fileID: 431962861}
+  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
+  moveSpeed: 2
   fireDistance: 3
   targeteDistance: 6
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-  gold: 0
-  hpUI: {fileID: 431962861}
+  gold: 100
   maxHealth: 3
 --- !u!50 &431962863
 Rigidbody2D:
@@ -2197,15 +2197,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33c849c4ae77364d99066c00c17ce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyController
-  moveSpeed: 2
   animationController: {fileID: 1985865445}
   shooterController: {fileID: 2145999914}
   goldController: {fileID: 0}
+  hpUI: {fileID: 635362185}
+  coin: {fileID: 0}
+  moveSpeed: 2
   fireDistance: 3
   targeteDistance: 6
-  coin: {fileID: 0}
   gold: 0
-  hpUI: {fileID: 635362185}
   maxHealth: 3
 --- !u!95 &635362181 stripped
 Animator:
@@ -3344,7 +3344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3480,15 +3480,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33c849c4ae77364d99066c00c17ce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyController
-  moveSpeed: 2
   animationController: {fileID: 572587593}
   shooterController: {fileID: 2079856378}
-  goldController: {fileID: 0}
+  goldController: {fileID: 919741306}
+  hpUI: {fileID: 1204992463}
+  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
+  moveSpeed: 2
   fireDistance: 3
   targeteDistance: 6
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-  gold: 0
-  hpUI: {fileID: 1204992463}
+  gold: 100
   maxHealth: 3
 --- !u!1001 &1243954753
 PrefabInstance:
@@ -4802,15 +4802,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f20f675ee07548448fc732e8e1471f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
-  moveSpeed: 2
   animationController: {fileID: 136466477}
   weapon: {fileID: 8000475381359839145}
-  goldController: {fileID: 0}
-  attackDistance: 0.8
-  targeteDistance: 6
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-  gold: 0
+  goldController: {fileID: 919741306}
   hpUI: {fileID: 1751808595}
+  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
+  moveSpeed: 2
+  targeteDistance: 6
+  attackDistance: 0.5
+  gold: 100
   maxHealth: 3
 --- !u!1 &1758197160
 GameObject:
@@ -5607,22 +5607,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07ebabaa420c144fa89a28a72bd80b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyBossController
-  moveSpeed: 2
   animationController: {fileID: 1640961780}
   shooterController: {fileID: 2029203563}
   weapon: {fileID: 3912984480355143185}
   goldController: {fileID: 0}
+  hpUI: {fileID: 2070192202}
+  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
+  moveSpeed: 2
+  targeteDistance: 6
   fireDistance: 3
   attackDistance: 0.5
-  targeteDistance: 6
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-  gold: 0
-  hpUI: {fileID: 2070192202}
+  gold: 100
   maxHealth: 5
+  recoveryHPDelay: 5
+  dashDelay: 5
   dashSpeed: 15
   dashDuration: 0.2
-  dashDelay: 5
-  recoveryHPDelay: 5
 --- !u!1 &2070896748
 GameObject:
   m_ObjectHideFlags: 0

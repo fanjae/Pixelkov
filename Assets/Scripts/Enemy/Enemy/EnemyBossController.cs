@@ -45,8 +45,13 @@ namespace Enemy1
         private bool isDead = false;
         private bool isAttack = false;
 
+        //원래 자리
+        private Vector2 originalPosiotion;
+
         private void Awake()
         {
+            originalPosiotion = transform.position;
+
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
@@ -127,6 +132,14 @@ namespace Enemy1
                 Move();
                 return;
             }
+            //플레이어와 거리가 멀어지면 원래 자리로 이동
+            if (transform.position.x !=originalPosiotion.x
+                && transform.position.y != originalPosiotion.y)
+            {
+                UpdateAnimation(EnemyActionType.Move);
+                OriMove();
+                return;
+            }
             //애니메이션 타입
             UpdateAnimation(EnemyActionType.Idle);
 
@@ -185,18 +198,11 @@ namespace Enemy1
             isAttack = false;
         }
 
-        //IEnumerator AttackRoutine()
-        //{
-        //    isAttack = true;
-        //    UpdateAnimation(EnemyActionType.Attack);
-        //    weapon.StartAttack();
-        //    yield return new WaitForSeconds(1.0f);
-        //    //공격후 딜레이
-        //    yield return new WaitForSeconds(1.0f);
-        //    isAttack = false;
-
-        //}
-
+        
+        private void OriMove()
+        {
+            transform.position = Vector2.MoveTowards(transform.position, originalPosiotion, moveSpeed * Time.deltaTime);
+        }
         private void Move()
         {
             //플레이어 방향으로 이동

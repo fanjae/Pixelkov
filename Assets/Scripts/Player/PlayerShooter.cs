@@ -147,12 +147,6 @@ public class PlayerShooter : MonoBehaviour
             yield break;
         }
 
-        if (!player.WeaponController.CanReload(player.Inventory))
-        {
-            Debug.LogWarning("장전 실패: WeaponController가 없습니다.");
-            yield break;
-        }
-
         Debug.Log(
             $"장전 시도 - 무기: {player.WeaponController.GetEquippedWeapon()?.ItemName}, " +
             $"탄약: {player.WeaponController.CurrentAmmo} / {player.WeaponController.MaxAmmo}"
@@ -165,6 +159,7 @@ public class PlayerShooter : MonoBehaviour
         }
 
         isReloading = true;
+        player.Equipment.SetWeaponLocked(true);
 
         Debug.Log("재장전 시작");
 
@@ -182,6 +177,7 @@ public class PlayerShooter : MonoBehaviour
             $"재장전 완료: {player.WeaponController.CurrentAmmo} / {player.WeaponController.MaxAmmo}"
         );
 
+        player.Equipment.SetWeaponLocked(false);
         isReloading = false;
     }
     public void SetShootingBlocked(bool value)

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [Serializable]
-public class WeaponRuntimeData
+public class WeaponRuntimeData : ItemRuntimeData
 {
     // 장전 화살 수
     [SerializeField] private int currentAmmo;

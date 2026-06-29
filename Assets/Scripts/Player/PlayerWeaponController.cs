@@ -1,5 +1,10 @@
-﻿public class PlayerWeaponController
+﻿using System;
+using UnityEngine;
+
+public class PlayerWeaponController
 {
+    private readonly Inventory inventory;
+
     // 장착 정보 확인용
     private readonly Equipment equipment;
 
@@ -9,10 +14,16 @@
     // 무기 장착시 기본 공격력
     private readonly int defaultDamage;
 
-    // 장착 무기의 현재 탄약 수 런타임 데이터.
-    private WeaponRuntimeData runtimeData = new WeaponRuntimeData();
+    public event Action OnAmmoChanged;
 
-    public int CurrentAmmo => runtimeData.CurrentAmmo;
+    public int CurrentAmmo
+    {
+        get
+        {
+            WeaponRuntimeData runtimeData = GetCurrentWeaponRuntime();
+            return runtimeData == null ? 0 : runtimeData.CurrentAmmo;
+        }
+    }
 
     // 현재 장착 무기의 탄창 용량
     // 무기 없으면 무한 탄환(0) 반환
@@ -37,8 +48,9 @@
         }
     }
 
-    public PlayerWeaponController(Equipment equipment, ItemDatabase itemDatabase, int defaultDamage)
+    public PlayerWeaponController(Inventory inventory, Equipment equipment, ItemDatabase itemDatabase, int defaultDamage)
     {
+        this.inventory = inventory;
         this.equipment = equipment;
         this.itemDatabase = itemDatabase;
         this.defaultDamage = defaultDamage;
@@ -82,8 +94,10 @@
         // 무기가 없으면 기본 공격은 탄약 없이 가능하도록 처리
         if (weapon == null) return true;
 
+        WeaponRuntimeData runtimeData = GetCurrentWeaponRuntime();
+
         // 무기가 있으면 현재 탄약 수 기준으로 발사 가능 여부 판단.
-        return runtimeData.CanShoot();
+        return runtimeData != null && runtimeData.CanShoot();
     }
 
     // 공격 시 탄약 소모
@@ -95,12 +109,18 @@
         if (weapon == null)
             return true;
 
+        WeaponRuntimeData runtimeData = GetCurrentWeaponRuntime();
+
+        if (runtimeData == null)
+            return false;
+
         // 탄약이 없으면 공격 실패.
         if (!runtimeData.CanShoot())
             return false;
 
         // 탄약 1발 소모
         runtimeData.ConsumeAmmo();
+        OnAmmoChanged?.Invoke();
         return true;
     }
 
@@ -108,8 +128,10 @@
     public bool CanReload(Inventory inventory)
     {
         WeaponData weapon = GetEquippedWeapon();
+        WeaponRuntimeData runtimeData = GetCurrentWeaponRuntime();
 
         if (weapon == null) return false;
+        if (runtimeData == null) return false;
         if (inventory == null) return false;
 
         // 탄창을 가득 채우기 위해 필요한 탄약 수 계산
@@ -126,8 +148,10 @@
     public bool ReloadFromInventory(Inventory inventory)
     {
         WeaponData weapon = GetEquippedWeapon();
+        WeaponRuntimeData runtimeData = GetCurrentWeaponRuntime();
 
         if (weapon == null) return false;
+        if (runtimeData == null) return false;
         if (inventory == null) return false;
 
         // 현재 탄창에 필요한 탄약 수 계산
@@ -148,6 +172,57 @@
 
         // 소모한 탄약 수만큼 현재 탄창에 반영
         runtimeData.Reload(reloadCount, weapon.Capacity);
+        OnAmmoChanged?.Invoke();
         return true;
+    }
+
+    private WeaponRuntimeData GetCurrentWeaponRuntime()
+    {
+        if (equipment == null || inventory == null)
+        {
+            
+            Debug.LogWarning("Runtime 조회 실패: equipment 또는 inventory null");
+            return null;
+        }
+
+        if (!equipment.TryGetSlot(EquipmentSlotType.Weapon, out EquipmentSlot equipmentSlot))
+        {
+            Debug.LogWarning("Runtime 조회 실패: Weapon 장비 슬롯 없음");
+            return null;
+        }
+
+        if (equipmentSlot.IsEmpty)
+        {
+            Debug.LogWarning("Runtime 조회 실패: Weapon 장비 슬롯 비어있음");
+            return null;
+        }
+
+        if (!inventory.TryGetSlot(equipmentSlot.InventorySlotIndex, out InventorySlot inventorySlot))
+        {
+            Debug.LogWarning($"Runtime 조회 실패: 인벤토리 슬롯 인덱스 오류 {equipmentSlot.InventorySlotIndex}");
+            return null;
+        }
+
+        if (inventorySlot.IsEmpty)
+        {
+            Debug.LogWarning($"Runtime 조회 실패: 인벤토리 슬롯 비어있음 {equipmentSlot.InventorySlotIndex}");
+            return null;
+        }
+
+        if (inventorySlot.ItemInstance == null)
+        {
+            Debug.LogWarning("Runtime 조회 실패: ItemInstance null");
+            return null;
+        }
+
+        WeaponRuntimeData runtime = inventorySlot.ItemInstance.RuntimeData as WeaponRuntimeData;
+
+        if (runtime == null)
+        {
+            Debug.LogWarning($"Runtime 조회 실패: WeaponRuntimeData 아님 / ItemId: {inventorySlot.ItemId}");
+            return null;
+        }
+
+        return runtime;
     }
 }

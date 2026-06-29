@@ -166,7 +166,7 @@ public class Inventory
             // 스택 가능한 아이템은 최대 스택 수 만큼 처리하고 스택 불가능한 아이템은 슬롯당 1개씩 추가
             int addCount = itemData.IsStackable ? Math.Min(itemData.MaxStackCount, count) : 1;
 
-            slot.SetItem(itemData.ItemId, addCount);
+            slot.SetItem(itemData, addCount);
             count -= addCount;
 
             if (count <= 0) break;
@@ -214,7 +214,7 @@ public class Inventory
         if (!TryGetSlot(slotIndex, out InventorySlot slot)) return false;
         if (slot.IsEmpty) return false;
 
-        slot.SetItem(newItemData.ItemId, count);
+        slot.SetItem(newItemData, count);
         OnInventoryChanged?.Invoke();
         return true;
     }

@@ -12,6 +12,9 @@ public class Equipment
     // 장비 교체에 대한 UI 갱신
     public event Action OnEquipmentChanged;
 
+    // 장비 교체 막는 용도
+    private bool isWeaponLocked;
+
     public Equipment()
     {
         // 장비 시스템 생성 시 사용할 슬롯 미리 생성
@@ -32,6 +35,9 @@ public class Equipment
         // ItemType을 실제 장비 슬롯 타입 변환 및 무기/방어구/악세서리 여부 체크
         if (!TryGetEquipmentSlotType(itemData.ItemType, out EquipmentSlotType slotType)) return false;
 
+        // 장전 중 무기 장착만 차단
+        if (isWeaponLocked && slotType == EquipmentSlotType.Weapon) return false;
+
         // 실제 슬롯 데이터 변경
         EquipmentSlot slot = slots[slotType];
         slot.SetItem(itemData.ItemId, inventorySlotIndex);
@@ -44,6 +50,9 @@ public class Equipment
     // 지정한 장비 슬롯 아이템 해제
     public bool UnEquipItem(EquipmentSlotType slotType)
     {
+        // 장전 중 무기 해제만 차단
+        if (isWeaponLocked && slotType == EquipmentSlotType.Weapon) return false;
+
         // 미존재하는 슬롯 타입 해제 불가
         if (!slots.TryGetValue(slotType, out EquipmentSlot slot)) return false;
 
@@ -119,5 +128,10 @@ public class Equipment
         }
 
         return false;
+    }
+
+    public void SetWeaponLocked(bool locked)
+    {
+        isWeaponLocked = locked;
     }
 }

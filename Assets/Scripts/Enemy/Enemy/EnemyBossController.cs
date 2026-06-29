@@ -13,7 +13,7 @@ namespace Enemy1
         //플레이어와 적 공격 거리
         [SerializeField] private float fireDistance = 3.0f;
         //근접무기 공격 거리
-        [SerializeField] private float attackDistance = 1.0f;
+        [SerializeField] private float attackDistance = 0.5f;
         //플레이어 거리 기준 이동 거리
         [SerializeField] private float targeteDistance = 6.0f;
 
@@ -90,29 +90,33 @@ namespace Enemy1
             if (isAttack) return;
             //플레이어 - 적 거리
             float distance = Vector2.Distance(transform.position, target.position);
-            Vector2 direction = (target.position - transform.position).normalized;
+            
             if (distance < targeteDistance)
             {
+                
                 if (3 < currentHealth)
+                //if (false)
                 {
+
                     if (distance < fireDistance)
                     {
-                        //공격 코루틴
-                        //StartCoroutine(DashRoutine(direction));
+
                         StartCoroutine(AttackRoutine());
                         return;
                     }
                 }
                 else
                 {
+                    
+                    if (fireDistance< distance)
+                    {
+                        //데쉬 루틴
+                        StartCoroutine(DashRoutine());
+                        return;
+                    }
                     if (distance < attackDistance)
                     {
-                        //데쉬 작업중......
-                        //if (dashTimer < dashDelay)
-                        //{
-                        //    StartCoroutine(DashRoutine(direction));
-                        //    dashTimer = 0.0f;
-                        //}
+                        
                         //근접무기 공격 코루틴
                         StartCoroutine(AttackWeaponRoutine());
                         return;
@@ -128,13 +132,19 @@ namespace Enemy1
 
         }
 
-        IEnumerator DashRoutine(Vector2 dir)
+        IEnumerator DashRoutine()
         {
             isAttack = true;
-            rb.linearVelocity = dir * dashSpeed;
+            Vector2 dashDirection = (target.position - transform.position).normalized;
 
-            // 대쉬 지속 시간만큼 대기
+            Vector2 dashVelocity = dashDirection * dashSpeed;
+
+            // 3. 기존 속도를 덮어씌워 일정하게 대쉬
+            rb.linearVelocity = dashVelocity;
+
             yield return new WaitForSeconds(dashDuration);
+
+            // 대쉬 종료 후 속도 초기화
             rb.linearVelocity = Vector2.zero;
 
             isAttack = false;

@@ -19,6 +19,7 @@ public class AmmoPanel : MonoBehaviour
         else
         {
             ammoIcon.sprite = weaponData.Icon;
+            ammoIcon.color = Color.white;
         }
 
         if (maxAmmo == 0)

@@ -29,7 +29,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
         }
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         // 기존 할당된 인스턴스가 존재하지 않으면 현재 오브젝트를 할당
         if(instance == null)

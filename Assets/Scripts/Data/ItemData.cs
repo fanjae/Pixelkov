@@ -29,7 +29,7 @@ public abstract class ItemData : ScriptableObject
     public bool IsStackable => isStackable;
     public int MaxStackCount => isStackable ? maxStackCount : 1;
 
-    public abstract void Use(Player player);
+    public abstract bool Use(Player player);
 
 #if UNITY_EDITOR
     public void InitForTest(int itemId, string itemName, string description, int price, bool isStackable, int maxStackCount, ItemType itemType = ItemType.Material)

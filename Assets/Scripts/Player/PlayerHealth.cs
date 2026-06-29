@@ -71,7 +71,26 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
             );
         }
     }
- 
+    public void Heal(int amount)
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+        if (amount <= 0)
+        {
+            return;
+        }
+
+        currentHealth += amount;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        Debug.Log(
+            $"플레이어 체력 회복: {currentHealth} / {maxHealth}"
+        );
+    }
+
     // 플레이어가 데미지를 받을 때 외부에서 호출
     public void TakeDamage(int damage)
     {

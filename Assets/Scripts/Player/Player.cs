@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float dodgeSpeed = 15f;
     [SerializeField] private float dodgeDuration = 0.2f;
     [SerializeField] private float invincibleTime = 0.2f;
-    [SerializeField] private int maxDodgeCount = 2;
+    [SerializeField] private int maxDodgeCount = 3;
     [SerializeField] private float dodgeRecoverTime = 3f;
 
     [Header("애니메이터")]

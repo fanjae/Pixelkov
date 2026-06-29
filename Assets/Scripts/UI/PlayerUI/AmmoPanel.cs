@@ -38,11 +38,11 @@ public class AmmoPanel : MonoBehaviour
             curText.text = $"{curAmmo}";
             maxText.text = $"/{maxAmmo}";
 
-            if(maxAmmo != 0 && curAmmo / maxAmmo <= 0.2f)
+            if(maxAmmo != 0 && (float)curAmmo / maxAmmo <= 0.2f)
             {
                 curText.color = Color.red;
             }
-            else if(maxAmmo != 0 && curAmmo / maxAmmo <= 0.4f)
+            else if(maxAmmo != 0 && (float)curAmmo / maxAmmo <= 0.4f)
             {
                 curText.color = Color.yellow;
             }

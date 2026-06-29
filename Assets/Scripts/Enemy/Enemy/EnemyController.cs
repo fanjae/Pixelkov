@@ -11,7 +11,9 @@ namespace Enemy1
         [SerializeField] private float moveSpeed = 2.0f;
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyShooterController shooterController;
-        
+        //골드 컨드롤
+        [SerializeField] private PlayerGoldController goldController;
+
 
         //플레이어와 적 공격 거리
         [SerializeField] private float fireDistance = 3.0f;
@@ -33,8 +35,8 @@ namespace Enemy1
         [SerializeField] private int maxHealth = 3;
         //초기 HP
         private int currentHealth;
-        
 
+        private Collider2D collider;
         private Rigidbody2D rb;
 
         private bool isDead = false;
@@ -42,6 +44,7 @@ namespace Enemy1
 
         private void Awake()
         {
+            collider = GetComponent<Collider2D>();
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
@@ -140,10 +143,18 @@ namespace Enemy1
             isDead = true;
             //코인 Instantiate
             Instantiate(coin, transform.position, Quaternion.identity);
+            //골드 추가
+            goldController.AddGold(gold);
 
+            //Dead 애니메이션
             UpdateAnimation(EnemyActionType.Dead);
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
+
+            //collider, Rigidbody 비활성화
+            collider.enabled = false;
+            rb.simulated = false;
+            Destroy(gameObject, 3.0f);
         }
         //void OnCollisionStay2D(Collision2D collision)
         //{

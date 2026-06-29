@@ -106,7 +106,11 @@ public class PlayerInventoryController
         // 소비 아이템일 때만 사용할 수 있어야함.
         if (itemData is not ConsumableData consumableData) return false;
 
-        consumableData.Use(player);
+        // 소비 아이템 효과 적용
+        bool used = consumableData.Use(player);
+
+        // 효과 적용 실패하면 아이템 소모 못하게 처리
+        if (!used) return false;
 
         return inventory.RemoveItemAt(slotIndex, 1);
     }

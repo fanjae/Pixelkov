@@ -84,8 +84,6 @@ namespace Enemy1
             UpdateAnimation(EnemyActionType.Attack);
             weapon.StartAttack();
             yield return new WaitForSeconds(1.0f);
-            //공격후 딜레이
-            yield return new WaitForSeconds(1.0f);
             isAttack = false;
 
         }

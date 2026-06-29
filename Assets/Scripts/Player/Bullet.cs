@@ -58,31 +58,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Bullet 충돌 대상: " + other.name);
+        if (other.GetComponentInParent<Player>() != null) return;
 
-        // 총알끼리 충돌하면 무시
-        if (other.GetComponent<Bullet>() != null)
-        {
-            Debug.Log("Bullet 충돌 무시: Bullet");
-            return;
-        }
+        IEnmeyController target = other.GetComponentInParent<IEnmeyController>();
 
-        // 자신과 충돌 무시
-        if (other.GetComponent<Player>() != null)
-        {
-            Debug.Log("Bullet 충돌 무시: Player 계층");
-            return;
-        }
-
-        EnemyController enemyController = other.GetComponentInParent<EnemyController>();
-
-        if (enemyController != null)
-        {
-            enemyController.TakeDamage(damage);
-            Debug.Log("Bullet 삭제: 적 충돌 - " + enemyController.name);
-            Destroy(gameObject);
-            return;
-        }
+        if (target != null) target.TakeDamage(damage);
 
         Destroy(gameObject);
     }

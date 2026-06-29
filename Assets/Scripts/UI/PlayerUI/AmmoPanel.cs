@@ -25,10 +25,12 @@ public class AmmoPanel : MonoBehaviour
         if (maxAmmo == 0)
         {
             ammoText.text = "∞";
+            ammoText.rectTransform.localScale = new Vector3(3.0f, 2.0f, 1.0f);
         }
         else
         {
             ammoText.text = $"{curAmmo} / {maxAmmo}";
+            ammoText.rectTransform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
     }
 }

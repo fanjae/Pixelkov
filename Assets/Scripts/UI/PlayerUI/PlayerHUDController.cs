@@ -12,7 +12,9 @@ public class PlayerHUDController : MonoBehaviour
     [Header("플레이어 HUD")]
     [SerializeField] private PlayerHpPanel hpPanel; // 체력 패널
     [SerializeField] private PlayerDodgePanel dodgePanel;   // 회피 패널
+    [SerializeField] private AmmoPanel ammoPanel;   // 총알 개수 표시 패널
 
+    private PlayerWeaponController weaponController;
     private int curDodgeCount = -1;
     private void Awake()
     {
@@ -21,10 +23,11 @@ public class PlayerHUDController : MonoBehaviour
         if(dodgePanel == null) dodgePanel = FindAnyObjectByType<PlayerDodgePanel>();
         if (player == null) player = FindAnyObjectByType<Player>();
         if (playerHealth == null) playerHealth = FindAnyObjectByType<PlayerHealth>();
+        if (ammoPanel == null) ammoPanel = FindAnyObjectByType<AmmoPanel>();
     }
     private void Start()
     {
-        // UI 초기화
+        // UI 초기화 (항상 열려 있기 때문에 Start 사용)
         if(player != null && dodgePanel != null)
         {
             dodgePanel.MaxDodgeCountChanged(player.CurrentDodgeCount);
@@ -35,20 +38,22 @@ public class PlayerHUDController : MonoBehaviour
         {
             hpPanel.Init(playerHealth.CurrentHealth, playerHealth.MaxHealth);
         }
+        if(player != null)
+        {
+            weaponController = player.WeaponController;
+            if(weaponController != null)
+            {
+                UpdateAmmo();
+                weaponController.OnAmmoChanged += UpdateAmmo;
+            }
+        }
     }
-    private void OnEnable()
+    private void OnDestroy()
     {
-        // 플레이어가 null이 아니면 이벤트 할당 예정
-        if(playerHealth == null ||  hpPanel == null) return;
-
-        // 이벤트 할당 로직 추가
-    }
-    private void OnDisable()
-    {
-        // 만약 HUD를 끄거나 씬 전환되는 상황이 생기면 이벤트 해제
-        if(playerHealth == null ||  hpPanel == null) return;
-
-        // 이벤트 취소 로직 추가
+        if(weaponController != null)
+        {
+            weaponController.OnAmmoChanged -= UpdateAmmo;
+        }
     }
     private void Update()
     {
@@ -66,5 +71,22 @@ public class PlayerHUDController : MonoBehaviour
 
         dodgePanel.DodgeUIUpdate(player.CurrentDodgeCount);
         curDodgeCount = player.CurrentDodgeCount;
+    }
+    private void UpdateAmmo()
+    {
+        if (ammoPanel == null) return;
+
+        if(weaponController  == null)
+        {
+            weaponController = player.WeaponController;
+            if(weaponController == null)
+            {
+                return;
+            }
+        }
+
+        WeaponData data = weaponController.GetEquippedWeapon();
+
+        ammoPanel.PaintUI(data, weaponController.CurrentAmmo, weaponController.MaxAmmo);
     }
 }

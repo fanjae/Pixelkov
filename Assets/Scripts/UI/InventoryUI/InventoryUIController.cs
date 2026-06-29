@@ -40,7 +40,6 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
 
         if(player != null)
         {
-            // 플레이어의 인벤토리, 장비 받을 예정
             inventory = player.Inventory;
             equipment = player.Equipment;
         }

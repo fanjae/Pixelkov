@@ -70,6 +70,7 @@ public class InventoryPanel : MonoBehaviour
     /// </summary>
     public void PaintInventoryAll()
     {
+        if (inventory == null) return;
         for(int i = 0; i < inventory.Slots.Count; i++)
         {
             PaintSlotUI(i);

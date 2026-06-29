@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IEnmeyController
 {
     [Header("플레이어 체력")]
     [SerializeField] private int maxHealth = 5;

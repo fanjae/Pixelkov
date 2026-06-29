@@ -15,6 +15,7 @@ public class EnemyVisibility : MonoBehaviour
     [SerializeField] private LayerMask wallLayer; // 벽 레이어
 
     private SpriteRenderer[] spriteRenderers;
+    [SerializeField] private Canvas hpBarCanvas;
 
     private void Awake()
     {
@@ -87,5 +88,8 @@ public class EnemyVisibility : MonoBehaviour
             if (spriteRenderer == null) continue;
             spriteRenderer.enabled = visible;
         }
+
+        if (hpBarCanvas != null)
+            hpBarCanvas.enabled = visible;
     }
 }

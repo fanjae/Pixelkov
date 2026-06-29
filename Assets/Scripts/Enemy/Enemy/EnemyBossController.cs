@@ -100,7 +100,6 @@ namespace Enemy1
             {
                 
                 if (3 < currentHealth)
-                //if (false)
                 {
 
                     if (distance < fireDistance)
@@ -112,11 +111,12 @@ namespace Enemy1
                 }
                 else
                 {
-                    
-                    if (fireDistance< distance)
+
+                    if (fireDistance < distance && dashDelay <= dashTimer)
                     {
                         //데쉬 루틴
                         StartCoroutine(DashRoutine());
+                        dashTimer = 0.0f;
                         return;
                     }
                     if (distance < attackDistance)
@@ -167,36 +167,24 @@ namespace Enemy1
         IEnumerator AttackRoutine()
         {
             isAttack = true;
-            //애니메이션 타입 : 공격
-            //현재 공격 애니메이션 문제로 주석
             UpdateAnimation(EnemyActionType.Attack);
-            ////공격 방향
-            //UpdatePlayerShoter();
-            ////공격
-
+            weapon.StartAttack();
             yield return new WaitForSeconds(1.0f);
-            shooterController.Fire();
-            //공격후 딜레이
-            //yield return new WaitForSeconds(1.0f);
             isAttack = false;
+
         }
-        //근접무기 공격
+
         IEnumerator AttackWeaponRoutine()
         {
             isAttack = true;
-            //애니메이션 타입 : 공격
-            //현재 공격 애니메이션 문제로 주석
             UpdateAnimation(EnemyActionType.WeaponAttack);
-            ////공격 방향
-            //UpdatePlayerShoter();
-            ////공격
-
-            yield return new WaitForSeconds(1.0f);
             weapon.StartAttack();
-            //공격후 딜레이
             yield return new WaitForSeconds(1.0f);
             isAttack = false;
+
         }
+        //근접무기 공격
+        
 
         
         private void OriMove()

@@ -1,4 +1,4 @@
-using Enemy_Player;
+ï»¿using Enemy_Player;
 using UnityEngine;
 
 
@@ -11,44 +11,45 @@ namespace Enemy1
         private bool isAttack = false;
         public int Damage => damage;
 
-        private BoxCollider2D collider;
 
-        private void Awake()
-        {
-            collider = GetComponent<BoxCollider2D>();
-        }
-        //°ø°İ ½ÃÀÛ
+        [SerializeField] private float FindRange = 1.0f;
+        public LayerMask targetLayer;
+
+        
+        //ê³µê²© ì‹œì‘
         public void StartAttack()
         {
             isAttack = true;
-            collider.enabled = true;
         }
-
-        //°ø°İ Á¾·á
+        //ê³µê²© ì¢…ë£Œ
         public void EndAttack()
         {
             isAttack = false;
-            collider.enabled = false;
         }
-        private void OnTriggerEnter2D(Collider2D collision)
+
+        void Update()
         {
             if (!isAttack) return;
-
-            if (collision.CompareTag("Enemy"))
+            //ë²”ìœ„ ì•ˆì— ì  
+            Collider2D EnemyObj = Physics2D.OverlapCircle(transform.position, FindRange, targetLayer);
+            PlayerHealth enemyController = null;
+            if (EnemyObj)
             {
-                return;
+                enemyController = EnemyObj.GetComponentInParent<PlayerHealth>();
             }
-
-            // Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®³ª ºÎ¸ğ¿¡¼­ EnemyController Ã£±â
-            PlayerHealth enemyController =
-            collision.GetComponentInParent<PlayerHealth>();
-            // ÀûÀÌ¶ó¸é µ¥¹ÌÁö Àü´Ş
+            // ì ì´ë¼ë©´ ë°ë¯¸ì§€ ì „ë‹¬
             if (enemyController != null)
             {
                 enemyController.TakeDamage(damage);
             }
-            //°ø°İ Á¾·á
             EndAttack();
+
         }
+        //private void OnDrawGizmos() // ë²”ìœ„ ê·¸ë¦¬ê¸°
+        //{
+        //    Gizmos.color = Color.red;
+        //    Gizmos.DrawWireSphere(transform.position, FindRange);
+        //}
+
     }
 }

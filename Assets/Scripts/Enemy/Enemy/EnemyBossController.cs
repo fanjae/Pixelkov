@@ -5,42 +5,56 @@ namespace Enemy1
 {
     public class EnemyBossController : MonoBehaviour, IEnmeyController
     {
-        [SerializeField] private float moveSpeed = 2.0f;
+        
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyShooterController shooterController;
         [SerializeField] private EnemyWeapon weapon;
         //골드 컨드롤
         [SerializeField] private PlayerGoldController goldController;
+        //HP UI
+        [SerializeField] private EnemyUI hpUI;
+        //코인
+        [SerializeField] private GameObject coin;
 
+
+        [Header("이동 속도")]
+        [SerializeField] private float moveSpeed = 2.0f;
+        //플레이어 거리 기준 이동 거리
+        [Header("Player 이동 시작 거리 ")]
+        [SerializeField] private float targeteDistance = 6.0f;
         //플레이어와 적 공격 거리
+        [Header("원거리 공격 시작 거리")]
         [SerializeField] private float fireDistance = 3.0f;
         //근접무기 공격 거리
+        [Header("근접 공격 시작 거리")]
         [SerializeField] private float attackDistance = 0.5f;
-        //플레이어 거리 기준 이동 거리
-        [SerializeField] private float targeteDistance = 6.0f;
-
-        //코인
-        [SerializeField]private GameObject coin;
-
         //골드
+        [Header("Gold")]
         [SerializeField] private int gold;
+        //Max HP
+        [Header("최대 HP")]
+        [SerializeField] private int maxHealth = 3;
+        //HP 회복시간
+        [Header("HP 회복시간")]
+        [SerializeField] private float recoveryHPDelay = 5.0f;
+        //Dash 재사용 시간
+        [Header("Dash 재사용 시간")]
+        [SerializeField] private float dashDelay = 5.0f;
+        //Dash 스피드
+        [Header("Dash 스피드")]
+        [SerializeField] public float dashSpeed = 15.0f;
+
 
         //플레이어
         private Transform target;
-
-        //HP UI
-        [SerializeField] private EnemyUI hpUI;
-        //Max HP
-        [SerializeField] private int maxHealth = 3;
         //초기 HP
         private int currentHealth;
+        //대쉬 지속 시간
+        private float dashDuration = 0.2f;
 
-        public float dashSpeed = 15f;
-        public float dashDuration = 0.2f;
-
-        [SerializeField] private float dashDelay = 5.0f;
+        //Dash 타이머
         private float dashTimer = 0.0f;
-        [SerializeField] private float recoveryHPDelay = 5.0f;
+        //HP 타이머
         private float recoveryHPTimer = 0.0f;
 
         private Collider2D collider;
@@ -103,10 +117,8 @@ namespace Enemy1
             
             if (distance < targeteDistance)
             {
-                
                 if (3 < currentHealth)
                 {
-
                     if (distance < fireDistance)
                     {
                         //원거리 공격 루틴
@@ -116,7 +128,6 @@ namespace Enemy1
                 }
                 else
                 {
-
                     if (fireDistance < distance && dashDelay <= dashTimer)
                     {
                         //데쉬 루틴

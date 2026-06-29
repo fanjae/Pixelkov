@@ -6,29 +6,34 @@ namespace Enemy1
 {
     public class EnemyWeaponController : MonoBehaviour, IEnmeyController
     {
-        [SerializeField] private float moveSpeed = 2.0f;
+        
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyWeapon weapon;
         //골드 컨드롤
         [SerializeField] private PlayerGoldController goldController;
-
-        //플레이어와 적 공격 거리
-        [SerializeField] private float attackDistance = 0.5f;
-        //플레이어 거리 기준 이동 거리
-        [SerializeField] private float targeteDistance = 6.0f;
-
+        //HP UI
+        [SerializeField] private EnemyUI hpUI;
         //코인
-        [SerializeField]private GameObject coin;
+        [SerializeField] private GameObject coin;
+
+        [Header("이동 속도")]
+        [SerializeField] private float moveSpeed = 2.0f;
+        //플레이어 거리 기준 이동 거리
+        [Header("Player 이동 시작 거리 ")]
+        [SerializeField] private float targeteDistance = 6.0f;
+        //근접무기 공격 거리
+        [Header("근접 공격 시작 거리")]
+        [SerializeField] private float attackDistance = 0.5f;
         //골드
+        [Header("Gold")]
         [SerializeField] private int gold;
+        //Max HP
+        [Header("최대 HP")]
+        [SerializeField] private int maxHealth = 3;
+
 
         //플레이어
         private Transform target;
-
-        //HP UI
-        [SerializeField] private EnemyUI hpUI;
-        //Max HP
-        [SerializeField] private int maxHealth = 3;
         //초기 HP
         private int currentHealth;
 

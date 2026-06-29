@@ -60,8 +60,6 @@ namespace Enemy1
                 hpUI.Initialize(maxHealth);
             }
         }
-
-
         private void FixedUpdate()
         {
             if (isDead) return;
@@ -138,21 +136,24 @@ namespace Enemy1
             collider.enabled = false;
             rb.simulated = false;
             Destroy(gameObject, 3.0f);
-           
+
         }
-        
-        //void OnCollisionStay2D(Collision2D collision)
-        //{
-        //    Debug.Log("test");
-        //    // 충돌한 상대가 'Enemy' 레이어일 경우
-        //    if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
-        //    {
-        //        // 서로 밀어내는 벡터 계산
-        //        Vector2 dir = transform.position - collision.transform.position;
-        //        GetComponent<Rigidbody2D>().AddForce(dir.normalized * 5f);
-        //    }
-        //}
 
-
+        //충돌시 밀어내기
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            // 충돌한 대상이 Enemy 
+            if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+            {
+                Rigidbody2D otherRb = collision.GetComponent<Rigidbody2D>();
+                if (otherRb != null)
+                {
+                    // 밀어낼 방향과 거리 계산
+                    Vector2 pushDir = (Vector2)(transform.position - collision.transform.position).normalized;
+                    // 위치 강제 이동
+                    transform.position += (Vector3)(pushDir * 0.1f);
+                }
+            } 
+        }
     }
 }

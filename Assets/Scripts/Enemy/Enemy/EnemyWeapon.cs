@@ -6,16 +6,16 @@ namespace Enemy1
 {
     public class EnemyWeapon : MonoBehaviour
     {
+        [Header("Damage")]
         [SerializeField] private int damage = 1;
-
+        [Header("공격 사정 거리")]
+        [SerializeField] private float FindRange = 1.0f;
+        [Header("Target Layer")]
+        [SerializeField] private LayerMask targetLayer;
         private bool isAttack = false;
         public int Damage => damage;
 
 
-        [SerializeField] private float FindRange = 1.0f;
-        public LayerMask targetLayer;
-
-        
         //공격 시작
         public void StartAttack()
         {
@@ -45,11 +45,5 @@ namespace Enemy1
             EndAttack();
 
         }
-        //private void OnDrawGizmos() // 범위 그리기
-        //{
-        //    Gizmos.color = Color.red;
-        //    Gizmos.DrawWireSphere(transform.position, FindRange);
-        //}
-
     }
 }

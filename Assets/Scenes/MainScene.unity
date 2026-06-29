@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 18495523}
   - component: {fileID: 18495525}
   - component: {fileID: 18495524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 51857305}
   - component: {fileID: 51857307}
   - component: {fileID: 51857306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 67153775}
   - component: {fileID: 67153776}
   - component: {fileID: 67153777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 72705914}
   - component: {fileID: 72705916}
   - component: {fileID: 72705915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   - component: {fileID: 75154630}
   - component: {fileID: 75154632}
   - component: {fileID: 75154631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 81181289}
   - component: {fileID: 81181291}
   - component: {fileID: 81181290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1367,7 +1367,7 @@ GameObject:
   - component: {fileID: 125588382}
   - component: {fileID: 125588384}
   - component: {fileID: 125588383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1504,7 +1504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 127550619}
   - component: {fileID: 127550620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1596,7 +1596,7 @@ GameObject:
   - component: {fileID: 136085144}
   - component: {fileID: 136085146}
   - component: {fileID: 136085145}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1723,11 +1723,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!20 &145112978 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3863602750916826462, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
-  m_PrefabInstance: {fileID: 1697962340}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &154978734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,7 +1732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154978735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1795,7 +1790,7 @@ GameObject:
   - component: {fileID: 170542947}
   - component: {fileID: 170542949}
   - component: {fileID: 170542948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2066,7 @@ GameObject:
   - component: {fileID: 192766885}
   - component: {fileID: 192766887}
   - component: {fileID: 192766886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2380,7 +2375,7 @@ PrefabInstance:
     - target: {fileID: 3134998967192711951, guid: 18a30f36deccd4643a7254881d925560, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 145112978}
+      objectReference: {fileID: 0}
     - target: {fileID: 8103280382590797349, guid: 18a30f36deccd4643a7254881d925560, type: 3}
       propertyPath: m_Name
       value: CursorCanvas
@@ -2406,7 +2401,7 @@ GameObject:
   - component: {fileID: 205398520}
   - component: {fileID: 205398522}
   - component: {fileID: 205398521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2544,7 +2539,7 @@ GameObject:
   - component: {fileID: 236309490}
   - component: {fileID: 236309492}
   - component: {fileID: 236309491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2682,7 +2677,7 @@ GameObject:
   - component: {fileID: 264989555}
   - component: {fileID: 264989557}
   - component: {fileID: 264989556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2819,7 +2814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266445092}
   - component: {fileID: 266445093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3033,7 +3028,7 @@ GameObject:
   - component: {fileID: 304154147}
   - component: {fileID: 304154149}
   - component: {fileID: 304154148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3171,7 +3166,7 @@ GameObject:
   - component: {fileID: 335541137}
   - component: {fileID: 335541139}
   - component: {fileID: 335541138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3447,7 +3442,7 @@ GameObject:
   - component: {fileID: 353086864}
   - component: {fileID: 353086866}
   - component: {fileID: 353086865}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3585,7 +3580,7 @@ GameObject:
   - component: {fileID: 356792878}
   - component: {fileID: 356792880}
   - component: {fileID: 356792879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3723,7 +3718,7 @@ GameObject:
   - component: {fileID: 364004031}
   - component: {fileID: 364004032}
   - component: {fileID: 364004033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3850,6 +3845,143 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.2, y: 0.15}
   m_EdgeRadius: 0
+--- !u!1 &399891539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399891543}
+  - component: {fileID: 399891542}
+  - component: {fileID: 399891541}
+  - component: {fileID: 399891540}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &399891540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399891539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!81 &399891541
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399891539}
+  m_Enabled: 1
+--- !u!20 &399891542
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399891539}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 34
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 0
+  m_HDR: 1
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &399891543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399891539}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0071428567, y: 0.56, z: -1.4285713}
+  m_LocalScale: {x: 0.14285713, y: 0.14285713, z: 0.14285713}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1697962342}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438678044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,7 +3993,7 @@ GameObject:
   - component: {fileID: 438678045}
   - component: {fileID: 438678047}
   - component: {fileID: 438678046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4040,7 +4172,7 @@ GameObject:
   - component: {fileID: 473984568}
   - component: {fileID: 473984570}
   - component: {fileID: 473984569}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4178,7 +4310,7 @@ GameObject:
   - component: {fileID: 495989854}
   - component: {fileID: 495989856}
   - component: {fileID: 495989855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4316,7 +4448,7 @@ GameObject:
   - component: {fileID: 502679064}
   - component: {fileID: 502679066}
   - component: {fileID: 502679065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4454,7 +4586,7 @@ GameObject:
   - component: {fileID: 524504288}
   - component: {fileID: 524504290}
   - component: {fileID: 524504289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4592,7 +4724,7 @@ GameObject:
   - component: {fileID: 528990039}
   - component: {fileID: 528990041}
   - component: {fileID: 528990040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4730,7 +4862,7 @@ GameObject:
   - component: {fileID: 537676702}
   - component: {fileID: 537676704}
   - component: {fileID: 537676703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7900,6 +8032,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &584767512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 190230837376255552, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+  m_PrefabInstance: {fileID: 2068859221983128141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba60e05d13d52f4d8145cb49ec6aaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Temp_EnemyAnimationController
 --- !u!1 &596783126
 GameObject:
   m_ObjectHideFlags: 0
@@ -13696,7 +13839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 640122442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14010,7 +14153,7 @@ GameObject:
   - component: {fileID: 702856545}
   - component: {fileID: 702856547}
   - component: {fileID: 702856546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14148,7 +14291,7 @@ GameObject:
   - component: {fileID: 702947522}
   - component: {fileID: 702947524}
   - component: {fileID: 702947523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14424,7 +14567,7 @@ GameObject:
   - component: {fileID: 741033731}
   - component: {fileID: 741033732}
   - component: {fileID: 741033733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14600,7 +14743,7 @@ GameObject:
   - component: {fileID: 781305582}
   - component: {fileID: 781305584}
   - component: {fileID: 781305583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14876,7 +15019,7 @@ GameObject:
   - component: {fileID: 790640751}
   - component: {fileID: 790640753}
   - component: {fileID: 790640752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15013,7 +15156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 807785300}
   - component: {fileID: 807785301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84764,7 +84907,7 @@ PrefabInstance:
     - target: {fileID: 390177449831270858, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
       propertyPath: goldController
       value: 
-      objectReference: {fileID: 2021475781}
+      objectReference: {fileID: 0}
     - target: {fileID: 1286382358002617794, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
       propertyPath: player
       value: 
@@ -85076,7 +85219,7 @@ PrefabInstance:
     - target: {fileID: 6165529523165202019, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
       propertyPath: goldController
       value: 
-      objectReference: {fileID: 2021475781}
+      objectReference: {fileID: 0}
     - target: {fileID: 6407626707926757759, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -85210,7 +85353,7 @@ GameObject:
   - component: {fileID: 921968073}
   - component: {fileID: 921968075}
   - component: {fileID: 921968074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85655,7 +85798,7 @@ GameObject:
   - component: {fileID: 1026710218}
   - component: {fileID: 1026710220}
   - component: {fileID: 1026710219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85793,7 +85936,7 @@ GameObject:
   - component: {fileID: 1057460486}
   - component: {fileID: 1057460488}
   - component: {fileID: 1057460487}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86886,7 +87029,7 @@ GameObject:
   - component: {fileID: 1093404085}
   - component: {fileID: 1093404087}
   - component: {fileID: 1093404086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87024,7 +87167,7 @@ GameObject:
   - component: {fileID: 1142000432}
   - component: {fileID: 1142000434}
   - component: {fileID: 1142000433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87162,7 +87305,7 @@ GameObject:
   - component: {fileID: 1142281854}
   - component: {fileID: 1142281856}
   - component: {fileID: 1142281855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87298,7 +87441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180031984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87363,7 +87506,7 @@ GameObject:
   - component: {fileID: 1180713797}
   - component: {fileID: 1180713799}
   - component: {fileID: 1180713798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87501,7 +87644,7 @@ GameObject:
   - component: {fileID: 1194564556}
   - component: {fileID: 1194564558}
   - component: {fileID: 1194564557}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87639,7 +87782,7 @@ GameObject:
   - component: {fileID: 1280691248}
   - component: {fileID: 1280691250}
   - component: {fileID: 1280691249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87777,7 +87920,7 @@ GameObject:
   - component: {fileID: 1314422248}
   - component: {fileID: 1314422250}
   - component: {fileID: 1314422249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88583,75 +88726,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1347110739
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 358305604466692551, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_Name
-      value: Enemy_03
-      objectReference: {fileID: 0}
-    - target: {fileID: 358305604466692551, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 960570727456789659, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: coin
-      value: 
-      objectReference: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-    - target: {fileID: 1657277607722355705, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.486249
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.9799701
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.091
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999619
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.008726557
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358707518830829636, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e73f7978f6c68dc49a30e2201c464838, type: 3}
 --- !u!1 &1347449941
 GameObject:
   m_ObjectHideFlags: 0
@@ -88662,7 +88736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347449942}
   - component: {fileID: 1347449943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88754,7 +88828,7 @@ GameObject:
   - component: {fileID: 1354140465}
   - component: {fileID: 1354140467}
   - component: {fileID: 1354140466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88983,7 +89057,7 @@ GameObject:
   - component: {fileID: 1355404335}
   - component: {fileID: 1355404337}
   - component: {fileID: 1355404336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121399,7 +121473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372154382}
   - component: {fileID: 1372154383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121526,7 +121600,7 @@ GameObject:
   - component: {fileID: 1375785155}
   - component: {fileID: 1375785157}
   - component: {fileID: 1375785156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121796,7 +121870,7 @@ GameObject:
   - component: {fileID: 1427151087}
   - component: {fileID: 1427151089}
   - component: {fileID: 1427151088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121934,7 +122008,7 @@ GameObject:
   - component: {fileID: 1459759016}
   - component: {fileID: 1459759018}
   - component: {fileID: 1459759017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122072,7 +122146,7 @@ GameObject:
   - component: {fileID: 1467681386}
   - component: {fileID: 1467681388}
   - component: {fileID: 1467681387}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122576,7 +122650,7 @@ GameObject:
   - component: {fileID: 1503291244}
   - component: {fileID: 1503291246}
   - component: {fileID: 1503291245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122713,7 +122787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514633561}
   - component: {fileID: 1514633562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122943,7 +123017,7 @@ GameObject:
   - component: {fileID: 1548385659}
   - component: {fileID: 1548385661}
   - component: {fileID: 1548385660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123070,75 +123144,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1001 &1551644547
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 604824051150214649, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_Name
-      value: Enemy_02
-      objectReference: {fileID: 0}
-    - target: {fileID: 604824051150214649, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.679937
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.9799701
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999619
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.008726557
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053514610560830870, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3274917490197169340, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: coin
-      value: 
-      objectReference: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-    - target: {fileID: 4307090030425787379, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
 --- !u!1 &1561637816
 GameObject:
   m_ObjectHideFlags: 0
@@ -123149,7 +123154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561637817}
   - component: {fileID: 1561637818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123241,7 +123246,7 @@ GameObject:
   - component: {fileID: 1570066329}
   - component: {fileID: 1570066331}
   - component: {fileID: 1570066330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124762,7 +124767,7 @@ GameObject:
   - component: {fileID: 1671960319}
   - component: {fileID: 1671960321}
   - component: {fileID: 1671960320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124899,7 +124904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672658717}
   - component: {fileID: 1672658718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine props_28 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125082,7 +125087,7 @@ GameObject:
   - component: {fileID: 1690695360}
   - component: {fileID: 1690695362}
   - component: {fileID: 1690695361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125220,7 +125225,7 @@ GameObject:
   - component: {fileID: 1690850523}
   - component: {fileID: 1690850525}
   - component: {fileID: 1690850524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125355,13 +125360,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 502923518768100820, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382281924349734925, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.01
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.64
+      value: -3.92
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -125399,9 +125412,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Test
       objectReference: {fileID: 0}
+    - target: {fileID: 7912254970507497521, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912254970507497521, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835514886835017822, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835514886835017822, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835514886835017822, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 399891543}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
 --- !u!114 &1697962341 stripped
@@ -125415,6 +125451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5087c4c3168e0e348a414e4627f72978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &1697962342 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+  m_PrefabInstance: {fileID: 1697962340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1712261213
 GameObject:
   m_ObjectHideFlags: 0
@@ -125564,7 +125605,7 @@ GameObject:
   - component: {fileID: 1718970348}
   - component: {fileID: 1718970350}
   - component: {fileID: 1718970349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125702,7 +125743,7 @@ GameObject:
   - component: {fileID: 1749590196}
   - component: {fileID: 1749590198}
   - component: {fileID: 1749590197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125840,7 +125881,7 @@ GameObject:
   - component: {fileID: 1758799569}
   - component: {fileID: 1758799571}
   - component: {fileID: 1758799570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125976,7 +126017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1776475965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126014,7 +126055,7 @@ GameObject:
   - component: {fileID: 1785584810}
   - component: {fileID: 1785584812}
   - component: {fileID: 1785584811}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127477,7 +127518,7 @@ GameObject:
   - component: {fileID: 1802855355}
   - component: {fileID: 1802855357}
   - component: {fileID: 1802855356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127604,6 +127645,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!4 &1810669279 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8062931820950492523, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+  m_PrefabInstance: {fileID: 1697962340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1810669281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9220994794998661733, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+  m_PrefabInstance: {fileID: 1697962340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
 --- !u!1 &1824396183
 GameObject:
   m_ObjectHideFlags: 0
@@ -127615,7 +127672,7 @@ GameObject:
   - component: {fileID: 1824396184}
   - component: {fileID: 1824396186}
   - component: {fileID: 1824396185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127763,7 +127820,7 @@ GameObject:
   - component: {fileID: 1889876444}
   - component: {fileID: 1889876446}
   - component: {fileID: 1889876445}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128039,7 +128096,7 @@ GameObject:
   - component: {fileID: 1900989966}
   - component: {fileID: 1900989968}
   - component: {fileID: 1900989967}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128315,7 +128372,7 @@ GameObject:
   - component: {fileID: 1930650116}
   - component: {fileID: 1930650118}
   - component: {fileID: 1930650117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128622,7 +128679,7 @@ GameObject:
   - component: {fileID: 1950884886}
   - component: {fileID: 1950884888}
   - component: {fileID: 1950884887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128760,7 +128817,7 @@ GameObject:
   - component: {fileID: 1958658089}
   - component: {fileID: 1958658091}
   - component: {fileID: 1958658090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128898,7 +128955,7 @@ GameObject:
   - component: {fileID: 1973949744}
   - component: {fileID: 1973949746}
   - component: {fileID: 1973949745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129036,7 +129093,7 @@ GameObject:
   - component: {fileID: 1982082392}
   - component: {fileID: 1982082394}
   - component: {fileID: 1982082393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129172,7 +129229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985295543}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MineStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129351,17 +129408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43e194a9d2c5524b99e9c3cc7a99e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
---- !u!114 &2021475781 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4675067371354953239, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
-  m_PrefabInstance: {fileID: 1697962340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 162555e6f62cbc64e9f4d62561f2c814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerGoldController
 --- !u!1 &2031897008
 GameObject:
   m_ObjectHideFlags: 0
@@ -129464,7 +129510,7 @@ GameObject:
   - component: {fileID: 2033411318}
   - component: {fileID: 2033411320}
   - component: {fileID: 2033411319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141137,6 +141183,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2067918127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3080424443104038601, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+  m_PrefabInstance: {fileID: 1697962340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
 --- !u!1 &2072929520
 GameObject:
   m_ObjectHideFlags: 0
@@ -141148,7 +141205,7 @@ GameObject:
   - component: {fileID: 2072929521}
   - component: {fileID: 2072929523}
   - component: {fileID: 2072929522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141377,7 +141434,7 @@ GameObject:
   - component: {fileID: 2084239689}
   - component: {fileID: 2084239691}
   - component: {fileID: 2084239690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141515,7 +141572,7 @@ GameObject:
   - component: {fileID: 2097546102}
   - component: {fileID: 2097546104}
   - component: {fileID: 2097546103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141653,7 +141710,7 @@ GameObject:
   - component: {fileID: 2103882238}
   - component: {fileID: 2103882240}
   - component: {fileID: 2103882239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142036,7 +142093,7 @@ GameObject:
   - component: {fileID: 2122553118}
   - component: {fileID: 2122553120}
   - component: {fileID: 2122553119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142163,6 +142220,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2130577112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 61443761069499303, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+  m_PrefabInstance: {fileID: 8828481664053026922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba60e05d13d52f4d8145cb49ec6aaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Temp_EnemyAnimationController
 --- !u!1 &2132862686
 GameObject:
   m_ObjectHideFlags: 0
@@ -142174,7 +142242,7 @@ GameObject:
   - component: {fileID: 2132862687}
   - component: {fileID: 2132862689}
   - component: {fileID: 2132862688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: deep forest stones_0 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142465,6 +142533,87 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.2407879, y: 0.16572948}
   m_EdgeRadius: 0
+--- !u!1001 &2068859221983128141
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 94266723710995536, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_Name
+      value: Temp_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 600839344784741233, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1697962342}
+    - target: {fileID: 600839344784741233, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: coneLight
+      value: 
+      objectReference: {fileID: 1810669281}
+    - target: {fileID: 600839344784741233, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: circleLight
+      value: 
+      objectReference: {fileID: 2067918127}
+    - target: {fileID: 600839344784741233, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: visionTransform
+      value: 
+      objectReference: {fileID: 1810669279}
+    - target: {fileID: 2286440159762137345, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1697962342}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999619
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.008726557
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372928127239254812, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181565593435400826, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
+      propertyPath: animationController
+      value: 
+      objectReference: {fileID: 584767512}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8528c7b8909b87745bbf79300c34ed17, type: 3}
 --- !u!4 &3093827638244199944
 Transform:
   m_ObjectHideFlags: 0
@@ -142489,7 +142638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8579370058061975352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'Tree0 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142507,7 +142656,7 @@ GameObject:
   - component: {fileID: 3093827638244199944}
   - component: {fileID: 314333654851707365}
   - component: {fileID: 828460235158078171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142555,7 +142704,7 @@ GameObject:
   - component: {fileID: 3827075498367126343}
   - component: {fileID: 480077834435458255}
   - component: {fileID: 8095268059655239070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142573,7 +142722,7 @@ GameObject:
   - component: {fileID: 4136181851024259779}
   - component: {fileID: 7322935592593572087}
   - component: {fileID: 8002833933327558897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142759,13 +142908,114 @@ Transform:
   - {fileID: 1900989966}
   m_Father: {fileID: 1776475965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8828481664053026922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 286362992274326344, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1697962342}
+    - target: {fileID: 286362992274326344, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: coneLight
+      value: 
+      objectReference: {fileID: 1810669281}
+    - target: {fileID: 286362992274326344, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: circleLight
+      value: 
+      objectReference: {fileID: 2067918127}
+    - target: {fileID: 286362992274326344, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: visionTransform
+      value: 
+      objectReference: {fileID: 1810669279}
+    - target: {fileID: 999760026939414343, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1697962342}
+    - target: {fileID: 999760026939414343, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: attackDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 999760026939414343, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: attackRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 999760026939414343, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: detectRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 999760026939414343, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: keepDistance
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671615154139035557, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_Name
+      value: Temp_Enemy2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718084306004339103, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: animationController
+      value: 
+      objectReference: {fileID: 2130577112}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.07362
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.23347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999619
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.008726557
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915849782229409481, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514553992653893548, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9477b5480aed2a14e84b30086507d0a0, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 320e1695f6e5a0a4aa266d66ec63b9f5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 770994663}
   - {fileID: 59103155}
-  - {fileID: 1551644547}
-  - {fileID: 1347110739}
   - {fileID: 1697962340}
   - {fileID: 1407454931}
+  - {fileID: 2068859221983128141}
+  - {fileID: 8828481664053026922}

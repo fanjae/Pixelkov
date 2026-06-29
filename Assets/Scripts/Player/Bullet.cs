@@ -58,31 +58,36 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Bullet 충돌 대상: " + other.name);
+        if (other.GetComponent<Bullet>() != null) return;
+        if (other.GetComponent<Player>() != null) return;
 
-        // 총알끼리 충돌하면 무시
-        if (other.GetComponent<Bullet>() != null)
-        {
-            Debug.Log("Bullet 충돌 무시: Bullet");
-            return;
-        }
+        IDamageable damageable = other.GetComponentInParent<IDamageable>();
 
-        // 자신과 충돌 무시
-        if (other.GetComponent<Player>() != null)
-        {
-            Debug.Log("Bullet 충돌 무시: Player 계층");
-            return;
-        }
+        if (damageable != null) damageable.TakeDamage(damage);
 
-        EnemyController enemyController = other.GetComponentInParent<EnemyController>();
+        //// 총알끼리 충돌하면 무시
+        //if (other.GetComponent<Bullet>() != null)
+        //{
+        //    Debug.Log("Bullet 충돌 무시: Bullet");
+        //    return;
+        //}
 
-        if (enemyController != null)
-        {
-            enemyController.TakeDamage(damage);
-            Debug.Log("Bullet 삭제: 적 충돌 - " + enemyController.name);
-            Destroy(gameObject);
-            return;
-        }
+        //// 자신과 충돌 무시
+        //if (other.GetComponent<Player>() != null)
+        //{
+        //    Debug.Log("Bullet 충돌 무시: Player 계층");
+        //    return;
+        //}
+
+        //EnemyController enemyController = other.GetComponentInParent<EnemyController>();
+
+        //if (enemyController != null)
+        //{
+        //    enemyController.TakeDamage(damage);
+        //    Debug.Log("Bullet 삭제: 적 충돌 - " + enemyController.name);
+        //    Destroy(gameObject);
+        //    return;
+        //}
 
         Destroy(gameObject);
     }

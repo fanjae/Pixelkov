@@ -8,8 +8,9 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioDataBase database;
     [SerializeField] private AudioMixer audioMixer;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if(database != null)
         {
             database.Init();
@@ -18,12 +19,12 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Start()
     {
-        if(SceneLoadManager.Instance != null)
+        if (SceneLoadManager.Instance != null)
             SceneLoadManager.Instance.OnSceneChanged += ChangeBGM;
     }
     private void OnDestroy()
     {
-        if(SceneLoadManager.Instance != null)
+        if (SceneLoadManager.Instance != null)
             SceneLoadManager.Instance.OnSceneChanged -= ChangeBGM;
     }
 

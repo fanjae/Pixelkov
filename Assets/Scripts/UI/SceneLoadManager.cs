@@ -23,6 +23,11 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
 
     public event Action<SceneType> OnSceneChanged; // 씬 전환을 알림
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     /// <summary>
     /// SceneType에 맞춰 씬을 로드하는 메서드
     /// </summary>

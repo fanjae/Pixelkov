@@ -43,6 +43,7 @@ public class CursorController : MonoBehaviour
                 cursorImage.sprite = cursorSprite;
             }
             cursorImage.rectTransform.anchoredPosition += offset;
+            cursorImage.color = Color.white;
             HoverUI = true;
         }
         else
@@ -51,6 +52,7 @@ public class CursorController : MonoBehaviour
             {
                 cursorImage.sprite = crossHairSprite;
             }
+            cursorImage.color = Color.green;
             HoverUI = false;
         }
     }

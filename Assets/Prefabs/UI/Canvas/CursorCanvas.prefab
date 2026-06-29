@@ -110,22 +110,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1032303917497519388}
     m_Modifications:
-    - target: {fileID: 1958559834593727328, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
-      propertyPath: offset.x
-      value: 21.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958559834593727328, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
-      propertyPath: offset.y
-      value: -32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958559834593727328, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
-      propertyPath: cursorSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 95638ad22ce07409e864eeb2fbf8e4a3, type: 3}
-    - target: {fileID: 1958559834593727328, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
-      propertyPath: crossHairSprite
-      value: 
-      objectReference: {fileID: 21300002, guid: 66995b6b61aed864daa956ae255d7fee, type: 3}
     - target: {fileID: 5335639080601447675, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
       propertyPath: m_Name
       value: CursorController
@@ -156,11 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5657038628540118365, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5657038628540118365, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5657038628540118365, guid: 9c180dfa56a696447ba6a2f5c72d9cf1, type: 3}
       propertyPath: m_LocalPosition.x

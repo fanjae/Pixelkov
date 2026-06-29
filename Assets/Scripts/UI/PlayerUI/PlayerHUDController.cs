@@ -46,6 +46,11 @@ public class PlayerHUDController : MonoBehaviour
                 UpdateAmmo();
                 weaponController.OnAmmoChanged += UpdateAmmo;
             }
+
+            if(player.Equipment != null)
+            {
+                player.Equipment.OnEquipmentChanged += UpdateAmmo;
+            }
         }
     }
     private void OnDestroy()
@@ -53,6 +58,10 @@ public class PlayerHUDController : MonoBehaviour
         if(weaponController != null)
         {
             weaponController.OnAmmoChanged -= UpdateAmmo;
+        }
+        if (player != null && player.Equipment != null)
+        {
+            player.Equipment.OnEquipmentChanged -= UpdateAmmo;
         }
     }
     private void Update()

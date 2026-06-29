@@ -8,7 +8,7 @@ public class Fade : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 0.5f;
 
-    private void Awake()
+    private void Start()
     {
         // 씬 들어오면 FadeIn
         StartCoroutine(FadeIn());

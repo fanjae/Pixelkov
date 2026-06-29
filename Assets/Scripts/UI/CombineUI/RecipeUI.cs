@@ -13,6 +13,7 @@ public class RecipeUI : MonoBehaviour
 
     public ItemData CurItem { get; private set; }
     public int RecipeId { get; private set; } = -1;
+    public int MaxCount { get; private set; }
 
     public void RecvRecipeData(CraftRecipeData recipeData, bool firstMatActive, bool secondMatActive, int maxCount)
     {
@@ -20,6 +21,7 @@ public class RecipeUI : MonoBehaviour
         if (recipeData == null) return;
 
         RecipeId = recipeData.RecipeId;
+        MaxCount = maxCount;
 
         ItemData resultItem = CraftUIController.Database.GetItem(recipeData.ResultItemId);
         if (resultItem != null)
@@ -39,12 +41,10 @@ public class RecipeUI : MonoBehaviour
         if (counterSelector != null)
             counterSelector.Init(0, maxCount);
     }
-    public void UpdateCounterSelector(int maxCount)
-    {
-        counterSelector.Init(0, maxCount);
-    }
     public void OnClickCraftButton()
     {
+        if(MaxCount <= 0) return;
+
         if(CurItem != null && CurItem.IsStackable)
         {
             if(counterSelector != null &&  OnCraft != null)

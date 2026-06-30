@@ -152,16 +152,20 @@ public class PlayerShooter : MonoBehaviour
 
         Debug.Log("재장전 시작");
 
-        // 캐릭터 재장전 애니메이션 실행
-        if (characterAnimator != null)
+        // 활 재장전 애니메이션 실행
+        if (weaponAnimator != null)
         {
-            characterAnimator.ResetTrigger("Reload");
-            characterAnimator.SetTrigger("Reload");
+            // 공격 모션이 남아 있으면 초기화
+            weaponAnimator.ResetTrigger("Shoot");
+
+            // 장전 트리거 초기화 후 실행
+            weaponAnimator.ResetTrigger("Reload");
+            weaponAnimator.SetTrigger("Reload");
         }
         else
         {
             Debug.LogWarning(
-                "Character Animator가 연결되지 않았습니다."
+                "Weapon Animator가 연결되지 않았습니다."
             );
         }
 

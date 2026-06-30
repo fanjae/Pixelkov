@@ -14,10 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaterialData
   itemId: 500
   itemName: Wood
-  description: 'Wood.
-
-
-    Can''t be used directly, but can be used to carft equipment. '
+  description: 'Wood. '
   price: 0
   icon: {fileID: 21300000, guid: c19659f47213c4b45a744f8a3a361cf2, type: 3}
   itemType: 5

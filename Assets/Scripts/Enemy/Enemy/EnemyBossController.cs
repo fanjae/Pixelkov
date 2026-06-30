@@ -15,6 +15,8 @@ namespace Enemy1
         [SerializeField] private EnemyUI hpUI;
         //코인
         [SerializeField] private GameObject coin;
+        //회복 아이콘 
+        [SerializeField] private GameObject hpAdd;
 
 
         [Header("이동 속도")]
@@ -74,6 +76,7 @@ namespace Enemy1
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
+            
 
             //플레이어 컴포넌트
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -91,21 +94,35 @@ namespace Enemy1
 
         private void Update()
         {
+            
             dashTimer += Time.deltaTime;
             //데미지 있을시 HP 회복 타이머 작동
             if (currentHealth < maxHealth)
             {
+                
                 recoveryHPTimer += Time.deltaTime;
                 Debug.Log(recoveryHPTimer);
             }
             //HP 회복
             if (recoveryHPDelay < recoveryHPTimer
-                && currentHealth < maxHealth)
+                && currentHealth < maxHealth
+                )
             {
                 currentHealth += 1;
                 hpUI.SetHP(currentHealth);
                 recoveryHPTimer = 0.0f;
+                //HP 회복 아이콘 
+                StartCoroutine(RecoveryHPRoutine());
             }
+        }
+
+        IEnumerator RecoveryHPRoutine()
+        {
+
+            hpAdd.SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            hpAdd.SetActive(false);
+
         }
 
         private void FixedUpdate()

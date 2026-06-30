@@ -14,7 +14,7 @@ public class WeaponData : ItemData
     public float ReloadTime => reloadTime;
     public int AmmoItemId => ammoItemId;
 
-    public override void Use(Player player)
+    public override bool Use(Player player)
     {
         // player.EquipWeapon(this);
     }

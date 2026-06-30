@@ -71,17 +71,11 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
             );
         }
     }
-    public void Heal(int amount)
+    public bool Heal(int amount)
     {
-        if (isDead)
-        {
-            return;
-        }
-
-        if (amount <= 0)
-        {
-            return;
-        }
+        if (isDead) return false;
+        if (amount <= 0) return false;
+        if (currentHealth >= maxHealth) return false;
 
         currentHealth += amount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
@@ -89,6 +83,8 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
         Debug.Log(
             $"플레이어 체력 회복: {currentHealth} / {maxHealth}"
         );
+
+        return true;
     }
 
     // 플레이어가 데미지를 받을 때 외부에서 호출

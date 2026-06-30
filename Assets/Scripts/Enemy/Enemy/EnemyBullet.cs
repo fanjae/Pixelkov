@@ -16,7 +16,7 @@ namespace Enemy1
         private Vector2 direction;
 
         public int Damage => damage;
-        private bool isAttack = false;
+        private bool isAttack = true;
 
         private void Start()
         {
@@ -41,29 +41,31 @@ namespace Enemy1
             //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime, Space.Self);
             transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
 
+
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!isAttack) return;
-            isAttack=true;
-            // 플레이어 자신과 충돌하면 무시
-            if (collision.CompareTag("Enemy"))
+            isAttack = false;
+            // 플레이어외의 테그는 무시
+            if (!collision.CompareTag("Player"))
             {
+                isAttack = true;
                 return;
             }
 
             // 충돌한 오브젝트나 부모에서 EnemyController 찾기
             PlayerHealth enemyController =
                 collision.GetComponentInParent<PlayerHealth>();
-
-            // 적이라면 데미지 전달
+            
+            //적이라면 데미지 전달
             if (enemyController != null)
             {
                 enemyController.TakeDamage(damage);
             }
-            isAttack = false;
+            isAttack = true;
 
-            // 충돌 후 총알 삭제
+            //// 충돌 후 총알 삭제
             Destroy(gameObject);
         }
     }

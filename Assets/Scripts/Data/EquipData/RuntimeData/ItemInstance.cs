@@ -11,7 +11,7 @@
         switch (itemData)
         {
             case WeaponData weapon:
-                RuntimeData = new WeaponRuntimeData(weapon.Capacity);
+                RuntimeData = new WeaponRuntimeData(0);
                 break;
         }
     }

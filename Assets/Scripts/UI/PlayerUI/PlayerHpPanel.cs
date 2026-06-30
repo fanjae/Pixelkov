@@ -29,7 +29,7 @@ public class PlayerHpPanel : MonoBehaviour
     {
         float ratio = (float)currentHp / maxHp; // 체력 비율을 구해서 DOTween을 사용해 fillAmount 조정
         fillImage.DOKill();
-        fillImage.DOFillAmount(ratio, 0.05f).SetEase(Ease.OutQuad);
+        fillImage.DOFillAmount(ratio, 0.1f).SetEase(Ease.OutQuad);
         hpText.text = $"{currentHp} / {maxHp}";
     }
 }

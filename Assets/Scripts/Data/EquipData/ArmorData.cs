@@ -15,11 +15,9 @@ public class ArmorData : ItemData
     public int NextUpgradeItemId => nextUpgradeItemId;
     public bool CanUpgrade => nextUpgradeItemId > 0;
 
-    public override void Use(Player player)
+    public override bool Use(Player player)
     {
-        // player.EquipArmor(this);
-        // 초기에는 이쪽에서 처리하려고 했으나, 컨트롤러 쪽에 고정되면서
-        // 필요성이 모호해진 상태.
+        return false;
     }
 
     // 방어구 아이템 데이터

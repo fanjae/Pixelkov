@@ -9,12 +9,10 @@ public class WeaponData : ItemData
     [SerializeField] private float reloadTime;
     [SerializeField] private int ammoItemId;
 
+    public int Damage => damage;
+    public int Capacity => capacity;
+    public float ReloadTime => reloadTime;
     public int AmmoItemId => ammoItemId;
-
-    public override void Use(Player player)
-    {
-        // player.EquipWeapon(this);
-    }
 
     // 무기 데이터
     // - 데미지

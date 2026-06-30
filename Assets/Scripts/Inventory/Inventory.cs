@@ -166,7 +166,7 @@ public class Inventory
             // 스택 가능한 아이템은 최대 스택 수 만큼 처리하고 스택 불가능한 아이템은 슬롯당 1개씩 추가
             int addCount = itemData.IsStackable ? Math.Min(itemData.MaxStackCount, count) : 1;
 
-            slot.SetItem(itemData.ItemId, addCount);
+            slot.SetItem(itemData, addCount);
             count -= addCount;
 
             if (count <= 0) break;
@@ -214,8 +214,28 @@ public class Inventory
         if (!TryGetSlot(slotIndex, out InventorySlot slot)) return false;
         if (slot.IsEmpty) return false;
 
-        slot.SetItem(newItemData.ItemId, count);
+        slot.SetItem(newItemData, count);
         OnInventoryChanged?.Invoke();
         return true;
+    }
+
+    // 특정 아이템에 대한 보유 개수를 조회.
+    public int GetItemCount(int itemId)
+    {
+        if (itemId <= 0) return 0;
+
+        int totalCount = 0;
+
+        foreach (InventorySlot slot in slots)
+        {
+            // 빈 슬롯이거나 아이템 다르면 제외
+            if (!slot.IsEmpty && slot.ItemId == itemId)
+            {
+                // 같은 아이템 수량 모두 합산
+                totalCount += slot.Count;
+            }
+        }
+
+        return totalCount;
     }
 }

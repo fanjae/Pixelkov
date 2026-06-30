@@ -14,8 +14,23 @@ public class ConsumableData : ItemData
     public ConsumableType ConsuabmeType => consumableType;
     public int Value => value;
 
-    public override void Use(Player player)
+    public override bool Use(Player player)
     {
-        // player.UseConsumable(this);
+        if (player == null) return false;
+
+        switch (consumableType)
+        {
+            case ConsumableType.HealHp: // 체력 포션 사용
+                PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+                if (playerHealth == null) return false;
+
+                return playerHealth.Heal(value);
+
+            case ConsumableType.RestoreDodge:
+                return false; // 추후 구현
+
+            default:
+                return false;
+        }
     }
 }

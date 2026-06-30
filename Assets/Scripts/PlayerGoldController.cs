@@ -15,6 +15,7 @@ public class PlayerGoldController : MonoBehaviour
     {
         // 시작 골드가 음수가 되지 않도록 보정
         Gold = Mathf.Max(0, initialGold);
+        OnGoldChanged?.Invoke(Gold);
     }
 
     // 지정한 금액 지불 가능

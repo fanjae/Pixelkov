@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8916b4084043c47489a382a0992bd358, type: 3}
   m_Name: Arrow
   m_EditorClassIdentifier: Assembly-CSharp::AmmoData
-  itemId: 200
-  itemName: Arrow
-  description: 'Arrow
-
-'
+  itemId: 110
+  itemName: Wood Arrow
+  description: Wood Arrow
   price: 0
   icon: {fileID: -4346244404228752641, guid: 15ae71ba94351834da4d70780ed1465c, type: 3}
   itemType: 2

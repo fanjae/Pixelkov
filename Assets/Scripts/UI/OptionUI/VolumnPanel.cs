@@ -11,12 +11,28 @@ public class VolumnPanel : MonoBehaviour
     {
         if(AudioManager.Instance != null)
         {
+            // 슬라이더의 value를 초기화하고 onValueChanged에 이벤트 할당
             if (masterSlider != null)
-                masterSlider.onValueChanged.AddListener(AudioManager.Instance.SetMasterVolume);
+            {
+                if(AudioManager.Instance.TryGetVolumn(VolumnType.Master, out float volumnValue))
+                    masterSlider.value = volumnValue;
+
+                masterSlider.onValueChanged.AddListener((amount) => AudioManager.Instance.SetVolume(VolumnType.Master, amount));
+            }
             if (bgmSlider != null)
-                bgmSlider.onValueChanged.AddListener(AudioManager.Instance.SetBGMVolume);
+            {
+                if(AudioManager.Instance.TryGetVolumn(VolumnType.BGM, out float volumnValue))
+                    bgmSlider.value = volumnValue;
+                
+                bgmSlider.onValueChanged.AddListener((amount) => AudioManager.Instance.SetVolume(VolumnType.BGM, amount));
+            }
             if (sfxSlider != null)
-                sfxSlider.onValueChanged.AddListener(AudioManager.Instance.SetSFXVolume);
+            {
+                if(AudioManager.Instance.TryGetVolumn(VolumnType.SFX, out float volumnValue))
+                    sfxSlider.value = volumnValue;
+
+                sfxSlider.onValueChanged.AddListener((amount) => AudioManager.Instance.SetVolume(VolumnType.SFX, amount));
+            }
         }
     }
 }

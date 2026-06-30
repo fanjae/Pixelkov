@@ -1,19 +1,35 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Audio;
 
+public enum VolumnType
+{
+    Master, BGM, SFX
+}
 public class AudioManager : Singleton<AudioManager>
 {
     [Header("Audio Fields")]
     [SerializeField] private AudioSource BGM_Player;
-    [SerializeField] private AudioDataBase database;
+    [SerializeField] private AudioDataBase audioDatabase;
     [SerializeField] private AudioMixer audioMixer;
+
+    private Dictionary<VolumnType, string> Volumns = new Dictionary<VolumnType, string>()
+    {
+        {VolumnType.Master, "Master" },
+        {VolumnType.BGM, "BGM" },
+        {VolumnType.SFX, "SFX" }
+    };
 
     protected override void Awake()
     {
         base.Awake();
-        if(database != null)
+        if(audioDatabase != null)
         {
-            database.Init();
+            audioDatabase.Init();
+        }
+        if(audioMixer == null)
+        {
+            audioMixer = Resources.Load<AudioMixer>("AudioMixer");
         }
     }
 
@@ -33,9 +49,9 @@ public class AudioManager : Singleton<AudioManager>
     /// </summary>
     public AudioClip GetSFX(SFXType sfxType)
     {
-        if (database == null) return null;
+        if (audioDatabase == null) return null;
 
-        AudioData data = database.GetAudioData(sfxType);
+        AudioData data = audioDatabase.GetAudioData(sfxType);
         if (data == null) return null;
 
         AudioClip nextClip = data.Clip;
@@ -47,9 +63,9 @@ public class AudioManager : Singleton<AudioManager>
     /// </summary>
     public void PlayBGM(BGMType bgmType)
     {
-        if (BGM_Player == null || database == null) return;
+        if (BGM_Player == null || audioDatabase == null) return;
 
-        AudioData data = database.GetAudioData(bgmType);
+        AudioData data = audioDatabase.GetAudioData(bgmType);
         if (data == null) return;
         
         AudioClip nextClip = data.Clip;
@@ -58,26 +74,37 @@ public class AudioManager : Singleton<AudioManager>
         BGM_Player.clip = nextClip;
         BGM_Player.Play();
     }
-
-    public void SetMasterVolume(float amount)
+    
+    // 타입에 맞는 볼륨을 조절하는 메서드
+    public void SetVolume(VolumnType volumnType, float amount)
     {
         if (audioMixer == null) return;
-        audioMixer.SetFloat("Master", Mathf.Log10(amount) * 20.0f);
+        if (Volumns.TryGetValue(volumnType, out string name))
+            audioMixer.SetFloat(name, Mathf.Log10(amount) * 20.0f);
     }
-    public void SetBGMVolume(float amount)
+    // 타입에 맞는 볼륨의 값을 원본 값으로 변환해서 전달하는 메서드. 성공시 true, 실패시 false
+    public bool TryGetVolumn(VolumnType volumnType, out float amount)
     {
-        if (audioMixer == null) return;
-        audioMixer.SetFloat("BGM", Mathf.Log10(amount) * 20.0f);
-    }
-    public void SetSFXVolume(float amount)
-    {
-        if (audioMixer == null) return;
-        audioMixer.SetFloat("SFX", Mathf.Log10(amount) * 20.0f);
+        if (audioMixer == null)
+        {
+            amount = -1;
+            return false;
+        }
+        if (Volumns.TryGetValue(volumnType, out string name))
+        {
+            if(audioMixer.GetFloat(name, out amount))
+            {
+                amount = Mathf.Pow(10, amount / 20f);
+                return true;
+            }
+        }
+        amount = -1;
+        return false;
     }
 
     private void ChangeBGM(SceneType sceneType)
     {
-        if (BGM_Player == null || database == null) return;
+        if (BGM_Player == null || audioDatabase == null) return;
 
         // 씬 타입에 맞는 배경음 변경
         BGMType bgmType = ConvertToBGMType(sceneType);

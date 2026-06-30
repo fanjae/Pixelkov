@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3dc35a5e631114db1e57190854409f, type: 3}
+  m_Name: Basic_Armor
+  m_EditorClassIdentifier: Assembly-CSharp::ArmorData
+  itemId: 200
+  itemName: Basic_Armor
+  description: 'Basic Armor
+
+    Defense + 0
+
+
+    Upgradable!'
+  price: 0
+  icon: {fileID: 21300000, guid: f88537080c04b6a4787d85e050d7ce2b, type: 3}
+  itemType: 3
+  isStackable: 0
+  maxStackCount: 1
+  defense: 0
+  upgradeCost: 0
+  nextUpgradeItemId: 201

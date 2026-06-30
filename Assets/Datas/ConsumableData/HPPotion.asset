@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 634443943b57a044d908dcd3ed1b635d, type: 3}
-  m_Name: SamplePotion
+  m_Name: HPPotion
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableData
-  itemId: 1000
-  itemName: Test Item
-  description: Test Item
-  price: 50
+  itemId: 400
+  itemName: Hp Potion
+  description: 'HP + 20
+
+    Price : 0'
+  price: 0
   icon: {fileID: -7587008787810219046, guid: 9a333b188cc197343bba0e54cd79faeb, type: 3}
   itemType: 0
   isStackable: 1

@@ -6,10 +6,10 @@ public enum AudioType
 }
 public enum BGMType
 {
-    None, Title, Main
+    None, Title, Main, Clear, Shop, Boss
 }
 public enum SFXType
-{ 
+{
     None
 }
 

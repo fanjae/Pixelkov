@@ -127308,11 +127308,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.6
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -29.6
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -144274,6 +144274,10 @@ PrefabInstance:
       propertyPath: Shop
       value: 
       objectReference: {fileID: 1971190548}
+    - target: {fileID: 2833124095670758982, guid: e10ae1ebda8977742860f2d54a01eaf1, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 1971190548}
     - target: {fileID: 3870473268256713884, guid: e10ae1ebda8977742860f2d54a01eaf1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 76.4
@@ -144432,6 +144436,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492339209514200997, guid: 12542d2277136ea4ab1b72c0b52a30ac, type: 3}
       propertyPath: Shop
+      value: 
+      objectReference: {fileID: 914728384}
+    - target: {fileID: 492339209514200997, guid: 12542d2277136ea4ab1b72c0b52a30ac, type: 3}
+      propertyPath: interactPanel
       value: 
       objectReference: {fileID: 914728384}
     - target: {fileID: 4569830833511785170, guid: 12542d2277136ea4ab1b72c0b52a30ac, type: 3}

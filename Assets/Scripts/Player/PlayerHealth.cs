@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IEnmeyController
 {
     [Header("플레이어 체력")]
     [SerializeField] private int maxHealth = 5;
@@ -71,7 +71,22 @@ public class PlayerHealth : MonoBehaviour
             );
         }
     }
- 
+    public bool Heal(int amount)
+    {
+        if (isDead) return false;
+        if (amount <= 0) return false;
+        if (currentHealth >= maxHealth) return false;
+
+        currentHealth += amount;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        Debug.Log(
+            $"플레이어 체력 회복: {currentHealth} / {maxHealth}"
+        );
+
+        return true;
+    }
+
     // 플레이어가 데미지를 받을 때 외부에서 호출
     public void TakeDamage(int damage)
     {

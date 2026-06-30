@@ -9,51 +9,58 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
 {
     public static ItemDatabase Database { get; private set; }
 
+    [Header("외부 참조 컴포넌트")]
+    [SerializeField] private ItemDatabase database;
+    [SerializeField] private Player player;
+
+    [Header("캔버스 내 참조 컴포넌트")]
     [SerializeField] private GuidePanel guidePanel;
     [SerializeField] private InventoryPanel inventoryPanel;
     [SerializeField] private EquipmentPanel equipmentPanel;
 
-    #region test Fields
-    // 해당 region에 있는 필드들은 추후 플레이어 데이터와 연동해야하는 필드 입니다.
-    [SerializeField] private ItemDatabase database; // 테스트용 데이터베이스
-    private Inventory inventory = new Inventory(12);
-    private Equipment equipment = new Equipment();
-    #endregion
-    private PlayerInventoryController inventoryController;
 
-    // Shop 전달용 임시 프로퍼티 (플레이어 받으면 수정 예정)
-    public Inventory Inventory => inventory;
-    public Equipment Equipment => equipment;
-    public PlayerInventoryController InventoryController => inventoryController;
+    private Inventory inventory;
+    private Equipment equipment;
+
+    private PlayerInventoryController inventoryController;
 
     // 마우스 드래그 오프셋
     private Vector2 offset = Vector2.zero;
 
     private void Awake()
     {
-        inventoryPanel?.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
-        inventoryPanel?.AllocateInventory(inventory);    // 임시로 생성된 인벤토리
-
+        inventoryPanel?.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, UseConsumable); // GuidePanel의 온/오프 메서드 할당
         equipmentPanel?.AllocateSlotEvent(UnEquip);
-        equipmentPanel?.AllocateEquipment(equipment);
 
-        if (inventory != null)
-        {
-            inventory.OnInventoryChanged += UpdateInventory;
-        }
-        if(equipment != null)
-        {
-            equipment.OnEquipmentChanged += UpdateEquipment;
-        }
         if (database != null)
         {
             Database = database;
+        }
+        if(player == null) player = FindAnyObjectByType<Player>();
+
+        if(player != null)
+        {
+            inventory = player.Inventory;
+            equipment = player.Equipment;
+        }
+        if (inventory != null)
+        {
+            inventory.OnInventoryChanged += UpdateInventory;
+            inventoryPanel?.AllocateInventory(inventory);
+        }
+        if (equipment != null)
+        {
+            equipment.OnEquipmentChanged += UpdateEquipment;
+            equipmentPanel?.AllocateEquipment(equipment);
+        }
+        if (inventory != null && equipment != null && database != null)
+        {
             inventoryController = new PlayerInventoryController(inventory, equipment, database);
         }
     }
     private void OnDestroy()
     {
-        inventoryPanel?.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip); // GuidePanel의 온/오프 메서드 할당
+        inventoryPanel?.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, UseConsumable); // GuidePanel의 온/오프 메서드 할당
         equipmentPanel?.ReleaseSlotEvent(UnEquip);
 
         if (inventory != null)
@@ -78,9 +85,14 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     /// <param name="itemId"></param>
     private void OpenGuidePanel(int itemId)
     {
-        bool? result = guidePanel?.PaintGuide(itemId);
+        if (guidePanel == null) return;
+        bool? result = guidePanel.PaintGuide(itemId);
         if(result != null && result == true)
-            guidePanel?.gameObject.SetActive(true);
+        {
+            guidePanel.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition.x > 0 
+                ? new Vector2(-525.0f, 0.0f) : new Vector2(525.0f, 0.0f);
+            guidePanel.gameObject.SetActive(true);
+        }
     }
     /// <summary>
     /// GuidePanel을 비활성화 하는 메서드.
@@ -117,7 +129,13 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     {
         inventoryController?.UnEquip(slotType);
     }
+
+    public void UseConsumable(int index)
+    {
+        inventoryController?.UseConsumableFromInventory(index, player);
+    }
     
+    // 판매 기능을 제공 받는 통로 역할을 하는 메서드
     public void AllocateShop(Func<int, int, bool> sellAction)
     {
         inventoryPanel.AllocateSell(sellAction);

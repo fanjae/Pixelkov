@@ -10,13 +10,14 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 {
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private Image iconImage;
-    [SerializeField] private GameObject subButton;
+    [SerializeField] private SubButton subButton;
     [SerializeField] private CounterSelector counterSelector;
 
     public event Action<int> OnSlotEnter;
     public event Action OnSlotExit;
     public event Action<int> OnEquip;
     public event Func<int, int, bool> OnSell;
+    public event Action<int> OnUse;
 
     public int Index { get; private set; }
     public ItemData CurItem { get; private set; }
@@ -40,9 +41,16 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     /// <summary>
     /// 버튼에 할당하기 위한 메서드
     /// </summary>
-    public void OnClickEquipButton()
+    public void OnClickUseButton()
     {
-        OnEquip?.Invoke(Index);
+        if(CurItem.ItemType == ItemType.Consumable)
+        {
+            OnUse?.Invoke(Index);
+        }
+        else if(CurItem.ItemType == ItemType.Weapon || CurItem.ItemType == ItemType.Armor || CurItem.ItemType == ItemType.Accessory)
+        {
+            OnEquip?.Invoke(Index);
+        }
     }
     public void OnClickSellButton()
     {
@@ -124,7 +132,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         transform.DOKill();
         transform.DOScale(originScale, 0.15f).SetEase(Ease.OutQuad);
-        subButton.SetActive(false);
+        subButton?.gameObject.SetActive(false);
         OnSlotExit?.Invoke();
     }
     public void OnPointerClick(PointerEventData eventData)
@@ -136,14 +144,12 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
             if (CurItem == null) return;
 
-            // 해당 슬롯이 재료 아이템이라면 상호작용 X
-            if (CurItem.ItemType == ItemType.Material) return;
-
-            subButton.SetActive(!subButton.activeSelf);
+            UpdateSubButtonState(CurItem.ItemType);
+            subButton.gameObject.SetActive(!subButton.gameObject.activeSelf);
             return;
         }
         else
-            subButton.SetActive(false);
+            subButton.gameObject.SetActive(false);
 
         if (eventData.clickCount >= 2)
         {
@@ -161,7 +167,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        subButton.SetActive(false);
+        subButton.gameObject.SetActive(false);
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -222,6 +228,29 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             default:
                 return default;
         }
+    }
+    private void UpdateSubButtonState(ItemType type)
+    {
+        string text = "";
+        bool isUse = false;
+        bool isSell = (OnSell != null);
+        bool isUpgrade = (type == ItemType.Armor) && (OnSell != null);
+        switch (type)
+        {
+            case ItemType.Weapon:
+            case ItemType.Armor:
+            case ItemType.Accessory:
+                text = "Equip";
+                isUse = true;
+                break;
+            case ItemType.Consumable:
+                text = "Use";
+                isUse = true;
+                break;
+            default:
+                break;
+        }
+        subButton.UpdateUI(text, isUse, isSell, isUpgrade);
     }
 
 }

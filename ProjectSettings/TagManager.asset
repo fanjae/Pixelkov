@@ -13,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - player
+  - enemy
+  - Wall
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 664662559
+    locked: 0
+  - name: Wall
+    uniqueID: 2040691303
     locked: 0
   m_RenderingLayers:
   - Default

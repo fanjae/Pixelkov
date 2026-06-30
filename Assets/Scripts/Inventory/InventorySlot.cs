@@ -3,30 +3,19 @@
 [Serializable]
 public class InventorySlot
 {
-    public int ItemId { get; private set; }
+    public ItemInstance ItemInstance { get; private set; }
     public int Count { get; private set; }
 
-    public bool IsEmpty => ItemId <= 0 || Count <= 0;
+    public int ItemId => ItemInstance?.ItemId ?? 0;
+    public bool IsEmpty => ItemInstance == null || Count <= 0;
 
 
-    // 빈 슬롯
-    public InventorySlot()
+    public void SetItem(ItemData itemData, int count)
     {
-        Clear();
-    }
-
-    // 아이템 정보 포함 슬롯 생성
-    public InventorySlot(int itemId, int count)
-    {
-        SetItem(itemId, count);
-    }
-
-    public void SetItem(int itemId, int count) // 슬롯에 아이템 설정
-    {
-        if (itemId <= 0) throw new ArgumentException("Item Id >= 1");
+        if (itemData == null) throw new ArgumentNullException(nameof(itemData));
         if (count <= 0) throw new ArgumentException("Item count >= 1");
 
-        ItemId = itemId;
+        ItemInstance = new ItemInstance(itemData);
         Count = count;
     }
 
@@ -46,9 +35,9 @@ public class InventorySlot
         if (Count <= 0) Clear();
     }
 
-    public void Clear() // 슬롯 상태 리셋
+    public void Clear()
     {
-        ItemId = 0;
+        ItemInstance = null;
         Count = 0;
     }
 }

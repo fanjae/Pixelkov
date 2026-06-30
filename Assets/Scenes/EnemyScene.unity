@@ -678,6 +678,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7086353608697940140, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
@@ -1052,6 +1056,10 @@ PrefabInstance:
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3376,6 +3384,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7086353608697940140, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
@@ -4716,6 +4728,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7086353608697940140, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
@@ -5513,6 +5529,10 @@ PrefabInstance:
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

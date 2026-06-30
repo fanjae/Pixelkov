@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d96a86547bf94347b42a8fd84672502, type: 3}
   m_Name: OreMaterial
   m_EditorClassIdentifier: Assembly-CSharp::MaterialData
-  itemId: 501
+  itemId: 502
   itemName: Ore
-  description: 'Iron.
-
-
-    Can''t be used directly, but can be used to carft equipment. '
+  description: 'Ore '
   price: 0
   icon: {fileID: 21300000, guid: 7b27d60d914444ab9abd0673752f012d, type: 3}
   itemType: 5

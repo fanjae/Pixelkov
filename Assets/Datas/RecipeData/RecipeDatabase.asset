@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: RecipeDatabase
   m_EditorClassIdentifier: Assembly-CSharp::CraftRecipeDatabase
   recipes:
-  - {fileID: 11400000, guid: 5b2b46c332755c44cb0d1b115069d9d8, type: 2}
   - {fileID: 11400000, guid: 976c7daaaf57983429657e0fb9af2bdf, type: 2}
+  - {fileID: 11400000, guid: 5b2b46c332755c44cb0d1b115069d9d8, type: 2}
+  - {fileID: 11400000, guid: b6d3c0f8742218a418e6e38eba142aba, type: 2}
+  - {fileID: 11400000, guid: a84343cbc99695942a54d7699574d9e6, type: 2}

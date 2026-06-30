@@ -84,6 +84,7 @@ public class ShopUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     private void InitShopList()
     {
+        if (shopData == null) return;
         // ShopData에 들어있는 리스트를 통해 상점에 아이템 추가
         foreach (var data in shopData.ShopItems)
         {

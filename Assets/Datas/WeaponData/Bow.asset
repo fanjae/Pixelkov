@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   itemId: 100
-  itemName: Bow
-  description: Bow.
+  itemName: Wood Bow
+  description: 'Wood Bow
+
+    Damage + 5
+
+    Capacity + 10
+
+    Reload Time + 2'
   price: 0
-  icon: {fileID: 21300000, guid: 7aea5f88ef1754eb7ad1913dd0b451ac, type: 3}
+  icon: {fileID: 21300000, guid: 780a48919111e46ff9c8908ca0e1c878, type: 3}
   itemType: 1
   isStackable: 0
   maxStackCount: 1
   damage: 5
   capacity: 10
-  reloadTime: 3
+  reloadTime: 2
   ammoItemId: 200

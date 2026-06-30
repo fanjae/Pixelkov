@@ -14,11 +14,6 @@ public class WeaponData : ItemData
     public float ReloadTime => reloadTime;
     public int AmmoItemId => ammoItemId;
 
-    public override bool Use(Player player)
-    {
-        // player.EquipWeapon(this);
-    }
-
     // 무기 데이터
     // - 데미지
     // - 탄창 용량

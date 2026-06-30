@@ -163,10 +163,16 @@ public class PlayerShooter : MonoBehaviour
 
         Debug.Log("재장전 시작");
 
-        if (characterAnimator != null)
+        // 활/무기 재장전 애니메이션 실행
+        if (weaponAnimator != null)
         {
-            characterAnimator.ResetTrigger("Reload");
-            characterAnimator.SetTrigger("Reload");
+            weaponAnimator.ResetTrigger("Shoot");
+            weaponAnimator.ResetTrigger("Reload");
+            weaponAnimator.SetTrigger("Reload");
+        }
+        else
+        {
+            Debug.LogWarning("Weapon Animator가 연결되지 않았습니다.");
         }
 
         yield return new WaitForSeconds(player.WeaponController.ReloadTime);

@@ -30,6 +30,10 @@ public class CounterSelector : MonoBehaviour
         slider.value = 0;
         inputField.text = "0";
     }
+    private void OnDisable()
+    {
+        gameObject.SetActive(false);
+    }
 
     public void Init(int min, int max)
     {

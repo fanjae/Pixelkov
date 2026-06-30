@@ -871,9 +871,9 @@ AudioSource:
   m_GameObject: {fileID: 976754589}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5420640906969066778, guid: 96a1b87c8d8058e459e35042a2f7bb6f, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: a7bfdcb767a52e1449edb578774235df, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2335,7 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   BGM_Player: {fileID: 976754590}
-  database: {fileID: 0}
+  audioDatabase: {fileID: 11400000, guid: 91def74844de35f4dbf439842cab62ba, type: 2}
   audioMixer: {fileID: 24100000, guid: 96a1b87c8d8058e459e35042a2f7bb6f, type: 2}
 --- !u!4 &2100407884
 Transform:

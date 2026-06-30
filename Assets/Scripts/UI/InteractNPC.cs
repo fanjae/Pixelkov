@@ -39,6 +39,10 @@ public class InteractNPC : MonoBehaviour
             {
                 guideCanvas.SetActive(false);
             }
+            if (interactPanel != null)
+            {
+                interactPanel.SetActive(false);
+            }
         }
     }
     private void OnDestroy()

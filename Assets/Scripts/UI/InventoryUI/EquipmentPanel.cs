@@ -34,6 +34,7 @@ public class EquipmentPanel : MonoBehaviour
     /// </summary>
     public void PaintEquipmentAll()
     {
+        if (equipment == null) return;
         foreach(var slot in equipment.Slots)
         {
             PaintSlotUI(slot.Key, slot.Value);

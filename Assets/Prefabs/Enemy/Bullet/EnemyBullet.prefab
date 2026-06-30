@@ -172,3 +172,6 @@ MonoBehaviour:
   moveSpeed: 10
   lifeTime: 3
   damage: 1
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 256

@@ -200,9 +200,17 @@ namespace Enemy1
         IEnumerator AttackRoutine()
         {
             isAttack = true;
+            //애니메이션 타입 : 공격
+            //현재 공격 애니메이션 문제로 주석
             UpdateAnimation(EnemyActionType.Attack);
-            weapon.StartAttack();
+            ////공격 방향
+            //UpdatePlayerShoter();
+            ////공격
+
             yield return new WaitForSeconds(1.0f);
+            shooterController.Fire();
+            //공격후 딜레이
+            //yield return new WaitForSeconds(1.0f);
             isAttack = false;
 
         }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 760597508a32ec74ebabc40bf3b1bee0, type: 3}
-  m_Name: SampleRecipeData
+  m_Name: WoodBow
   m_EditorClassIdentifier: Assembly-CSharp::CraftRecipeData
-  recipeId: 0
-  resultItemId: 0
-  resultCount: 1
-  material1ItemId: 0
-  material1Count: 1
-  material2ItemId: 0
+  recipeId: 1
+  resultItemId: 100
+  resultCount: 10
+  material1ItemId: 500
+  material1Count: 3
+  material2ItemId: 501
   material2Count: 1

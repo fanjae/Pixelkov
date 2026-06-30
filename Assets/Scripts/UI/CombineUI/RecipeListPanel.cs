@@ -35,7 +35,7 @@ public class RecipeListPanel : MonoBehaviour
 
         foreach(RecipeUI recipeUI in RecipeUIList)
         {
-            if (recipeUI != null && materialStatus.Count >= 2)
+            if (recipeUI != null && recipeUI.RecipeId == recipeData.RecipeId && materialStatus.Count >= 2)
             {
                 if (materialStatus[0] == null) continue;
                 bool mat1Status = materialStatus[0].OwnedCount >= materialStatus[0].RequiredCount;
@@ -44,6 +44,8 @@ public class RecipeListPanel : MonoBehaviour
                 bool mat2Status = materialStatus[1].OwnedCount >= materialStatus[1].RequiredCount;
 
                 recipeUI.RecvRecipeData(recipeData, mat1Status, mat2Status, maxCount);
+
+                break;
             }
         }
     }

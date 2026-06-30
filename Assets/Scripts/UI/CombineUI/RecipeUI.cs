@@ -57,7 +57,7 @@ public class RecipeUI : MonoBehaviour
             OnCraft?.Invoke(RecipeId, 1);
         }
     }
-    public void OnClickSellStackable()
+    public void OnClickCraftStackable()
     {
         OnCraft?.Invoke(RecipeId, counterSelector.Count);
     }

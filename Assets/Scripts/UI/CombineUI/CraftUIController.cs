@@ -33,6 +33,7 @@ public class CraftUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
     }
     private void OnEnable()
     {
+        UpdateCounter();
         player.Inventory.OnInventoryChanged += UpdateCounter;
     }
     private void OnDisable()

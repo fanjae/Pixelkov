@@ -11,8 +11,10 @@ namespace Enemy1
         [SerializeField] private float lifeTime = 3.0f;
         [Header("Damage")]
         [SerializeField] private int damage = 1;
+        //벽 레이어
+        [SerializeField] private LayerMask wallLayer;
 
-        
+
         private Vector2 direction;
 
         public int Damage => damage;
@@ -47,6 +49,15 @@ namespace Enemy1
         {
             if (!isAttack) return;
             isAttack = false;
+
+            // 벽 충돌 판정 추가
+            if (((1 << collision.gameObject.layer) & wallLayer) != 0)
+            {
+                isAttack = true;
+                Destroy(gameObject);
+                return;
+            }
+
             // 플레이어외의 테그는 무시
             if (!collision.CompareTag("Player"))
             {

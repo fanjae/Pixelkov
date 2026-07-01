@@ -65,7 +65,14 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         // 아니라면 한개만 있다는 의미이므로 한개 판매
         else
         {
-            OnSell?.Invoke(Index, 1);
+            if (OnSell != null)
+            {
+                bool isSell = OnSell.Invoke(Index, 1);
+                if (isSell && AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.Play(SFXType.Sell);
+                }
+            }
         }
     }
     /// <summary>
@@ -73,7 +80,14 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     /// </summary>
     public void OnClickSellStackable()
     {
-        OnSell?.Invoke(Index, counterSelector.Count);
+        if (counterSelector == null || OnSell == null) return;
+        if (counterSelector.Count <= 0) return;
+
+        bool isSell = OnSell.Invoke(Index, counterSelector.Count);
+        if (isSell && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play(SFXType.Sell);
+        }
     }
     /// <summary>
     /// subButton에 있는 Upgrade버튼에 할당하는 메서드로 업그레이드 패널에 데이터를 전달하는 기능
@@ -202,7 +216,14 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             // 비스택형이면 바로 판매 진행
             else
             {
-                OnSell?.Invoke(Index, 1);
+                if(OnSell != null)
+                {
+                    bool isSell = OnSell.Invoke(Index, 1);
+                    if(isSell && AudioManager.Instance != null)
+                    {
+                        AudioManager.Instance.Play(SFXType.Sell);
+                    }
+                }
             }
             return;
         }

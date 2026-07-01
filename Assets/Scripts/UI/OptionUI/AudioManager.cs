@@ -68,6 +68,7 @@ public class AudioManager : Singleton<AudioManager>
         if (nextClip == null) return;
 
         SFX_Player.PlayOneShot(nextClip);
+        Debug.Log("SFX");
     }
 
     /// <summary>

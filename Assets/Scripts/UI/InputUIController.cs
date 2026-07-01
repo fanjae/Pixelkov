@@ -30,6 +30,10 @@ public class InputUIController : MonoBehaviour
         if(InputInventory.WasPerformedThisFrame() && inventoryUI != null)
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
+            if(AudioManager.Instance != null)
+            {
+                AudioManager.Instance.Play(SFXType.PopUp);
+            }
         }
         // 메뉴 Key : Esc
         if(InputMenu.WasPerformedThisFrame() && menuUI != null)

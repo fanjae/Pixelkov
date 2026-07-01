@@ -72,7 +72,12 @@ public class CraftUIController : MonoBehaviour, IDragHandler, IBeginDragHandler
     public void Craft(int recipeId, int count)
     {
         if(craftController == null) return;
-        craftController.Craft(recipeId, count);
+
+        bool isCraft = craftController.Craft(recipeId, count);
+        if (isCraft && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play(SFXType.Craft);
+        }
     }
     public void OnDrag(PointerEventData eventData)
     {

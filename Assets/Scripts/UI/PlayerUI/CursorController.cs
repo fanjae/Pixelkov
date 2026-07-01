@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CursorController : MonoBehaviour
 {
     // 외부에 마우스가 UI위에 있는지 알림
-    public static bool HoverUI = false;
+    public static bool IsHover { get; private set; } = false;
 
     [Header("외부 참조 컴포넌트")]
     [SerializeField] private Camera cam;
@@ -44,7 +44,7 @@ public class CursorController : MonoBehaviour
             }
             cursorImage.rectTransform.anchoredPosition += offset;
             cursorImage.color = Color.white;
-            HoverUI = true;
+            IsHover = true;
         }
         else
         {
@@ -53,7 +53,7 @@ public class CursorController : MonoBehaviour
                 cursorImage.sprite = crossHairSprite;
             }
             cursorImage.color = Color.green;
-            HoverUI = false;
+            IsHover = false;
         }
     }
 }

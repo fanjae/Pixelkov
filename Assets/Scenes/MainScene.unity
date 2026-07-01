@@ -127736,6 +127736,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Test
       objectReference: {fileID: 0}
+    - target: {fileID: 8564699624093893437, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: invincibleTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564699624093893437, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
+      propertyPath: dodgeRecoverTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9220994794998661733, guid: 75f99cd8ef7fca1409fc7bdf2ae69ac2, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 2

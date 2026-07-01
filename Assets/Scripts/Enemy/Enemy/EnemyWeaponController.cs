@@ -10,7 +10,7 @@ namespace Enemy1
         [SerializeField] private EnemyAnimationController animationController;
         [SerializeField] private EnemyWeapon weapon;
         //골드 컨드롤
-        [SerializeField] private PlayerGoldController goldController;
+        private PlayerGoldController goldController;
         //HP UI
         [SerializeField] private EnemyUI hpUI;
         //코인
@@ -52,8 +52,13 @@ namespace Enemy1
             animationController = GetComponentInChildren<EnemyAnimationController>();
             
 
-            //플레이어 컴포넌트
-            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            //플레이어 
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                target = player.transform;
+                goldController = player.GetComponent<PlayerGoldController>();
+            }
         }
 
         void Start()
@@ -149,7 +154,10 @@ namespace Enemy1
             //코인 Instantiate
             Instantiate(coin, transform.position, Quaternion.identity);
             //골드 추가
-            goldController.AddGold(gold);
+            if (goldController != null)
+            {
+                goldController.AddGold(gold);
+            }
             //Dead 애니메이션
             UpdateAnimation(EnemyActionType.Dead);
             //hp 삭제

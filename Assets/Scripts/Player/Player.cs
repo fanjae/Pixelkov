@@ -310,4 +310,21 @@ public class Player : MonoBehaviour
             currentDodgeCount = maxDodgeCount;
         }
     }
+
+    public bool RestoreDodge(int amount) // 회피 회복(포션용)
+    {
+        if (amount <= 0) return false;
+
+        if (currentDodgeCount >= maxDodgeCount)
+        {
+            return false;
+        }
+
+        currentDodgeCount += amount;
+        currentDodgeCount = Mathf.Min(currentDodgeCount, maxDodgeCount);
+
+        Debug.Log($"회피 횟수 회복: {currentDodgeCount} / {maxDodgeCount}");
+
+        return true;
+    }
 }

@@ -11,11 +11,11 @@ namespace Enemy1
         [SerializeField] private EnemyShooterController shooterController;
         [SerializeField] private EnemyWeapon weapon;
         //골드 컨드롤
-        [SerializeField] private PlayerGoldController goldController;
+        //[SerializeField] private PlayerGoldController goldController;
         //HP UI
         [SerializeField] private EnemyUI hpUI;
         //코인
-        [SerializeField] private GameObject coin;
+        //[SerializeField] private GameObject coin;
         //회복 아이콘 
         [SerializeField] private GameObject hpAdd;
 
@@ -291,11 +291,11 @@ namespace Enemy1
         {
             isDead = true;
             //골드 추가
-            goldController.AddGold(gold);
+            //goldController.AddGold(gold);
             UpdateAnimation(EnemyActionType.Dead);
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
-            Instantiate(coin, transform.position, Quaternion.identity);
+            //Instantiate(coin, transform.position, Quaternion.identity);
 
             //collider, Rigidbody 비활성화
             collider.enabled = false;

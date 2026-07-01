@@ -504,7 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1453,9 +1453,7 @@ MonoBehaviour:
   animationController: {fileID: 7103788608262846456}
   shooterController: {fileID: 23533937688972657}
   weapon: {fileID: 1443358823578445126}
-  goldController: {fileID: 0}
   hpUI: {fileID: 8389253068460118554}
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
   hpAdd: {fileID: 4902143704371828564}
   moveSpeed: 2
   targeteDistance: 6
@@ -1682,7 +1680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -130310,6 +130310,10 @@ PrefabInstance:
       propertyPath: obstacleLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 4055756910417257663, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4950597932477118671, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
       propertyPath: player
       value: 
@@ -130334,17 +130338,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6929924649355377159, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8382565315916747977, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.3
+      value: -4.32
       objectReference: {fileID: 0}
     - target: {fileID: 8382565315916747977, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 8382565315916747977, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 8382565315916747977, guid: 1c244a3c7dbefcd43a4ba7a369a6ad18, type: 3}
       propertyPath: m_LocalRotation.w

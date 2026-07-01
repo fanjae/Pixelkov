@@ -69,9 +69,18 @@ namespace Enemy1
         {
             if (isDead) return;
             if (isAttack) return;
-            //플레이어 사망시 대기 상태
-            if (target.GetComponentInParent<PlayerHealth>().CurrentHealth == 0
-                || target == null)
+            //플레이어 사망후 대기 상태
+            if (target != null)
+            {
+                
+                if (target.GetComponentInParent<PlayerHealth>().CurrentHealth == 0)
+                {
+                    //애니메이션 타입
+                    UpdateAnimation(EnemyActionType.Idle);
+                    return;
+                }
+            }
+            else
             {
                 //애니메이션 타입
                 UpdateAnimation(EnemyActionType.Idle);
@@ -151,23 +160,6 @@ namespace Enemy1
             rb.simulated = false;
             Destroy(gameObject, 3.0f);
 
-        }
-
-        //충돌시 밀어내기
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            // 충돌한 대상이 Enemy 
-            if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
-            {
-                Rigidbody2D otherRb = collision.GetComponent<Rigidbody2D>();
-                if (otherRb != null)
-                {
-                    // 밀어낼 방향과 거리 계산
-                    Vector2 pushDir = (Vector2)(transform.position - collision.transform.position).normalized;
-                    // 위치 강제 이동
-                    transform.position += (Vector3)(pushDir * 0.1f);
-                }
-            } 
         }
     }
 }

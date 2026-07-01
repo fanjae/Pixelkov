@@ -61,6 +61,11 @@ public class PlayerShooter : MonoBehaviour
         // 총 발사 불가 상태 확인
         if (IsShootingBlocked) return;
 
+        if (CursorController.IsHover)
+        {
+            return ;
+        }
+
         //피격시 공격불가
         if (playerHealth != null && playerHealth.IsHit)
         {

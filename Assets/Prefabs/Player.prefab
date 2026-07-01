@@ -2161,7 +2161,7 @@ GameObject:
   - component: {fileID: 2199233788999072599}
   m_Layer: 6
   m_Name: HorseRoot
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3682,7 +3682,7 @@ GameObject:
   - component: {fileID: 2219165995373283725}
   m_Layer: 6
   m_Name: New_Weapon_15
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6510,6 +6510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
+  defense: 0
   animator: {fileID: 2199233788999072599}
   destroyDelay: 3
 --- !u!114 &4426748579356210866

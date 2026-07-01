@@ -8,6 +8,7 @@ public class ArmorUpgradePanel : MonoBehaviour
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private UpgradeSlot upgradeSlot;
 
     public int SlotIndex { get; private set; } = -1;
 
@@ -17,7 +18,13 @@ public class ArmorUpgradePanel : MonoBehaviour
     {
         // 패널 활성화 시마다 UI 초기화
         InitUI();
+        upgradeSlot.ReleaseEvent += InitUI;
     }
+    private void OnDisable()
+    {
+        upgradeSlot.ReleaseEvent -= InitUI;
+    }
+
     public void UpgradeEvent()
     {
         if(OnUpgrade != null)

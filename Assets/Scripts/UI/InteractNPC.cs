@@ -1,5 +1,4 @@
-﻿using AllIn1SpriteShader;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InteractNPC : MonoBehaviour
 {
@@ -14,6 +13,14 @@ public class InteractNPC : MonoBehaviour
         if(interactPanel != null)
         {
             interactPanel.SetActive(!interactPanel.activeSelf);
+            if (interactPanel.activeSelf)
+            {
+                InputUIController.PopUpOrder.AddLast(interactPanel);
+            }
+            else
+            {
+                InputUIController.PopUpOrder.Remove(interactPanel);
+            }
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.Play(SFXType.PopUp);
@@ -26,7 +33,7 @@ public class InteractNPC : MonoBehaviour
         // 플레이어가 콜라이더 내로 진입 시 상점 기능 구독
         if(collision.CompareTag("Player"))
         {
-            InputUIController.ShopAction += SwitchPanel;
+            InputUIController.InteractAction += SwitchPanel;
             // 가이드 아이콘 활성화
             if(guideCanvas != null)
             {
@@ -39,21 +46,21 @@ public class InteractNPC : MonoBehaviour
         // 플레이어가 떠나면 상점 기능 취소
         if(collision.CompareTag("Player"))
         {
-            InputUIController.ShopAction -= SwitchPanel;
+            InputUIController.InteractAction -= SwitchPanel;
             // 가이드 아이콘 비활성화
-            if(guideCanvas != null)
+            if (guideCanvas != null)
             {
                 guideCanvas.SetActive(false);
             }
             if (interactPanel != null)
             {
+                InputUIController.PopUpOrder.Remove(interactPanel);
                 interactPanel.SetActive(false);
             }
         }
     }
     private void OnDestroy()
     {
-        // 파괴시에는 구독여부 상관없이 취소
-        InputUIController.ShopAction -= SwitchPanel;
+        InputUIController.InteractAction -= SwitchPanel;
     }
 }

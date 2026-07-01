@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputUIController : MonoBehaviour
 {
-    // ShopNPC에서 상점 온/오프 기능을 할당해줄 Action
-    public static Action ShopAction;
+    // interactNPC에서 상점 온/오프 기능을 할당해줄
+    public static Action InteractAction;
+    public static LinkedList<GameObject> PopUpOrder = new LinkedList<GameObject>();
 
     // 온/오프 해줄 UIs
     [SerializeField] private GameObject inventoryUI;
@@ -29,8 +31,25 @@ public class InputUIController : MonoBehaviour
         // 인벤토리 Key : I
         if(InputInventory.WasPerformedThisFrame() && inventoryUI != null)
         {
+            // 메뉴창이 열려있을 때는 상호작용 x
+            // +) 메뉴창이 열려있을 때는 열려있는 창이 없다는 것을 보장 중
+            if (menuUI != null && menuUI.activeSelf) return;
+
+            // UI 활성화/비활성화
             inventoryUI.SetActive(!inventoryUI.activeSelf);
-            if(AudioManager.Instance != null)
+
+            // 활성화 시 LinkedList에 추가
+            if (inventoryUI.activeSelf)
+            {
+                PopUpOrder.AddLast(inventoryUI);
+            }
+            // 비활성화 시 LinkedList에서 제거
+            else
+            {
+                PopUpOrder.Remove(inventoryUI);
+            }
+
+            if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.Play(SFXType.PopUp);
             }
@@ -38,12 +57,28 @@ public class InputUIController : MonoBehaviour
         // 메뉴 Key : Esc
         if(InputMenu.WasPerformedThisFrame() && menuUI != null)
         {
-            menuUI.SetActive(!menuUI.activeSelf);
+            // 열려있는 창이 있으면 해당 창을 우선 닫기
+            if(PopUpOrder.Count > 0)
+            {
+                // 마지막으로 열었던 순서대로 닫기
+                LinkedListNode<GameObject> lastPopUp = PopUpOrder.Last;
+                lastPopUp.Value.gameObject.SetActive(false);
+                PopUpOrder.RemoveLast();
+            }
+            // 없으면 메뉴창을 활성화/비활성화
+            else
+            {
+                menuUI.SetActive(!menuUI.activeSelf);
+            }
         }
         // 상점 Key : E
         if(InputShop.WasCompletedThisFrame())
         {
-            ShopAction?.Invoke();
+            // 메뉴창이 열려있을 때는 상호작용 x
+            // +) 메뉴창이 열려있을 때는 열려있는 창이 없다는 것을 보장 중
+            if (menuUI != null && menuUI.activeSelf) return;
+
+            InteractAction?.Invoke();
         }
     }
 }

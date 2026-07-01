@@ -69,6 +69,15 @@ namespace Enemy1
         {
             if (isDead) return;
             if (isAttack) return;
+            //플레이어 사망시 대기 상태
+            if (target.GetComponentInParent<PlayerHealth>().CurrentHealth == 0
+                || target == null)
+            {
+                //애니메이션 타입
+                UpdateAnimation(EnemyActionType.Idle);
+                return;
+            }
+            //플레이어 - 적 거리
             float distance = Vector2.Distance(transform.position, target.position);
             if (distance < targeteDistance)
             {

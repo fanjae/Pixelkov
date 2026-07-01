@@ -5,11 +5,16 @@ using UnityEngine.InputSystem;
 
 public class InputUIController : MonoBehaviour
 {
-    // interactNPC에서 상점 온/오프 기능을 할당해줄
+    
+    // 상호작용 기능 메서드를 제공 받는 Action
     public static Action InteractAction;
     public static LinkedList<GameObject> PopUpOrder = new LinkedList<GameObject>();
 
     // 온/오프 해줄 UIs
+    [Header("외부 참조 컴포넌트")]
+    [SerializeField] private PlayerHealth playerHealth;
+
+    [Header("캔버스 내 참조 컴포넌트")]
     [SerializeField] private GameObject inventoryUI;
     [SerializeField] private GameObject menuUI;
 
@@ -22,11 +27,31 @@ public class InputUIController : MonoBehaviour
         InputInventory = InputSystem.actions.FindAction("Inventory");
         InputMenu = InputSystem.actions.FindAction("Menu");
         InputShop = InputSystem.actions.FindAction("Shop");
+
+        if(playerHealth == null) playerHealth = FindAnyObjectByType<PlayerHealth>();
+    }
+    private void OnDestroy()
+    {
+        PopUpOrder.Clear();
     }
 
     void Update()
     {
-        // 주석 위치에 플레이어 사망 상태에 따라 입력을 막는 로직 추가 예정
+        // 플레이어 사망 상태에 따라 입력을 막는 로직
+        if(playerHealth != null && playerHealth.IsDead)
+        {
+            // 열려있는 팝업창 모두 닫기
+            if (menuUI != null && menuUI.activeSelf) menuUI.SetActive(false);
+            if(PopUpOrder.Count > 0)
+            {
+                foreach (GameObject order in PopUpOrder)
+                {
+                    order.SetActive(false);
+                }
+                PopUpOrder.Clear();
+            }
+            return;
+        }
 
         // 인벤토리 Key : I
         if(InputInventory.WasPerformedThisFrame() && inventoryUI != null)

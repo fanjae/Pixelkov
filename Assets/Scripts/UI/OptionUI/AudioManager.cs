@@ -10,6 +10,7 @@ public class AudioManager : Singleton<AudioManager>
 {
     [Header("Audio Fields")]
     [SerializeField] private AudioSource BGM_Player;
+    [SerializeField] private AudioSource SFX_Player;
     [SerializeField] private AudioDataBase audioDatabase;
     [SerializeField] private AudioMixer audioMixer;
 
@@ -58,10 +59,21 @@ public class AudioManager : Singleton<AudioManager>
         return nextClip;
     }
 
+    // UI같은 전역 효과음을 사용하는 용도로 사용되는 메서드
+    public void Play(SFXType sfxType)
+    {
+        if (SFX_Player == null) return;
+
+        AudioClip nextClip = GetSFX(sfxType);
+        if (nextClip == null) return;
+
+        SFX_Player.PlayOneShot(nextClip);
+    }
+
     /// <summary>
     /// bgm타입을 받아서 재생 해주는 메서드
     /// </summary>
-    public void PlayBGM(BGMType bgmType)
+    public void Play(BGMType bgmType)
     {
         if (BGM_Player == null || audioDatabase == null) return;
 
@@ -82,6 +94,7 @@ public class AudioManager : Singleton<AudioManager>
         if (Volumns.TryGetValue(volumnType, out string name))
             audioMixer.SetFloat(name, Mathf.Log10(amount) * 20.0f);
     }
+
     // 타입에 맞는 볼륨의 값을 원본 값으로 변환해서 전달하는 메서드. 성공시 true, 실패시 false
     public bool TryGetVolumn(VolumnType volumnType, out float amount)
     {
@@ -110,7 +123,7 @@ public class AudioManager : Singleton<AudioManager>
         BGMType bgmType = ConvertToBGMType(sceneType);
         if(bgmType == BGMType.None) return;
 
-        PlayBGM(bgmType);
+        Play(bgmType);
     }
 
     private BGMType ConvertToBGMType(SceneType sceneType)
@@ -121,6 +134,8 @@ public class AudioManager : Singleton<AudioManager>
                 return BGMType.Title;
             case SceneType.Main:
                 return BGMType.Main;
+            case SceneType.Clear:
+                return BGMType.Clear;
             default:
                 return BGMType.None;
         }

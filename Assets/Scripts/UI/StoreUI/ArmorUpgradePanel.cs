@@ -8,6 +8,7 @@ public class ArmorUpgradePanel : MonoBehaviour
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private TextMeshProUGUI itemPrice;
     [SerializeField] private UpgradeSlot upgradeSlot;
 
     public int SlotIndex { get; private set; } = -1;
@@ -55,6 +56,7 @@ public class ArmorUpgradePanel : MonoBehaviour
 
         iconImage.sprite = data.Icon;
         itemName.text = data.ItemName;
+        itemPrice.text = data.UpgradeCost.ToString() + "G";
         description.text = data.Description;
         iconImage.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         SlotIndex = slotIndex;
@@ -65,6 +67,7 @@ public class ArmorUpgradePanel : MonoBehaviour
         iconImage.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         iconImage.sprite = null;
         itemName.text = null;
+        itemPrice.text = "0G";
         description.text = null;
         SlotIndex = -1;
     }

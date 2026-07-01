@@ -8,6 +8,7 @@ public class ProductUI : MonoBehaviour
 {
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI itemName;
+    [SerializeField] private TextMeshProUGUI itemPrice;
     [SerializeField] private CounterSelector counterSelector;
 
     public int ItemId { get; private set; }
@@ -61,6 +62,7 @@ public class ProductUI : MonoBehaviour
         ItemId = itemId;
         icon.sprite = curItem.Icon;
         itemName.text = curItem.ItemName;
+        itemPrice.text = curItem.Price.ToString() + "G";
         icon.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         if(this.goldController == null && goldController != null)

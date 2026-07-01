@@ -120,7 +120,13 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     /// </summary>
     private void Equip(int index)
     {
-        inventoryController?.EquipFromInventory(index);
+        if (inventoryController == null) return;
+
+        bool isEquip = inventoryController.EquipFromInventory(index);
+        if (isEquip && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play(SFXType.Equip);
+        }
     }
     /// <summary>
     /// 슬롯 타입을 기준으로 장비를 해제합니다.
@@ -132,7 +138,13 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
 
     public void UseConsumable(int index)
     {
-        inventoryController?.UseConsumableFromInventory(index, player);
+        if (inventoryController == null) return;
+
+        bool isUse = inventoryController.UseConsumableFromInventory(index, player);
+        if (isUse && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play(SFXType.Use);
+        }
     }
     
     // 판매 기능을 제공 받는 통로 역할을 하는 메서드

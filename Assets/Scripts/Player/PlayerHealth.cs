@@ -5,6 +5,9 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
     [Header("플레이어 체력")]
     [SerializeField] private int maxHealth = 5;
 
+    [Header("방어력")]
+    [SerializeField] private int defense = 0;
+
     [Header("애니메이터")]
     [SerializeField] private Animator animator;
 
@@ -27,6 +30,8 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
     public bool IsDead => isDead;
+    public int Defense => defense;
+
 
     private void Awake()
     {
@@ -71,6 +76,13 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
             );
         }
     }
+
+    // 방어력 설정
+    public void SetDefense(int value)
+    {
+        defense = Mathf.Max(0, value);
+        Debug.Log($"방어력 변경: {defense}");
+    }
     public bool Heal(int amount)
     {
         if (isDead) return false;
@@ -112,8 +124,11 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
             return;
         }
 
+        // 적 공격력에서 방어력 깎아서 계산
+        int finalDamage = Mathf.Max(0, damage - defense);
+
         // 체력 감소
-        currentHealth -= damage;
+        currentHealth -= finalDamage;
 
         // 체력이 음수가 되지 않도록 처리
         currentHealth = Mathf.Max(currentHealth, 0);
@@ -206,7 +221,15 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
             );
         }
 
-        // 죽음 모션이 재생된 후 Player 오브젝트 삭제
-        Destroy(gameObject, destroyDelay);
+        // 딜레이 이후 씬 이동 코루틴
+        StartCoroutine(LoadTitleAfterDeath());
+    }
+
+    // 사망 Delay이후, 타이틀 씬 이동 
+    private IEnumerator LoadTitleAfterDeath()
+    {
+        yield return new WaitForSeconds(destroyDelay);
+
+        SceneLoadManager.Instance.LoadScene(SceneType.Title);
     }
 }

@@ -24,6 +24,19 @@ public class EnemyVisibility : MonoBehaviour
 
         // Inspector에 미 연결시 직접 연결
         if (coneLight == null && visionTransform != null) coneLight = visionTransform.GetComponent<Light2D>();
+
+        if (visionTransform == null)
+            visionTransform = transform.Find("Vision");
+
+        if (coneLight == null && visionTransform != null)
+            coneLight = visionTransform.GetComponent<Light2D>();
+
+        if (circleLight == null)
+        {
+            Transform circleTransform = transform.Find("VisionCircle");
+            if (circleTransform != null)
+                circleLight = circleTransform.GetComponent<Light2D>();
+        }
     }
 
     private void Update()

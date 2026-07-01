@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     public Inventory Inventory { get; private set; }
     public Equipment Equipment { get; private set; }
+    private PlayerHealth playerHealth;
 
     // 0626 (테스트용)
 
@@ -66,6 +67,14 @@ public class Player : MonoBehaviour
     public bool IsInvincible => isInvincible;
     public int CurrentDodgeCount => currentDodgeCount;
 
+    // 장비 장착 부분에 대한 이벤트 해제
+    private void OnDestroy()
+    {
+        if (Equipment != null)
+        {
+            Equipment.OnEquipmentChanged -= UpdateDefenseFromEquipment;
+        }
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -90,6 +99,12 @@ public class Player : MonoBehaviour
 
         Inventory = new Inventory(inventorySlotCount);
         Equipment = new Equipment();
+
+        playerHealth = GetComponent<PlayerHealth>();
+
+        // 장비 장착시 이벤트
+        Equipment.OnEquipmentChanged += UpdateDefenseFromEquipment;
+        UpdateDefenseFromEquipment();
 
         InventoryController = new PlayerInventoryController(Inventory,Equipment,itemDatabase);
         WeaponController = new PlayerWeaponController(Inventory,Equipment,itemDatabase,defaultDamage);
@@ -304,19 +319,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    /* 기존 로직
-    private IEnumerator RecoverDodgeCharge()
-    {
-        yield return new WaitForSeconds(dodgeRecoverTime);
-
-        currentDodgeCount++;
-
-        if (currentDodgeCount > maxDodgeCount)
-        {
-            currentDodgeCount = maxDodgeCount;
-        }
-    }*/
-
+    // 회피 회복 루틴
     private IEnumerator RecoverDodgeCharge()
     {
         while (currentDodgeCount < maxDodgeCount)
@@ -349,5 +352,26 @@ public class Player : MonoBehaviour
         Debug.Log($"회피 횟수 회복: {currentDodgeCount} / {maxDodgeCount}");
 
         return true;
+    }
+
+    // 장비 장착시 방어구에 대한 방어력 계산하여 방어력 정보 업데이트
+    private void UpdateDefenseFromEquipment()
+    {
+        int newDefense = 0;
+
+        if (Equipment.TryGetSlot(EquipmentSlotType.Armor, out EquipmentSlot armorSlot))
+        {
+            if (!armorSlot.IsEmpty)
+            {
+                ItemData itemData = itemDatabase.GetItem(armorSlot.ItemId);
+
+                if (itemData is ArmorData armorData)
+                {
+                    newDefense = armorData.Defense;
+                }
+            }
+        }
+
+        playerHealth.SetDefense(newDefense);
     }
 }

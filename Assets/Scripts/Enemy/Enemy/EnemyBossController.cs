@@ -11,11 +11,11 @@ namespace Enemy1
         [SerializeField] private EnemyShooterController shooterController;
         [SerializeField] private EnemyWeapon weapon;
         //골드 컨드롤
-        [SerializeField] private PlayerGoldController goldController;
+        //[SerializeField] private PlayerGoldController goldController;
         //HP UI
         [SerializeField] private EnemyUI hpUI;
         //코인
-        [SerializeField] private GameObject coin;
+        //[SerializeField] private GameObject coin;
         //회복 아이콘 
         [SerializeField] private GameObject hpAdd;
 
@@ -103,9 +103,7 @@ namespace Enemy1
             //데미지 있을시 HP 회복 타이머 작동
             if (currentHealth < maxHealth)
             {
-                
-                recoveryHPTimer += Time.deltaTime;
-                Debug.Log(recoveryHPTimer);
+                recoveryHPTimer += Time.deltaTime;   
             }
             //HP 회복
             if (recoveryHPDelay < recoveryHPTimer
@@ -135,20 +133,29 @@ namespace Enemy1
             if (isAttack) return;
             
             //플레이어 사망후 대기 상태
-            if (target.GetComponentInParent<PlayerHealth>().CurrentHealth==0 
-                ||target == null)
+            if (target != null)
+            {
+                //플레이어 hp = 0
+                if (target.GetComponentInParent<PlayerHealth>().CurrentHealth == 0)
+                {
+                    //애니메이션 타입 
+                    UpdateAnimation(EnemyActionType.Idle);
+                    return;
+                }
+            }
+            else
             {
                 //애니메이션 타입
                 UpdateAnimation(EnemyActionType.Idle);
                 return;
             }
+            
             //플레이어 - 적 거리
             float distance = Vector2.Distance(transform.position, target.position);
             
             if (distance < targeteDistance)
             {
-
-                Debug.Log(maxHealth * (percentage / 100));
+                //hp가 퍼센지티 보다 낮으면 페이즈 2
                 if (maxHealth * (percentage / 100) < currentHealth)
                 {
                     if (distance < fireDistance)
@@ -279,35 +286,27 @@ namespace Enemy1
         {
             isDead = true;
             //골드 추가
-            goldController.AddGold(gold);
+            //goldController.AddGold(gold);
             UpdateAnimation(EnemyActionType.Dead);
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
-            Instantiate(coin, transform.position, Quaternion.identity);
+            //Instantiate(coin, transform.position, Quaternion.identity);
 
             //collider, Rigidbody 비활성화
             collider.enabled = false;
             rb.simulated = false;
-            Destroy(gameObject, 3.0f);
+            //Destroy(gameObject, 3.0f);
+            // 클리어씬 이동
+            StartCoroutine(LoadClearAfterDeath());
         }
-
-        //충돌시 밀어내기
-        private void OnTriggerEnter2D(Collider2D collision)
+        // 클리어씬 이동
+        private IEnumerator LoadClearAfterDeath()
         {
-            // 충돌한 대상이 Enemy 
-            if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
-            {
+            yield return new WaitForSeconds(3.0f);
 
-                Rigidbody2D otherRb = collision.GetComponent<Rigidbody2D>();
-                if (otherRb != null)
-                {
-                    // 밀어낼 방향과 거리 계산
-                    Vector2 pushDir = (Vector2)(transform.position - collision.transform.position).normalized;
-                    // 위치 강제 이동
-                    transform.position += (Vector3)(pushDir * 0.1f);
-                }
-            }
+            SceneLoadManager.Instance.LoadScene(SceneType.Clear);
         }
+
     }
 }
 

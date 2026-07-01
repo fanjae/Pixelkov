@@ -84,7 +84,14 @@ public class ProductUI : MonoBehaviour
         // 비스택형 아이템의 경우 구매 이벤트
         else
         {
-            OnBuyEvent?.Invoke(ItemId, 1);
+            if(OnBuyEvent != null)
+            {
+                bool isBuy = OnBuyEvent.Invoke(ItemId, 1);
+                if (isBuy && AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.Play(SFXType.Buy);
+                }
+            }
         }
     }
     /// <summary>
@@ -93,8 +100,12 @@ public class ProductUI : MonoBehaviour
     public void OnClickStackable()
     {
         if (counterSelector == null) return;
-        int count = counterSelector.Count;
+        if (counterSelector.Count <= 0) return;
 
-        OnBuyEvent?.Invoke(ItemId, count);
+        bool isBuy = OnBuyEvent.Invoke(ItemId, counterSelector.Count);
+        if(isBuy && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play(SFXType.Buy);
+        }
     }
 }

@@ -22,21 +22,30 @@ public class EnemyVisibility : MonoBehaviour
         // 적 오브젝트 및 자식 오브젝트에 있는 Sprite 모두 가져옴
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
 
-        // Inspector에 미 연결시 직접 연결
-        if (coneLight == null && visionTransform != null) coneLight = visionTransform.GetComponent<Light2D>();
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject == null) return;
 
+        player = playerObject.transform;
+
+        // Inspector에 미 연결시 직접 연결
         if (visionTransform == null)
-            visionTransform = transform.Find("Vision");
+            visionTransform = player.Find("Vision");
 
         if (coneLight == null && visionTransform != null)
             coneLight = visionTransform.GetComponent<Light2D>();
 
         if (circleLight == null)
         {
-            Transform circleTransform = transform.Find("VisionCircle");
+            Transform circleTransform = player.Find("VisionCircle");
             if (circleTransform != null)
                 circleLight = circleTransform.GetComponent<Light2D>();
         }
+
+        if (visionTransform == null)
+            Debug.LogError("Player 자식에서 Vision Light2D를 찾지 못함");
+
+        if (circleLight == null)
+            Debug.LogError("Player 자식에서 VisionCircle Light2D를 찾지 못함");
     }
 
     private void Update()

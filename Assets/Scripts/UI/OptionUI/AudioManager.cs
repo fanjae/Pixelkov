@@ -37,7 +37,11 @@ public class AudioManager : Singleton<AudioManager>
     private void Start()
     {
         if (SceneLoadManager.Instance != null)
+        {
             SceneLoadManager.Instance.OnSceneChanged += ChangeBGM;
+            BGMType bgm = ConvertToBGMType(SceneLoadManager.Instance.CurrentScene);
+            Play(bgm);
+        }
     }
     private void OnDestroy()
     {

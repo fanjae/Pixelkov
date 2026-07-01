@@ -11,7 +11,7 @@ public enum BGMType
 public enum SFXType
 {
     None, 
-    Equip, Use, PopUp, Buy, Sell, Craft,    // UI
+    Equip, Use, PopUp, Buy, Sell, Craft, Upgrade,    // UI
     Walk, Shoot, Reload,    // Player
     EnemyWalk, EnemyAttack, // Enemy
 }

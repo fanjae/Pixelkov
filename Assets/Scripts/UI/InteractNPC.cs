@@ -12,7 +12,13 @@ public class InteractNPC : MonoBehaviour
     public void SwitchPanel()
     {
         if(interactPanel != null)
+        {
             interactPanel.SetActive(!interactPanel.activeSelf);
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.Play(SFXType.PopUp);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

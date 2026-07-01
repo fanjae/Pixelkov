@@ -12,6 +12,10 @@ public class MapTeleportZone : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 0.5f;
 
+    [Header("BGM 변경")]
+    [SerializeField] private bool changeBGM;
+    [SerializeField] private BGMType nextBGM = BGMType.None;
+
     private bool isTeleporting;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +61,12 @@ public class MapTeleportZone : MonoBehaviour
         {
             // Rigidbody 없으면 Position 이동 방식
             other.transform.position = targetPoint.position;
+        }
+
+        // BGM 변경이 필요한 포탈이면 변경
+        if (changeBGM && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play(nextBGM);
         }
 
         // 포탈 종료 후 플레이어 입력/이동 복구

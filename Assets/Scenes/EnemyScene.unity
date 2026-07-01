@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_TagString
@@ -766,7 +766,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &246022957
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -818,9 +818,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
   animationController: {fileID: 910294302}
   weapon: {fileID: 7417723230966456245}
-  goldController: {fileID: 919741306}
+  goldController: {fileID: 0}
   hpUI: {fileID: 246022954}
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
+  coin: {fileID: 0}
   moveSpeed: 2
   targeteDistance: 6
   attackDistance: 0.5
@@ -4674,15 +4674,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5373313910969140490, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4726,7 +4726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_TagString
@@ -4813,7 +4813,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1751808598
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4844,7 +4844,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -4865,9 +4865,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
   animationController: {fileID: 136466477}
   weapon: {fileID: 8000475381359839145}
-  goldController: {fileID: 919741306}
+  goldController: {fileID: 0}
   hpUI: {fileID: 1751808595}
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
+  coin: {fileID: 0}
   moveSpeed: 2
   targeteDistance: 6
   attackDistance: 0.5
@@ -5528,7 +5528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9041770812090128195, guid: a30485309d80b044c832c2fa6a8c1312, type: 3}
       propertyPath: m_TagString
@@ -5678,9 +5678,7 @@ MonoBehaviour:
   animationController: {fileID: 1640961780}
   shooterController: {fileID: 2029203563}
   weapon: {fileID: 3912984480355143185}
-  goldController: {fileID: 919741306}
   hpUI: {fileID: 2070192202}
-  coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
   hpAdd: {fileID: 133914252300323058}
   moveSpeed: 2
   targeteDistance: 6

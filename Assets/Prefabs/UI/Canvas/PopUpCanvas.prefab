@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4286bdf2da251f447b11a09a8365d2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputUIController
+  playerHealth: {fileID: 0}
   inventoryUI: {fileID: 1715191884318864235}
   menuUI: {fileID: 4472484694569512734}
 --- !u!1001 &861428503398162534
@@ -574,14 +575,82 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5636071788351826425}
     m_Modifications:
+    - target: {fileID: 518054347352173212, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518054347352173212, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518054347352173212, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 518054347352173212, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -62.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182496830387530638, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389765811776556307, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2449592871176864337, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449592871176864337, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674857079275336353, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674857079275336353, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674857079275336353, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 106.666664
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674857079275336353, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -62.5
       objectReference: {fileID: 0}
     - target: {fileID: 4736780979448937828, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
       propertyPath: invenUIController
       value: 
       objectReference: {fileID: 1286382358002617794}
+    - target: {fileID: 5530499308099783288, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530499308099783288, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530499308099783288, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 533.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530499308099783288, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -62.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308703833692395225, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308703833692395225, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 24.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8583020577695983371, guid: 5f0fc6a5ecd8ea141a614474d38c9fbf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

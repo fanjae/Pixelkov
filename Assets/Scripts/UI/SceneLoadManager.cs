@@ -48,6 +48,7 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
         if (FadeEvent == null)
         {
             SceneManager.LoadScene(SceneNames[type]);
+            CurrentScene = type;
             OnSceneChanged?.Invoke(type);
         }
         else
@@ -69,6 +70,7 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
         yield return FadeEvent?.Invoke();
 
         SceneManager.LoadScene(SceneNames[type]);
+        CurrentScene = type;
         OnSceneChanged?.Invoke(type);
         Loading = false;
     }

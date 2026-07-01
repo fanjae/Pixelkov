@@ -103,9 +103,7 @@ namespace Enemy1
             //데미지 있을시 HP 회복 타이머 작동
             if (currentHealth < maxHealth)
             {
-                
-                recoveryHPTimer += Time.deltaTime;
-                Debug.Log(recoveryHPTimer);
+                recoveryHPTimer += Time.deltaTime;   
             }
             //HP 회복
             if (recoveryHPDelay < recoveryHPTimer
@@ -133,8 +131,6 @@ namespace Enemy1
         {
             if (isDead) return;
             if (isAttack) return;
-
-            //Debug.Log("피 확인 : " + target.GetComponent<PlayerHealth>().CurrentHealth);
             
             //플레이어 사망후 대기 상태
             if (target != null)

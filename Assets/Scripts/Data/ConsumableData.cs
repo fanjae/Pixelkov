@@ -27,7 +27,7 @@ public class ConsumableData : ItemData
                 return playerHealth.Heal(value);
 
             case ConsumableType.RestoreDodge:
-                return false; // 추후 구현
+                return player.RestoreDodge(value);
 
             default:
                 return false;

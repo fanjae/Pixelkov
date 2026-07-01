@@ -53,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
         // 생성한 적을 생존 목록에 등록
-        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity, transform);
         aliveEnemies.Add(enemy);
     }
 }

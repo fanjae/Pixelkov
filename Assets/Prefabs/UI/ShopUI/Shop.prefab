@@ -308,6 +308,7 @@ MonoBehaviour:
   iconImage: {fileID: 7647864891735046132}
   itemName: {fileID: 5443044757355015181}
   description: {fileID: 4058261327856709718}
+  upgradeSlot: {fileID: 7000253443538843864}
 --- !u!1 &2281197038946660695
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8583020577695983371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -828,9 +829,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6434ddd8e48a746a0b2d932496887c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopUIController
-  database: {fileID: 11400000, guid: d6e7f52091e629a4694ea9e733927709, type: 2}
+  database: {fileID: 11400000, guid: 5e26967a74d832647a977f851c9331b2, type: 2}
+  shopData: {fileID: 11400000, guid: 9d7102dce199f0144a6f984e71f605a2, type: 2}
+  player: {fileID: 0}
   goldController: {fileID: 0}
-  shopData: {fileID: 11400000, guid: a558bd81094c5a24487e191b74cc5502, type: 2}
   buyPanel: {fileID: 5850787774911880684}
   upgradePanel: {fileID: 2083119910438702670}
   invenUIController: {fileID: 0}
@@ -2239,6 +2241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3163574170375516862}
   - component: {fileID: 7726773331138014327}
+  - component: {fileID: 7000253443538843864}
   m_Layer: 5
   m_Name: UpgradeSlot
   m_TagString: Untagged
@@ -2265,7 +2268,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 0, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7726773331138014327
 CanvasRenderer:
@@ -2275,6 +2278,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7983214489191511461}
   m_CullTransparentMesh: 1
+--- !u!114 &7000253443538843864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983214489191511461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebad447332238534e97d91aba6580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeSlot
 --- !u!1 &8033682467964508629
 GameObject:
   m_ObjectHideFlags: 0

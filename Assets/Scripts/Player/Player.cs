@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     public PlayerInventoryController InventoryController { get; private set; }
     public PlayerWeaponController WeaponController { get; private set; }
+    private Coroutine dodgeRecoverCoroutine;
 
     public Inventory Inventory { get; private set; }
     public Equipment Equipment { get; private set; }
@@ -236,7 +237,11 @@ public class Player : MonoBehaviour
         currentDodgeCount--;
 
         StartCoroutine(DodgeCoroutine());
-        StartCoroutine(RecoverDodgeCharge());
+
+        if (dodgeRecoverCoroutine == null)
+        {
+            dodgeRecoverCoroutine = StartCoroutine(RecoverDodgeCharge());
+        }
     }
 
     private IEnumerator DodgeCoroutine()
@@ -299,6 +304,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    /* 기존 로직
     private IEnumerator RecoverDodgeCharge()
     {
         yield return new WaitForSeconds(dodgeRecoverTime);
@@ -309,7 +315,24 @@ public class Player : MonoBehaviour
         {
             currentDodgeCount = maxDodgeCount;
         }
+    }*/
+
+    private IEnumerator RecoverDodgeCharge()
+    {
+        while (currentDodgeCount < maxDodgeCount)
+        {
+            yield return new WaitForSeconds(dodgeRecoverTime);
+
+            currentDodgeCount++;
+            currentDodgeCount = Mathf.Min(currentDodgeCount, maxDodgeCount);
+
+            Debug.Log($"회피 회복: {currentDodgeCount} / {maxDodgeCount}");
+        }
+
+        dodgeRecoverCoroutine = null;
     }
+
+
 
     public bool RestoreDodge(int amount) // 회피 회복(포션용)
     {

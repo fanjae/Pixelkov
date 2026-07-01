@@ -21,13 +21,22 @@ public class SceneLoadManager : Singleton<SceneLoadManager>
     
     // Fade가 배치된 씬이면 해당 이벤트를 사용해서 DOTween 애니메이션 종료 시점을 알림
     public event Func<YieldInstruction> FadeEvent;
-
+    public SceneType CurrentScene { get; private set; } = SceneType.Title;
     public event Action<SceneType> OnSceneChanged; // 씬 전환을 알림
     public bool Loading { get; private set; } = false;  // 씬 전환 코루틴 중복 방지용 변수
 
     protected override void Awake()
     {
         base.Awake();
+        string sceneName = SceneManager.GetActiveScene().name;
+        foreach(var kv in SceneNames)
+        {
+            if(kv.Value == sceneName)
+            {
+                CurrentScene = kv.Key;
+                break;
+            }
+        }
     }
 
     /// <summary>

@@ -8,6 +8,7 @@ public class ArmorUpgradePanel : MonoBehaviour
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private UpgradeSlot upgradeSlot;
 
     public int SlotIndex { get; private set; } = -1;
 
@@ -17,14 +18,28 @@ public class ArmorUpgradePanel : MonoBehaviour
     {
         // 패널 활성화 시마다 UI 초기화
         InitUI();
+        upgradeSlot.ReleaseEvent += InitUI;
     }
+    private void OnDisable()
+    {
+        upgradeSlot.ReleaseEvent -= InitUI;
+    }
+
     public void UpgradeEvent()
     {
-        bool? result = OnUpgrade?.Invoke(SlotIndex);
-        // 강화 결과가 실패했다면 return
-        if (result == null || result == false) return;
-        // 성공이면 UI 초기화
-        InitUI();
+        if(OnUpgrade != null)
+        {
+            bool isUpgrade = OnUpgrade.Invoke(SlotIndex);
+            if (isUpgrade)
+            {
+                // 성공이면 UI 초기화
+                InitUI();
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.Play(SFXType.Upgrade);
+                }
+            }
+        }
     }
 
     public void PaintUpgradeUI(ArmorData data, int slotIndex)

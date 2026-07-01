@@ -159,8 +159,7 @@ namespace Enemy1
             
             if (distance < targeteDistance)
             {
-
-                Debug.Log(maxHealth * (percentage / 100));
+                //hp가 퍼센지티 보다 낮으면 페이즈 2
                 if (maxHealth * (percentage / 100) < currentHealth)
                 {
                     if (distance < fireDistance)
@@ -301,24 +300,6 @@ namespace Enemy1
             collider.enabled = false;
             rb.simulated = false;
             Destroy(gameObject, 3.0f);
-        }
-
-        //충돌시 밀어내기
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            // 충돌한 대상이 Enemy 
-            if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
-            {
-
-                Rigidbody2D otherRb = collision.GetComponent<Rigidbody2D>();
-                if (otherRb != null)
-                {
-                    // 밀어낼 방향과 거리 계산
-                    Vector2 pushDir = (Vector2)(transform.position - collision.transform.position).normalized;
-                    // 위치 강제 이동
-                    transform.position += (Vector3)(pushDir * 0.1f);
-                }
-            }
         }
     }
 }

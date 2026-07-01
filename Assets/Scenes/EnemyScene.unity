@@ -5678,7 +5678,7 @@ MonoBehaviour:
   animationController: {fileID: 1640961780}
   shooterController: {fileID: 2029203563}
   weapon: {fileID: 3912984480355143185}
-  goldController: {fileID: 0}
+  goldController: {fileID: 919741306}
   hpUI: {fileID: 2070192202}
   coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
   hpAdd: {fileID: 133914252300323058}
@@ -5691,6 +5691,7 @@ MonoBehaviour:
   recoveryHPDelay: 5
   dashDelay: 5
   dashSpeed: 15
+  percentage: 30
 --- !u!1 &2070896748
 GameObject:
   m_ObjectHideFlags: 0

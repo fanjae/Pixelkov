@@ -11,11 +11,11 @@ namespace Enemy1
         [SerializeField] private EnemyShooterController shooterController;
         [SerializeField] private EnemyWeapon weapon;
         //골드 컨드롤
-        [SerializeField] private PlayerGoldController goldController;
+        //[SerializeField] private PlayerGoldController goldController;
         //HP UI
         [SerializeField] private EnemyUI hpUI;
         //코인
-        [SerializeField] private GameObject coin;
+        //[SerializeField] private GameObject coin;
         //회복 아이콘 
         [SerializeField] private GameObject hpAdd;
 
@@ -133,15 +133,27 @@ namespace Enemy1
         {
             if (isDead) return;
             if (isAttack) return;
+
+            //Debug.Log("피 확인 : " + target.GetComponent<PlayerHealth>().CurrentHealth);
             
             //플레이어 사망후 대기 상태
-            if (target.GetComponentInParent<PlayerHealth>().CurrentHealth==0 
-                ||target == null)
+            if (target != null)
+            {
+                //플레이어 hp = 0
+                if (target.GetComponentInParent<PlayerHealth>().CurrentHealth == 0)
+                {
+                    //애니메이션 타입 
+                    UpdateAnimation(EnemyActionType.Idle);
+                    return;
+                }
+            }
+            else
             {
                 //애니메이션 타입
                 UpdateAnimation(EnemyActionType.Idle);
                 return;
             }
+            
             //플레이어 - 적 거리
             float distance = Vector2.Distance(transform.position, target.position);
             
@@ -279,11 +291,11 @@ namespace Enemy1
         {
             isDead = true;
             //골드 추가
-            goldController.AddGold(gold);
+            //goldController.AddGold(gold);
             UpdateAnimation(EnemyActionType.Dead);
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
-            Instantiate(coin, transform.position, Quaternion.identity);
+            //Instantiate(coin, transform.position, Quaternion.identity);
 
             //collider, Rigidbody 비활성화
             collider.enabled = false;

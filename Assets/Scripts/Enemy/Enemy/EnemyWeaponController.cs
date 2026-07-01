@@ -69,9 +69,18 @@ namespace Enemy1
         {
             if (isDead) return;
             if (isAttack) return;
-            //플레이어 사망시 대기 상태
-            if (target.GetComponentInParent<PlayerHealth>().CurrentHealth == 0
-                || target == null)
+            //플레이어 사망후 대기 상태
+            if (target != null)
+            {
+                
+                if (target.GetComponentInParent<PlayerHealth>().CurrentHealth == 0)
+                {
+                    //애니메이션 타입
+                    UpdateAnimation(EnemyActionType.Idle);
+                    return;
+                }
+            }
+            else
             {
                 //애니메이션 타입
                 UpdateAnimation(EnemyActionType.Idle);

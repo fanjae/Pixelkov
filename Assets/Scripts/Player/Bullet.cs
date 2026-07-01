@@ -60,11 +60,20 @@ public class Bullet : MonoBehaviour
     {
         if (other.GetComponentInParent<Player>() != null) return;
 
+        // 적에 데미지 주고 총알삭제
         IEnmeyController target = other.GetComponentInParent<IEnmeyController>();
+        if (target != null)
+        {
+            target.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
 
-        if (target != null) target.TakeDamage(damage);
-
-        Destroy(gameObject);
+        // 벽 총알 판정시 삭제
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
     public void SetDamage(int damage)
     {

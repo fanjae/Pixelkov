@@ -295,8 +295,18 @@ namespace Enemy1
             //collider, Rigidbody 비활성화
             collider.enabled = false;
             rb.simulated = false;
-            Destroy(gameObject, 3.0f);
+            //Destroy(gameObject, 3.0f);
+            // 클리어씬 이동
+            StartCoroutine(LoadClearAfterDeath());
         }
+        // 클리어씬 이동
+        private IEnumerator LoadClearAfterDeath()
+        {
+            yield return new WaitForSeconds(3.0f);
+
+            SceneLoadManager.Instance.LoadScene(SceneType.Clear);
+        }
+
     }
 }
 

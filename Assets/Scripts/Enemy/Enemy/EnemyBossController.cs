@@ -1,6 +1,7 @@
 ﻿using Enemy;
 using UnityEngine;
 using System.Collections;
+using System;
 namespace Enemy1
 {
     public class EnemyBossController : MonoBehaviour, IEnmeyController
@@ -45,6 +46,9 @@ namespace Enemy1
         //Dash 스피드
         [Header("Dash 스피드")]
         [SerializeField] public float dashSpeed = 15.0f;
+
+        [Header("페이즈 변경 퍼센티지")]
+        [SerializeField] public float percentage = 30.0f;
 
 
         //플레이어
@@ -134,7 +138,9 @@ namespace Enemy1
             
             if (distance < targeteDistance)
             {
-                if (3 < currentHealth)
+
+                Debug.Log(maxHealth * (percentage / 100));
+                if (maxHealth * (percentage / 100) < currentHealth)
                 {
                     if (distance < fireDistance)
                     {
@@ -282,6 +288,7 @@ namespace Enemy1
             // 충돌한 대상이 Enemy 
             if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
             {
+
                 Rigidbody2D otherRb = collision.GetComponent<Rigidbody2D>();
                 if (otherRb != null)
                 {

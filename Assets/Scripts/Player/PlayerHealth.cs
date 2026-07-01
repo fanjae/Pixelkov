@@ -221,7 +221,15 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
             );
         }
 
-        // 죽음 모션이 재생된 후 Player 오브젝트 삭제
-        Destroy(gameObject, destroyDelay);
+        // 딜레이 이후 씬 이동 코루틴
+        StartCoroutine(LoadTitleAfterDeath());
+    }
+
+    // 사망 Delay이후, 타이틀 씬 이동 
+    private IEnumerator LoadTitleAfterDeath()
+    {
+        yield return new WaitForSeconds(destroyDelay);
+
+        SceneLoadManager.Instance.LoadScene(SceneType.Title);
     }
 }

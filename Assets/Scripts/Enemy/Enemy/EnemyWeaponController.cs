@@ -189,6 +189,9 @@ namespace Enemy1
             }
             //Dead 애니메이션
             UpdateAnimation(EnemyActionType.Dead);
+
+            //Dead 사운드
+            sfxPlayer.PlaySFX(SFXType.Dead);
             //hp 삭제
             Destroy(transform.Find("HP").gameObject);
 

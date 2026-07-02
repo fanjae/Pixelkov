@@ -1,22 +1,21 @@
 ﻿using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using MagicPigGames;
 
 public class PlayerHpPanel : MonoBehaviour
 {
-    [SerializeField] private Image fillImage;   // 체력바
+    [SerializeField] private ProgressBarInspectorTest hpBar;   // 체력바
     [SerializeField] private TextMeshProUGUI hpText;    // 체력 수치 표시
 
+    Tween tween;
     /// <summary>
     /// 게임 시작시 플레이어 HP기반으로 초기화 해주는 메서드입니다.
     /// </summary>
-    /// <param name="currentHp"></param>
-    /// <param name="maxHp"></param>
     public void Init(int currentHp, int maxHp)
     {
         float ratio = (float)currentHp / maxHp;
-        fillImage.fillAmount = ratio;
+        hpBar.progress = ratio;
         hpText.text = $"{currentHp} / {maxHp}";
     }
 
@@ -27,9 +26,11 @@ public class PlayerHpPanel : MonoBehaviour
     /// <param name="maxHp">최대 체력</param>
     public void HpUIUpdate(int currentHp, int maxHp)
     {
+        if(tween != null)
+            tween.Complete();
         float ratio = (float)currentHp / maxHp; // 체력 비율을 구해서 DOTween을 사용해 fillAmount 조정
-        fillImage.DOKill();
-        fillImage.DOFillAmount(ratio, 0.1f).SetEase(Ease.OutQuad);
+        tween = DOTween.To(() => hpBar.progress, amount => hpBar.progress = amount, ratio, 0.2f);
+        tween.Play();
         hpText.text = $"{currentHp} / {maxHp}";
     }
 }

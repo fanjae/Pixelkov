@@ -12,6 +12,7 @@ namespace Enemy1
         [SerializeField] private float FindRange = 1.0f;
         [Header("Target Layer")]
         [SerializeField] private LayerMask targetLayer;
+        [SerializeField] private SFXPlayer sfxPlayer;
         private bool isAttack = false;
         public int Damage => damage;
 
@@ -42,6 +43,7 @@ namespace Enemy1
             {
                 DamageHandler.EnemyAttack(transform.position, damage);
                 enemyController.TakeDamage(damage);
+                sfxPlayer.PlaySFX(SFXType.Impact);
             }
             EndAttack();
 

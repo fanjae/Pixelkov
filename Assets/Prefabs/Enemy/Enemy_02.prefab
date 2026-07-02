@@ -215,7 +215,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.008726557, z: -0, w: 0.9999619}
   m_LocalPosition: {x: -1.65986, y: -17.48453, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3725705454858087225}
@@ -353,11 +353,11 @@ MonoBehaviour:
   shooterController: {fileID: 4777057423789886744}
   hpUI: {fileID: 7279961300707024171}
   coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
-  moveSpeed: 2
+  moveSpeed: 1
   fireDistance: 3
   targeteDistance: 6
   gold: 100
-  maxHealth: 3
+  maxHealth: 5
 --- !u!114 &4950597932477118671
 MonoBehaviour:
   m_ObjectHideFlags: 0

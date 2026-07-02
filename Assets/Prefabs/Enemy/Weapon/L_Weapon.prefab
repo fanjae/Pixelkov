@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8505e06b900ac144093ec55f76d4cd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.Weapon
-  damage: 2
+  damage: 10
   FindRange: 1
   targetLayer:
     serializedVersion: 2

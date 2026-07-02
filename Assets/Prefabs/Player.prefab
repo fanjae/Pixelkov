@@ -6528,7 +6528,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.2, y: -3, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2698046191962970132}
@@ -6714,7 +6714,7 @@ MonoBehaviour:
   dodgeSpeed: 15
   dodgeDuration: 0.2
   invincibleTime: 1
-  maxDodgeCount: 3
+  baseMaxDodgeCount: 2
   dodgeRecoverTime: 5
   animator: {fileID: 2199233788999072599}
   horseRoot: {fileID: 2698046191962970132}
@@ -6734,7 +6734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5087c4c3168e0e348a414e4627f72978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 100
+  baseMaxHealth: 100
   defense: 0
   animator: {fileID: 2199233788999072599}
   destroyDelay: 3

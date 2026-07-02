@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 803020acf123ab24296887602dcb6e36, type: 3}
-  m_Name: Hp Ring
+  m_Name: Dodge Ring
   m_EditorClassIdentifier: Assembly-CSharp::AccessoryData
-  itemId: 300
-  itemName: HP Ring
-  description: 'Max Hp + 50
+  itemId: 301
+  itemName: Dodge Ring
+  description: 'Max Dodge + 1
 
-    Price : 1500'
-  price: 1500
-  icon: {fileID: 21300000, guid: 7e921b6d4de454eab86d24397afc2b0a, type: 3}
+    Price : 2000'
+  price: 2000
+  icon: {fileID: 21300000, guid: ce6a4fc8a1c294bea92e9378af664190, type: 3}
   itemType: 4
   isStackable: 0
   maxStackCount: 1
-  maxHpBonus: 50
-  maxDodgeBonus: 0
+  maxHpBonus: 0
+  maxDodgeBonus: 1

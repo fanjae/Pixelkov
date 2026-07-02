@@ -74,6 +74,9 @@ namespace Enemy1
         {
             if (isDead) return;
             if (isAttack) return;
+
+            //Enemy 좌우 반전
+            UpdateFacingDirection();
             //플레이어 사망후 대기 상태
             if (target != null)
             {
@@ -107,6 +110,23 @@ namespace Enemy1
             }
             UpdateAnimation(EnemyActionType.Idle);
         }
+        //Enemy 좌우 반전
+        private void UpdateFacingDirection()
+        {
+            if (target == null) return;
+
+            if (target.position.x > transform.position.x)
+            {
+                // 플레이어가 오른쪽이면 오른쪽 보기
+                transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            }
+            else
+            {
+                // 플레이어가 왼쪽이면 기본 방향 유지
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
+        }
+
         //공격 코루틴
         IEnumerator AttackRoutine()
         {

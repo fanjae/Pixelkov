@@ -17,11 +17,11 @@ MonoBehaviour:
   description: 'Defense + 0
 
     Upgradable!'
-  price: 0
+  price: 100
   icon: {fileID: 21300000, guid: f88537080c04b6a4787d85e050d7ce2b, type: 3}
   itemType: 3
   isStackable: 0
   maxStackCount: 1
   defense: 0
-  upgradeCost: 0
+  upgradeCost: 800
   nextUpgradeItemId: 201

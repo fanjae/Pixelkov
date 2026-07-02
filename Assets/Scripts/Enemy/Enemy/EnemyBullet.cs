@@ -74,6 +74,7 @@ namespace Enemy1
             //적이라면 데미지 전달
             if (enemyController != null)
             {
+                DamageHandler.EnemyAttack(transform.position, damage);
                 enemyController.TakeDamage(damage);
             }
             isAttack = true;

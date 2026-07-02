@@ -10,10 +10,11 @@ public enum BGMType
 }
 public enum SFXType
 {
-    None, 
-    Equip, Use, PopUp, Buy, Sell, Craft, Upgrade,    // UI
-    Walk, Shoot, Reload,    // Player
-    EnemyWalk, EnemyAttack, // Enemy
+    None,
+    Equip, Use, PopUp, Buy, Sell, Craft, Upgrade,   // UI
+    Move, Shoot, Reload, Impact, Dodge, Dead,  // Player
+    EnemyMove, EnemySword, EnemyAxe, EnemyBow, EnemyMagic, EnemyImpact,  // Enemy
+    BossMove, BossNormalAttack, BossBowAttack, BossHeal, BossRush, BossDead,    // Boss
 }
 
 [CreateAssetMenu(fileName = "AudioData", menuName = "Audio/Audio Data")]

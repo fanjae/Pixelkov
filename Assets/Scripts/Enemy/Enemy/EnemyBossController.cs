@@ -19,6 +19,8 @@ namespace Enemy1
         //회복 아이콘 
         [SerializeField] private GameObject hpAdd;
 
+        [SerializeField] private SFXPlayer sfxPlayer;
+
 
         [Header("이동 속도")]
         [SerializeField] private float moveSpeed = 2.0f;
@@ -248,6 +250,7 @@ namespace Enemy1
 
             yield return new WaitForSeconds(1.0f);
             shooterController.Fire();
+            sfxPlayer.PlaySFX(SFXType.BossBowAttack);
             //공격후 딜레이
             //yield return new WaitForSeconds(1.0f);
             isAttack = false;
@@ -259,6 +262,7 @@ namespace Enemy1
             isAttack = true;
             UpdateAnimation(EnemyActionType.WeaponAttack);
             weapon.StartAttack();
+            sfxPlayer.PlaySFX(SFXType.BossNormalAttack);
             yield return new WaitForSeconds(1.0f);
             isAttack = false;
 

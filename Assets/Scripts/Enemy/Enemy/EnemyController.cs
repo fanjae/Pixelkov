@@ -149,10 +149,12 @@ namespace Enemy1
 
             if (gameObject.name.Equals("Enemy_02(Clone)"))
             {
+                //Bow 사운드
                 sfxPlayer.PlaySFX(SFXType.EnemyBow);
             }
             else
             {
+                //Magic 사운드
                 sfxPlayer.PlaySFX(SFXType.EnemyMagic);
             }
 
@@ -204,6 +206,9 @@ namespace Enemy1
             }
             //Dead 애니메이션
             UpdateAnimation(EnemyActionType.Dead);
+            //Dead 사운드
+            sfxPlayer.PlaySFX(SFXType.Dead);
+            
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
 

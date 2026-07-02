@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyBossController
   animationController: {fileID: 7103788608262846456}
   shooterController: {fileID: 23533937688972657}
-  weapon: {fileID: 8902173565820492685, guid: f4f015064af03a94aae15232fd45395a, type: 3}
+  weapon: {fileID: 7601226137793569147}
   hpUI: {fileID: 8389253068460118554}
   hpAdd: {fileID: 4902143704371828564}
   moveSpeed: 3
@@ -7728,3 +7728,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6086799773361786770, guid: f4f015064af03a94aae15232fd45395a, type: 3}
   m_PrefabInstance: {fileID: 1366320592663608054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7601226137793569147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8902173565820492685, guid: f4f015064af03a94aae15232fd45395a, type: 3}
+  m_PrefabInstance: {fileID: 1366320592663608054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8505e06b900ac144093ec55f76d4cd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeapon

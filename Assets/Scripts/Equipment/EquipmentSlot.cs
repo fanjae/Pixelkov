@@ -38,4 +38,10 @@ public class EquipmentSlot
         ItemId = 0;
         InventorySlotIndex = -1;
     }
+
+    // 장비 슬롯이 참조 중인 인벤토리 슬롯 인덱스 변경
+    public void ChangeInventorySlotIndex(int inventorySlotIndex)
+    {
+        InventorySlotIndex = inventorySlotIndex;
+    }
 }

@@ -134,4 +134,38 @@ public class Equipment
     {
         isWeaponLocked = locked;
     }
+
+    // 인벤토리 슬롯 교환 이후, 장비 슬롯이 참조하는 인벤토리 인덱스 동기화
+    public void SyncInventorySlotIndexAfterSwap(int indexA, int indexB)
+    {
+        bool changed = false;
+
+        foreach (var pair in slots)
+        {
+            EquipmentSlot slot = pair.Value;
+
+            // 비어있는 장비 슬롯은 처리하지 않음
+            if (slot.IsEmpty) continue;
+
+            // indexA 참조하던 장비는 indexB 참조하도록 변경
+            if (slot.InventorySlotIndex == indexA)
+            {
+                slot.ChangeInventorySlotIndex(indexB);
+                changed = true;
+            }
+
+            // indexB 참조하던 장비는 indexA 참조하도록 변경
+            else if (slot.InventorySlotIndex == indexB)
+            {
+                slot.ChangeInventorySlotIndex(indexA);
+                changed = true;
+            }
+        }
+
+        // 실제 변경이 있었을 때만 장비 UI 갱신 알림
+        if (changed)
+        {
+            OnEquipmentChanged?.Invoke();
+        }
+    }
 }

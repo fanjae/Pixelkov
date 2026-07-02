@@ -114,4 +114,19 @@ public class PlayerInventoryController
 
         return inventory.RemoveItemAt(slotIndex, 1);
     }
+
+    // 인벤토리 슬롯 간 위치 교환
+    public bool SwapInventorySlots(int fromIndex, int toIndex)
+    {
+        if (fromIndex == toIndex) return false;
+
+        // 슬롯 교환
+        bool swapped = inventory.SwapSlots(fromIndex, toIndex);
+        if (!swapped) return false;
+
+        // 장착 슬롯이 참조 중인 인벤토리 인덱스 동기화
+        equipment.SyncInventorySlotIndexAfterSwap(fromIndex, toIndex);
+
+        return true;
+    }
 }

@@ -17,6 +17,8 @@ public class PlayerHUDController : MonoBehaviour
 
     private PlayerWeaponController weaponController;
     private int curDodgeCount = -1;
+    private int maxDodgeCount = -1;
+    private int maxHp = 0;
     private int curHp = 0;
     private void Awake()
     {
@@ -32,13 +34,15 @@ public class PlayerHUDController : MonoBehaviour
         // UI 초기화 (항상 열려 있기 때문에 Start 사용)
         if(player != null && dodgePanel != null)
         {
-            dodgePanel.MaxDodgeCountChanged(player.CurrentDodgeCount);
+            dodgePanel.MaxDodgeCountChanged(player.MaxDodgeCount);
             dodgePanel.DodgeUIUpdate(player.CurrentDodgeCount);
             curDodgeCount = player.CurrentDodgeCount;
+            maxDodgeCount = player.MaxDodgeCount;
         }
         if(playerHealth != null && hpPanel != null)
         {
             curHp = playerHealth.CurrentHealth;
+            maxHp = playerHealth.MaxHealth;
             hpPanel.Init(playerHealth.CurrentHealth, playerHealth.MaxHealth);
         }
         if(player != null)
@@ -69,8 +73,13 @@ public class PlayerHUDController : MonoBehaviour
     }
     private void Update()
     {
-        // 이벤트로 연결하기 전 임시 업데이트 로직
-        if(playerHealth != null && curHp != playerHealth.CurrentHealth)
+        if(playerHealth != null && maxHp != playerHealth.MaxHealth)
+        {
+            if(hpPanel != null)
+                hpPanel.Init(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+            maxHp = playerHealth.MaxHealth;
+        }
+        if (playerHealth != null && curHp != playerHealth.CurrentHealth)
         {
             if(hpPanel != null)
                 hpPanel.HpUIUpdate(playerHealth.CurrentHealth, playerHealth.MaxHealth);
@@ -89,10 +98,16 @@ public class PlayerHUDController : MonoBehaviour
         if (player == null || dodgePanel == null) return;
 
         // 현재 회피 수가 동일하면 갱신하지 않음
-        if (player.CurrentDodgeCount == curDodgeCount) return;
-
-        dodgePanel.DodgeUIUpdate(player.CurrentDodgeCount);
-        curDodgeCount = player.CurrentDodgeCount;
+        if (player.CurrentDodgeCount != curDodgeCount)
+        {
+            dodgePanel.DodgeUIUpdate(player.CurrentDodgeCount);
+            curDodgeCount = player.CurrentDodgeCount;
+        }
+        if (player.MaxDodgeCount != maxDodgeCount)
+        {
+            dodgePanel.MaxDodgeCountChanged(player.MaxDodgeCount);
+            maxDodgeCount = player.MaxDodgeCount;
+        }
     }
     private void UpdateAmmo()
     {

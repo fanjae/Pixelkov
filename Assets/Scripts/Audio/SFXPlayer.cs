@@ -5,6 +5,8 @@ public class SFXPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
 
+  
+
     private void Start()
     {
         if (audioSource == null)
@@ -28,4 +30,5 @@ public class SFXPlayer : MonoBehaviour
 
         audioSource.PlayOneShot(clip);
     }
+  
 }

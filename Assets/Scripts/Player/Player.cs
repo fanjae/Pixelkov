@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [Header("이동 설정")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private SFXPlayer sfxPlayer;
 
     [Header("회피 설정")]
     [SerializeField] private float dodgeSpeed = 15f;
@@ -268,6 +269,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("IsMoving", false);
             animator.SetBool("IsDodging", true);
+            sfxPlayer.PlaySFX(SFXType.Dodge);
         }
 
         float timer = 0f;

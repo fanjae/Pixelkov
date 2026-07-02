@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
     private int currentHealth;
     private bool isHit;
 
+
     public bool IsHit => isHit;
     // 이미 죽었는지 확인
     private bool isDead;

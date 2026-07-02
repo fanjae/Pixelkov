@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6101a2445a3408e4da696878c233172a, type: 3}
   m_Name: PlayerShoot
   m_EditorClassIdentifier: Assembly-CSharp::AudioData
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 9aa9cf8067116844db77d7036246af99, type: 3}
   audioType: 1
   bgmType: 0
   sfxType: 9

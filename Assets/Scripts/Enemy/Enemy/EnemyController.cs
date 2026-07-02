@@ -17,6 +17,7 @@ namespace Enemy1
         [SerializeField] private EnemyUI hpUI;
         //코인
         [SerializeField] private GameObject coin;
+        [SerializeField] private SFXPlayer sfxPlayer;
 
         [Header("이동 속도")]
         [SerializeField] private float moveSpeed = 2.0f;
@@ -103,6 +104,7 @@ namespace Enemy1
             {
                 if (distance < fireDistance)
                 {
+
                     //공격 코루틴
                     StartCoroutine(AttackRoutine());
                     return;
@@ -145,6 +147,20 @@ namespace Enemy1
 
             yield return new WaitForSeconds(1.0f);
             shooterController.Fire();
+
+            //궁수와 법사가 같이 사용하고 있어서
+            //Enemy_02 -> 궁수
+            //Enemy_03 -> 법사
+            if (gameObject.name.Equals("Enemy_02(Clone)"))
+            {
+                sfxPlayer.PlaySFX(SFXType.EnemyBow);
+            }
+            else
+            {
+                sfxPlayer.PlaySFX(SFXType.EnemyMagic);
+            }
+
+            
             //공격후 딜레이
             //yield return new WaitForSeconds(1.0f);
             isAttack = false;

@@ -15,6 +15,7 @@ namespace Enemy1
         [SerializeField] private EnemyUI hpUI;
         //코인
         [SerializeField] private GameObject coin;
+        [SerializeField] private SFXPlayer sfxPlayer;
 
         [Header("이동 속도")]
         [SerializeField] private float moveSpeed = 2.0f;
@@ -30,6 +31,7 @@ namespace Enemy1
         //Max HP
         [Header("최대 HP")]
         [SerializeField] private int maxHealth = 3;
+
 
 
         //플레이어
@@ -132,8 +134,23 @@ namespace Enemy1
         {
             isAttack = true;
             UpdateAnimation(EnemyActionType.Attack);
+
+
             weapon.StartAttack();
-            yield return new WaitForSeconds(1.0f);
+            //도끼와 검사가 같이 사용하고 있어서
+            //Enemy_01 -> 도끼
+            //Enemy_04 -> 검사
+            if (gameObject.name.Equals("Enemy_01(Clone)"))
+            {
+                sfxPlayer.PlaySFX(SFXType.EnemyAxe);
+            }
+            else
+            {
+                sfxPlayer.PlaySFX(SFXType.EnemySword);
+            }
+
+
+                yield return new WaitForSeconds(1.0f);
             isAttack = false;
 
         }

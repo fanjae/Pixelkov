@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using MagicPigGames;
 
+/// <summary>
+/// 폐기 예정
+/// </summary>
 public class DodgePanel : MonoBehaviour
 {
 

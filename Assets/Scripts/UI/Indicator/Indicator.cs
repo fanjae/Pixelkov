@@ -24,11 +24,13 @@ public class Indicator : MonoBehaviour
     {
         cam = Camera.main;
         DamageHandler.OnPlayerAttack += ShowDamageText;
+        DamageHandler.OnEnemyAttack += ShowDamageText;
         DamageHandler.OnEnemyAttack += ShowIndicator;
     }
     private void OnDestroy()
     {
         DamageHandler.OnPlayerAttack -= ShowDamageText;
+        DamageHandler.OnEnemyAttack -= ShowDamageText;
         DamageHandler.OnEnemyAttack -= ShowIndicator;
     }
 

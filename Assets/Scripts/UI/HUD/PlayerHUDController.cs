@@ -17,7 +17,6 @@ public class PlayerHUDController : MonoBehaviour
 
     private PlayerWeaponController weaponController;
     private int curDodgeCount = -1;
-    private int maxDodgeCount = -1;
     private int maxHp = 0;
     private int curHp = 0;
     private void Awake()
@@ -34,10 +33,9 @@ public class PlayerHUDController : MonoBehaviour
         // UI 초기화 (항상 열려 있기 때문에 Start 사용)
         if(player != null && dodgePanel != null)
         {
-            dodgePanel.MaxDodgeCountChanged(player.MaxDodgeCount);
+            //dodgePanel.MaxDodgeCountChanged(player.MaxDodgeCount);
             dodgePanel.DodgeUIUpdate(player.CurrentDodgeCount);
             curDodgeCount = player.CurrentDodgeCount;
-            maxDodgeCount = player.MaxDodgeCount;
         }
         if(playerHealth != null && hpPanel != null)
         {
@@ -102,11 +100,6 @@ public class PlayerHUDController : MonoBehaviour
         {
             dodgePanel.DodgeUIUpdate(player.CurrentDodgeCount);
             curDodgeCount = player.CurrentDodgeCount;
-        }
-        if (player.MaxDodgeCount != maxDodgeCount)
-        {
-            dodgePanel.MaxDodgeCountChanged(player.MaxDodgeCount);
-            maxDodgeCount = player.MaxDodgeCount;
         }
     }
     private void UpdateAmmo()

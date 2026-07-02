@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Enemy
@@ -9,16 +9,18 @@ namespace Enemy
         [SerializeField] private Image hpFillImage;
         private int maxHp;
 
-        //ÃÊ±â HP ¼ÂÆÃ
+        //ì´ˆê¸° HP ì…‹íŒ…
         public void Initialize(int maxHealth)
         {
             maxHp = maxHealth;
             hpFillImage.fillAmount = 1.0f;
         }
 
-        //Damage ÈÄ HP¼ÂÆÃ
+        //Damage í›„ HPì…‹íŒ…
         public void SetHP(int currentHp)
         {
+            if (hpFillImage == null) return;
+
             hpFillImage.fillAmount = (float)currentHp / maxHp;
         }
     }

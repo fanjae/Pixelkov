@@ -8,10 +8,11 @@ public class Fade : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 0.5f;
 
+    private Coroutine coroutine;
     private void Start()
     {
         // 씬 들어오면 FadeIn
-        StartCoroutine(FadeIn());
+        coroutine = StartCoroutine(FadeIn());
         // FadeOut을 이벤트에 구독해서 씬 전환할 때 FadeOut
         if(SceneLoadManager.Instance != null)
             SceneLoadManager.Instance.FadeEvent += FadeOut;
@@ -24,6 +25,8 @@ public class Fade : MonoBehaviour
 
     private YieldInstruction FadeOut()
     {
+        if (coroutine != null)
+            StopCoroutine(coroutine);
         fadeImage.gameObject.SetActive(true);
         fadeImage.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         // DOTween과 코루틴을 연계해서 씬 전환 타이밍을 조절

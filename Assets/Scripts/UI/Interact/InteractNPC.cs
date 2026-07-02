@@ -3,6 +3,7 @@
 public class InteractNPC : MonoBehaviour
 {
     [SerializeField] private GameObject interactPanel;
+    [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject guideCanvas;
 
     /// <summary>
@@ -12,6 +13,11 @@ public class InteractNPC : MonoBehaviour
     {
         if(interactPanel != null)
         {
+            if(inventory != null && !inventory.activeSelf)
+            {
+                inventory.SetActive(true);
+                InputUIController.PopUpOrder.AddLast(inventory);
+            }
             interactPanel.SetActive(!interactPanel.activeSelf);
             if (interactPanel.activeSelf)
             {

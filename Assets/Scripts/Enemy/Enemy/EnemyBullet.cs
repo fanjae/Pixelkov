@@ -77,7 +77,9 @@ namespace Enemy1
             {
                 DamageHandler.EnemyAttack(transform.position, damage);
                 enemyController.TakeDamage(damage);
-                sfxPlayer.PlaySFX(SFXType.Impact);
+
+
+                sfxPlayer.PlaySFX(SFXType.EnemyImpact);
             }
             isAttack = true;
 

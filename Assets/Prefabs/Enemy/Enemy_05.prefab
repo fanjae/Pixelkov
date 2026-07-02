@@ -1466,7 +1466,9 @@ MonoBehaviour:
   recoveryHPDelay: 5
   dashDelay: 5
   dashSpeed: 15
+  healHPCount: 1
   percentage: 30
+  bulletSkillDelay: 10
 --- !u!114 &358941766042089014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,6 +2003,10 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  bulletSkillPrefab: {fileID: 2451312595677165212, guid: bc9ba6f0008f8b64f8ec414eba5993ef, type: 3}
+  bulletCount: 30
+  bulletSkillCount: 3
+  bulletSkillDelay: 0.5
 --- !u!1 &2808002135835640085
 GameObject:
   m_ObjectHideFlags: 0

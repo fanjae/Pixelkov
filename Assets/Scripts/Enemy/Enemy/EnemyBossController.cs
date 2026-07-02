@@ -49,6 +49,9 @@ namespace Enemy1
         [Header("Dash 스피드")]
         [SerializeField] public float dashSpeed = 15.0f;
 
+        [Header("Heal HP Count")]
+        [SerializeField] public int healHPCount = 1;
+
         [Header("페이즈 변경 퍼센티지")]
         [SerializeField] public float percentage = 30.0f;
 
@@ -70,6 +73,9 @@ namespace Enemy1
 
         private bool isDead = false;
         private bool isAttack = false;
+
+        //보스 사망 여부 확인
+        public bool IsDead => isDead;
 
         //원래 자리
         private Vector2 originalPosiotion;
@@ -112,7 +118,7 @@ namespace Enemy1
                 && currentHealth < maxHealth
                 )
             {
-                currentHealth += 1;
+                currentHealth += healHPCount;
                 hpUI.SetHP(currentHealth);
                 recoveryHPTimer = 0.0f;
                 //HP 회복 아이콘 

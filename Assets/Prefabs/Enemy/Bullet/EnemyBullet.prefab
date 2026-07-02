@@ -172,6 +172,7 @@ MonoBehaviour:
   moveSpeed: 5
   lifeTime: 2
   damage: 10
+  spriteAngleOffset: -90
   wallLayer:
     serializedVersion: 2
     m_Bits: 256

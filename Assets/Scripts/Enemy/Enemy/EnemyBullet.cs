@@ -11,6 +11,8 @@ namespace Enemy1
         [SerializeField] private float lifeTime = 3.0f;
         [Header("Damage")]
         [SerializeField] private int damage = 1;
+        [Header("Sprite 회전 보정값")]
+        [SerializeField] private float spriteAngleOffset = -45f;
         //벽 레이어
         [SerializeField] private LayerMask wallLayer;
 
@@ -35,7 +37,7 @@ namespace Enemy1
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             // transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             // 스프라이트 기본 방향 보정
-            transform.rotation = Quaternion.Euler(0f, 0f, angle - 45f);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
         }
         void Update()
         {

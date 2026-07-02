@@ -1,17 +1,25 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using MagicPigGames;
 
+/// <summary>
+/// 폐기 예정
+/// </summary>
 public class DodgePanel : MonoBehaviour
 {
-    [SerializeField] private Image fillImage;
 
+    [SerializeField] private ProgressBarInspectorTest hpBar;   // 체력바
+
+    Tween tween;
     /// <summary>
     /// 플레이어의 회피 게이지를 반영해서 갱신하는 메서드
     /// </summary>
     public void FillUpdate(float amount)
     {
-        //fillImage.fillAmount = amount;
-        fillImage.DOFillAmount(amount, 0.1f).SetEase(Ease.OutQuad);
+        if(tween != null)
+            tween.Complete();
+        tween = DOTween.To(() => hpBar.progress, progress => hpBar.progress = progress, amount, 0.2f);
+        tween.Play();
     }
 }

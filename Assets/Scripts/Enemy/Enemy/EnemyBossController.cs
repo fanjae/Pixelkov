@@ -19,6 +19,8 @@ namespace Enemy1
         //회복 아이콘 
         [SerializeField] private GameObject hpAdd;
 
+        [SerializeField] private SFXPlayer sfxPlayer;
+
 
         [Header("이동 속도")]
         [SerializeField] private float moveSpeed = 2.0f;
@@ -115,6 +117,9 @@ namespace Enemy1
                 recoveryHPTimer = 0.0f;
                 //HP 회복 아이콘 
                 StartCoroutine(RecoveryHPRoutine());
+                //Heal 사운드
+                sfxPlayer.PlaySFX(SFXType.BossHeal);
+
             }
         }
 
@@ -224,6 +229,8 @@ namespace Enemy1
 
             Vector2 dashVelocity = dashDirection * dashSpeed;
 
+            //Rush 사운드
+            sfxPlayer.PlaySFX(SFXType.BossRush);
             // 3. 기존 속도를 덮어씌워 일정하게 대쉬
             rb.linearVelocity = dashVelocity;
 
@@ -248,6 +255,8 @@ namespace Enemy1
 
             yield return new WaitForSeconds(1.0f);
             shooterController.Fire();
+            //Bow 사운드
+            sfxPlayer.PlaySFX(SFXType.BossBowAttack);
             //공격후 딜레이
             //yield return new WaitForSeconds(1.0f);
             isAttack = false;
@@ -259,11 +268,13 @@ namespace Enemy1
             isAttack = true;
             UpdateAnimation(EnemyActionType.WeaponAttack);
             weapon.StartAttack();
+            //Weapon 사운드
+            sfxPlayer.PlaySFX(SFXType.BossNormalAttack);
             yield return new WaitForSeconds(1.0f);
             isAttack = false;
 
         }
-        //근접무기 공격
+        
         
 
         
@@ -301,10 +312,14 @@ namespace Enemy1
         //사망
         private void Die()
         {
+            
             isDead = true;
             //골드 추가
             //goldController.AddGold(gold);
             UpdateAnimation(EnemyActionType.Dead);
+            //Dead 사운드
+            sfxPlayer.PlaySFX(SFXType.BossDead);
+
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
             //Instantiate(coin, transform.position, Quaternion.identity);

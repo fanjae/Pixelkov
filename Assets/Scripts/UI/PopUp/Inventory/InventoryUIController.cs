@@ -29,7 +29,7 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
 
     private void Awake()
     {
-        inventoryPanel?.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, UseConsumable); // GuidePanel의 온/오프 메서드 할당
+        inventoryPanel?.AllocateSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, UseConsumable, Swap); // GuidePanel의 온/오프 메서드 할당
         equipmentPanel?.AllocateSlotEvent(UnEquip);
 
         if (database != null)
@@ -60,7 +60,7 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     }
     private void OnDestroy()
     {
-        inventoryPanel?.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, UseConsumable); // GuidePanel의 온/오프 메서드 할당
+        inventoryPanel?.ReleaseSlotEvent(OpenGuidePanel, CloseGuidePanel, Equip, UseConsumable, Swap); // GuidePanel의 온/오프 메서드 할당
         equipmentPanel?.ReleaseSlotEvent(UnEquip);
 
         if (inventory != null)
@@ -146,6 +146,17 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
             AudioManager.Instance.Play(SFXType.Use);
         }
     }
+
+    public void Swap(int index1, int index2)
+    {
+        if (inventoryController == null) return;
+
+        bool isSwap = inventoryController.SwapInventorySlots(index1, index2);
+        if(isSwap && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play(SFXType.Equip);
+        }
+    }
     
     // 판매 기능을 제공 받는 통로 역할을 하는 메서드
     public void AllocateShop(Func<int, int, bool> sellAction)
@@ -156,7 +167,6 @@ public class InventoryUIController : MonoBehaviour, IDragHandler, IBeginDragHand
     {
         inventoryPanel.ReleaseSell(sellAction);
     }
-
 
     // 창 움직이는 기능 관련 메서드
     public void OnDrag(PointerEventData eventData)

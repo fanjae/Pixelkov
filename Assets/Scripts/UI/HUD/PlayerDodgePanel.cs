@@ -2,17 +2,8 @@
 
 public class PlayerDodgePanel : MonoBehaviour
 {
-    [SerializeField] private DodgePanel[] panels; // 회피 게이지 패널들
+    [SerializeField] private GameObject[] panels; // 회피 게이지 패널들
     [SerializeField] private int maxDodgeCount;
-
-    private void Awake()
-    {
-        // 패널 할당이 되어있지 않다면 자식 오브젝트 패널들을 추가
-        if(panels.Length == 0)
-        {
-            panels = transform.GetComponentsInChildren<DodgePanel>();
-        }
-    }
 
     /// <summary>
     /// 제공되는 회피 카운트를 통해서 회피 UI를 갱신하는 메서드 입니다.
@@ -25,12 +16,12 @@ public class PlayerDodgePanel : MonoBehaviour
         int maxCount = Mathf.Min(maxDodgeCount, count);
 
         // count 만큼의 dodgePanel은 꽉 차있는 상태
-        for(int i = 0; i < maxCount; i++)
-            panels[i].FillUpdate(1f);
+        for (int i = 0; i < maxCount; i++)
+            panels[i].SetActive(true);
 
         // 나머지 패널들은 비워주기
         for(int i = maxCount; i < maxDodgeCount; i++)
-            panels[i].FillUpdate(0f);
+            panels[i].SetActive(false);
     }
     /// <summary>
     /// 최대 회피 개수 변경시 발생할 이벤트에 할당하게 될 메서드 입니다.

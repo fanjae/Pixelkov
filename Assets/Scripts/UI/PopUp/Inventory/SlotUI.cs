@@ -18,6 +18,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public event Action<int> OnEquip;
     public event Func<int, int, bool> OnSell;
     public event Action<int> OnUse;
+    public event Action<int, int> OnSwap;
 
     public int Index { get; private set; }
     public ItemData CurItem { get; private set; }
@@ -233,6 +234,14 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         if(upgradePanel != null)
         {
             upgradePanel.PaintUpgradeUI(CurItem as ArmorData, Index);
+            return;
+        }
+
+        // 다른 슬롯에 드롭한 경우 스왑
+        SlotUI anotherSlot = hoverObjects.GetComponentInParent<SlotUI>();
+        if(anotherSlot != null && Index != anotherSlot.Index)
+        {
+            OnSwap?.Invoke(Index, anotherSlot.Index);
             return;
         }
     }

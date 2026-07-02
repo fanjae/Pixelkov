@@ -7,11 +7,12 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private float fireDelay = 0.2f;
+    
 
     [Header("애니메이터")]
     [SerializeField] private Animator characterAnimator;
     [SerializeField] private Animator weaponAnimator;
-
+    [SerializeField] private SFXPlayer sfxPlayer;
     private Camera mainCamera;
     private float fireTimer;
     private PlayerHealth playerHealth;
@@ -26,6 +27,7 @@ public class PlayerShooter : MonoBehaviour
         mainCamera = Camera.main;
         playerHealth = GetComponent<PlayerHealth>();
         player = GetComponent<Player>();       
+
     }
 
     private void Update()
@@ -132,9 +134,8 @@ public class PlayerShooter : MonoBehaviour
 
         bullet.SetDamage(player.WeaponController.GetAttackDamage());
         bullet.Launch(direction);
-
         fireTimer = 0f;
-    }
+    } 
 
     private IEnumerator Reload()
     {
@@ -179,8 +180,16 @@ public class PlayerShooter : MonoBehaviour
         {
             Debug.LogWarning("Weapon Animator가 연결되지 않았습니다.");
         }
+       if(sfxPlayer !=null)
+        {
+            sfxPlayer.PlaySFX(SFXType.Reload);
+        }
+        else
+        {
+            Debug.LogWarning("호출되지 않았습니다");
+        }
 
-        yield return new WaitForSeconds(player.WeaponController.ReloadTime);
+            yield return new WaitForSeconds(player.WeaponController.ReloadTime);
 
         player.WeaponController.ReloadFromInventory(player.Inventory);
 

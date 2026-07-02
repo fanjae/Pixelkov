@@ -238,4 +238,22 @@ public class Inventory
 
         return totalCount;
     }
+
+    // 인벤토리 슬롯 간 위치 교환
+    public bool SwapSlots(int fromIndex, int toIndex)
+    {
+        // 같은 슬롯이면 교환할 필요 없음
+        if (fromIndex == toIndex) return false;
+
+        // 잘못된 인덱스면 교환 실패
+        if (!TryGetSlot(fromIndex, out _)) return false;
+        if (!TryGetSlot(toIndex, out _)) return false;
+
+        // 슬롯 내부 데이터가 아니라 슬롯 객체 자체를 교환
+        (slots[fromIndex], slots[toIndex]) = (slots[toIndex], slots[fromIndex]);
+
+        // 인벤토리 UI 갱신 알림
+        OnInventoryChanged?.Invoke();
+        return true;
+    }
 }

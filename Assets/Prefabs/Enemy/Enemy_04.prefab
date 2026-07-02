@@ -3620,7 +3620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyWeaponController
   animationController: {fileID: 1170207267960375001}
-  weapon: {fileID: 1980820257604586904, guid: f49df6351a9d6b74ca76ad81f76064f6, type: 3}
+  weapon: {fileID: 8443763489984560185}
   hpUI: {fileID: 4039523934089140113}
   coin: {fileID: 1407465415833846338, guid: f47e716f45144d349ba456bf79941dab, type: 3}
   moveSpeed: 3
@@ -5357,3 +5357,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3237416747917381728, guid: f49df6351a9d6b74ca76ad81f76064f6, type: 3}
   m_PrefabInstance: {fileID: 7949715014512439713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8443763489984560185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1980820257604586904, guid: f49df6351a9d6b74ca76ad81f76064f6, type: 3}
+  m_PrefabInstance: {fileID: 7949715014512439713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8505e06b900ac144093ec55f76d4cd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1.Weapon

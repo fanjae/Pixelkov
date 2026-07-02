@@ -10,10 +10,11 @@ public class Player : MonoBehaviour
     [SerializeField] private SFXPlayer sfxPlayer;
 
     [Header("회피 설정")]
+    
     [SerializeField] private float dodgeSpeed = 15f;
     [SerializeField] private float dodgeDuration = 0.2f;
     [SerializeField] private float invincibleTime = 0.2f;
-    [SerializeField] private int maxDodgeCount = 3;
+    [SerializeField] private int baseMaxDodgeCount = 2;
     [SerializeField] private float dodgeRecoverTime = 3f;
 
     [Header("애니메이터")]
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
     private bool isDodging;
     private bool isInvincible;
     private int currentDodgeCount;
+    private int maxDodgeCount;
 
     // HorseRoot가 처음 가지고 있던 크기
     private Vector3 horseOriginalScale;
@@ -91,6 +93,7 @@ public class Player : MonoBehaviour
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
 
+        maxDodgeCount = baseMaxDodgeCount;
         currentDodgeCount = maxDodgeCount;
 
         // HorseRoot의 기존 Scale 값을 저장
@@ -357,11 +360,24 @@ public class Player : MonoBehaviour
         return true;
     }
 
+    public void SetMaxDodgeBonus(int bonus) // 최대 회피 가능 횟수 갱신
+    {
+        maxDodgeCount = Mathf.Max(1, baseMaxDodgeCount + Mathf.Max(0, bonus));
+
+        if (currentDodgeCount > maxDodgeCount)
+        {
+            currentDodgeCount = maxDodgeCount;
+        }
+
+        Debug.Log($"최대 회피 변경: {currentDodgeCount} / {maxDodgeCount}");
+    }
+
     // 장비 장착시 Stat 변화 체크
     private void UpdateStatsFromEquipment()
     {
         int newDefense = 0;
         int maxHpBonus = 0;
+        int maxDodgeBonus = 0;
 
         if (Equipment.TryGetSlot(EquipmentSlotType.Armor, out EquipmentSlot armorSlot))
         {
@@ -385,11 +401,13 @@ public class Player : MonoBehaviour
                 if (itemData is AccessoryData accessoryData)
                 {
                     maxHpBonus = accessoryData.MaxHpBonus;
+                    maxDodgeBonus = accessoryData.MaxDodgeBonus;
                 }
             }
         }
 
         playerHealth.SetDefense(newDefense);
         playerHealth.SetMaxHealthBonus(maxHpBonus);
+        SetMaxDodgeBonus(maxDodgeBonus);
     }
 }

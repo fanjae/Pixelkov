@@ -328,9 +328,37 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 185642904}
+    - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1789892650}
+    - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069869800286753057, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9118699788146039049, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -342,7 +370,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8057683911096606328, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1789892650}
   m_SourcePrefab: {fileID: 100100000, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
 --- !u!1 &185642904 stripped
 GameObject:
@@ -1612,6 +1643,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690286550}
   m_CullTransparentMesh: 1
+--- !u!1 &1789892645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8057683911096606328, guid: eabb8ed0f6712154384bc24c1e3a10da, type: 3}
+  m_PrefabInstance: {fileID: 173142160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1789892650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789892645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0d10fa04a413646b359334a5097489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
 --- !u!1 &1839906216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1672,7 @@ GameObject:
   - component: {fileID: 1839906221}
   - component: {fileID: 1839906220}
   - component: {fileID: 1839906219}
+  - component: {fileID: 1839906222}
   m_Layer: 5
   m_Name: OptionButton
   m_TagString: Untagged
@@ -1707,6 +1756,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1839906222}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1839906220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,6 +1806,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839906216}
   m_CullTransparentMesh: 1
+--- !u!114 &1839906222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839906216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0d10fa04a413646b359334a5097489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
 --- !u!1 &1979296650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,6 +1831,7 @@ GameObject:
   - component: {fileID: 1979296654}
   - component: {fileID: 1979296653}
   - component: {fileID: 1979296652}
+  - component: {fileID: 1979296656}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1854,6 +1928,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1979296656}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1979296654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1892,6 +1978,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979296650}
   m_CullTransparentMesh: 1
+--- !u!114 &1979296656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979296650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0d10fa04a413646b359334a5097489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
 --- !u!1 &2054468320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,6 +2003,7 @@ GameObject:
   - component: {fileID: 2054468324}
   - component: {fileID: 2054468323}
   - component: {fileID: 2054468322}
+  - component: {fileID: 2054468326}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2001,6 +2100,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2054468326}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2054468324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,6 +2150,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054468320}
   m_CullTransparentMesh: 1
+--- !u!114 &2054468326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054468320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0d10fa04a413646b359334a5097489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
 --- !u!1 &2093527453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,11 +2313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3399944535418921632, guid: 6701ed0d5d0b7cc449dea70e4782a9e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 175.50127
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3399944535418921632, guid: 6701ed0d5d0b7cc449dea70e4782a9e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 256.5631
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3399944535418921632, guid: 6701ed0d5d0b7cc449dea70e4782a9e8, type: 3}
       propertyPath: m_LocalPosition.z

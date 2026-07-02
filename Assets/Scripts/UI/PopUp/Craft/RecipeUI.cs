@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,10 @@ public class RecipeUI : MonoBehaviour
     [SerializeField] private Image resultIcon;
     [SerializeField] private Image firstMaterial;
     [SerializeField] private Image secondMaterial;
+
+    [SerializeField] private TextMeshProUGUI resultCountText;
+    [SerializeField] private TextMeshProUGUI mat1CountText;
+    [SerializeField] private TextMeshProUGUI mat2CountText;
 
     public Action<int, int> OnCraft;
 
@@ -26,17 +31,17 @@ public class RecipeUI : MonoBehaviour
         ItemData resultItem = CraftUIController.Database.GetItem(recipeData.ResultItemId);
         if (resultItem != null)
         {
-            PaintUI(resultIcon, resultItem);
+            PaintUI(resultIcon, resultCountText, resultItem, recipeData.ResultCount);
             CurItem = resultItem;
         }
 
         ItemData firstMatItem = CraftUIController.Database.GetItem(recipeData.Material1ItemId);
         if (firstMatItem != null)
-            PaintUI(firstMaterial, firstMatItem, firstMatActive);
+            PaintUI(firstMaterial, mat1CountText, firstMatItem, recipeData.Material1Count, firstMatActive);
 
         ItemData secondMatItem = CraftUIController.Database.GetItem(recipeData.Material2ItemId);
         if (secondMatItem != null)
-            PaintUI(secondMaterial, secondMatItem, secondMatActive);
+            PaintUI(secondMaterial, mat2CountText, secondMatItem, recipeData.Material2Count, secondMatActive);
 
         if (counterSelector != null)
             counterSelector.Init(0, maxCount);
@@ -61,13 +66,14 @@ public class RecipeUI : MonoBehaviour
     {
         OnCraft?.Invoke(RecipeId, counterSelector.Count);
     }
-    private void PaintUI(Image icon, ItemData itemData, bool active = true)
+    private void PaintUI(Image icon, TextMeshProUGUI text, ItemData itemData, int count, bool active = true)
     {
-        if (icon == null) return;
+        if (icon == null || text == null) return;
 
         if(itemData == null)
         {
             icon.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+            text.text = "";
             return;
         }
 
@@ -76,5 +82,11 @@ public class RecipeUI : MonoBehaviour
             icon.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         else
             icon.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+
+        if (count <= 1)
+            text.text = "";
+        else
+            text.text = count.ToString();
+        Debug.Log(count);
     }
 }

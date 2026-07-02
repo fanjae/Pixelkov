@@ -13,9 +13,11 @@ public class PlayerHUDController : MonoBehaviour
     [SerializeField] private PlayerHpPanel hpPanel; // 체력 패널
     [SerializeField] private PlayerDodgePanel dodgePanel;   // 회피 패널
     [SerializeField] private AmmoPanel ammoPanel;   // 총알 개수 표시 패널
+    [SerializeField] private IndicatorPanel indicatorPanel; // 플레이어가 피격 / 회복 시 표시 될 패널
 
     private PlayerWeaponController weaponController;
     private int curDodgeCount = -1;
+    private int curHp = 0;
     private void Awake()
     {
         // 캐싱 확인
@@ -36,6 +38,7 @@ public class PlayerHUDController : MonoBehaviour
         }
         if(playerHealth != null && hpPanel != null)
         {
+            curHp = playerHealth.CurrentHealth;
             hpPanel.Init(playerHealth.CurrentHealth, playerHealth.MaxHealth);
         }
         if(player != null)
@@ -67,9 +70,19 @@ public class PlayerHUDController : MonoBehaviour
     private void Update()
     {
         // 이벤트로 연결하기 전 임시 업데이트 로직
-        if(playerHealth != null && hpPanel != null)
+        if(playerHealth != null && curHp != playerHealth.CurrentHealth)
         {
-            hpPanel.HpUIUpdate(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+            if(hpPanel != null)
+                hpPanel.HpUIUpdate(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+
+            if(indicatorPanel != null)
+            {
+                if (playerHealth.CurrentHealth < curHp)
+                    indicatorPanel.HitIndicator();  // 기존 체력 보다 줄어듦 => 피격 당한 상황
+                else
+                    indicatorPanel.HealIndicator(); // 기존 체력 보다 늘어남 => 회복 한 상황
+            }
+            curHp = playerHealth.CurrentHealth;
         }
 
         // 플레이어가 null이 아니면 dodgePanel에 갱신하는 함수를 호출

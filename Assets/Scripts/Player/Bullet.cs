@@ -64,6 +64,9 @@ public class Bullet : MonoBehaviour
         IEnmeyController target = other.GetComponentInParent<IEnmeyController>();
         if (target != null)
         {
+            Transform targetTransform = ((MonoBehaviour)target).transform;
+            DamageHandler.PlayerAttack(targetTransform.position, damage);
+
             target.TakeDamage(damage);
             Destroy(gameObject);
             return;

@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 
     public bool IsInvincible => isInvincible;
     public int CurrentDodgeCount => currentDodgeCount;
+    public int MaxDodgeCount => maxDodgeCount;
 
     // 장비 장착 부분에 대한 이벤트 해제
     private void OnDestroy()

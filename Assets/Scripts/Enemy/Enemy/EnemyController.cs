@@ -17,6 +17,7 @@ namespace Enemy1
         [SerializeField] private EnemyUI hpUI;
         //코인
         [SerializeField] private GameObject coin;
+        [SerializeField] private SFXPlayer sfxPlayer;
 
         [Header("이동 속도")]
         [SerializeField] private float moveSpeed = 2.0f;
@@ -145,6 +146,18 @@ namespace Enemy1
 
             yield return new WaitForSeconds(1.0f);
             shooterController.Fire();
+
+            if (gameObject.name.Equals("Enemy_02(Clone)"))
+            {
+                //Bow 사운드
+                sfxPlayer.PlaySFX(SFXType.EnemyBow);
+            }
+            else
+            {
+                //Magic 사운드
+                sfxPlayer.PlaySFX(SFXType.EnemyMagic);
+            }
+
             //공격후 딜레이
             //yield return new WaitForSeconds(1.0f);
             isAttack = false;
@@ -193,6 +206,9 @@ namespace Enemy1
             }
             //Dead 애니메이션
             UpdateAnimation(EnemyActionType.Dead);
+            //Dead 사운드
+            sfxPlayer.PlaySFX(SFXType.Dead);
+            
             //Eenmy 삭제
             Destroy(transform.Find("HP").gameObject);
 

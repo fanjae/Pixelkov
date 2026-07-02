@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     {
         if (Equipment != null)
         {
-            Equipment.OnEquipmentChanged -= UpdateDefenseFromEquipment;
+            Equipment.OnEquipmentChanged -= UpdateStatsFromEquipment;
         }
     }
     private void Awake()
@@ -104,8 +104,8 @@ public class Player : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
 
         // 장비 장착시 이벤트
-        Equipment.OnEquipmentChanged += UpdateDefenseFromEquipment;
-        UpdateDefenseFromEquipment();
+        Equipment.OnEquipmentChanged += UpdateStatsFromEquipment;
+        UpdateStatsFromEquipment();
 
         InventoryController = new PlayerInventoryController(Inventory,Equipment,itemDatabase);
         WeaponController = new PlayerWeaponController(Inventory,Equipment,itemDatabase,defaultDamage);
@@ -356,10 +356,11 @@ public class Player : MonoBehaviour
         return true;
     }
 
-    // 장비 장착시 방어구에 대한 방어력 계산하여 방어력 정보 업데이트
-    private void UpdateDefenseFromEquipment()
+    // 장비 장착시 Stat 변화 체크
+    private void UpdateStatsFromEquipment()
     {
         int newDefense = 0;
+        int maxHpBonus = 0;
 
         if (Equipment.TryGetSlot(EquipmentSlotType.Armor, out EquipmentSlot armorSlot))
         {
@@ -374,6 +375,20 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (Equipment.TryGetSlot(EquipmentSlotType.Accessory, out EquipmentSlot accessorySlot))
+        {
+            if (!accessorySlot.IsEmpty)
+            {
+                ItemData itemData = itemDatabase.GetItem(accessorySlot.ItemId);
+
+                if (itemData is AccessoryData accessoryData)
+                {
+                    maxHpBonus = accessoryData.MaxHpBonus;
+                }
+            }
+        }
+
         playerHealth.SetDefense(newDefense);
+        playerHealth.SetMaxHealthBonus(maxHpBonus);
     }
 }

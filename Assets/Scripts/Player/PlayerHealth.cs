@@ -3,7 +3,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour, IEnmeyController
 {
     [Header("플레이어 체력")]
-    [SerializeField] private int maxHealth = 5;
+    [SerializeField] private int baseMaxHealth = 5;
 
     [Header("방어력")]
     [SerializeField] private int defense = 0;
@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
     public bool IsHit => isHit;
     // 이미 죽었는지 확인
     private bool isDead;
+    private int maxHealth;
 
     private Player player;
     private PlayerShooter playerShooter;
@@ -37,6 +38,7 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
     private void Awake()
     {
         // 게임 시작 시 최대 체력으로 설정
+        maxHealth = baseMaxHealth;
         currentHealth = maxHealth;
 
         // Player에 붙어 있는 컴포넌트 찾기
@@ -232,5 +234,18 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
         yield return new WaitForSeconds(destroyDelay);
 
         SceneLoadManager.Instance.LoadScene(SceneType.Title);
+    }
+
+    // 최대 체력 증가 메서드
+    public void SetMaxHealthBonus(int bonus)
+    {
+        int oldMaxHealth = maxHealth;
+
+        maxHealth = Mathf.Max(1, baseMaxHealth + Mathf.Max(0, bonus));
+
+        // 최대 체력이 줄어든 경우에만 현재 체력을 잘라냄
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+
+        Debug.Log($"최대 체력 변경: {currentHealth} / {maxHealth}");
     }
 }

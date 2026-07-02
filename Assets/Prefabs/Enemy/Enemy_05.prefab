@@ -1315,7 +1315,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.008726557, z: -0, w: 0.9999619}
   m_LocalPosition: {x: -1.65986, y: -17.48453, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1903190571274476214}
@@ -1455,12 +1455,11 @@ MonoBehaviour:
   weapon: {fileID: 8902173565820492685, guid: f4f015064af03a94aae15232fd45395a, type: 3}
   hpUI: {fileID: 8389253068460118554}
   hpAdd: {fileID: 4902143704371828564}
-  moveSpeed: 2
+  moveSpeed: 3
   targeteDistance: 6
   fireDistance: 3
   attackDistance: 0.5
-  gold: 100
-  maxHealth: 5
+  maxHealth: 30
   recoveryHPDelay: 5
   dashDelay: 5
   dashSpeed: 15
@@ -1883,7 +1882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyShooterController
   firePoint: {fileID: 3329999315563150734}
-  bulletPrefab: {fileID: 2273542289340582570, guid: 1ad387b7eb3531c40a8eda43a7d67db1, type: 3}
+  bulletPrefab: {fileID: 2273542289340582570, guid: c3893baf6c97cfc439e62996ba9274c8, type: 3}
   fireDelay: 0.2
   detectionRadius: 3
   targetLayer:

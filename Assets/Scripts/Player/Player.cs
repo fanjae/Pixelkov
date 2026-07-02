@@ -362,13 +362,10 @@ public class Player : MonoBehaviour
 
     public void SetMaxDodgeBonus(int bonus) // 최대 회피 가능 횟수 갱신
     {
+        int usedDodgeCount = maxDodgeCount - currentDodgeCount;
         maxDodgeCount = Mathf.Max(1, baseMaxDodgeCount + Mathf.Max(0, bonus));
 
-        if (currentDodgeCount > maxDodgeCount)
-        {
-            currentDodgeCount = maxDodgeCount;
-        }
-
+        currentDodgeCount = Mathf.Clamp(maxDodgeCount - usedDodgeCount,0,maxDodgeCount);
         Debug.Log($"최대 회피 변경: {currentDodgeCount} / {maxDodgeCount}");
     }
 

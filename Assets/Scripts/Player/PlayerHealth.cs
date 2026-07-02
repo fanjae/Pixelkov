@@ -240,10 +240,10 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
     {
         int oldMaxHealth = maxHealth;
 
-        maxHealth = baseMaxHealth + Mathf.Max(0, bonus);
+        maxHealth = Mathf.Max(1, baseMaxHealth + Mathf.Max(0, bonus));
 
-        if (maxHealth > oldMaxHealth) currentHealth += maxHealth - oldMaxHealth;
-        else currentHealth = Mathf.Min(currentHealth, maxHealth);
+        // 최대 체력이 줄어든 경우에만 현재 체력을 잘라냄
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
 
         Debug.Log($"최대 체력 변경: {currentHealth} / {maxHealth}");
     }

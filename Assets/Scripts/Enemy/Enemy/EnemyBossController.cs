@@ -31,9 +31,9 @@ namespace Enemy1
         //근접무기 공격 거리
         [Header("근접 공격 시작 거리")]
         [SerializeField] private float attackDistance = 0.5f;
-        //골드
-        [Header("Gold")]
-        [SerializeField] private int gold;
+        ////골드
+        //[Header("Gold")]
+        //[SerializeField] private int gold;
         //Max HP
         [Header("최대 HP")]
         [SerializeField] private int maxHealth = 3;

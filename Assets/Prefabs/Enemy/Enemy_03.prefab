@@ -2281,7 +2281,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.008726557, z: -0, w: 0.9999619}
   m_LocalPosition: {x: -1.65986, y: -17.48453, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7620343268776465008}
@@ -2409,8 +2409,8 @@ MonoBehaviour:
   moveSpeed: 2
   fireDistance: 3
   targeteDistance: 6
-  gold: 100
-  maxHealth: 3
+  gold: 200
+  maxHealth: 10
 --- !u!114 &6383486115189854027
 MonoBehaviour:
   m_ObjectHideFlags: 0

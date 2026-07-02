@@ -73,6 +73,15 @@ public class AudioManager : Singleton<AudioManager>
 
         SFX_Player.PlayOneShot(nextClip);
     }
+    public AudioMixerGroup GetMixerGroup()
+    {
+        if (audioMixer == null) return null;
+        AudioMixerGroup[] mixerGroups =  audioMixer.FindMatchingGroups("SFX");
+        if (mixerGroups.Length > 0)
+            return mixerGroups[0];
+        else
+            return null;
+    }
 
     /// <summary>
     /// bgm타입을 받아서 재생 해주는 메서드

@@ -13,6 +13,7 @@ namespace Enemy1
         [SerializeField] private int damage = 1;
         [Header("Sprite 회전 보정값")]
         [SerializeField] private float spriteAngleOffset = -45f;
+        [SerializeField] private SFXPlayer sfxPlayer;
         //벽 레이어
         [SerializeField] private LayerMask wallLayer;
 
@@ -76,6 +77,7 @@ namespace Enemy1
             {
                 DamageHandler.EnemyAttack(transform.position, damage);
                 enemyController.TakeDamage(damage);
+                sfxPlayer.PlaySFX(SFXType.Impact);
             }
             isAttack = true;
 

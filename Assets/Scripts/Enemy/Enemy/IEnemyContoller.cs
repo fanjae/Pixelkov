@@ -1,6 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-interface IEnmeyController
+interface IEnemyController
 {
     public void TakeDamage(int damage);
 }

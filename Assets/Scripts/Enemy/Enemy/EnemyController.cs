@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace Enemy1
 {
-    public class EnemyController : MonoBehaviour, IEnmeyController
+    public class EnemyController : MonoBehaviour, IEnemyController
     {
         
         [SerializeField] private EnemyAnimationController animationController;

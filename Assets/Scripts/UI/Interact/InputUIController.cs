@@ -17,6 +17,7 @@ public class InputUIController : MonoBehaviour
     [Header("캔버스 내 참조 컴포넌트")]
     [SerializeField] private GameObject inventoryUI;
     [SerializeField] private GameObject menuUI;
+    [SerializeField] private HelperController helper;
 
     private InputAction InputInventory;
     private InputAction InputMenu;
@@ -104,6 +105,10 @@ public class InputUIController : MonoBehaviour
             if (menuUI != null && menuUI.activeSelf) return;
 
             InteractAction?.Invoke();
+        }
+        if (Keyboard.current.tabKey.wasPressedThisFrame && helper != null)
+        {
+            helper.SwitchHelper();
         }
     }
 }

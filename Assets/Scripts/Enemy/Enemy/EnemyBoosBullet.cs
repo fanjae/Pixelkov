@@ -56,11 +56,13 @@ namespace Enemy1
             //적이라면 데미지 전달
             if (enemyController != null)
             {
-                DamageHandler.EnemyAttack(transform.position, damage);
-                enemyController.TakeDamage(damage);
 
-
-                sfxPlayer.PlaySFX(SFXType.EnemyImpact);
+                bool damaged = enemyController.TakeDamage(damage);
+                if (damaged)
+                {
+                    DamageHandler.EnemyAttack(transform.position, damage);
+                    sfxPlayer.PlaySFX(SFXType.EnemyImpact);
+                }
             }
             isAttack = true;
 

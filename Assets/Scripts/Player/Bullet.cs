@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour
         if (other.GetComponentInParent<Player>() != null) return;
 
         // 적에 데미지 주고 총알삭제
-        IEnmeyController target = other.GetComponentInParent<IEnmeyController>();
+        IEnemyController target = other.GetComponentInParent<IEnemyController>();
         if (target != null)
         {
             Transform targetTransform = ((MonoBehaviour)target).transform;

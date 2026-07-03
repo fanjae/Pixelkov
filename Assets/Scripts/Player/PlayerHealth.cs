@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class PlayerHealth : MonoBehaviour, IEnmeyController
+public class PlayerHealth : MonoBehaviour
 {
     [Header("플레이어 체력")]
     [SerializeField] private int baseMaxHealth = 5;
@@ -103,58 +103,41 @@ public class PlayerHealth : MonoBehaviour, IEnmeyController
     }
 
     // 플레이어가 데미지를 받을 때 외부에서 호출
-    public void TakeDamage(int damage)
+    public bool TakeDamage(int damage)
     {
-        // 이미 죽은 상태라면 추가 데미지를 받지 않음
-        if (isDead)
-        {
-            return;
-        }
+        if (isDead) return false;
+        if (damage <= 0) return false;
 
-        // 0 이하의 데미지는 무시
-        if (damage <= 0)
-        {
-            return;
-        }
-
-        // 회피 무적 상태라면 데미지를 받지 않음
         if (player != null && player.IsInvincible)
         {
-            Debug.Log(
-                "회피 무적 상태라 데미지를 받지 않았습니다."
-            );
-
-            return;
+            Debug.Log("회피 무적 상태라 데미지를 받지 않았습니다.");
+            return false;
         }
 
-        // 적 공격력에서 방어력 깎아서 계산
         int finalDamage = Mathf.Max(0, damage - defense);
 
-        // 체력 감소
-        currentHealth -= finalDamage;
+        if (finalDamage <= 0)
+        {
+            return false;
+        }
 
-        // 체력이 음수가 되지 않도록 처리
+        currentHealth -= finalDamage;
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        Debug.Log(
-            $"플레이어 현재 체력: {currentHealth} / {maxHealth}"
-        );
+        Debug.Log($"플레이어 현재 체력: {currentHealth} / {maxHealth}");
 
-        // 체력이 0이 되면 사망
         if (currentHealth <= 0)
         {
             Die();
-            return;
+            return true;
         }
-        if(animator !=null)
-        {
-            animator.ResetTrigger("3_Damaged");
-            animator.SetTrigger("3_Damaged");
-        }
+
         if (animator != null)
         {
             StartCoroutine(HitCoroutine());
         }
+
+        return true;
     }
     private IEnumerator HitCoroutine()
     {

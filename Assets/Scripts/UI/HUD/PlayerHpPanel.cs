@@ -12,8 +12,8 @@ public class PlayerHpPanel : MonoBehaviour
     public void Init(int currentHp, int maxHp)
     {
         float ratio = (float)currentHp / maxHp;
-        float amount = Mathf.Lerp(0.375f, 0.75f, ratio);
-        hpImage.fillAmount = amount;
+        //float amount = Mathf.Lerp(0.375f, 0.75f, ratio);
+        hpImage.fillAmount = ratio;
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public class PlayerHpPanel : MonoBehaviour
     {
         DOTween.Kill(hpImage.fillAmount);
         float ratio = (float)currentHp / maxHp; // 체력 비율을 구해서 DOTween을 사용해 fillAmount 조정
-        float amount = Mathf.Lerp(0.375f, 0.75f, ratio);
-        hpImage.DOFillAmount(amount, 0.2f);
+        //float amount = Mathf.Lerp(0.375f, 0.75f, ratio);
+        hpImage.DOFillAmount(ratio, 0.2f);
     }
 }

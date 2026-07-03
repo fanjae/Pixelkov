@@ -184,6 +184,13 @@ namespace Enemy1
             
             if (distance < targeteDistance)
             {
+
+                if (bulletSkillDelay <= bulletSkillTimer)
+                {
+                    StartCoroutine(AttackSkillRoutine());
+                    return;
+                }
+            
                 //hp가 퍼센지티 보다 낮으면 페이즈 2
                 if (maxHealth * (percentage / 100) < currentHealth)
                 {
@@ -278,30 +285,41 @@ namespace Enemy1
 
             yield return new WaitForSeconds(1.0f);
 
-            //Bullet Skill Delay초과하면 Bullet Skill
-            if (bulletSkillDelay <= bulletSkillTimer)
-            {
-                //Bullet Skill
-                shooterController.FireSkill(sfxPlayer);
-                //Bow 사운드
-                sfxPlayer.PlaySFX(SFXType.EnemyMagic);
-                yield return new WaitForSeconds(2.0f);
-                bulletSkillTimer = 0.0f;
-            }
-            else
-            {
-                shooterController.Fire();
-                //Bow 사운드
-                sfxPlayer.PlaySFX(SFXType.BossBowAttack);
-            }
-            
-            
-            
+            shooterController.Fire();
+            //Bow 사운드
+            sfxPlayer.PlaySFX(SFXType.BossBowAttack);
+
             //공격후 딜레이
             //yield return new WaitForSeconds(1.0f);
             isAttack = false;
-
         }
+        //스킬 탄막 공격
+        IEnumerator AttackSkillRoutine()
+        {
+            isAttack = true;
+            //애니메이션 타입 : 공격
+            //현재 공격 애니메이션 문제로 주석
+            UpdateAnimation(EnemyActionType.Attack);
+            ////공격 방향
+            //UpdatePlayerShoter();
+            ////공격
+
+            yield return new WaitForSeconds(1.0f);
+
+            //Bullet Skill Delay초과하면 Bullet Skill
+            //Bullet Skill
+            shooterController.FireSkill(sfxPlayer);
+            //Bow 사운드
+            sfxPlayer.PlaySFX(SFXType.EnemyMagic);
+            yield return new WaitForSeconds(2.0f);
+            bulletSkillTimer = 0.0f;
+
+            //공격후 딜레이
+            //yield return new WaitForSeconds(1.0f);
+            isAttack = false;
+        }
+
+
 
         IEnumerator AttackWeaponRoutine()
         {

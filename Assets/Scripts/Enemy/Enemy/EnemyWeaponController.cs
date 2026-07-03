@@ -137,10 +137,12 @@ namespace Enemy1
 
             if (gameObject.name.Equals("Enemy_01(Clone)"))
             {
+                //도끼 사운드
                 sfxPlayer.PlaySFX(SFXType.EnemyAxe);
             }
             else
             {
+                //Sword 사운드
                 sfxPlayer.PlaySFX(SFXType.EnemySword);
             }
             yield return new WaitForSeconds(1.0f);

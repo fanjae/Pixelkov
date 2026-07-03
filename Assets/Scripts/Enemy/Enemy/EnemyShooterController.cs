@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 namespace Enemy1
 {
     public class EnemyShooterController : MonoBehaviour
@@ -17,6 +17,17 @@ namespace Enemy1
         // 적 레이어
         [Header("Target Layer")]
         [SerializeField] private LayerMask targetLayer;
+
+        [Header("탄막 SKill")]
+        [Header("탄막 Bullet")]
+        [SerializeField] private GameObject bulletSkillPrefab; // 발사할 총알 프리팹
+        [Header("탄막 스킬 총알 Count")]
+        [SerializeField] private int bulletCount = 30;
+        [Header("탄막 스킬 연속 Count")]
+        [SerializeField] private int bulletSkillCount = 3;
+        [Header("탄막 스킬 Delay")]
+        [SerializeField] private float bulletSkillDelay = 0.5f;
+        private bool isFireSkillStart = false;
 
         private void Update()
         {
@@ -70,6 +81,36 @@ namespace Enemy1
             }
             return nearest;
         }
-      
+
+     
+        //탄막 스킬
+        public void FireSkill()
+        {
+            if (isFireSkillStart) return;
+            StartCoroutine(SpellStart());
+
+        }
+        IEnumerator SpellStart()
+        {
+            isFireSkillStart = true;
+            float angle = 360 / bulletCount; 
+            for(int i= 1; i<= bulletSkillCount; i++)
+            {
+                for (int k = 0; k < bulletCount; k++)
+                {
+                    GameObject obj = Instantiate(bulletSkillPrefab, firePoint.position, Quaternion.identity);
+                    
+                    obj.GetComponent<Rigidbody2D>().AddForce(
+                        new Vector2(
+                            Mathf.Cos(Mathf.PI * 2 * k / bulletCount),
+                            Mathf.Sin(Mathf.PI * k * 2 / bulletCount)));
+                    obj.transform.Rotate(new Vector3(0f, 0f, 360 * k / bulletCount - 90));
+                }
+                yield return new WaitForSeconds(bulletSkillDelay);
+            }
+            isFireSkillStart = false;
+
+        } 
     }
 }
+

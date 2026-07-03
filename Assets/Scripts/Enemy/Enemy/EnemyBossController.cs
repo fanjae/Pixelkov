@@ -332,10 +332,6 @@ namespace Enemy1
             isAttack = false;
 
         }
-        
-        
-
-        
         private void OriMove()
         {
             transform.position = Vector2.MoveTowards(transform.position, originalPosiotion, moveSpeed * Time.deltaTime);
@@ -396,6 +392,40 @@ namespace Enemy1
 
             SceneLoadManager.Instance.LoadScene(SceneType.Clear);
         }
+        public void ResetBoss()
+        {
+            if (isDead) return;
+
+            StopAllCoroutines();
+
+            isAttack = false;
+
+            currentHealth = maxHealth;
+
+            recoveryHPTimer = 0.0f;
+            bulletSkillTimer = 0.0f;
+            dashTimer = 0.0f;
+
+            transform.position = originalPosiotion;
+
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+
+            if (hpUI != null)
+            {
+                hpUI.SetHP(currentHealth);
+            }
+
+            if (hpAdd != null)
+            {
+                hpAdd.SetActive(false);
+            }
+
+            UpdateAnimation(EnemyActionType.Idle);
+        }
+
 
     }
 }

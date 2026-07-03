@@ -55,6 +55,10 @@ namespace Enemy1
         [Header("페이즈 변경 퍼센티지")]
         [SerializeField] public float percentage = 30.0f;
 
+        //Bullet Skill 재사용 시간
+        [Header("Bullet Skill 재사용 시간")]
+        [SerializeField] private float bulletSkillDelay = 10.0f;
+
 
         //플레이어
         private Transform target;
@@ -67,6 +71,8 @@ namespace Enemy1
         private float dashTimer = 0.0f;
         //HP 타이머
         private float recoveryHPTimer = 0.0f;
+        //Bullet Skill 타이머 
+        private float bulletSkillTimer = 0.0f;
 
         private Collider2D collider;
         private Rigidbody2D rb;
@@ -109,10 +115,21 @@ namespace Enemy1
             
             dashTimer += Time.deltaTime;
             //데미지 있을시 HP 회복 타이머 작동
+            //데미지 있을시 bulletSkill 타이머 작동 
             if (currentHealth < maxHealth)
             {
-                recoveryHPTimer += Time.deltaTime;   
+                recoveryHPTimer += Time.deltaTime;
+                bulletSkillTimer += Time.deltaTime;
             }
+            //보스가 최대 HP면
+            //HP 회복 타이머 초기화
+            //bulletSkill 타이머 초기화
+            if (currentHealth == maxHealth)
+            {
+                recoveryHPTimer = 0.0f;
+                bulletSkillTimer = 0.0f;
+            }
+
             //HP 회복
             if (recoveryHPDelay < recoveryHPTimer
                 && currentHealth < maxHealth
@@ -260,7 +277,21 @@ namespace Enemy1
             ////공격
 
             yield return new WaitForSeconds(1.0f);
-            shooterController.Fire();
+
+            //Bullet Skill Delay초과하면 Bullet Skill
+            if (bulletSkillDelay <= bulletSkillTimer)
+            {
+                //Bullet Skill
+                shooterController.FireSkill();
+                bulletSkillTimer = 0.0f;
+                yield return new WaitForSeconds(2.0f);
+            }
+            else
+            {
+                shooterController.Fire();
+            }
+            
+            
             //Bow 사운드
             sfxPlayer.PlaySFX(SFXType.BossBowAttack);
             //공격후 딜레이

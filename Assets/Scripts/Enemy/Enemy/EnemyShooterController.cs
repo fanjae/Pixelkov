@@ -84,18 +84,19 @@ namespace Enemy1
 
      
         //탄막 스킬
-        public void FireSkill()
+        public void FireSkill(SFXPlayer sfxPlayer)
         {
             if (isFireSkillStart) return;
-            StartCoroutine(SpellStart());
+            StartCoroutine(SpellStart(sfxPlayer));
 
         }
-        IEnumerator SpellStart()
+        IEnumerator SpellStart(SFXPlayer sfxPlayer)
         {
             isFireSkillStart = true;
             float angle = 360 / bulletCount; 
             for(int i= 1; i<= bulletSkillCount; i++)
             {
+                sfxPlayer.PlaySFX(SFXType.EnemyMagic);
                 for (int k = 0; k < bulletCount; k++)
                 {
                     GameObject obj = Instantiate(bulletSkillPrefab, firePoint.position, Quaternion.identity);

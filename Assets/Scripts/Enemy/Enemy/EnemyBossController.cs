@@ -282,18 +282,21 @@ namespace Enemy1
             if (bulletSkillDelay <= bulletSkillTimer)
             {
                 //Bullet Skill
-                shooterController.FireSkill();
-                bulletSkillTimer = 0.0f;
+                shooterController.FireSkill(sfxPlayer);
+                //Bow 사운드
+                sfxPlayer.PlaySFX(SFXType.EnemyMagic);
                 yield return new WaitForSeconds(2.0f);
+                bulletSkillTimer = 0.0f;
             }
             else
             {
                 shooterController.Fire();
+                //Bow 사운드
+                sfxPlayer.PlaySFX(SFXType.BossBowAttack);
             }
             
             
-            //Bow 사운드
-            sfxPlayer.PlaySFX(SFXType.BossBowAttack);
+            
             //공격후 딜레이
             //yield return new WaitForSeconds(1.0f);
             isAttack = false;

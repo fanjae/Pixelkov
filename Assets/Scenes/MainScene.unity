@@ -3822,6 +3822,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2672525954743840690, guid: 49d222368ccd9f54699cf822e5aba00e, type: 3}
   m_PrefabInstance: {fileID: 333785716}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &333785718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6524371829026040773, guid: 49d222368ccd9f54699cf822e5aba00e, type: 3}
+  m_PrefabInstance: {fileID: 333785716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07ebabaa420c144fa89a28a72bd80b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1.EnemyBossController
 --- !u!1 &335541136
 GameObject:
   m_ObjectHideFlags: 0
@@ -89524,6 +89535,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1106113962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1715191884318864235, guid: 0eb939ece721b7a45859898e4935791e, type: 3}
+  m_PrefabInstance: {fileID: 914728383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1134030752
 GameObject:
   m_ObjectHideFlags: 0
@@ -127956,6 +127972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BGMSwitchZone
   enterBGM: 5
   exitBGM: 2
+  boss: {fileID: 333785718}
 --- !u!1 &1671960318
 GameObject:
   m_ObjectHideFlags: 0
@@ -128562,11 +128579,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2449829987066603305, guid: c484c44901d3e4c4b83ac907bcb39af6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 9.87
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: c484c44901d3e4c4b83ac907bcb39af6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.7
+      value: -12.9
       objectReference: {fileID: 0}
     - target: {fileID: 2449829987066603305, guid: c484c44901d3e4c4b83ac907bcb39af6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -128600,16 +128617,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3107442871183952738, guid: c484c44901d3e4c4b83ac907bcb39af6, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 4675067371354953239, guid: c484c44901d3e4c4b83ac907bcb39af6, type: 3}
+      propertyPath: initialGold
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 7912254970507497521, guid: c484c44901d3e4c4b83ac907bcb39af6, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912254970507497521, guid: c484c44901d3e4c4b83ac907bcb39af6, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -145707,6 +145720,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1971190548}
     - target: {fileID: 2833124095670758982, guid: e10ae1ebda8977742860f2d54a01eaf1, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1106113962}
+    - target: {fileID: 2833124095670758982, guid: e10ae1ebda8977742860f2d54a01eaf1, type: 3}
       propertyPath: interactPanel
       value: 
       objectReference: {fileID: 1971190548}
@@ -145874,6 +145891,10 @@ PrefabInstance:
       propertyPath: Shop
       value: 
       objectReference: {fileID: 914728384}
+    - target: {fileID: 492339209514200997, guid: 12542d2277136ea4ab1b72c0b52a30ac, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1106113962}
     - target: {fileID: 492339209514200997, guid: 12542d2277136ea4ab1b72c0b52a30ac, type: 3}
       propertyPath: interactPanel
       value: 

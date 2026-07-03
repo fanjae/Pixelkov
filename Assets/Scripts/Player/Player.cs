@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
 {
     [Header("이동 설정")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private SFXPlayer sfxPlayer;
 
     [Header("회피 설정")]
+    
     [SerializeField] private float dodgeSpeed = 15f;
     [SerializeField] private float dodgeDuration = 0.2f;
     [SerializeField] private float invincibleTime = 0.2f;
-    [SerializeField] private int maxDodgeCount = 3;
+    [SerializeField] private int baseMaxDodgeCount = 2;
     [SerializeField] private float dodgeRecoverTime = 3f;
 
     [Header("애니메이터")]
@@ -60,19 +62,21 @@ public class Player : MonoBehaviour
     private bool isDodging;
     private bool isInvincible;
     private int currentDodgeCount;
+    private int maxDodgeCount;
 
     // HorseRoot가 처음 가지고 있던 크기
     private Vector3 horseOriginalScale;
 
     public bool IsInvincible => isInvincible;
     public int CurrentDodgeCount => currentDodgeCount;
+    public int MaxDodgeCount => maxDodgeCount;
 
     // 장비 장착 부분에 대한 이벤트 해제
     private void OnDestroy()
     {
         if (Equipment != null)
         {
-            Equipment.OnEquipmentChanged -= UpdateDefenseFromEquipment;
+            Equipment.OnEquipmentChanged -= UpdateStatsFromEquipment;
         }
     }
     private void Awake()
@@ -89,6 +93,7 @@ public class Player : MonoBehaviour
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
 
+        maxDodgeCount = baseMaxDodgeCount;
         currentDodgeCount = maxDodgeCount;
 
         // HorseRoot의 기존 Scale 값을 저장
@@ -103,8 +108,8 @@ public class Player : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
 
         // 장비 장착시 이벤트
-        Equipment.OnEquipmentChanged += UpdateDefenseFromEquipment;
-        UpdateDefenseFromEquipment();
+        Equipment.OnEquipmentChanged += UpdateStatsFromEquipment;
+        UpdateStatsFromEquipment();
 
         InventoryController = new PlayerInventoryController(Inventory,Equipment,itemDatabase);
         WeaponController = new PlayerWeaponController(Inventory,Equipment,itemDatabase,defaultDamage);
@@ -268,6 +273,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("IsMoving", false);
             animator.SetBool("IsDodging", true);
+            sfxPlayer.PlaySFX(SFXType.Dodge);
         }
 
         float timer = 0f;
@@ -354,10 +360,21 @@ public class Player : MonoBehaviour
         return true;
     }
 
-    // 장비 장착시 방어구에 대한 방어력 계산하여 방어력 정보 업데이트
-    private void UpdateDefenseFromEquipment()
+    public void SetMaxDodgeBonus(int bonus) // 최대 회피 가능 횟수 갱신
+    {
+        int usedDodgeCount = maxDodgeCount - currentDodgeCount;
+        maxDodgeCount = Mathf.Max(1, baseMaxDodgeCount + Mathf.Max(0, bonus));
+
+        currentDodgeCount = Mathf.Clamp(maxDodgeCount - usedDodgeCount,0,maxDodgeCount);
+        Debug.Log($"최대 회피 변경: {currentDodgeCount} / {maxDodgeCount}");
+    }
+
+    // 장비 장착시 Stat 변화 체크
+    private void UpdateStatsFromEquipment()
     {
         int newDefense = 0;
+        int maxHpBonus = 0;
+        int maxDodgeBonus = 0;
 
         if (Equipment.TryGetSlot(EquipmentSlotType.Armor, out EquipmentSlot armorSlot))
         {
@@ -372,6 +389,22 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (Equipment.TryGetSlot(EquipmentSlotType.Accessory, out EquipmentSlot accessorySlot))
+        {
+            if (!accessorySlot.IsEmpty)
+            {
+                ItemData itemData = itemDatabase.GetItem(accessorySlot.ItemId);
+
+                if (itemData is AccessoryData accessoryData)
+                {
+                    maxHpBonus = accessoryData.MaxHpBonus;
+                    maxDodgeBonus = accessoryData.MaxDodgeBonus;
+                }
+            }
+        }
+
         playerHealth.SetDefense(newDefense);
+        playerHealth.SetMaxHealthBonus(maxHpBonus);
+        SetMaxDodgeBonus(maxDodgeBonus);
     }
 }

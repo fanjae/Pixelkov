@@ -106,7 +106,7 @@ namespace Enemy1
             currentHealth = maxHealth;
             if (hpUI != null)
             {
-                hpUI.Initialize(maxHealth);
+                hpUI.Initialize(maxHealth, transform);
             }
         }
 

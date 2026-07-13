@@ -38,15 +38,15 @@
 ## 구현 기능
 
 | 기능 | 화면 | 설명 |
-|:---:|:---:|:---|
-| 메인 화면 | GIF 예정 | 게임 시작 및 종료 |
+|:----:|:---:|:---|
+| 메인 화면 | <img width="850" height="500" alt="Image" src="https://github.com/user-attachments/assets/a44cfea4-a119-44ad-ba27-13b4c68eae1d" /> | 게임 시작 및 종료 |
 | 플레이어 | GIF 예정 | 이동, 조준, 공격, 회피 |
-| 전투 시스템 | GIF 예정 | 일반 몬스터 및 보스 전투 |
-| 인벤토리 | GIF 예정 | 아이템 관리 및 장착 |
-| 상점 | GIF 예정 | 아이템 구매 및 판매 |
-| 장비 강화 | GIF 예정 | 방어구 강화 |
-| 제작 시스템 | GIF 예정 | 재료를 이용한 무기 제작 |
-| 보스 전투 | GIF 예정 | 보스 패턴 및 클리어 |
+| 전투 시스템 | <img width="850" height="400" alt="Image" src="https://github.com/user-attachments/assets/b4eab723-a2f4-43b9-af66-b53a6f36ce9e" /> | 일반 몬스터 및 보스 전투 |
+| 인벤토리 | <img width="850" height="400" alt="Image" src="https://github.com/user-attachments/assets/0477197c-0d07-4f6d-9ebd-f065186c920c" /> | 아이템 관리 및 장착 |
+| 상점 | <img width="850" height="500" alt="Image" src="https://github.com/user-attachments/assets/c0af8456-dbbd-447c-9d7a-8c634837f0f5" /> | 아이템 구매 및 판매 |
+| 장비 강화 | <img width="850" height="400" alt="Image" src="https://github.com/user-attachments/assets/7770c6ec-ddfa-4aa7-9113-9fa801f51c90" /> | 방어구 강화 |
+| 제작 시스템 | <img width="850" height="400" alt="Image" src="https://github.com/user-attachments/assets/40557ec2-943f-40ab-befa-ee4b0330d4ce" /> | 재료를 이용한 무기 제작 |
+| 보스 전투 | GIF 예정 | 강한 능력치와 고유 패턴을 보유한 보스 몬스터 |
 
 ---
 

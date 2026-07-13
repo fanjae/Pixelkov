@@ -130,4 +130,4 @@
 - 사운드 및 이펙트 개선
 
 ## 개발 기록
-(추가 예정)
+[Pixelkov 개발일지](https://fanjae.tistory.com/326)

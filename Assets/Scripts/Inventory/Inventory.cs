@@ -211,6 +211,8 @@ public class Inventory
     public bool ReplaceItemAt(int slotIndex, ItemData newItemData, int count = 1)
     {
         if (newItemData == null || count <= 0) return false;
+        if (count <= 0 || count > newItemData.MaxStackCount) return false; 
+
         if (!TryGetSlot(slotIndex, out InventorySlot slot)) return false;
         if (slot.IsEmpty) return false;
 

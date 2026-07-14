@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class PlayerInventoryController
+﻿public class PlayerInventoryController
 {
     private readonly Inventory inventory;
     private readonly Equipment equipment;
@@ -41,10 +39,6 @@ public class PlayerInventoryController
     // 장착 여부 체크
     public bool IsEquippedSlot(int slotIndex)
     {
-        // 슬롯이 없거나 비어있으면 장착 상태 아님
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot)) return false;
-        if (inventorySlot.IsEmpty) return false;
-
         foreach (var pair in equipment.Slots)
         {
             EquipmentSlot equipmentSlot = pair.Value;

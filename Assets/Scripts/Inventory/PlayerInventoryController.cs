@@ -39,6 +39,9 @@
     // 장착 여부 체크
     public bool IsEquippedSlot(int slotIndex)
     {
+        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot)) return false; 
+        if (inventorySlot.IsEmpty) return false;
+
         foreach (var pair in equipment.Slots)
         {
             EquipmentSlot equipmentSlot = pair.Value;

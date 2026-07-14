@@ -45,17 +45,21 @@ public class ArmorUpgradeController
         // 강화 가능 조건을 검증
         if (!CanUpgradeArmorAt(slotIndex)) return false;
 
-        InventorySlot slot = inventory.Slots[slotIndex];
+        // 유효하지 않은 슬롯에 대한 처리
+        if (!inventory.TryGetSlot(slotIndex, out InventorySlot slot)) return false;
 
         ArmorData currentArmor = itemDatabase.GetItem(slot.ItemId) as ArmorData;
+        if (currentArmor == null) return false;
+
         ArmorData nextArmor = itemDatabase.GetItem(currentArmor.NextUpgradeItemId) as ArmorData;
 
         bool wasEquipped = inventoryController.IsEquippedSlot(slotIndex);
         int oldItemId = currentArmor.ItemId;
         int newItemId = nextArmor.ItemId;
+        int upgradeCost = currentArmor.UpgradeCost;
 
         // 강화 비용 지불
-        if (!goldController.SpendGold(currentArmor.UpgradeCost)) return false;
+        if (!goldController.SpendGold(upgradeCost)) return false;
 
         // 기존 슬롯의 아이템을 강화된 방어구로 교체
         if (!inventory.ReplaceItemAt(slotIndex, nextArmor))
@@ -64,12 +68,12 @@ public class ArmorUpgradeController
             return false;
         }
 
-        if (wasEquipped)
+        if (wasEquipped && !equipment.ReplaceEquippedItem(slotIndex, oldItemId, newItemId))
         {
-            if (!equipment.ReplaceEquippedItem(slotIndex, oldItemId, newItemId))
-            {
-                return false;
-            }
+            // 인벤토리와 골드 원상 복구
+            inventory.ReplaceItemAt(slotIndex, currentArmor);
+            goldController.AddGold(upgradeCost);
+            return false;
         }
 
         return true;

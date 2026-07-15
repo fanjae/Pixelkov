@@ -56,7 +56,7 @@ public class ShopController
         if (!inventoryController.CanRemoveFromInventory(slotIndex, count)) return false;
 
         // 슬롯 정보 조회
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot slot)) return false;
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot slot)) return false;
 
         // ItemId로 데이터 조회
         ItemData itemData = itemDatabase.GetItem(slot.ItemId);

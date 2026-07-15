@@ -21,7 +21,7 @@ public class ArmorUpgradeController
     public bool CanUpgradeArmorAt(int slotIndex)
     {
         // 잘못된 슬롯이거나 빈 슬롯이면 강화 불가
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot slot)) return false;
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot slot)) return false;
         if (slot.IsEmpty) return false;
 
         // 슬롯의 ItemId로 실제 아이템 데이터를 조회하고, 방어구 인지 체크
@@ -46,7 +46,7 @@ public class ArmorUpgradeController
         if (!CanUpgradeArmorAt(slotIndex)) return false;
 
         // 유효하지 않은 슬롯에 대한 처리
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot slot)) return false;
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot slot)) return false;
 
         ArmorData currentArmor = itemDatabase.GetItem(slot.ItemId) as ArmorData;
         if (currentArmor == null) return false;
@@ -82,7 +82,7 @@ public class ArmorUpgradeController
     // 인벤토리 슬롯에 있는 강화 가능한 방어구 데이터 조회
     public ArmorData GetUpgradeableArmorAt(int slotIndex)
     {
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot slot)) return null;
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot slot)) return null;
         if (slot.IsEmpty) return null;
 
         return itemDatabase.GetItem(slot.ItemId) as ArmorData;

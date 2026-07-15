@@ -93,8 +93,8 @@ public class InventoryPanel : MonoBehaviour
         if (inventory.Slots[index] == null) return;
 
         // index 번째의 슬롯 정보를 받아서 UI에 전달
-        InventorySlot curSlotInfo = inventory.Slots[index];
-        if(curSlotInfo != null)
+        IReadOnlyInventorySlot curSlotInfo = inventory.Slots[index];
+        if (curSlotInfo != null)
             slotUIs[index].SetSlotInfo(curSlotInfo);
     }
 }

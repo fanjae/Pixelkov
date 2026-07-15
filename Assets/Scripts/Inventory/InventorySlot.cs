@@ -1,7 +1,7 @@
 ﻿using System;
 
 [Serializable]
-public class InventorySlot
+public class InventorySlot : IReadOnlyInventorySlot
 {
     public ItemInstance ItemInstance { get; private set; }
     public int Count { get; private set; }

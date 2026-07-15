@@ -105,7 +105,7 @@ public class SlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     /// <summary>
     /// 슬롯의 데이터를 가져와 UI에 적용하는 메서드
     /// </summary>
-    public void SetSlotInfo(InventorySlot slot)
+    public void SetSlotInfo(IReadOnlyInventorySlot slot)
     {
         ItemDatabase database = InventoryUIController.Database;
         if (database == null) return;

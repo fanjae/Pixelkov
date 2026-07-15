@@ -16,7 +16,7 @@
     public bool EquipFromInventory(int slotIndex)
     {
         // 유효하지 않은 슬롯 장착 불가
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot)) return false;
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot inventorySlot)) return false;
 
         // 빈 슬롯 장착 불가
         if (inventorySlot.IsEmpty) return false;
@@ -39,7 +39,7 @@
     // 장착 여부 체크
     public bool IsEquippedSlot(int slotIndex)
     {
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot)) return false; 
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot inventorySlot)) return false; 
         if (inventorySlot.IsEmpty) return false;
 
         foreach (var pair in equipment.Slots)
@@ -56,7 +56,7 @@
     public bool CanEquipFromInventory(int slotIndex)
     {
         // 유효하지 않은 슬롯이나 빈 슬롯 장착 불가
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot)) return false;
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot inventorySlot)) return false;
         if (inventorySlot.IsEmpty) return false;
 
         // ItemId로 ItemData를 조회한 뒤 장착 가능 여부 확인
@@ -72,7 +72,7 @@
         if (count <= 0) return false;
 
         // 잘못된 슬롯 제거 불가
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot)) return false;
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot inventorySlot)) return false;
 
         // 빈 슬롯 제거 불가
         if (inventorySlot.IsEmpty) return false;
@@ -90,7 +90,7 @@
         if (player == null) return false;
 
         // 잘못된 슬롯 접근
-        if (!inventory.TryGetSlot(slotIndex, out InventorySlot inventorySlot))
+        if (!inventory.TryGetSlot(slotIndex, out IReadOnlyInventorySlot inventorySlot))
             return false;
 
         // 빈 슬롯

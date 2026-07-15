@@ -197,7 +197,7 @@ public class PlayerWeaponController
             return null;
         }
 
-        if (!inventory.TryGetSlot(equipmentSlot.InventorySlotIndex, out InventorySlot inventorySlot))
+        if (!inventory.TryGetSlot(equipmentSlot.InventorySlotIndex, out IReadOnlyInventorySlot inventorySlot))
         {
             Debug.LogWarning($"Runtime 조회 실패: 인벤토리 슬롯 인덱스 오류 {equipmentSlot.InventorySlotIndex}");
             return null;

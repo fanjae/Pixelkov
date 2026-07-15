@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class Inventory
 {
     private readonly List<InventorySlot> slots;
-    public IReadOnlyList<InventorySlot> Slots => slots;
+    public IReadOnlyList<IReadOnlyInventorySlot> Slots => slots;
 
     public event Action OnInventoryChanged; // 인벤토리 변경에 대한 이벤트
 
@@ -53,7 +53,7 @@ public class Inventory
         if (count <= 0) return false;
 
         // 잘못된 슬롯 처리
-        if (!TryGetSlot(slotIndex, out InventorySlot slot)) return false;
+        if (!TryGetMutableSlot(slotIndex, out InventorySlot slot)) return false;
 
         if (slot.IsEmpty) return false;
 
@@ -116,9 +116,22 @@ public class Inventory
 
 
     // 슬롯 인덱스로 슬롯을 가져옴
-    public bool TryGetSlot(int slotIndex, out InventorySlot slot)
+    public bool TryGetSlot(int slotIndex, out IReadOnlyInventorySlot slot)
     {
         if (slotIndex < 0 || slotIndex >= slots.Count) // 잘못 인덱스 처리
+        {
+            slot = null;
+            return false;
+        }
+
+        slot = slots[slotIndex];
+        return true;
+    }
+
+    // 내부 획득용
+    private bool TryGetMutableSlot(int slotIndex,out InventorySlot slot)
+    {
+        if (slotIndex < 0 || slotIndex >= slots.Count)
         {
             slot = null;
             return false;
@@ -211,9 +224,9 @@ public class Inventory
     public bool ReplaceItemAt(int slotIndex, ItemData newItemData, int count = 1)
     {
         if (newItemData == null || count <= 0) return false;
-        if (count <= 0 || count > newItemData.MaxStackCount) return false; 
+        if (count > newItemData.MaxStackCount) return false; 
 
-        if (!TryGetSlot(slotIndex, out InventorySlot slot)) return false;
+        if (!TryGetMutableSlot(slotIndex, out InventorySlot slot)) return false;
         if (slot.IsEmpty) return false;
 
         slot.SetItem(newItemData, count);

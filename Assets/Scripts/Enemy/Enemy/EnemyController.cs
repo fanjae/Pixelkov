@@ -40,7 +40,7 @@ namespace Enemy1
         //초기 HP
         private int currentHealth;
 
-        private Collider2D collider;
+        private Collider2D enemyCollider;
         private Rigidbody2D rb;
 
         private bool isDead = false;
@@ -48,7 +48,7 @@ namespace Enemy1
 
         private void Awake()
         {
-            collider = GetComponent<Collider2D>();
+            enemyCollider = GetComponent<Collider2D>();
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
@@ -213,7 +213,7 @@ namespace Enemy1
             Destroy(transform.Find("HP").gameObject);
 
             //collider, Rigidbody 비활성화
-            collider.enabled = false;
+            enemyCollider.enabled = false;
             rb.simulated = false;
             Destroy(gameObject, 3.0f);
         }

@@ -74,7 +74,7 @@ namespace Enemy1
         //Bullet Skill 타이머 
         private float bulletSkillTimer = 0.0f;
 
-        private Collider2D collider;
+        private Collider2D enemyCollider;
         private Rigidbody2D rb;
 
         private bool isDead = false;
@@ -90,7 +90,7 @@ namespace Enemy1
         {
             originalPosiotion = transform.position;
 
-            collider = GetComponent<Collider2D>();
+            enemyCollider = GetComponent<Collider2D>();
             rb = GetComponent<Rigidbody2D>();
             animationController = GetComponentInChildren<EnemyAnimationController>();
             shooterController = GetComponentInChildren<EnemyShooterController>();
@@ -379,7 +379,7 @@ namespace Enemy1
             //Instantiate(coin, transform.position, Quaternion.identity);
 
             //collider, Rigidbody 비활성화
-            collider.enabled = false;
+            enemyCollider.enabled = false;
             rb.simulated = false;
             //Destroy(gameObject, 3.0f);
             // 클리어씬 이동

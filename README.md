@@ -30,9 +30,9 @@
 ## 실행 방법
 
 ### Unity 실행
-1. Repository Clone
-2. Unity Hub에서 프로젝트 열기
-3. Play 버튼 실행
+1. https://github.com/fanjae/Pixelkov/releases/tag/Ver_1.4
+2. `Pixelkov_ver.1.4.zip` 압축해제
+3. `Pixelkov.exe` 실행
 
 
 ## 구현 기능

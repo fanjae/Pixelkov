@@ -20,7 +20,7 @@
 ## 팀 구성 및 역할
 | 이름 | 역할 | 담당 내용 |
 |---|---|---|
-| [@fanjae](https://github.com/shgmlrkd) | 팀장 | 프로젝트 관리 및 시스템 설계 |
+| [@fanjae](https://github.com/fanjae) | 팀장 | 프로젝트 관리 및 시스템 설계 |
 | [@ShinJinSeop2536](https://github.com/ShinJinSeop2536) | 적 AI | 몬스터 및 보스 구현 |
 | [@duaehdtjs20](https://github.com/duaehdtjs20) | UI | 인벤토리, 장비, 상점 / 제작 UI 및 사운드 시스템 구현 |
 | [@YeoHaeng-J](https://github.com/YeoHaeng-J) | 플레이어 | 플레이어 및 전투 시스템 |
